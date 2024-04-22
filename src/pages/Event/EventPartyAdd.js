@@ -71,7 +71,7 @@ function EventPartyAdd() {
         }
       );
       // Navigate to main page
-      navigate(`/event-view/${id}`);
+      navigate(`/events`);
     } catch (error) {
       console.log(error.message); // Display error messages
     }
