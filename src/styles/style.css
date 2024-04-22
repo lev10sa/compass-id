@@ -1,0 +1,851 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;800&family=VT323&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: auto;
+  padding: auto;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #111;
+  background: transparent;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px hidden;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2.25em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.75em;
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 1em;
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+.shdw {
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (min-width: 601px) {
+  pre {
+    margin: 10px auto;
+    white-space: break-spaces;
+  }
+
+  p {
+    margin: 15px auto;
+  }
+
+  .section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .container {
+    width: 80%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .navbar {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    background: #fff;
+    clear: both;
+  }
+
+  .navbar .logo {
+    width: 115px;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    float: left;
+    margin: 10px 10px;
+  }
+
+  .navbar .tabs {
+    width: auto;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    float: right;
+    margin: 10px 10px;
+  }
+
+  .navbar button {
+    width: auto;
+    height: auto;
+    background: transparent;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .navbar .logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .navbar .tabs button {
+    display: inline-block;
+    margin: auto 1.5rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1em;
+  }
+
+  .navbar .tabs button:hover {
+    color: #004;
+  }
+
+  .sidenav-wrapper,
+  .sidenav-wrapper .plain {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  .sidenav {
+    width: 20%;
+    height: 100vh;
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidenav img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding: 15px 50px;
+    border-bottom: 1px solid #111;
+  }
+
+  .sidenav button {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #111;
+    font-weight: bold;
+  }
+
+  .sidenav button:hover {
+    background: #eee;
+  }
+
+  .sidenav i {
+    margin-right: 15px;
+  }
+
+  #sidenav {
+    display: none;
+  }
+
+  .main-page {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 2.5rem;
+    overflow: hidden;
+  }
+
+  .banner img {
+    width: 100%;
+    height: 325px;
+    display: block;
+    overflow: hidden;
+    margin-top: 2.5rem;
+  }
+
+  .headline {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #111;
+  }
+
+  .headline h4 {
+    display: inline-block;
+  }
+
+  .headline .btn {
+    float: right;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 8px 40px;
+    font-weight: bold;
+    background: #111;
+    border: 1px solid #111;
+  }
+
+  .headline .btn:hover {
+    background: #004;
+  }
+
+  .headline input[type="text"] {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    margin: 10px auto;
+    background: #fff;
+    color: #111;
+    border: 2px solid #111;
+    border-radius: 30px;
+  }
+
+  .form {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .form .field {
+    display: inline-block;
+    overflow: hidden;
+    width: 50%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .form .field-half,
+  .form .controls {
+    display: block;
+    overflow: hidden;
+  }
+
+  .form .field input[type="text"],
+  .form .field input[type="number"],
+  .form .field input[type="date"],
+  .form .field input[type="password"],
+  .form .field input[type="datetime-local"],
+  .form .field input[type="file"],
+  .form .field textarea,
+  .form .field select,
+  .form .field-half select {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    margin: 10px auto;
+    background: #fff;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 10px;
+  }
+
+  .form .controls {
+    text-align: right;
+    padding: 1rem 1rem;
+  }
+
+  .form .controls button {
+    display: inline-block;
+    margin: 1rem auto;
+    margin-left: 1rem;
+    padding: 10px 35px;
+    border: 1px hidden;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+  }
+
+  .form .controls button:hover {
+    background: #004;
+    color: #fff;
+  }
+
+  .event {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #111;
+    margin: 10px 10px;
+    border-radius: 15px;
+  }
+
+  .event img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .event .caption {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .event .caption h4,
+  .event .caption h6,
+  .event .caption p,
+  .event .caption label {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 12px auto;
+  }
+
+  .event .btn {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 10px 35px;
+    border: 1px hidden;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .event .btn:hover {
+    background: #004;
+  }
+
+  .event .btn:nth-child(even) {
+    margin-right: 5px;
+  }
+
+  .event .btn:nth-child(odd) {
+    margin-left: 5px;
+  }
+
+  .party p,
+  .party pre {
+    margin: 5px auto;
+  }
+
+  .party .left {
+    width: 35%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    float: left;
+    border-right: 1px solid #111;
+    padding: 15px;
+  }
+
+  .party .right {
+    width: 55%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    float: right;
+  }
+
+  .party .left img {
+    width: 80%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .party .right .field {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  .recom .scrollList {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  .recom .scrollList img {
+    width: 20%;
+    height: 300px;
+    display: inline-block;
+    overflow: hidden;
+    margin: auto 10px;
+  }
+
+  .partner .thumbs img {
+    width: 15%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px 10px;
+  }
+
+  .partner .thumbs {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  pre {
+    margin: 10px auto;
+    white-space: break-spaces;
+  }
+
+  p {
+    margin: 15px auto;
+  }
+
+  .section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .container {
+    width: 90%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .navbar {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    background: #fff;
+    clear: both;
+  }
+
+  .navbar .logo {
+    width: 115px;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    float: left;
+    margin: 10px 10px;
+  }
+
+  .navbar .tabs {
+    width: auto;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    float: right;
+    margin: 10px 10px;
+  }
+
+  .navbar button {
+    width: auto;
+    height: auto;
+    background: transparent;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .navbar .logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .navbar .tabs button {
+    display: inline-block;
+    margin: auto 1rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1em;
+    display: none;
+  }
+
+  .navbar .tabs button.menu {
+    display: inline-block;
+  }
+
+  .navbar .tabs button:hover {
+    color: #004;
+  }
+
+  .sidenav-wrapper,
+  .sidenav-wrapper .plain {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  .sidenav {
+    width: 60%;
+    height: 100vh;
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidenav img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding: 15px 50px;
+    border-bottom: 1px solid #111;
+  }
+
+  .sidenav button {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #111;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .sidenav button:hover {
+    background: #eee;
+  }
+
+  .sidenav i {
+    margin-right: 15px;
+  }
+
+  #sidenav {
+    display: none;
+  }
+
+  .main-page {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 2.5rem;
+    overflow: hidden;
+  }
+
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    margin-top: 2.6rem;
+  }
+
+  .headline {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #111;
+  }
+
+  .headline h4 {
+    display: inline-block;
+  }
+
+  .headline .btn {
+    float: right;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 8px 40px;
+    font-weight: bold;
+    background: #111;
+    border: 1px solid #111;
+  }
+
+  .headline .btn:hover {
+    background: #004;
+  }
+
+  .headline input[type="text"] {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    margin: 10px auto;
+    background: #fff;
+    color: #111;
+    border: 2px solid #111;
+    border-radius: 30px;
+  }
+
+  .form {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .form .field {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 1rem auto;
+  }
+
+  .form .field-half,
+  .form .controls {
+    display: block;
+    overflow: hidden;
+  }
+
+  .form .field input[type="text"],
+  .form .field input[type="number"],
+  .form .field input[type="date"],
+  .form .field input[type="file"],
+  .form .field input[type="password"],
+  .form .field input[type="datetime-local"],
+  .form .field textarea,
+  .form .field select,
+  .form .field-half select {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 10px 15px;
+    margin: 10px auto;
+    background: #fff;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 10px;
+  }
+
+  .form .controls {
+    text-align: center;
+  }
+
+  .form .controls button {
+    width: 44%;
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 15px 15px;
+    border: 1px hidden;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+  }
+
+  .form .controls button:hover {
+    background: #004;
+    color: #fff;
+  }
+
+  .event {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #111;
+    border-radius: 15px;
+  }
+
+  .event img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .event .caption {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .event .caption h6,
+  .event .caption h5,
+  .event .caption p,
+  .event .caption label {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 12px auto;
+  }
+
+  .event .btn {
+    display: inline-block;
+    margin: 1rem auto;
+    padding: 15px 35px;
+    border: 1px hidden;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .event .btn:hover {
+    background: #004;
+  }
+
+  .event .btn:nth-child(even) {
+    margin-right: 5px;
+  }
+
+  .event .btn:nth-child(odd) {
+    margin-left: 5px;
+  }
+
+  .party .left {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #111;
+    border-radius: 15px;
+    padding: 2rem 1rem;
+  }
+
+  .party p,
+  .party pre {
+    margin: 5px auto;
+  }
+
+  .party .left img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .party .right .field {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  .recom .scrollList {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  .recom .scrollList img {
+    width: 35%;
+    height: 175px;
+    display: inline-block;
+    overflow: hidden;
+    margin: auto 10px;
+  }
+
+  .partner .thumbs img {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin: 5px 5px;
+  }
+
+  .partner .thumbs {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+}

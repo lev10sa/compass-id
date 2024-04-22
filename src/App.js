@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import router kit
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Home, EventList, EventPartyAdd } from "./pages";
+import { Navigation } from "./components";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Navigation />
+        <div className="main-page">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<EventList />} />
+            <Route path="/event-join/:id" element={<EventPartyAdd />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
