@@ -163,6 +163,10 @@ body {
     z-index: 999;
   }
 
+  #sidenav.active {
+    display: block;
+  }
+
   .sidenav {
     width: 20%;
     height: 100vh;
@@ -547,6 +551,10 @@ body {
 
   .navbar .tabs button:hover {
     color: #004;
+  }
+
+  #sidenav.active {
+    display: block;
   }
 
   .sidenav-wrapper,

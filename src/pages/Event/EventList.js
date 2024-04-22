@@ -11,8 +11,6 @@ const EventList = () => {
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
 
-  // dependency array with only `search`
-
   // setting up useNavigate
   const navigate = useNavigate();
 
@@ -29,8 +27,6 @@ const EventList = () => {
     // use toLocaleString() with the defined options
     return new Intl.NumberFormat("id-ID", options).format(number);
   }
-
-  // setting up useEffect to do tasks in real-time
 
   useEffect(() => {
     // create book loader callback function
@@ -105,6 +101,11 @@ const EventList = () => {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   }
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+
   // render the display
   return (
     <>
@@ -120,7 +121,7 @@ const EventList = () => {
               autoComplete="on"
               className="input"
               value={search} // set value from search state
-              onInput={(e) => setSearch(e.target.value)} // update search state on change
+              onInput={handleSearch} // update search state on change
               placeholder="Search Events..."
             />
           </div>

@@ -49,16 +49,6 @@ function Home() {
               life". We hold this belief to be true as it has motivated us to
               continuously develop quality academic matterials.
             </p>
-            <p>
-              Our textbooks cover a wide range of topics and grade levels. Along
-              with our printed materials, we also provide diverse teaching
-              programs aligned with Indonesia's needs. By allowing access to
-              different pedagogy, we are able to support learners in clear,
-              structured ways. These methods are then reinforced by learning
-              activities through online resources as an effort to create an
-              innovative and effective blended learning model in the classroom
-              and in the domestic market.
-            </p>
           </div>
         </div>
         <div className="section partner">
