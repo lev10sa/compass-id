@@ -174,7 +174,7 @@ function EventPartyAdd() {
     <>
       <div className="party container">
         <div className="left">
-          {event.name !== null ? (
+          {event.name !== "" ? (
             <div>
               <h3>{event.name}</h3>
             </div>
@@ -182,14 +182,14 @@ function EventPartyAdd() {
             <></>
           )}
           <div className="section"></div>
-          {event.img !== null ? (
+          {event.img !== "" ? (
             <div className="section">
               <img src={event.img} alt={event.img} />
             </div>
           ) : (
             <></>
           )}
-          {event.pic !== null ? (
+          {event.pic !== "" ? (
             <div className="section">
               <p>
                 <strong>Speaker:</strong>
@@ -199,7 +199,7 @@ function EventPartyAdd() {
           ) : (
             <></>
           )}
-          {event.model !== null ? (
+          {event.model !== "" ? (
             <div className="section">
               <p>
                 <strong>Role:</strong>
@@ -209,7 +209,7 @@ function EventPartyAdd() {
           ) : (
             <></>
           )}
-          {event.start !== null ? (
+          {event.start !== "" ? (
             <div className="section">
               <p>
                 <strong>Time:</strong>
@@ -219,7 +219,7 @@ function EventPartyAdd() {
           ) : (
             <></>
           )}
-          {event.address !== null ? (
+          {event.address !== "" ? (
             <div className="section">
               <p>
                 <strong>Location:</strong>
@@ -229,7 +229,7 @@ function EventPartyAdd() {
           ) : (
             <></>
           )}
-          {event.price !== null ? (
+          {event.price !== "" ? (
             <div className="section">
               <p>
                 <strong>Price:</strong>
@@ -239,7 +239,7 @@ function EventPartyAdd() {
           ) : (
             <></>
           )}
-          {event.desc !== null ? (
+          {event.desc !== "" ? (
             <div className="section">
               <p>
                 <strong>Description:</strong>
@@ -262,7 +262,7 @@ function EventPartyAdd() {
           <div className="section">
             <form onSubmit={AddEvent} className="form">
               <div className="field">
-                <label className="label">Name</label>
+                <label className="label">Name | Nama</label>
                 <input
                   type="text"
                   autoComplete="on"
@@ -271,28 +271,34 @@ function EventPartyAdd() {
                   name="name"
                   value={eventData.name}
                   onChange={handleChange}
-                  placeholder="Name"
+                  placeholder="Name | Nama"
                   required
                 />
               </div>
               <div className="field">
-                <label className="label">Occupation</label>
+                <label className="label">Occupation | Pekerjaan</label>
                 <select
                   id="job"
                   name="job"
                   value={eventData.job}
                   onChange={handleChange}
                 >
-                  <option value="">--- Select Occupation ---</option>
-                  <option value="Headmaster">Headmaster</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Tutor">Tutor</option>
-                  <option value="Parent">Parent</option>
-                  <option value="Other">Other</option>
+                  <option value="">
+                    --- Select Occupation | Pilih Pekerjaan ---
+                  </option>
+                  <option value="Headmaster">
+                    Headmaster | Kepala Sekolah
+                  </option>
+                  <option value="Teacher">Teacher | Guru</option>
+                  <option value="Tutor">Tutor | Tutor</option>
+                  <option value="Parent">Parent | Orang Tua</option>
+                  <option value="Other">Other | Lainnya</option>
                 </select>
               </div>
               <div className="field">
-                <label className="label">School/Organization</label>
+                <label className="label">
+                  School/Organization | Sekolah/Organisasi
+                </label>
                 <input
                   type="text"
                   autoComplete="on"
@@ -301,11 +307,11 @@ function EventPartyAdd() {
                   name="company"
                   value={eventData.company}
                   onChange={handleChange}
-                  placeholder="School/Organization"
+                  placeholder="School/Organization | Sekolah/Organisasi"
                 />
               </div>
               <div className="field">
-                <label className="label">Email</label>
+                <label className="label">Email | Email</label>
                 <input
                   type="text"
                   autoComplete="on"
@@ -314,12 +320,12 @@ function EventPartyAdd() {
                   name="email"
                   value={eventData.email}
                   onChange={handleChange}
-                  placeholder="Email"
+                  placeholder="Email | Email"
                   required
                 />
               </div>
               <div className="field">
-                <label className="label">Phone</label>
+                <label className="label">Phone | Telepon</label>
                 <input
                   type="text"
                   autoComplete="on"
@@ -328,12 +334,12 @@ function EventPartyAdd() {
                   name="phone"
                   value={eventData.phone}
                   onChange={handleChange}
-                  placeholder="Phone"
+                  placeholder="Phone | Telepon"
                   required
                 />
               </div>
               <div className="field">
-                <label className="label">City</label>
+                <label className="label">City | Kota</label>
                 <input
                   type="text"
                   autoComplete="on"
@@ -342,12 +348,19 @@ function EventPartyAdd() {
                   name="address"
                   value={eventData.address}
                   onChange={handleChange}
-                  placeholder="City"
+                  placeholder="City | Kota"
                   required
                 />
               </div>
               <div className="field">
-                <label className="label">Payment Evidence</label>
+                <label className="label">
+                  Proof of Payment | Bukti Pembayaran
+                </label>
+                <label style={{ fontSize: "9pt" }}>
+                  <br />
+                  Please attach your proof of payment bank slip transfer |
+                  Sisipkan bukti slip pembayaran
+                </label>
                 <input
                   type="file"
                   autoComplete="on"
@@ -355,7 +368,7 @@ function EventPartyAdd() {
                   id="img"
                   name="img"
                   onChange={handleFile}
-                  placeholder="Payment Evidence"
+                  placeholder="Proof of Payment | Bukti Pembayaran"
                 />
               </div>
               <div className="section">

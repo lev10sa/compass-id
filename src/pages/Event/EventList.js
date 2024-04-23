@@ -137,21 +137,64 @@ const EventList = () => {
               {events.map((event, index) => (
                 <div className="section">
                   <div className="event" key={index}>
-                    <img src={event.img} alt={event.img} />
+                    {event.img !== "" ? (
+                      <>
+                        <img src={event.img} alt={event.img} />
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
                     <div className="section caption">
-                      <h6 title={event.name}>{event.name}</h6>
-                      <p title={event.pic}>
-                        <strong>Speaker:</strong> {event.pic}
-                      </p>
-                      <p>
-                        <strong>Time:</strong> {formatTime(event.start)}
-                      </p>
-                      <p title={event.address}>
-                        <strong>Location:</strong> {event.address}
-                      </p>
-                      <p>
-                        <strong>Price:</strong> {formatCurrency(event.price)}
-                      </p>
+                      {event.name !== "" ? (
+                        <>
+                          <h6 title={event.name}>{event.name}</h6>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
+                      {event.pic !== "" ? (
+                        <>
+                          <p title={event.pic}>
+                            <strong>Speaker:</strong> {event.pic}
+                          </p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
+                      {event.start !== "" ? (
+                        <>
+                          <p>
+                            <strong>Time:</strong> {formatTime(event.start)}
+                          </p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
+                      {event.address !== "" ? (
+                        <>
+                          <p title={event.address}>
+                            <strong>Location:</strong> {event.address}
+                          </p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
+                      {event.price !== "" ? (
+                        <>
+                          <p>
+                            <strong>Price:</strong>{" "}
+                            {formatCurrency(event.price)}
+                          </p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
                       <button
                         onClick={() => navigate(`/event-join/${event._id}`)}
                         className="btn"
