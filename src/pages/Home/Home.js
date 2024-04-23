@@ -7,11 +7,15 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => clearInterval(intervalId);
+    setCurrentTime(new Date());
+    alr();
   }, []);
+
+  const alr = () => {
+    return alert(
+      "Welcome to Compass Publishing Indonesia, this website is still under construction, so perhaps some features wouldn't work correctly."
+    );
+  };
 
   const getGreeting = () => {
     const hours = currentTime.getHours();
@@ -22,10 +26,16 @@ function Home() {
           <i className="fas fa-cloud-sun"></i> Good Morning!
         </h4>
       );
-    } else if (hours >= 12 && hours < 18) {
+    } else if (hours >= 12 && hours < 15) {
       return (
         <h4>
-          <i className="fas fa-sun"></i> Good Afternoon!
+          <i className="fas fa-sun"></i> Good Day!
+        </h4>
+      );
+    } else if (hours >= 15 && hours < 18) {
+      return (
+        <h4>
+          <i className="fas fa-cloud-sun"></i> Good Afternoon!
         </h4>
       );
     } else if (hours >= 18 && hours < 21) {
@@ -63,6 +73,21 @@ function Home() {
     },
     {
       url: "https://i.compasspub.com/userfiles/item/2023102511058_itm.jpg",
+    },
+  ];
+
+  const partners = [
+    {
+      src: "/assets/img/partner/b.jpg",
+      uri: "https://compasspub.com/eng",
+    },
+    {
+      src: "/assets/img/partner/a.jpg",
+      uri: "https://classboxenglish.com",
+    },
+    {
+      src: "/assets/img/partner/c.jpg",
+      uri: "https://global.playbigbox.com",
     },
   ];
 
@@ -153,18 +178,17 @@ function Home() {
             <h5>Partnership</h5>
           </div>
           <div className="section thumbs">
-            <img
-              src="https://www.wjcompass.com/eng/front/image/main/btn_menu01_on.png"
-              alt=""
-            />
-            <img
-              src="https://www.wjcompass.com/kor/front/image/main/btn_menu02_on.png"
-              alt=""
-            />
-            <img
-              src="https://www.wjcompass.com/kor/front/image/main/btn_menu03_on.png"
-              alt=""
-            />
+            {partners.map((thumb, index) => (
+              <>
+                <a
+                  href={thumb.uri}
+                  target="
+                _blank"
+                >
+                  <img src={thumb.src} alt={thumb.src} />
+                </a>
+              </>
+            ))}
           </div>
         </div>
         <div className="section"></div>
