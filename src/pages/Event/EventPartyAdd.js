@@ -173,6 +173,85 @@ function EventPartyAdd() {
   return (
     <>
       <div className="party container">
+        <div className="left">
+          {event.name !== null ? (
+            <div>
+              <h3>{event.name}</h3>
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className="section"></div>
+          {event.img !== null ? (
+            <div className="section">
+              <img src={event.img} alt={event.img} />
+            </div>
+          ) : (
+            <></>
+          )}
+          {event.pic !== null ? (
+            <div className="section">
+              <p>
+                <strong>Speaker:</strong>
+              </p>
+              <p>{event.pic}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          {event.model !== null ? (
+            <div className="section">
+              <p>
+                <strong>Role:</strong>
+              </p>
+              <p>{event.model}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          {event.start !== null ? (
+            <div className="section">
+              <p>
+                <strong>Time:</strong>
+              </p>
+              <p>{formatTime(event.start)}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          {event.address !== null ? (
+            <div className="section">
+              <p>
+                <strong>Location:</strong>
+              </p>
+              <p>{event.address}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          {event.price !== null ? (
+            <div className="section">
+              <p>
+                <strong>Price:</strong>
+              </p>
+              <p>{formatCurrency(event.price)}</p>
+            </div>
+          ) : (
+            <></>
+          )}
+          {event.desc !== null ? (
+            <div className="section">
+              <p>
+                <strong>Description:</strong>
+              </p>
+              <pre>{event.desc}</pre>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="section"></div>
+        <div className="section"></div>
         <div className="right">
           <div className="section headline">
             <h4>Join Event</h4>
@@ -291,84 +370,6 @@ function EventPartyAdd() {
               </div>
             </form>
           </div>
-        </div>
-        <div className="section"></div>
-        <div className="left">
-          {event.name !== null ? (
-            <div>
-              <h3>{event.name}</h3>
-            </div>
-          ) : (
-            <></>
-          )}
-          <div className="section"></div>
-          {event.img !== null ? (
-            <div className="section">
-              <img src={event.img} alt={event.img} />
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.pic !== null ? (
-            <div className="section">
-              <p>
-                <strong>Speaker:</strong>
-              </p>
-              <p>{event.pic}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.model !== null ? (
-            <div className="section">
-              <p>
-                <strong>Role:</strong>
-              </p>
-              <p>{event.model}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.start !== null ? (
-            <div className="section">
-              <p>
-                <strong>Time:</strong>
-              </p>
-              <p>{formatTime(event.start)}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.address !== null ? (
-            <div className="section">
-              <p>
-                <strong>Location:</strong>
-              </p>
-              <p>{event.address}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.price !== null ? (
-            <div className="section">
-              <p>
-                <strong>Price:</strong>
-              </p>
-              <p>{formatCurrency(event.price)}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.desc !== null ? (
-            <div className="section">
-              <p>
-                <strong>Description:</strong>
-              </p>
-              <pre>{event.desc}</pre>
-            </div>
-          ) : (
-            <></>
-          )}
         </div>
       </div>
       <div className="section"></div>

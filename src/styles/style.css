@@ -159,7 +159,6 @@ body {
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
-    font-weight: bold;
   }
 
   .navbar .logo img {
@@ -176,6 +175,10 @@ body {
     margin: auto 1.5rem;
     padding: 0.5rem 0.5rem;
     font-size: 1em;
+  }
+
+  .navbar .tabs button:hover {
+    font-weight: bold;
   }
 
   .navbar .tabs button:hover {
