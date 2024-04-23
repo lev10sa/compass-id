@@ -85,7 +85,7 @@ const Navigation = () => {
             <i className="fas fa-book"></i> <span>Book</span>
           </button>
           <button onClick={() => navigate(`/`)}>
-            <i className="fas fa-question-circle"></i> <span>Help</span>
+            <i className="fas fa-question-circle"></i> <span>FAQ</span>
           </button>
           <button className="menu" onClick={openMenu}>
             <i className="fas fa-bars"></i>
@@ -113,7 +113,7 @@ const Navigation = () => {
       >
         <div className="plain" onClick={openMenu}></div>
         <div className="sidenav">
-          <img src="/logo.png" alt="" />
+          <div className="header">NAVIGATION</div>
           <button onClick={() => navigate(`/`)}>
             <span>Home</span> <i className="fas fa-home"></i>
           </button>

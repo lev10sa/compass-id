@@ -176,6 +176,10 @@ body {
     font-size: 1em;
   }
 
+  .navbar .tabs button i {
+    margin-right: 10px;
+  }
+
   .navbar .tabs button:hover {
     font-weight: bold;
   }
@@ -186,66 +190,6 @@ body {
 
   .navbar .tabs button.menu {
     display: none;
-  }
-
-  .sidenav-wrapper,
-  .sidenav-wrapper .plain {
-    width: 100%;
-    height: 100vh;
-    display: block;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 999;
-  }
-
-  #sidenav.active {
-    display: block;
-  }
-
-  .sidenav {
-    width: 15%;
-    height: 100vh;
-    display: block;
-    overflow: hidden;
-    background: #fff;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  }
-
-  .sidenav img {
-    width: 100%;
-    height: auto;
-    display: block;
-    overflow: hidden;
-    padding: 15px 50px;
-    border-bottom: 1px solid #111;
-  }
-
-  .sidenav button {
-    width: 100%;
-    height: auto;
-    display: block;
-    overflow: hidden;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid #111;
-    font-weight: bold;
-    text-align: right;
-  }
-
-  .sidenav button:hover {
-    background: #eee;
-  }
-
-  .sidenav i {
-    margin-left: 15px;
   }
 
   #sidenav {
@@ -729,13 +673,17 @@ body {
       0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   }
 
-  .sidenav img {
+  .sidenav .header {
     width: 100%;
     height: auto;
     display: block;
     overflow: hidden;
-    padding: 15px 50px;
+    padding: 1rem 1rem;
     border-bottom: 1px solid #111;
+    font-weight: bold;
+    text-align: right;
+    background: #111;
+    color: #fff;
   }
 
   .sidenav button {
