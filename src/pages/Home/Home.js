@@ -57,22 +57,44 @@ function Home() {
 
   const books = [
     {
-      url: "https://i.compasspub.com/userfiles/item/20231122132720_itm.png",
+      src: "https://www.compasspub.com/userfiles/item/20200903161644_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17%27",
     },
     {
-      url: "https://i.compasspub.com/userfiles/item/20231212144942_itm.jpg",
+      src: "https://www.compasspub.com/userfiles/item/20230508105235_itm.png",
+      url: "https://eb.compasspub.com/v2/?uri=books/Boost_English_1/work/&prev=23%27",
     },
     {
-      url: "https://i.compasspub.com/userfiles/item/20231117142036_itm.png",
+      src: "https://www.compasspub.com/userfiles/item/2019041295137_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/interact_1/work/&prev=19%27",
     },
     {
-      url: "https://i.compasspub.com/userfiles/item/20231212145035_itm.jpg",
+      src: "https://www.compasspub.com/userfiles/item/20200922145515_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/HangOut_Starter/work/&prev=19%27",
     },
     {
-      url: "https://i.compasspub.com/userfiles/item/2023080994546_itm.png",
+      src: "https://www.compasspub.com/userfiles/item/20200922134819_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/NF1/work/&prev=21%27",
     },
     {
-      url: "https://i.compasspub.com/userfiles/item/2023102511058_itm.jpg",
+      src: "https://www.compasspub.com/userfiles/item/2010052791452_itm.PNG",
+      url: "https://eb.compasspub.com/v2/?uri=books/SoundsGreat_1/work/&prev=15%27",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/2022040811442_itm.jpg",
+      url: "javascript:popEbook('https://eb.compasspub.com/v2/?uri=books/Ni_Hao_1/work/&prev=15%27)",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/2018032617514_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/BigShow_1/work/&prev=15%27",
+    },
+    {
+      src: "https://i.compasspub.com/userfiles/item/2023070595325_itm.jpg",
+      url: "https://compasspubindonesia.com",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/20211006135227_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Splash_1/work/&prev=21%27",
     },
   ];
 
@@ -114,6 +136,29 @@ function Home() {
     },
   ];
 
+  const socials = [
+    {
+      src: "https://static.xx.fbcdn.net/rsrc.php/yT/r/aGT3gskzWBf.ico?_nc_eui2=AeFGwtFgLdVIHM7LBnFuKvT_rSiY817De8atKJjzXsN7xqi8ECKJdfPZh9_pxx_g-_0wOCb9xZ5iP9uVJIRjdb8O",
+      url: "https://facebook.com/compasspubindonesia",
+    },
+    {
+      src: "https://static.cdninstagram.com/rsrc.php/v3/yG/r/De-Dwpd5CHc.png",
+      url: "https://instagram.com/compasspubindonesia",
+    },
+    {
+      src: "https://static.licdn.com/aero-v1/sc/h/akt4ae504epesldzj74dzred8",
+      url: "https://www.linkedin.com/company/compass-publishing-indonesia",
+    },
+    {
+      src: "https://www.youtube.com/s/desktop/050e6796/img/favicon_144x144.png",
+      url: "https://www.youtube.com/@compasspubindonesia",
+    },
+    {
+      src: "https://sf16-sg.tiktokcdn.com/obj/eden-sg/uvkuhyieh7lpqpbj/pwa/192x192.png",
+      url: "https://www.tiktok.com/@compasspubindonesia?is_from_webapp=1&sender_device=pc",
+    },
+  ];
+
   return (
     <>
       <div className="container">
@@ -152,9 +197,9 @@ function Home() {
           </div>
           <div className="section scrollList">
             {books.map((book, index) => (
-              <>
-                <img src={book.url} alt="" key={index} />
-              </>
+              <a href={book.url} target="_blank" rel="noreferrer">
+                <img src={book.src} alt="" key={index} />
+              </a>
             ))}
           </div>
         </div>
@@ -164,12 +209,26 @@ function Home() {
           </div>
           <div className="section">
             <p>
-              In 1999, Compass Publishing published its inaugural textbook
-              English for Everyday Activity, commencing our journey into the in
-              ELT Publishing market. Since that first step, we have stayed
-              committed to our philosophy of "English Education for a better
-              life". We hold this belief to be true as it has motivated us to
-              continuously develop quality academic matterials.
+              <a
+                href="https://compasspubindonesia.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Compass Publishing Indonesia
+              </a>{" "}
+              is a representative from{" "}
+              <a href="https://compasspub.com" target="_blank" rel="noreferrer">
+                Compass Publishing
+              </a>{" "}
+              South Korea which produce innovative ELT solutions for teachers
+              and their influence towards students since 1999. We provide all
+              services related to ELT books, ELT digital books, ELT
+              applications, and Top Class Education Webinar Services for
+              Indonesian teachers upskill needs in curriculum insight, language
+              skill, digital skill, and class psychology management. We
+              positioned as Sahabat Guru Sepanjang Masa in order to develop the
+              education quality in Indonesia. We motivate all to inspire to
+              teach, inspire to learn.
             </p>
           </div>
         </div>
@@ -192,6 +251,27 @@ function Home() {
           </div>
         </div>
         <div className="section"></div>
+      </div>
+      <div className="section footer">
+        <div className="container section">
+          <div className="section">
+            {socials.map((soc, index) => (
+              <>
+                <a
+                  href={soc.url}
+                  target="
+                _blank"
+                  key={index}
+                >
+                  <img src={soc.src} alt="" />
+                </a>
+              </>
+            ))}
+          </div>
+          <div className="section">
+            <p>&copy; 2024 - PT Solusi Edukasi Gemilang</p>
+          </div>
+        </div>
       </div>
     </>
   );

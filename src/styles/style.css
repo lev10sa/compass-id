@@ -5,7 +5,6 @@
   margin: auto;
   padding: auto;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  color: #111;
   background: transparent;
 }
 
@@ -549,6 +548,38 @@ body {
   .icons {
     display: none;
   }
+
+  .footer {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    background: #111;
+    text-align: center;
+  }
+
+  .footer a {
+    width: 5%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    margin: auto 1rem;
+    padding: 10px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  .footer a img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  .footer p {
+    color: #fff;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -619,7 +650,7 @@ body {
     display: block;
     overflow: hidden;
     float: left;
-    margin: 10px 10px;
+    margin: 10px auto;
   }
 
   .navbar .tabs {
@@ -1011,5 +1042,37 @@ body {
     background: #eee;
     padding: 10px 15px;
     border-radius: 15px;
+  }
+
+  .footer {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    background: #111;
+    text-align: center;
+  }
+
+  .footer a {
+    width: 10%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    margin: auto 1rem;
+    padding: 10px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  .footer a img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  .footer p {
+    color: #fff;
   }
 }

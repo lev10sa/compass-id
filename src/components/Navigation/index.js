@@ -78,7 +78,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <i className="fas fa-calendar-alt"></i> <span>Event</span>
           </button>
-          <button onClick={() => navigate(`/events`)}>
+          <button onClick={() => navigate(`/`)}>
             <i className="fas fa-file-alt"></i> <span>Article</span>
           </button>
           <button onClick={() => navigate(`/`)}>
