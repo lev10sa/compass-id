@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /%PUBLIC_URL%/
+  RewriteBase /
 
   # Handle requests to the React app by serving the index.html file
   RewriteCond %{REQUEST_FILENAME} !-f
