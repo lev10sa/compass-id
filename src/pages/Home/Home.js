@@ -22,33 +22,33 @@ function Home() {
 
     if (hours >= 5 && hours < 12) {
       return (
-        <h4>
-          <i className="fas fa-cloud-sun"></i> Good Morning!
-        </h4>
+        <h5>
+          <i className="fas fa-cloud-sun"></i> Hello, Good Morning!
+        </h5>
       );
     } else if (hours >= 12 && hours < 15) {
       return (
-        <h4>
-          <i className="fas fa-sun"></i> Good Day!
-        </h4>
+        <h5>
+          <i className="fas fa-sun"></i> Hello, Good Day!
+        </h5>
       );
     } else if (hours >= 15 && hours < 18) {
       return (
-        <h4>
-          <i className="fas fa-cloud-sun"></i> Good Afternoon!
-        </h4>
+        <h5>
+          <i className="fas fa-cloud-sun"></i> Hello, Good Afternoon!
+        </h5>
       );
     } else if (hours >= 18 && hours < 21) {
       return (
-        <h4>
-          <i className="fas fa-cloud-moon"></i> Good Evening!
-        </h4>
+        <h5>
+          <i className="fas fa-cloud-moon"></i> Hello, Good Evening!
+        </h5>
       );
     } else if (hours >= 21 || hours < 5) {
       return (
-        <h4>
-          <i className="fas fa-star-and-crescent"></i> Good Night!
-        </h4>
+        <h5>
+          <i className="fas fa-star-and-crescent"></i> Hello, Good Night!
+        </h5>
       );
     }
   };
@@ -82,7 +82,7 @@ function Home() {
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2022040811442_itm.jpg",
-      url: "javascript:popEbook('https://eb.compasspub.com/v2/?uri=books/Ni_Hao_1/work/&prev=15%27)",
+      url: "'https://eb.compasspub.com/v2/?uri=books/Ni_Hao_1/work/&prev=15%27",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2018032617514_itm.jpg",
@@ -91,10 +91,6 @@ function Home() {
     {
       src: "https://i.compasspub.com/userfiles/item/2023070595325_itm.jpg",
       url: "https://compasspubindonesia.com",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20211006135227_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Splash_1/work/&prev=21%27",
     },
   ];
 
@@ -163,16 +159,18 @@ function Home() {
     <>
       <div className="container">
         <div className="panel">
-          <div className="section headline">
+          <div className="headline">
             {greeting}
-            <div className="section">
+             <label style={{ fontSize: "10pt", display: "block"}}>Welcome to Compass Publishing Indonesia!</label>
+             <div className="section">
               <input
                 type="text"
                 autoComplete="on"
                 className="input"
                 placeholder="Search anything..."
               />
-            </div>
+                  </div>       
+            
           </div>
           <div className="section icons">
             {icons.map((icon, index) => (
@@ -193,7 +191,10 @@ function Home() {
         </div>
         <div className="section recom">
           <div className="section headline">
-            <h5>Recommendation</h5>
+            <h5 style={{float: "left"}}>Recommendation</h5>
+            <button type="button" onClick={() => navigate("/")} style={{borderRadius: "10px", background: "transparent", color: "#111", border: "1px hidden", paddingLeft: "5px", paddingRight: "5px", float: "right"}} className="btn">
+            <span style={{marginRight: "10px"}}>See More</span>&#10095;
+            </button>
           </div>
           <div className="section scrollList">
             {books.map((book, index) => (
@@ -205,7 +206,7 @@ function Home() {
         </div>
         <div className="section about">
           <div className="section headline">
-            <h5>Publication</h5>
+            <h5>About Us</h5>
           </div>
           <div className="section">
             <p>
@@ -234,7 +235,7 @@ function Home() {
         </div>
         <div className="section partner">
           <div className="section headline">
-            <h5>Partnership</h5>
+            <h5>Our Services</h5>
           </div>
           <div className="section thumbs">
             {partners.map((thumb, index) => (

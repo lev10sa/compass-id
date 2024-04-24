@@ -356,7 +356,7 @@ function EventPartyAdd() {
                 <label className="label">
                   Proof of Payment | Bukti Pembayaran
                 </label>
-                <label style={{ fontSize: "9pt" }}>
+                <label style={{ fontSize: "10pt" }}>
                   <br />
                   Please attach your proof of payment bank slip transfer |
                   Sisipkan bukti slip pembayaran

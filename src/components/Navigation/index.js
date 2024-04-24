@@ -65,7 +65,7 @@ const Navigation = () => {
   // display of the navbar
   return (
     <>
-      <div className="navbar shdw">
+      <div className="navbar">
         <div className="logo">
           <button onClick={() => navigate(`/`)}>
             <img src="/logo.png" alt="" />
@@ -96,7 +96,7 @@ const Navigation = () => {
         <img
           src={images[currentIndex].url}
           alt={images[currentIndex].url}
-          className="animate__animated animate__fadeIn animate__slow active"
+          className="animate__animated animate__fadeIn active"
           id="images"
           key={currentIndex}
         />
