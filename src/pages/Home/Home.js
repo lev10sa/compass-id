@@ -161,16 +161,17 @@ function Home() {
         <div className="panel">
           <div className="headline">
             {greeting}
-             <label style={{ fontSize: "10pt", display: "block"}}>Welcome to Compass Publishing Indonesia!</label>
-             <div className="section">
+            <label style={{ fontSize: "10pt", display: "block" }}>
+              Welcome to Compass Publishing Indonesia!
+            </label>
+            <div className="section">
               <input
                 type="text"
                 autoComplete="on"
                 className="input"
                 placeholder="Search anything..."
               />
-                  </div>       
-            
+            </div>
           </div>
           <div className="section icons">
             {icons.map((icon, index) => (
@@ -191,9 +192,22 @@ function Home() {
         </div>
         <div className="section recom">
           <div className="section headline">
-            <h5 style={{float: "left"}}>Recommendation</h5>
-            <button type="button" onClick={() => navigate("/")} style={{borderRadius: "10px", background: "transparent", color: "#111", border: "1px hidden", paddingLeft: "5px", paddingRight: "5px", float: "right"}} className="btn">
-            <span style={{marginRight: "10px"}}>See More</span>&#10095;
+            <h5 style={{ float: "left" }}>Recommendation</h5>
+            <button
+              type="button"
+              onClick={() => navigate("/")}
+              style={{
+                borderRadius: "10px",
+                background: "transparent",
+                color: "#111",
+                border: "1px hidden",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                float: "right",
+              }}
+              className="btn"
+            >
+              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
             </button>
           </div>
           <div className="section scrollList">

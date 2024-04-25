@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function EventPartyAdd() {
   // Fetches latest Event count for serie generation (Optional)
+  const [isLoading, setIsLoading] = useState(true); // state for loading
+  const [isEmpty, setIsEmpty] = useState(false);
 
   const { id } = useParams();
 
@@ -99,7 +101,8 @@ function EventPartyAdd() {
       try {
         const url = `https://seg-server.vercel.app/api/events/id/${id}`; // modify URL based on backend
         const datas = await axios.get(url); // get datas from URL with axios
-
+        datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
+        setIsLoading(false);
         setEvent(datas.data);
       } catch (error) {
         console.log(error.message); // display error message
@@ -173,217 +176,229 @@ function EventPartyAdd() {
   return (
     <>
       <div className="party container">
-        <div className="left">
-          {event.name !== "" ? (
-            <div>
-              <h3>{event.name}</h3>
-            </div>
-          ) : (
-            <></>
-          )}
-          <div className="section"></div>
-          {event.img !== "" ? (
-            <div className="section">
-              <img src={event.img} alt={event.img} />
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.pic !== "" ? (
-            <div className="section">
-              <p>
-                <strong>Speaker:</strong>
-              </p>
-              <p>{event.pic}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.model !== "" ? (
-            <div className="section">
-              <p>
-                <strong>Role:</strong>
-              </p>
-              <p>{event.model}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.start !== "" ? (
-            <div className="section">
-              <p>
-                <strong>Time:</strong>
-              </p>
-              <p>{formatTime(event.start)}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.address !== "" ? (
-            <div className="section">
-              <p>
-                <strong>Location:</strong>
-              </p>
-              <p>{event.address}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.price !== "" ? (
-            <div className="section">
-              <p>
-                <strong>Price:</strong>
-              </p>
-              <p>{formatCurrency(event.price)}</p>
-            </div>
-          ) : (
-            <></>
-          )}
-          {event.desc !== "" ? (
-            <div className="section">
-              <p>
-                <strong>Description:</strong>
-              </p>
-              <pre>{event.desc}</pre>
-            </div>
-          ) : (
-            <></>
-          )}
-        </div>
-        <div className="section"></div>
-        <div className="section"></div>
-        <div className="right">
-          <div className="section headline">
-            <h4>Join Event</h4>
-            <button onClick={() => navigate(`/events`)} className="btn">
-              See Events
-            </button>
-          </div>
-          <div className="section">
-            <form onSubmit={AddEvent} className="form">
-              <div className="field">
-                <label className="label">Name | Nama</label>
-                <input
-                  type="text"
-                  autoComplete="on"
-                  className="input"
-                  id="name"
-                  name="name"
-                  value={eventData.name}
-                  onChange={handleChange}
-                  placeholder="Name | Nama"
-                  required
-                />
+        {isLoading ? (
+          <div className="section">Loading Event Database...</div> // display status when loading
+        ) : isEmpty ? (
+          <div className="section">No data...</div> // display status when loading
+        ) : (
+          <div className="left">
+            {event.name !== "" ? (
+              <div>
+                <h3>{event.name}</h3>
               </div>
-              <div className="field">
-                <label className="label">Occupation | Pekerjaan</label>
-                <select
-                  id="job"
-                  name="job"
-                  value={eventData.job}
-                  onChange={handleChange}
-                >
-                  <option value="">
-                    --- Select Occupation | Pilih Pekerjaan ---
-                  </option>
-                  <option value="Headmaster">
-                    Headmaster | Kepala Sekolah
-                  </option>
-                  <option value="Teacher">Teacher | Guru</option>
-                  <option value="Tutor">Tutor | Tutor</option>
-                  <option value="Parent">Parent | Orang Tua</option>
-                  <option value="Other">Other | Lainnya</option>
-                </select>
-              </div>
-              <div className="field">
-                <label className="label">
-                  School/Organization | Sekolah/Organisasi
-                </label>
-                <input
-                  type="text"
-                  autoComplete="on"
-                  className="input"
-                  id="company"
-                  name="company"
-                  value={eventData.company}
-                  onChange={handleChange}
-                  placeholder="School/Organization | Sekolah/Organisasi"
-                />
-              </div>
-              <div className="field">
-                <label className="label">Email | Email</label>
-                <input
-                  type="text"
-                  autoComplete="on"
-                  className="input"
-                  id="email"
-                  name="email"
-                  value={eventData.email}
-                  onChange={handleChange}
-                  placeholder="Email | Email"
-                  required
-                />
-              </div>
-              <div className="field">
-                <label className="label">Phone | Telepon</label>
-                <input
-                  type="text"
-                  autoComplete="on"
-                  className="input"
-                  id="phone"
-                  name="phone"
-                  value={eventData.phone}
-                  onChange={handleChange}
-                  placeholder="Phone | Telepon"
-                  required
-                />
-              </div>
-              <div className="field">
-                <label className="label">City | Kota</label>
-                <input
-                  type="text"
-                  autoComplete="on"
-                  className="input"
-                  id="address"
-                  name="address"
-                  value={eventData.address}
-                  onChange={handleChange}
-                  placeholder="City | Kota"
-                  required
-                />
-              </div>
-              <div className="field">
-                <label className="label">
-                  Proof of Payment | Bukti Pembayaran
-                </label>
-                <label style={{ fontSize: "10pt" }}>
-                  <br />
-                  Please attach your proof of payment bank slip transfer |
-                  Sisipkan bukti slip pembayaran
-                </label>
-                <input
-                  type="file"
-                  autoComplete="on"
-                  className="input"
-                  id="img"
-                  name="img"
-                  onChange={handleFile}
-                  placeholder="Proof of Payment | Bukti Pembayaran"
-                />
-              </div>
+            ) : (
+              <></>
+            )}
+            <div className="section"></div>
+            {event.img !== "" ? (
               <div className="section">
-                <div className="controls">
-                  <button type="button" onClick={resetEvent} className="btn">
-                    Reset
-                  </button>
-                  <button type="submit" className="btn">
-                    Join
-                  </button>
-                </div>
+                <img src={event.img} alt={event.img} />
               </div>
-            </form>
+            ) : (
+              <></>
+            )}
+            {event.pic !== "" ? (
+              <div className="section">
+                <p>
+                  <strong>Speaker:</strong>
+                </p>
+                <p>{event.pic}</p>
+              </div>
+            ) : (
+              <></>
+            )}
+            {event.model !== "" ? (
+              <div className="section">
+                <p>
+                  <strong>Role:</strong>
+                </p>
+                <p>{event.model}</p>
+              </div>
+            ) : (
+              <></>
+            )}
+            {event.start !== "" ? (
+              <div className="section">
+                <p>
+                  <strong>Time:</strong>
+                </p>
+                <p>{formatTime(event.start)}</p>
+              </div>
+            ) : (
+              <></>
+            )}
+            {event.address !== "" ? (
+              <div className="section">
+                <p>
+                  <strong>Location:</strong>
+                </p>
+                <p>{event.address}</p>
+              </div>
+            ) : (
+              <></>
+            )}
+            {event.price !== "" ? (
+              <div className="section">
+                <p>
+                  <strong>Price:</strong>
+                </p>
+                <p>{formatCurrency(event.price)}</p>
+              </div>
+            ) : (
+              <></>
+            )}
+            {event.desc !== "" ? (
+              <div className="section">
+                <p>
+                  <strong>Description:</strong>
+                </p>
+                <pre>{event.desc}</pre>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
-        </div>
+        )}
+        <div className="section"></div>
+        <div className="section"></div>
+        {isLoading ? (
+          <div className="section"></div> // display status when loading
+        ) : isEmpty ? (
+          <div className="section"></div> // display status when loading
+        ) : (
+          <div className="right">
+            <div className="section headline">
+              <h4>Join Event</h4>
+              <button onClick={() => navigate(`/events`)} className="btn">
+                See Events
+              </button>
+            </div>
+            <div className="section">
+              <form onSubmit={AddEvent} className="form">
+                <div className="field">
+                  <label className="label">Name | Nama</label>
+                  <input
+                    type="text"
+                    autoComplete="on"
+                    className="input"
+                    id="name"
+                    name="name"
+                    value={eventData.name}
+                    onChange={handleChange}
+                    placeholder="Name | Nama"
+                    required
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Occupation | Pekerjaan</label>
+                  <select
+                    id="job"
+                    name="job"
+                    value={eventData.job}
+                    onChange={handleChange}
+                  >
+                    <option value="">
+                      --- Select Occupation | Pilih Pekerjaan ---
+                    </option>
+                    <option value="Headmaster">
+                      Headmaster | Kepala Sekolah
+                    </option>
+                    <option value="Teacher">Teacher | Guru</option>
+                    <option value="Tutor">Tutor | Tutor</option>
+                    <option value="Parent">Parent | Orang Tua</option>
+                    <option value="Other">Other | Lainnya</option>
+                  </select>
+                </div>
+                <div className="field">
+                  <label className="label">
+                    School/Organization | Sekolah/Organisasi
+                  </label>
+                  <input
+                    type="text"
+                    autoComplete="on"
+                    className="input"
+                    id="company"
+                    name="company"
+                    value={eventData.company}
+                    onChange={handleChange}
+                    placeholder="School/Organization | Sekolah/Organisasi"
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Email | Email</label>
+                  <input
+                    type="text"
+                    autoComplete="on"
+                    className="input"
+                    id="email"
+                    name="email"
+                    value={eventData.email}
+                    onChange={handleChange}
+                    placeholder="Email | Email"
+                    required
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">Phone | Telepon</label>
+                  <input
+                    type="text"
+                    autoComplete="on"
+                    className="input"
+                    id="phone"
+                    name="phone"
+                    value={eventData.phone}
+                    onChange={handleChange}
+                    placeholder="Phone | Telepon"
+                    required
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">City | Kota</label>
+                  <input
+                    type="text"
+                    autoComplete="on"
+                    className="input"
+                    id="address"
+                    name="address"
+                    value={eventData.address}
+                    onChange={handleChange}
+                    placeholder="City | Kota"
+                    required
+                  />
+                </div>
+                <div className="field">
+                  <label className="label">
+                    Proof of Payment | Bukti Pembayaran
+                  </label>
+                  <label style={{ fontSize: "10pt" }}>
+                    <br />
+                    Please attach your proof of payment bank slip transfer |
+                    Sisipkan bukti slip pembayaran
+                  </label>
+                  <input
+                    type="file"
+                    autoComplete="on"
+                    className="input"
+                    id="img"
+                    name="img"
+                    onChange={handleFile}
+                    placeholder="Proof of Payment | Bukti Pembayaran"
+                  />
+                </div>
+                <div className="section">
+                  <div className="controls">
+                    <button type="button" onClick={resetEvent} className="btn">
+                      Reset
+                    </button>
+                    <button type="submit" className="btn">
+                      Join
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
       </div>
       <div className="section"></div>
       <div className="section"></div>
