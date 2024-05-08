@@ -135,73 +135,70 @@ const EventList = () => {
           <div className="section">
             <div className="section">
               {events.map((event, index) => (
-                <div className="section">
-                  <div className="event" key={index}>
-                    {event.img !== "" ? (
+                <div className="event" key={index}>
+                  {event.img !== "" ? (
+                    <>
+                      <img src={event.img} alt={event.img} />
+                    </>
+                  ) : (
+                    <></>
+                  )}
+
+                  <div className="section caption">
+                    {event.name !== "" ? (
                       <>
-                        <img src={event.img} alt={event.img} />
+                        <h6 title={event.name}>{event.name}</h6>
                       </>
                     ) : (
                       <></>
                     )}
 
-                    <div className="section caption">
-                      {event.name !== "" ? (
-                        <>
-                          <h6 title={event.name}>{event.name}</h6>
-                        </>
-                      ) : (
-                        <></>
-                      )}
+                    {event.pic !== "" ? (
+                      <>
+                        <p title={event.pic}>
+                          <strong>Speaker:</strong> {event.pic}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
 
-                      {event.pic !== "" ? (
-                        <>
-                          <p title={event.pic}>
-                            <strong>Speaker:</strong> {event.pic}
-                          </p>
-                        </>
-                      ) : (
-                        <></>
-                      )}
+                    {event.start !== "" ? (
+                      <>
+                        <p>
+                          <strong>Time:</strong> {formatTime(event.start)}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
 
-                      {event.start !== "" ? (
-                        <>
-                          <p>
-                            <strong>Time:</strong> {formatTime(event.start)}
-                          </p>
-                        </>
-                      ) : (
-                        <></>
-                      )}
+                    {event.address !== "" ? (
+                      <>
+                        <p title={event.address}>
+                          <strong>Location:</strong> {event.address}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
 
-                      {event.address !== "" ? (
-                        <>
-                          <p title={event.address}>
-                            <strong>Location:</strong> {event.address}
-                          </p>
-                        </>
-                      ) : (
-                        <></>
-                      )}
+                    {event.price !== "" ? (
+                      <>
+                        <p>
+                          <strong>Price:</strong> {formatCurrency(event.price)}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
 
-                      {event.price !== "" ? (
-                        <>
-                          <p>
-                            <strong>Price:</strong>{" "}
-                            {formatCurrency(event.price)}
-                          </p>
-                        </>
-                      ) : (
-                        <></>
-                      )}
-
-                      <button
-                        onClick={() => navigate(`/event-join/${event._id}`)}
-                        className="btn"
-                      >
-                        JOIN THIS EVENT
-                      </button>
-                    </div>
+                    <button
+                      onClick={() => navigate(`/event-join/${event._id}`)}
+                      className="btn"
+                    >
+                      JOIN THIS EVENT
+                    </button>
                   </div>
                 </div>
               ))}

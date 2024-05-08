@@ -21,6 +21,7 @@ function EventPartyAdd() {
     address: "",
     file: "",
     event: "",
+    room: "",
   });
 
   // Setting up useNavigate
@@ -365,6 +366,21 @@ function EventPartyAdd() {
                     placeholder="City | Kota"
                     required
                   />
+                </div>
+                <div className="field">
+                  <label className="label">Occupation | Pekerjaan</label>
+                  <select
+                    id="room"
+                    name="room"
+                    value={eventData.room}
+                    onChange={handleChange}
+                  >
+                    <option value="">
+                      --- Select Attendance | Pilih Kehadiran ---
+                    </option>
+                    <option value="Online">Online | Daring</option>
+                    <option value="Onsite">Onsite | Luring</option>
+                  </select>
                 </div>
                 <div className="field">
                   <label className="label">

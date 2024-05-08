@@ -23,31 +23,39 @@ function Home() {
     if (hours >= 5 && hours < 12) {
       return (
         <h5>
-          <i className="fas fa-cloud-sun"></i> Hello, Good Morning!
+          <i style={{ marginRight: "10px" }} className="fas fa-cloud-sun"></i>{" "}
+          Hello, Good Morning!
         </h5>
       );
     } else if (hours >= 12 && hours < 15) {
       return (
         <h5>
-          <i className="fas fa-sun"></i> Hello, Good Day!
+          <i style={{ marginRight: "10px" }} className="fas fa-sun"></i> Hello,
+          Good Day!
         </h5>
       );
     } else if (hours >= 15 && hours < 18) {
       return (
         <h5>
-          <i className="fas fa-cloud-sun"></i> Hello, Good Afternoon!
+          <i style={{ marginRight: "10px" }} className="fas fa-cloud-sun"></i>{" "}
+          Hello, Good Afternoon!
         </h5>
       );
     } else if (hours >= 18 && hours < 21) {
       return (
         <h5>
-          <i className="fas fa-cloud-moon"></i> Hello, Good Evening!
+          <i style={{ marginRight: "10px" }} className="fas fa-cloud-moon"></i>{" "}
+          Hello, Good Evening!
         </h5>
       );
     } else if (hours >= 21 || hours < 5) {
       return (
         <h5>
-          <i className="fas fa-star-and-crescent"></i> Hello, Good Night!
+          <i
+            style={{ marginRight: "10px" }}
+            className="fas fa-star-and-crescent"
+          ></i>{" "}
+          Hello, Good Night!
         </h5>
       );
     }
@@ -107,6 +115,14 @@ function Home() {
       src: "/assets/img/partner/c.jpg",
       uri: "https://global.playbigbox.com",
     },
+    {
+      src: "/assets/img/partner/e.jpg",
+      uri: "https://mathpid.com",
+    },
+    {
+      src: "/assets/img/partner/d.jpg",
+      uri: "https://mathpid.com",
+    },
   ];
 
   const icons = [
@@ -153,6 +169,10 @@ function Home() {
       src: "https://sf16-sg.tiktokcdn.com/obj/eden-sg/uvkuhyieh7lpqpbj/pwa/192x192.png",
       url: "https://www.tiktok.com/@compasspubindonesia?is_from_webapp=1&sender_device=pc",
     },
+    {
+      src: "https://images.tokopedia.net/img/lite-sw/assets/144px.png",
+      url: "https://www.tokopedia.com/ptsolusiedukasi",
+    },
   ];
 
   return (
@@ -161,9 +181,9 @@ function Home() {
         <div className="panel">
           <div className="headline">
             {greeting}
-            <label style={{ fontSize: "10pt", display: "block" }}>
+            <p style={{ fontSize: "1em", margin: "5px auto" }}>
               Welcome to Compass Publishing Indonesia!
-            </label>
+            </p>
             <div className="section">
               <input
                 type="text"
@@ -173,6 +193,7 @@ function Home() {
               />
             </div>
           </div>
+          <div className="section"></div>
           <div className="section icons">
             {icons.map((icon, index) => (
               <>
@@ -218,6 +239,25 @@ function Home() {
             ))}
           </div>
         </div>
+        <div className="section"></div>
+        <div className="section partner">
+          <div className="section headline">
+            <h5>Our Services</h5>
+          </div>
+          <div className="section thumbs">
+            {partners.map((thumb, index) => (
+              <>
+                <a
+                  href={thumb.uri}
+                  target="
+                _blank"
+                >
+                  <img src={thumb.src} alt={thumb.src} />
+                </a>
+              </>
+            ))}
+          </div>
+        </div>
         <div className="section about">
           <div className="section headline">
             <h5>About Us</h5>
@@ -245,24 +285,6 @@ function Home() {
               education quality in Indonesia. We motivate all to inspire to
               teach, inspire to learn.
             </p>
-          </div>
-        </div>
-        <div className="section partner">
-          <div className="section headline">
-            <h5>Our Services</h5>
-          </div>
-          <div className="section thumbs">
-            {partners.map((thumb, index) => (
-              <>
-                <a
-                  href={thumb.uri}
-                  target="
-                _blank"
-                >
-                  <img src={thumb.src} alt={thumb.src} />
-                </a>
-              </>
-            ))}
           </div>
         </div>
         <div className="section"></div>
