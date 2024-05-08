@@ -368,7 +368,7 @@ function EventPartyAdd() {
                   />
                 </div>
                 <div className="field">
-                  <label className="label">Occupation | Pekerjaan</label>
+                  <label className="label">Attendance | Kehadiran</label>
                   <select
                     id="room"
                     name="room"
