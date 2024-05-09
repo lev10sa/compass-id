@@ -71,16 +71,15 @@ function EventPartyAdd() {
       event: event._id,
     };
 
+    const formData = {
+      title: event.title,
+      group: event.group,
+      name: eventData.name,
+      email: eventData.email,
+    };
+
     const formiData = new FormData();
     formiData.append("img", selectedFile);
-
-    const formData = new FormData();
-    formData.append("name", eventData);
-    formData.append("email", eventData);
-    formData.append("title", event);
-    formData.append("group", event);
-    formData.append("start", event);
-    formData.append("end", event);
 
     try {
       // Add the Event into database with axios
