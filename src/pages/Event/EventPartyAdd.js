@@ -110,8 +110,7 @@ function EventPartyAdd() {
       );
 
       await axios.get(
-        `https://compasspubindonesia.com/media/api/mails/index.php`,
-        formi
+        `https://compasspubindonesia.com/media/api/mails/index.php?name=${formi.name}&title=${formi.title}&start=${formi.start}&end=${formi.end}&group=${formi.group}&email=${formi.email}`
       );
       // Navigate to main page
       alert(
