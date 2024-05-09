@@ -145,9 +145,9 @@ const EventList = () => {
                   )}
 
                   <div className="section caption">
-                    {event.name !== "" ? (
+                    {event.title !== "" ? (
                       <>
-                        <h6 title={event.name}>{event.name}</h6>
+                        <h6 title={event.title}>{event.title}</h6>
                       </>
                     ) : (
                       <></>
