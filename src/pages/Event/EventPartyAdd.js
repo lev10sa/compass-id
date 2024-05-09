@@ -60,6 +60,7 @@ function EventPartyAdd() {
   };
 
   const AddEvent = async (e) => {
+    document.getElementById("submit").classList.remove = "btn";
     document.getElementById("submit").type = "reset";
     document.getElementById("submit").textContent =
       "Saving data, please wait..";
@@ -110,7 +111,7 @@ function EventPartyAdd() {
 
       // Navigate to main page
       alert(
-        `Halo ${eventData.name}! Anda berhasil terdaftar! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email ${eventData.email}.`
+        `Halo ${eventData.name}! Anda berhasil terdaftar dalam acara ${event.title}! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email.`
       );
 
       navigate(`/events`);
