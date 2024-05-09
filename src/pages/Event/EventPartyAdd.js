@@ -88,6 +88,7 @@ function EventPartyAdd() {
         `https://seg-server.vercel.app/api/parties`,
         cleanedData
       );
+
       await axios.post(
         `https://compasspubindonesia.com/media/api/bills/index.php`,
         formData,
@@ -97,6 +98,7 @@ function EventPartyAdd() {
           },
         }
       );
+
       await axios.post(
         `https://compasspubindonesia.com/media/api/mails/index.php`,
         formi,
@@ -450,7 +452,7 @@ function EventPartyAdd() {
                 <div className="section">
                   <div className="controls forms">
                     <button type="submit" className="btn" id="submit">
-                      Join
+                      Join This Event
                     </button>
                   </div>
                 </div>
