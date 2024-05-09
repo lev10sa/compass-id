@@ -10,15 +10,6 @@ function EventPartyAdd() {
 
   const { id } = useParams();
 
-  const [formi, setFormi] = useState({
-    title: "",
-    group: "",
-    start: "",
-    end: "",
-    name: "",
-    email: "",
-  });
-
   const [event, setEvent] = useState({
     title: "",
     pic: "",
@@ -80,8 +71,16 @@ function EventPartyAdd() {
       event: event._id,
     };
 
+    const formiData = new FormData();
+    formiData.append("img", selectedFile);
+
     const formData = new FormData();
-    formData.append("img", selectedFile);
+    formData.append("name", eventData);
+    formData.append("email", eventData);
+    formData.append("title", event);
+    formData.append("group", event);
+    formData.append("start", event);
+    formData.append("end", event);
 
     try {
       // Add the Event into database with axios
@@ -92,6 +91,16 @@ function EventPartyAdd() {
 
       await axios.post(
         `https://compasspubindonesia.com/media/api/bills/index.php`,
+        formiData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      await axios.post(
+        `https://compasspubindonesia.com/media/api/mails/index.php`,
         formData,
         {
           headers: {
@@ -100,29 +109,11 @@ function EventPartyAdd() {
         }
       );
 
-      setFormi({
-        ...formi,
-        title: event.title,
-        group: event.group,
-        start: event.start,
-        end: event.end,
-        name: eventData.name,
-        email: eventData.email,
-      });
-
-      await axios.get(
-        `https://compasspubindonesia.com/media/api/mails/index.php?name=${formi.name}&title=${formi.title}&start=${formi.start}&end=${formi.end}&group=${formi.group}&email=${formi.email}`,
-        formi,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
       // Navigate to main page
       alert(
         `Halo ${eventData.name}! Anda berhasil terdaftar! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email ${eventData.email}.`
       );
+
       navigate(`/events`);
     } catch (error) {
       console.log(error.message); // Display error messages
