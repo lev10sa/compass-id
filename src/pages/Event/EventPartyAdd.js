@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { getElementError } from "@testing-library/react";
 
 function EventPartyAdd() {
   // Fetches latest Event count for serie generation (Optional)
@@ -60,7 +59,6 @@ function EventPartyAdd() {
   };
 
   const AddEvent = async (e) => {
-    document.getElementById("submit").classList.remove = "btn";
     document.getElementById("submit").type = "reset";
     document.getElementById("submit").textContent =
       "Saving data, please wait..";
@@ -75,6 +73,8 @@ function EventPartyAdd() {
     const formData = {
       title: event.title,
       group: event.group,
+      start: event.start,
+      end: event.end,
       name: eventData.name,
       email: eventData.email,
     };
