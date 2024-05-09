@@ -10,6 +10,15 @@ function EventPartyAdd() {
 
   const { id } = useParams();
 
+  const [formi, setFormi] = useState({
+    title: "",
+    group: "",
+    start: "",
+    end: "",
+    name: "",
+    email: "",
+  });
+
   const [event, setEvent] = useState({
     title: "",
     pic: "",
@@ -66,6 +75,15 @@ function EventPartyAdd() {
 
     e.preventDefault();
 
+    setFormi({
+      title: event.title,
+      group: event.group,
+      start: event.start,
+      end: event.end,
+      name: eventData.name,
+      email: eventData.email,
+    });
+
     const cleanedData = {
       ...eventData,
       event: event._id,
@@ -73,17 +91,6 @@ function EventPartyAdd() {
 
     const formData = new FormData();
     formData.append("img", selectedFile);
-
-    const formi = [
-      {
-        title: event.title,
-        group: event.group,
-        start: event.start,
-        end: event.end,
-        name: eventData.name,
-        email: eventData.email,
-      },
-    ];
 
     try {
       // Add the Event into database with axios
@@ -104,12 +111,7 @@ function EventPartyAdd() {
 
       await axios.post(
         `https://compasspubindonesia.com/media/api/mails/index.php`,
-        formi,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
+        formi
       );
       // Navigate to main page
       alert(
