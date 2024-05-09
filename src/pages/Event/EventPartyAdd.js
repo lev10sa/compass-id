@@ -109,7 +109,7 @@ function EventPartyAdd() {
         }
       );
 
-      await axios.post(
+      await axios.get(
         `https://compasspubindonesia.com/media/api/mails/index.php`,
         formi
       );
