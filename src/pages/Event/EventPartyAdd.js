@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { getElementError } from "@testing-library/react";
 
 function EventPartyAdd() {
   // Fetches latest Event count for serie generation (Optional)
@@ -9,7 +10,18 @@ function EventPartyAdd() {
 
   const { id } = useParams();
 
-  const [event, setEvent] = useState([]);
+  const [event, setEvent] = useState({
+    title: "",
+    pic: "",
+    model: "",
+    img: "",
+    desc: "",
+    start: "",
+    end: "",
+    group: "",
+    address: "",
+    price: "",
+  });
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [eventData, setEventData] = useState({
@@ -48,6 +60,10 @@ function EventPartyAdd() {
   };
 
   const AddEvent = async (e) => {
+    document.getElementById("submit").type = "reset";
+    document.getElementById("submit").textContent =
+      "Saving data, please wait..";
+
     e.preventDefault();
 
     const cleanedData = {
@@ -57,6 +73,14 @@ function EventPartyAdd() {
 
     const formData = new FormData();
     formData.append("img", selectedFile);
+
+    const formi = new FormData();
+    formi.append("title", event);
+    formi.append("group", event);
+    formi.append("start", event);
+    formi.append("end", event);
+    formi.append("name", eventData);
+    formi.append("email", eventData);
 
     try {
       // Add the Event into database with axios
@@ -73,7 +97,19 @@ function EventPartyAdd() {
           },
         }
       );
+      await axios.post(
+        `https://compasspubindonesia.com/media/api/mails/index.php`,
+        formi,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       // Navigate to main page
+      alert(
+        `Halo ${eventData.name}! Anda berhasil terdaftar! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email ${eventData.email}.`
+      );
       navigate(`/events`);
     } catch (error) {
       console.log(error.message); // Display error messages
@@ -161,17 +197,14 @@ function EventPartyAdd() {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   }
 
-  const resetEvent = () => {
-    setEventData({
-      name: "",
-      company: "",
-      job: "",
-      email: "",
-      phone: "",
-      address: "",
-      file: "",
-      event: "",
-    });
+  const seePeg = () => {
+    document.getElementById("see").style = "display: none;";
+    document.getElementById("peg").style = "display: block;";
+  };
+
+  const unseePeg = () => {
+    document.getElementById("see").style = "display: block;";
+    document.getElementById("peg").style = "display: none;";
   };
 
   return (
@@ -183,9 +216,9 @@ function EventPartyAdd() {
           <div className="section">No data...</div> // display status when loading
         ) : (
           <div className="left">
-            {event.name !== "" ? (
+            {event.title !== "" ? (
               <div>
-                <h3>{event.name}</h3>
+                <h3>{event.title}</h3>
               </div>
             ) : (
               <></>
@@ -198,66 +231,79 @@ function EventPartyAdd() {
             ) : (
               <></>
             )}
-            {event.pic !== "" ? (
-              <div className="section">
-                <p>
-                  <strong>Speaker:</strong>
-                </p>
-                <p>{event.pic}</p>
-              </div>
-            ) : (
-              <></>
-            )}
-            {event.model !== "" ? (
-              <div className="section">
-                <p>
-                  <strong>Role:</strong>
-                </p>
-                <p>{event.model}</p>
-              </div>
-            ) : (
-              <></>
-            )}
-            {event.start !== "" ? (
-              <div className="section">
-                <p>
-                  <strong>Time:</strong>
-                </p>
-                <p>{formatTime(event.start)}</p>
-              </div>
-            ) : (
-              <></>
-            )}
-            {event.address !== "" ? (
-              <div className="section">
-                <p>
-                  <strong>Location:</strong>
-                </p>
-                <p>{event.address}</p>
-              </div>
-            ) : (
-              <></>
-            )}
-            {event.price !== "" ? (
-              <div className="section">
-                <p>
-                  <strong>Price:</strong>
-                </p>
-                <p>{formatCurrency(event.price)}</p>
-              </div>
-            ) : (
-              <></>
-            )}
-            {event.desc !== "" ? (
-              <div className="section">
-                <p>
-                  <strong>Description:</strong>
-                </p>
-                <pre>{event.desc}</pre>
-              </div>
-            ) : (
-              <></>
-            )}
+            <button type="button" onClick={seePeg} className="btni" id="see">
+              See more
+            </button>
+            <div id="peg">
+              {event.pic !== "" ? (
+                <div className="section">
+                  <p>
+                    <strong>Speaker:</strong>
+                  </p>
+                  <p>{event.pic}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {event.model !== "" ? (
+                <div className="section">
+                  <p>
+                    <strong>Role:</strong>
+                  </p>
+                  <p>{event.model}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {event.start !== "" ? (
+                <div className="section">
+                  <p>
+                    <strong>Time:</strong>
+                  </p>
+                  <p>{formatTime(event.start)}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {event.address !== "" ? (
+                <div className="section">
+                  <p>
+                    <strong>Location:</strong>
+                  </p>
+                  <p>{event.address}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {event.price !== "" ? (
+                <div className="section">
+                  <p>
+                    <strong>Price:</strong>
+                  </p>
+                  <p>{formatCurrency(event.price)}</p>
+                </div>
+              ) : (
+                <></>
+              )}
+              {event.desc !== "" ? (
+                <div className="section">
+                  <p>
+                    <strong>Description:</strong>
+                  </p>
+                  <pre>{event.desc}</pre>
+                </div>
+              ) : (
+                <></>
+              )}
+              <button
+                type="button"
+                onClick={unseePeg}
+                className="btni"
+                id="unsee"
+              >
+                See Less
+              </button>
+            </div>
           </div>
         )}
         <div className="section"></div>
@@ -402,11 +448,8 @@ function EventPartyAdd() {
                   />
                 </div>
                 <div className="section">
-                  <div className="controls">
-                    <button type="button" onClick={resetEvent} className="btn">
-                      Reset
-                    </button>
-                    <button type="submit" className="btn">
+                  <div className="controls forms">
+                    <button type="submit" className="btn" id="submit">
                       Join
                     </button>
                   </div>

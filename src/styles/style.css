@@ -86,7 +86,31 @@ label {
   margin: 5px auto;
 }
 
+#peg {
+  display: none;
+}
+
+.btni {
+  width: 100%;
+  display: inline-block;
+  margin: 1rem auto;
+  padding: 15px 35px;
+  border: 1px hidden;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+}
+
 @media only screen and (min-width: 601px) {
+  #peg {
+    display: none;
+    font-size: 0.8em;
+  }
+
+  #peg .section {
+    padding: 5px 0px;
+  }
+
   .prev,
   .next {
     cursor: pointer;
@@ -413,25 +437,26 @@ label {
   }
 
   .party .left {
-    width: 35%;
+    width: 25%;
     height: auto;
     display: block;
     overflow: hidden;
     float: left;
-    border-right: 1px solid #111;
-    padding: 15px;
+    border: 1px hidden;
   }
 
   .party .right {
-    width: 55%;
+    width: 65%;
     height: auto;
     display: block;
     overflow: hidden;
     float: right;
+    border-left: 1px solid #111;
+    padding: 15px 3rem;
   }
 
   .party .left img {
-    width: 80%;
+    width: 100%;
     height: auto;
     display: inline-block;
     overflow: hidden;
@@ -1056,5 +1081,11 @@ label {
 
   .footer p {
     color: #fff;
+  }
+
+  .forms button.btn {
+    width: 100%;
+    display: block;
+    margin: 1rem auto;
   }
 }
