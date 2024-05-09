@@ -75,15 +75,6 @@ function EventPartyAdd() {
 
     e.preventDefault();
 
-    setFormi({
-      title: event.title,
-      group: event.group,
-      start: event.start,
-      end: event.end,
-      name: eventData.name,
-      email: eventData.email,
-    });
-
     const cleanedData = {
       ...eventData,
       event: event._id,
@@ -109,8 +100,24 @@ function EventPartyAdd() {
         }
       );
 
+      setFormi({
+        ...formi,
+        title: event.title,
+        group: event.group,
+        start: event.start,
+        end: event.end,
+        name: eventData.name,
+        email: eventData.email,
+      });
+
       await axios.get(
-        `https://compasspubindonesia.com/media/api/mails/index.php?name=${formi.name}&title=${formi.title}&start=${formi.start}&end=${formi.end}&group=${formi.group}&email=${formi.email}`
+        `https://compasspubindonesia.com/media/api/mails/index.php?name=${formi.name}&title=${formi.title}&start=${formi.start}&end=${formi.end}&group=${formi.group}&email=${formi.email}`,
+        formi,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
       // Navigate to main page
       alert(
