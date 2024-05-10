@@ -230,13 +230,17 @@ function EventPartyAdd() {
             <div className="section"></div>
             {event.img !== "" ? (
               <div className="section">
-                <img src={event.img} alt={event.img} />
+                <img
+                  src={event.img}
+                  alt={event.img}
+                  onClick={() => window.open(event.img, "_blank")}
+                />
               </div>
             ) : (
               <></>
             )}
             <button type="button" onClick={seePeg} className="btni" id="see">
-              See more
+              See Description
             </button>
             <div id="peg">
               {event.pic !== "" ? (
@@ -307,6 +311,17 @@ function EventPartyAdd() {
               >
                 See Less
               </button>
+            </div>
+            <div className="section">
+              <p style={{ fontSize: "10pt" }}>
+                Untuk mendaftar, silakan lakukan pembayaran via transfer ke no.
+                rekening BCA atas nama PT. SOLUSI EDUKASI GEMILANG, berikut ini:
+                <br />
+                <br />
+                BCA - 4685015898
+                <br />
+                PT. Solusi Edukasi Gemilang
+              </p>
             </div>
           </div>
         )}
@@ -436,8 +451,8 @@ function EventPartyAdd() {
                   <label className="label">
                     Proof of Payment | Bukti Pembayaran
                   </label>
+                  <br />
                   <label style={{ fontSize: "10pt" }}>
-                    <br />
                     Please attach your proof of payment bank slip transfer |
                     Sisipkan bukti slip pembayaran
                   </label>
