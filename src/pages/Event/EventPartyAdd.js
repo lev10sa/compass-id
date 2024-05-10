@@ -219,114 +219,132 @@ function EventPartyAdd() {
         ) : isEmpty ? (
           <div className="section">No data...</div> // display status when loading
         ) : (
-          <div className="left">
-            {event.title !== "" ? (
-              <div>
-                <h3>{event.title}</h3>
-              </div>
-            ) : (
-              <></>
-            )}
-            <div className="section"></div>
-            {event.img !== "" ? (
-              <div className="section">
-                <img
-                  src={event.img}
-                  alt={event.img}
-                  onClick={() => window.open(event.img, "_blank")}
-                />
-              </div>
-            ) : (
-              <></>
-            )}
-            <button type="button" onClick={seePeg} className="btni" id="see">
-              See Description
-            </button>
-            <div id="peg">
-              {event.pic !== "" ? (
-                <div className="section">
-                  <p>
-                    <strong>Speaker:</strong>
-                  </p>
-                  <p>{event.pic}</p>
+          <>
+            <div className="left">
+              {event.title !== "" ? (
+                <div>
+                  <h3>{event.title}</h3>
                 </div>
               ) : (
                 <></>
               )}
-              {event.model !== "" ? (
+              <div className="section"></div>
+              {event.img !== "" ? (
                 <div className="section">
-                  <p>
-                    <strong>Role:</strong>
-                  </p>
-                  <p>{event.model}</p>
+                  <img
+                    src={event.img}
+                    alt={event.img}
+                    onClick={() => window.open(event.img, "_blank")}
+                  />
                 </div>
               ) : (
                 <></>
               )}
-              {event.start !== "" ? (
-                <div className="section">
-                  <p>
-                    <strong>Time:</strong>
-                  </p>
-                  <p>{formatTime(event.start)}</p>
-                </div>
-              ) : (
-                <></>
-              )}
-              {event.address !== "" ? (
-                <div className="section">
-                  <p>
-                    <strong>Location:</strong>
-                  </p>
-                  <p>{event.address}</p>
-                </div>
-              ) : (
-                <></>
-              )}
-              {event.price !== "" ? (
-                <div className="section">
-                  <p>
-                    <strong>Price:</strong>
-                  </p>
-                  <p>{formatCurrency(event.price)}</p>
-                </div>
-              ) : (
-                <></>
-              )}
-              {event.desc !== "" ? (
-                <div className="section">
-                  <p>
-                    <strong>Description:</strong>
-                  </p>
-                  <pre>{event.desc}</pre>
-                </div>
-              ) : (
-                <></>
-              )}
-              <button
-                type="button"
-                onClick={unseePeg}
-                className="btni"
-                id="unsee"
-              >
-                See Less
+              <div className="section"></div>
+              <button type="button" onClick={seePeg} className="btni" id="see">
+                See Description
               </button>
+              <div id="peg">
+                <div
+                  style={{
+                    width: "100%",
+                    padding: "1rem 5px",
+                    textAlign: "center",
+                    borderBottom: "1px solid #111",
+                  }}
+                >
+                  <h4>Event Description</h4>
+                </div>
+                <div className="section"></div>
+                {event.pic !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Speaker:</strong>
+                    </p>
+                    <p>{event.pic}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {event.model !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Role:</strong>
+                    </p>
+                    <p>{event.model}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {event.start !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Time:</strong>
+                    </p>
+                    <p>{formatTime(event.start)}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {event.address !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Location:</strong>
+                    </p>
+                    <p>{event.address}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {event.price !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Price:</strong>
+                    </p>
+                    <p>{formatCurrency(event.price)}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {event.desc !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Description:</strong>
+                    </p>
+                    <pre>{event.desc}</pre>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                <button
+                  type="button"
+                  onClick={unseePeg}
+                  className="btni"
+                  id="unsee"
+                >
+                  See Less
+                </button>
+              </div>
+              <div className="section"></div>
+              <div>
+                <p>
+                  Untuk mendaftar, silakan lakukan pembayaran via transfer ke
+                  no. rekening BCA atas nama PT. SOLUSI EDUKASI GEMILANG,
+                  berikut ini:
+                  <br />
+                  <br />
+                  BCA - 4685015898
+                  <br />
+                  PT. Solusi Edukasi Gemilang
+                </p>
+              </div>
+              <div className="section"></div>
+              <div className="section"></div>
+              <div className="section"></div>
             </div>
-            <div className="section">
-              <p style={{ fontSize: "10pt" }}>
-                Untuk mendaftar, silakan lakukan pembayaran via transfer ke no.
-                rekening BCA atas nama PT. SOLUSI EDUKASI GEMILANG, berikut ini:
-                <br />
-                <br />
-                BCA - 4685015898
-                <br />
-                PT. Solusi Edukasi Gemilang
-              </p>
-            </div>
-          </div>
+          </>
         )}
-        <div className="section"></div>
-        <div className="section"></div>
+
         {isLoading ? (
           <div className="section"></div> // display status when loading
         ) : isEmpty ? (
