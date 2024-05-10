@@ -72,6 +72,19 @@ const Navigation = () => {
           </button>
         </div>
         <div className="tabs">
+          <button className="menu" onClick={openMenu}>
+            <i className="fas fa-bars"></i>
+          </button>
+        </div>
+        <div className="tabi">
+          <button
+            className="btn"
+            onClick={() => window.open("https://wa.me/6285174448002", "_blank")}
+          >
+            <i className="fas fa-headset"></i> <span>Contact Us</span>
+          </button>
+        </div>
+        <div className="taba">
           <button onClick={() => navigate(`/`)}>
             <i className="fas fa-home"></i> <span>Home</span>
           </button>
@@ -86,9 +99,6 @@ const Navigation = () => {
           </button>
           <button onClick={() => navigate(`/`)}>
             <i className="fas fa-question-circle"></i> <span>FAQ</span>
-          </button>
-          <button className="menu" onClick={openMenu}>
-            <i className="fas fa-bars"></i>
           </button>
         </div>
       </div>
@@ -107,12 +117,9 @@ const Navigation = () => {
           &#10095;
         </button>
       </div>
-      <div
-        className="sidenav-wrapper animate__animated animate__slideInRight"
-        id="sidenav"
-      >
-        <div className="plain" onClick={openMenu}></div>
-        <div className="sidenav">
+      <div id="sidenav">
+        <div className="plain sidenav-wrapper" onClick={openMenu}></div>
+        <div className="sidenav animate__animated animate__slideInLeft">
           <div className="header">NAVIGATION</div>
           <button onClick={() => navigate(`/`)}>
             <span>Home</span> <i className="fas fa-home"></i>

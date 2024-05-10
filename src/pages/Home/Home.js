@@ -181,9 +181,6 @@ function Home() {
         <div className="panel">
           <div className="headline">
             {greeting}
-            <p style={{ fontSize: "1em", margin: "5px auto" }}>
-              Welcome to Compass Publishing Indonesia!
-            </p>
             <div className="section">
               <input
                 type="text"
