@@ -82,41 +82,50 @@ function EventPartyAdd() {
     const formiData = new FormData();
     formiData.append("img", selectedFile);
 
-    try {
-      // Add the Event into database with axios
-      await axios.post(
-        `https://seg-server.vercel.app/api/parties`,
-        cleanedData
-      );
+    if (
+      event !== "" &&
+      eventData !== "" &&
+      formData !== "" &&
+      formiData !== ""
+    ) {
+      try {
+        // Add the Event into database with axios
+        await axios.post(
+          `https://seg-server.vercel.app/api/parties`,
+          cleanedData
+        );
 
-      await axios.post(
-        `https://compasspubindonesia.com/media/api/bills/index.php`,
-        formiData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+        await axios.post(
+          `https://compasspubindonesia.com/media/api/bills/index.php`,
+          formiData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
 
-      await axios.post(
-        `https://compasspubindonesia.com/media/api/mails/index.php`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+        await axios.post(
+          `https://compasspubindonesia.com/media/api/mails/index.php`,
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
 
-      // Navigate to main page
-      alert(
-        `Halo ${eventData.name}! Anda berhasil terdaftar dalam acara ${event.title}! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email.`
-      );
+        // Navigate to main page
+        alert(
+          `Halo ${eventData.name}! Anda berhasil terdaftar dalam acara ${event.title}! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email.`
+        );
 
-      navigate(`/events`);
-    } catch (error) {
-      console.log(error.message); // Display error messages
+        navigate(`/events`);
+      } catch (error) {
+        console.log(error.message); // Display error messages
+      }
+    } else {
+      alert("Please fill the blanks.. | Silakan isi bagian yang kosong..");
     }
   };
 
@@ -380,6 +389,7 @@ function EventPartyAdd() {
                     name="job"
                     value={eventData.job}
                     onChange={handleChange}
+                    required
                   >
                     <option value="">
                       --- Select Occupation | Pilih Pekerjaan ---
@@ -406,6 +416,7 @@ function EventPartyAdd() {
                     value={eventData.company}
                     onChange={handleChange}
                     placeholder="School/Organization | Sekolah/Organisasi"
+                    required
                   />
                 </div>
                 <div className="field">
@@ -457,6 +468,7 @@ function EventPartyAdd() {
                     name="room"
                     value={eventData.room}
                     onChange={handleChange}
+                    required
                   >
                     <option value="">
                       --- Select Attendance | Pilih Kehadiran ---
@@ -482,6 +494,7 @@ function EventPartyAdd() {
                     name="img"
                     onChange={handleFile}
                     placeholder="Proof of Payment | Bukti Pembayaran"
+                    required
                   />
                 </div>
                 <div className="section">
