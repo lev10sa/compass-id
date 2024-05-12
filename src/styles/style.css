@@ -179,10 +179,7 @@ label {
     z-index: 997;
     background: #fff;
     clear: both;
-    -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-      0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    border-bottom: 0.5px solid #111;
   }
 
   .navbar .logo {
@@ -277,7 +274,7 @@ label {
     overflow: hidden;
     background: #111;
     padding: 0;
-    border-bottom: 1px solid #111;
+    border-bottom: 0.5px solid #111;
     margin-top: 3.7rem;
   }
 
