@@ -179,7 +179,7 @@ label {
     z-index: 997;
     background: #fff;
     clear: both;
-    border-bottom: 2px solid #eee;
+    border-bottom: 0.5px solid #111;
   }
 
   .navbar .logo {
