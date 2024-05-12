@@ -587,15 +587,13 @@ label {
   }
 
   .footer a {
-    width: 5%;
+    width: 2.5%;
     height: auto;
     display: inline-block;
     overflow: hidden;
     vertical-align: top;
-    margin: auto 1rem;
+    margin: auto 10px;
     padding: 10px;
-    background: #fff;
-    border-radius: 50%;
   }
 
   .footer a img {
