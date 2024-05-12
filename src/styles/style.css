@@ -179,7 +179,6 @@ label {
     z-index: 997;
     background: #fff;
     clear: both;
-    border-bottom: 0.5px solid #111;
   }
 
   .navbar .logo {
@@ -274,7 +273,6 @@ label {
     overflow: hidden;
     background: #111;
     padding: 0;
-    border-bottom: 0.5px solid #111;
     margin-top: 3.7rem;
   }
 
