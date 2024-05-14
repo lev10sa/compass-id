@@ -106,6 +106,36 @@ label {
 }
 
 @media only screen and (min-width: 601px) {
+  .posts,
+  .posts .film,
+  .posts .film .panel,
+  .posts .film img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  .posts .film img {
+    border: 1px solid #111;
+    margin: 10px auto;
+  }
+
+  .posts .film .panel {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .posts .film .panel img {
+    width: 10%;
+    height: 80px;
+    display: inline-block;
+    margin: 10px 5px;
+    vertical-align: top;
+    object-fit: cover;
+    object-position: center;
+  }
+
   #peg {
     display: none;
     font-size: 0.8em;
@@ -609,6 +639,36 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
+  .posts,
+  .posts .film,
+  .posts .film .panel,
+  .posts .film img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+  }
+
+  .posts .film img {
+    border: 1px solid #111;
+    margin: 10px auto;
+  }
+
+  .posts .film .panel {
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+
+  .posts .film .panel img {
+    width: 15%;
+    height: 50px;
+    display: inline-block;
+    margin: 10px 5px;
+    vertical-align: top;
+    object-fit: cover;
+    object-position: center;
+  }
+
   #peg {
     width: 100%;
     height: auto;
