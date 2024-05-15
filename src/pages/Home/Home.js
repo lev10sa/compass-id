@@ -1,14 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [article, setArticle] = useState([]);
+  const articles = article.slice(0, 6);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     setCurrentTime(new Date());
     alr();
+
+    const getArticle = async () => {
+      try {
+        const url = "https://seg-server.vercel.app/api/posts";
+        const datas = await axios.get(url);
+        setArticle(datas.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    getArticle();
   }, []);
 
   const alr = () => {
@@ -175,6 +190,54 @@ function Home() {
     },
   ];
 
+  const formatTime = (dateString) => {
+    // Create a new Date object from the provided dateString
+    const date = new Date(dateString);
+
+    // Define arrays for day names and month names
+    const daysOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    // Get the day of the week, month, day, and year from the Date object
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    const month = months[date.getMonth()];
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    // Get the hours and minutes from the Date object
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+
+    // Format the time as "HH.MM"
+    const time = `${hours < 10 ? "0" : ""}${hours}.${
+      minutes < 10 ? "0" : ""
+    }${minutes}`;
+
+    // Return the formatted date string
+    return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
+  };
+
   return (
     <>
       <div className="container">
@@ -236,8 +299,60 @@ function Home() {
             ))}
           </div>
         </div>
-        <div className="section"></div>
-        <div className="section partner">
+        {article.length !== 0 ? (
+          <>
+            <div className="section article">
+              <div className="section headline">
+                <h5 style={{ float: "left" }}>Latest Articles</h5>
+                <button
+                  type="button"
+                  onClick={() => navigate("/posts")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                  }}
+                  className="btn"
+                >
+                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
+              </div>
+              <div className="section scrollList">
+                {articles.map((item, index) => (
+                  <div
+                    onClick={() => navigate(`/post-view/${item.slug}`)}
+                    rel="noreferrer"
+                    key={index}
+                    className="panel"
+                  >
+                    <img src={item.banner} alt={item.banner} />
+                    <h3>{item.title}</h3>
+                    <p>
+                      <strong>Date:</strong> {formatTime(item.date)}
+                    </p>
+                    <p>
+                      <strong>Category:</strong> {item.category}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`/post-view/${item.slug}`)}
+                      className="btn"
+                    >
+                      Read This Article
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
+        <div className="partner">
           <div className="section headline">
             <h5>Our Services</h5>
           </div>
