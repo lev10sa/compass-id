@@ -5,7 +5,7 @@ import axios from "axios";
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [article, setArticle] = useState([]);
-  const articles = article.slice(0, 6);
+  const articles = article.slice(0, 4);
 
   const navigate = useNavigate();
 
