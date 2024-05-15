@@ -4,9 +4,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 // create the main function
-const EventList = () => {
+const PostList = () => {
   // create the useState
-  const [events, setEvents] = useState([]); // state for Event list
+  const [posts, setPosts] = useState([]); // state for Post list
   const [search, setSearch] = useState(""); // state for search
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
@@ -14,35 +14,21 @@ const EventList = () => {
   // setting up useNavigate
   const navigate = useNavigate();
 
-  // create currency format function
-  function formatCurrency(number) {
-    // define options for formatting
-    const options = {
-      style: "currency", // set currency
-      currency: "IDR", // set currency code for Indonesian Rupiah (IDR)
-      minimumFractionDigits: 2, // set minimum decimal places to 2
-      maximumFractionDigits: 2, // set maximum decimal places to 2
-    };
-
-    // use toLocaleString() with the defined options
-    return new Intl.NumberFormat("id-ID", options).format(number);
-  }
-
   useEffect(() => {
     // create book loader callback function
-    const getEvents = async () => {
+    const getposts = async () => {
       try {
         if (!search) {
-          const url = `https://seg-server.vercel.app/api/events`; // modify URL based on backend
+          const url = `https://seg-server.vercel.app/api/posts`; // modify URL based on backend
           const datas = await axios.get(url); // get datas from URL with axios
           datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
-          setEvents(datas.data);
+          setPosts(datas.data);
           setIsLoading(false);
         } else {
-          const url = `https://seg-server.vercel.app/api/events/key/${search}`; // modify URL based on backend
+          const url = `https://seg-server.vercel.app/api/posts/key/${search}`; // modify URL based on backend
           const datas = await axios.get(url); // get datas from URL with axios
           datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
-          setEvents(datas.data);
+          setPosts(datas.data);
           setIsLoading(false);
         }
       } catch (error) {
@@ -50,8 +36,8 @@ const EventList = () => {
       }
     };
 
-    getEvents();
-  }, [search]); // dependency array with only `getEvents`
+    getposts();
+  }, [search]); // dependency array with only `getposts`
 
   function formatTime(dateString) {
     // Create a new Date object from the provided dateString
@@ -111,7 +97,7 @@ const EventList = () => {
     <>
       <div className="container">
         <div className="section headline">
-          <h4>Event List</h4>
+          <h4>Post List</h4>
           <button onClick={() => navigate(`/`)} className="btn">
             See Home
           </button>
@@ -122,71 +108,51 @@ const EventList = () => {
               className="input"
               value={search} // set value from search state
               onInput={handleSearch} // update search state on change
-              placeholder="Search Events..."
+              placeholder="Search posts..."
             />
           </div>
         </div>
         {isLoading ? (
-          <div className="section">Loading Event Database...</div> // display status when loading
+          <div className="section">Loading Post Database...</div> // display status when loading
         ) : isEmpty ? (
           <div className="section">No data...</div> // display status when loading
         ) : (
           // display table after loading
           <div className="section">
             <div className="section">
-              {events.map((event, index) => (
+              {posts.map((post, index) => (
                 <div className="event" key={index}>
-                  {event.img !== "" ? (
+                  {post.banner !== "" ? (
                     <>
-                      <img src={event.img} alt={event.img} />
+                      <img src={post.banner} alt={post.banner} />
                     </>
                   ) : (
                     <></>
                   )}
 
                   <div className="section caption">
-                    {event.title !== "" ? (
+                    {post.title !== "" ? (
                       <>
-                        <h3 title={event.title}>{event.title}</h3>
+                        <h3 title={post.title}>{post.title}</h3>
                       </>
                     ) : (
                       <></>
                     )}
 
-                    {event.pic !== "" ? (
+                    {post.category !== "" ? (
                       <>
-                        <p title={event.pic}>
-                          <strong>Speaker:</strong> {event.pic}
+                        <p title={post.category}>
+                          <strong>Category:</strong> {post.category}
                         </p>
                       </>
                     ) : (
                       <></>
                     )}
 
-                    {event.start !== "" ? (
+                    {post.date !== "" ? (
                       <>
                         <p>
-                          <strong>Time:</strong> {formatTime(event.start)}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {event.address !== "" ? (
-                      <>
-                        <p title={event.address}>
-                          <strong>Location:</strong> {event.address}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {event.price !== "" ? (
-                      <>
-                        <p>
-                          <strong>Price:</strong> {formatCurrency(event.price)}
+                          <strong>Date:</strong> {formatTime(post.date)}
                         </p>
                       </>
                     ) : (
@@ -194,10 +160,10 @@ const EventList = () => {
                     )}
 
                     <button
-                      onClick={() => navigate(`/event-join/${event._id}`)}
+                      onClick={() => navigate(`/post-view/${post._id}`)}
                       className="btn"
                     >
-                      JOIN THIS EVENT
+                      Read This Article
                     </button>
                   </div>
                 </div>
@@ -213,4 +179,4 @@ const EventList = () => {
 };
 
 // export the main function
-export default EventList;
+export default PostList;

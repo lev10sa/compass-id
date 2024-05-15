@@ -7,6 +7,10 @@
   background: transparent;
 }
 
+pre {
+  white-space: break-spaces;
+}
+
 a,
 button {
   cursor: pointer;
@@ -105,6 +109,10 @@ label {
   background: #004;
 }
 
+.posts pre {
+  font-size: 1em;
+}
+
 @media only screen and (min-width: 601px) {
   .article .scrollList {
     width: 100%;
@@ -146,7 +154,8 @@ label {
     text-overflow: ellipsis;
   }
 
-  .article .panel h3 {
+  .article .panel h3,
+  .article .panel h1 {
     margin-top: 1rem;
   }
 
@@ -184,13 +193,17 @@ label {
   }
 
   .posts .film .panel img {
-    width: 10%;
-    height: 80px;
+    width: 5%;
+    height: 50px;
     display: inline-block;
     margin: 10px 5px;
     vertical-align: top;
     object-fit: cover;
     object-position: center;
+  }
+
+  .posts .film .panel img:hover {
+    border: 5px solid #111;
   }
 
   #peg {
@@ -233,9 +246,8 @@ label {
     background: #111;
   }
 
-  pre {
+  .left pre {
     margin: 10px auto;
-    white-space: pre-wrap;
   }
 
   p {
@@ -248,7 +260,7 @@ label {
   }
 
   .container {
-    width: 80%;
+    width: 75%;
     height: auto;
     display: block;
     overflow: hidden;
@@ -512,6 +524,7 @@ label {
     display: block;
   }
 
+  .event .caption h3,
   .event .caption h4,
   .event .caption h6,
   .event .caption p,
@@ -522,13 +535,17 @@ label {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 12px auto;
+    margin: 5px auto;
   }
 
   .event .btn {
-    display: inline-block;
-    margin: 1rem auto;
-    padding: 10px 35px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 10px 1px;
     border: 1px hidden;
     border-radius: 10px;
     background: #111;
@@ -698,6 +715,17 @@ label {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
+
+  .posts pre {
+    height: auto;
+    max-height: fit-content;
+    overflow: hidden;
+  }
+
+  .posts .section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -770,6 +798,10 @@ label {
   .posts .film .panel {
     white-space: nowrap;
     overflow-x: scroll;
+  }
+
+  .posts .film .panel img:hover {
+    border: 5px solid #111;
   }
 
   .posts .film .panel img {
@@ -1155,7 +1187,7 @@ label {
 
   .event img {
     width: 100%;
-    height: auto;
+    height: 150px;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -1169,6 +1201,7 @@ label {
   }
 
   .event .caption h6,
+  .event .caption h3,
   .event .caption h5,
   .event .caption p,
   .event .caption label {
@@ -1178,19 +1211,21 @@ label {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 12px auto;
+    margin: 5px auto;
   }
 
   .event .btn {
-    display: inline-block;
-    margin: 1rem auto;
-    padding: 15px 35px;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 10px 10px;
     border: 1px hidden;
     border-radius: 10px;
     background: #111;
     color: #fff;
     text-decoration: none;
     width: 95%;
+    float: left;
   }
 
   .event .btn:hover {
@@ -1336,5 +1371,10 @@ label {
     width: 100%;
     display: block;
     margin: 1rem auto;
+  }
+
+  .posts .section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }

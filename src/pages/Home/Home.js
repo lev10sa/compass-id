@@ -5,6 +5,8 @@ import axios from "axios";
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [article, setArticle] = useState([]);
+  const [isEmpty, setIsEmpty] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const articles = article.slice(0, 4);
 
   const navigate = useNavigate();
@@ -17,7 +19,9 @@ function Home() {
       try {
         const url = "https://seg-server.vercel.app/api/posts";
         const datas = await axios.get(url);
+        datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
         setArticle(datas.data);
+        setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
@@ -148,17 +152,17 @@ function Home() {
     },
     {
       src: "fas fa-file-alt",
-      url: "/",
+      url: "/posts",
       label: "Article",
     },
     {
       src: "fas fa-book",
-      url: "/",
+      url: "/books",
       label: "Book",
     },
     {
       src: "fas fa-question-circle",
-      url: "/",
+      url: "/faqs",
       label: "FAQ",
     },
   ];
@@ -291,13 +295,23 @@ function Home() {
               <span style={{ marginRight: "10px" }}>See More</span>&#10095;
             </button>
           </div>
-          <div className="section scrollList">
-            {books.map((book, index) => (
-              <a href={book.url} target="_blank" rel="noreferrer">
-                <img src={book.src} alt="" key={index} />
-              </a>
-            ))}
-          </div>
+          {isLoading === true ? (
+            <>
+              <div className="section">
+                <p>Loading data, please wait...</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="section scrollList">
+                {books.map((book, index) => (
+                  <a href={book.url} target="_blank" rel="noreferrer">
+                    <img src={book.src} alt="" key={index} />
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
         </div>
         {article.length !== 0 ? (
           <>
@@ -321,32 +335,49 @@ function Home() {
                   <span style={{ marginRight: "10px" }}>See More</span>&#10095;
                 </button>
               </div>
-              <div className="section scrollList">
-                {articles.map((item, index) => (
-                  <div
-                    onClick={() => navigate(`/post-view/${item.slug}`)}
-                    rel="noreferrer"
-                    key={index}
-                    className="panel"
-                  >
-                    <img src={item.banner} alt={item.banner} />
-                    <h3>{item.title}</h3>
-                    <p>
-                      <strong>Date:</strong> {formatTime(item.date)}
-                    </p>
-                    <p>
-                      <strong>Category:</strong> {item.category}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => navigate(`/post-view/${item.slug}`)}
-                      className="btn"
-                    >
-                      Read This Article
-                    </button>
+              {isLoading === true ? (
+                <>
+                  <div className="section">
+                    <p>Loading data, please wait...</p>
                   </div>
-                ))}
-              </div>
+                </>
+              ) : isEmpty === true ? (
+                <>
+                  <div className="section">
+                    <p>No data...</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  <div className="section scrollList">
+                    {articles.map((item, index) => (
+                      <div
+                        onClick={() => navigate(`/post-view/${item._id}`)}
+                        rel="noreferrer"
+                        key={index}
+                        className="panel"
+                      >
+                        <img src={item.banner} alt={item.banner} />
+                        <h3>{item.title}</h3>
+                        <p>
+                          <strong>Date:</strong> {formatTime(item.date)}
+                        </p>
+                        <p>
+                          <strong>Category:</strong> {item.category}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => navigate(`/post-view/${item._id}`)}
+                          className="btn"
+                        >
+                          Read This Article
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </>
         ) : (
