@@ -163,7 +163,7 @@ const PostList = () => {
                       onClick={() => navigate(`/post-view/${post._id}`)}
                       className="btn"
                     >
-                      Read This Article
+                      Read This post
                     </button>
                   </div>
                 </div>

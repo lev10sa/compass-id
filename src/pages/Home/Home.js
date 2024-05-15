@@ -4,10 +4,10 @@ import axios from "axios";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [article, setArticle] = useState([]);
+  const [post, setpost] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const articles = article.slice(0, 4);
+  const posts = post.slice(0, 4);
 
   const navigate = useNavigate();
 
@@ -15,19 +15,19 @@ function Home() {
     setCurrentTime(new Date());
     alr();
 
-    const getArticle = async () => {
+    const getpost = async () => {
       try {
         const url = "https://seg-server.vercel.app/api/posts";
         const datas = await axios.get(url);
         datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
-        setArticle(datas.data);
+        setpost(datas.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
     };
 
-    getArticle();
+    getpost();
   }, []);
 
   const alr = () => {
@@ -153,7 +153,7 @@ function Home() {
     {
       src: "fas fa-file-alt",
       url: "/posts",
-      label: "Article",
+      label: "post",
     },
     {
       src: "fas fa-book",
@@ -313,11 +313,11 @@ function Home() {
             </>
           )}
         </div>
-        {article.length !== 0 ? (
+        {post.length !== 0 ? (
           <>
-            <div className="section article">
+            <div className="section post">
               <div className="section headline">
-                <h5 style={{ float: "left" }}>Latest Articles</h5>
+                <h5 style={{ float: "left" }}>Latest Posts</h5>
                 <button
                   type="button"
                   onClick={() => navigate("/posts")}
@@ -351,7 +351,7 @@ function Home() {
                 <>
                   {" "}
                   <div className="section scrollList">
-                    {articles.map((item, index) => (
+                    {posts.map((item, index) => (
                       <div
                         onClick={() => navigate(`/post-view/${item._id}`)}
                         rel="noreferrer"
@@ -371,7 +371,7 @@ function Home() {
                           onClick={() => navigate(`/post-view/${item._id}`)}
                           className="btn"
                         >
-                          Read This Article
+                          Read This post
                         </button>
                       </div>
                     ))}

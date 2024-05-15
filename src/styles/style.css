@@ -114,7 +114,7 @@ label {
 }
 
 @media only screen and (min-width: 601px) {
-  .article .scrollList {
+  .post .scrollList {
     width: 100%;
     height: auto;
     display: block;
@@ -123,7 +123,7 @@ label {
     white-space: nowrap;
   }
 
-  .article .panel {
+  .post .panel {
     width: 32%;
     height: auto;
     display: inline-block;
@@ -133,7 +133,7 @@ label {
     margin: 1rem 0.5rem;
   }
 
-  .article .panel img {
+  .post .panel img {
     width: 100%;
     height: 180px;
     display: block;
@@ -143,8 +143,8 @@ label {
     border-bottom: 1px solid #111;
   }
 
-  .article .panel h3,
-  .article .panel p {
+  .post .panel h3,
+  .post .panel p {
     width: 90%;
     height: auto;
     display: block;
@@ -154,12 +154,12 @@ label {
     text-overflow: ellipsis;
   }
 
-  .article .panel h3,
-  .article .panel h1 {
+  .post .panel h3,
+  .post .panel h1 {
     margin-top: 1rem;
   }
 
-  .article .panel .btn {
+  .post .panel .btn {
     width: 95%;
     height: auto;
     display: block;
@@ -260,7 +260,7 @@ label {
   }
 
   .container {
-    width: 75%;
+    width: 70%;
     height: auto;
     display: block;
     overflow: hidden;
@@ -729,7 +729,7 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
-  .article .panel {
+  .post .panel {
     width: 100%;
     height: auto;
     display: block;
@@ -741,7 +741,7 @@ label {
     margin-bottom: 1rem;
   }
 
-  .article .panel img {
+  .post .panel img {
     width: 100%;
     height: 150px;
     display: block;
@@ -751,8 +751,8 @@ label {
     border-bottom: 1px solid #111;
   }
 
-  .article .panel h3,
-  .article .panel p {
+  .post .panel h3,
+  .post .panel p {
     width: 90%;
     height: auto;
     display: block;
@@ -762,11 +762,11 @@ label {
     text-overflow: ellipsis;
   }
 
-  .article .panel h3 {
+  .post .panel h3 {
     margin-top: 1rem;
   }
 
-  .article .panel .btn {
+  .post .panel .btn {
     width: 95%;
     height: auto;
     display: block;
@@ -1108,7 +1108,7 @@ label {
     margin: 10px auto;
     background: #fff;
     color: #111;
-    border: 1px solid #111;
+    border: 1.5px solid #111;
     border-radius: 30px;
   }
 
