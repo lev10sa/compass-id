@@ -20,7 +20,8 @@ function Home() {
       let url = "";
       lang === "en"
         ? (url = `https://seg-server.vercel.app/api/posts/en`)
-        : lang === "id"
+        : (url = `https://seg-server.vercel.app/api/posts/id`);
+      lang === "id"
         ? (url = `https://seg-server.vercel.app/api/posts/id`)
         : (url = `https://seg-server.vercel.app/api/posts/en`);
       try {
