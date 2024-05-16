@@ -54,6 +54,12 @@ const PostList = () => {
     getposts();
   }, [search, lang]); // dependency array with only `getposts`
 
+  const langSet = (a, b) => {
+    setLang(a);
+    document.getElementById(a).classList.add("active");
+    document.getElementById(b).classList.remove("active");
+  };
+
   function formatTime(dateString) {
     // Create a new Date object from the provided dateString
     const date = new Date(dateString);
@@ -128,11 +134,16 @@ const PostList = () => {
           </div>
         </div>
         <div className="section lang">
-          <span>Language:</span>
-          <button type="button" onClick={() => setLang("en")}>
+          <span>Select Language:</span>
+          <button
+            type="button"
+            onClick={() => langSet("en", "id")}
+            id="en"
+            className="active"
+          >
             English
           </button>
-          <button type="button" onClick={() => setLang("id")}>
+          <button type="button" onClick={() => langSet("id", "en")} id="id">
             Indonesian
           </button>
         </div>

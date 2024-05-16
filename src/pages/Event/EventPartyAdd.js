@@ -434,7 +434,10 @@ function EventPartyAdd() {
                   />
                 </div>
                 <div className="field">
-                  <label className="label">Phone | Telepon</label>
+                  <label className="label">
+                    {" "}
+                    WhatsApp / Phone | WhatsApp / Telepon
+                  </label>
                   <input
                     type="text"
                     autoComplete="on"
