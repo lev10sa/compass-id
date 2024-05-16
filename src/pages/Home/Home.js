@@ -30,7 +30,7 @@ function Home() {
         setpost(datas.data);
         setIsLoading(false);
       } catch (error) {
-        console.log(error.message);
+        window.alert(error.message);
       }
     };
 

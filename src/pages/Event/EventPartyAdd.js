@@ -122,7 +122,7 @@ function EventPartyAdd() {
 
         navigate(`/events`);
       } catch (error) {
-        console.log(error.message); // Display error messages
+        window.alert(error.message); // Display error messages
       }
     } else {
       alert("Please fill the blanks.. | Silakan isi bagian yang kosong..");
@@ -155,7 +155,7 @@ function EventPartyAdd() {
         setIsLoading(false);
         setEvent(datas.data);
       } catch (error) {
-        console.log(error.message); // display error message
+        window.alert(error.message); // display error message
       }
     };
 
