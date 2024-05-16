@@ -319,89 +319,80 @@ function Home() {
             </>
           )}
         </div>
-        {post.length !== 0 ? (
-          <>
-            <div className="section post">
-              <div className="section headline">
-                <h5 style={{ float: "left" }}>Latest Posts</h5>
-                <button
-                  type="button"
-                  onClick={() => navigate("/posts")}
-                  style={{
-                    borderRadius: "10px",
-                    background: "transparent",
-                    color: "#111",
-                    border: "1px hidden",
-                    paddingLeft: "5px",
-                    paddingRight: "5px",
-                    float: "right",
-                  }}
-                  className="btn"
-                >
-                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-                </button>
+        <div className="section post">
+          <div className="section headline">
+            <h5 style={{ float: "left" }}>Latest Posts</h5>
+            <button
+              type="button"
+              onClick={() => navigate("/posts")}
+              style={{
+                borderRadius: "10px",
+                background: "transparent",
+                color: "#111",
+                border: "1px hidden",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                float: "right",
+              }}
+              className="btn"
+            >
+              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+            </button>
+          </div>
+          <div className="section">
+            <span>
+              <strong>Language:</strong>
+            </span>
+            <button type="button" onClick={() => setLang("en")}>
+              English
+            </button>
+            <button type="button" onClick={() => setLang("id")}>
+              Indonesian
+            </button>
+          </div>
+          {isLoading === true ? (
+            <>
+              <div>
+                <p>Loading data, please wait...</p>
               </div>
-              <div className="section">
-                <span>
-                  <strong>Language:</strong>
-                </span>
-                <button type="button" onClick={() => setLang("en")}>
-                  English
-                </button>
-                <button type="button" onClick={() => setLang("id")}>
-                  Indonesian
-                </button>
+            </>
+          ) : isEmpty === true ? (
+            <>
+              <div>
+                <p>No data...</p>
               </div>
-              {isLoading === true ? (
-                <>
-                  <div className="section">
-                    <p>Loading data, please wait...</p>
+            </>
+          ) : (
+            <>
+              <div className="scrollList">
+                {posts.map((item, index) => (
+                  <div
+                    onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
+                    rel="noreferrer"
+                    key={index}
+                    className="panel"
+                  >
+                    <img src={item.banner} alt={item.banner} />
+                    <h3>{item.title}</h3>
+                    <p>
+                      <strong>Date:</strong> {formatTime(item.date)}
+                    </p>
+                    <p>
+                      <strong>Category:</strong> {item.category}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
+                      className="btn"
+                    >
+                      Read This post
+                    </button>
                   </div>
-                </>
-              ) : isEmpty === true ? (
-                <>
-                  <div className="section">
-                    <p>No data...</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  {" "}
-                  <div className="section scrollList">
-                    {posts.map((item, index) => (
-                      <div
-                        onClick={() => navigate(`/post-view/${item._id}`)}
-                        rel="noreferrer"
-                        key={index}
-                        className="panel"
-                      >
-                        <img src={item.banner} alt={item.banner} />
-                        <h3>{item.title}</h3>
-                        <p>
-                          <strong>Date:</strong> {formatTime(item.date)}
-                        </p>
-                        <p>
-                          <strong>Category:</strong> {item.category}
-                        </p>
-                        <button
-                          type="button"
-                          onClick={() =>
-                            navigate(`/post-view/${lang}/${item._id}`)
-                          }
-                          className="btn"
-                        >
-                          Read This post
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
+                ))}
+              </div>
+            </>
+          )}
+        </div>
         <div className="partner">
           <div className="section headline">
             <h5>Our Services</h5>
