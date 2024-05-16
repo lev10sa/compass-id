@@ -127,9 +127,9 @@ const EventList = () => {
           </div>
         </div>
         {isLoading ? (
-          <div className="section">Loading Event Database...</div> // display status when loading
+          <div className="section loading">Loading Event Database...</div> // display status when loading
         ) : isEmpty ? (
-          <div className="section">No data...</div> // display status when loading
+          <div className="section empty">No data...</div> // display status when loading
         ) : (
           // display table after loading
           <div className="section">

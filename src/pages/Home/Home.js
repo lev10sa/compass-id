@@ -335,13 +335,13 @@ function Home() {
           </div>
           {isLoading === true ? (
             <>
-              <div>
+              <div className="section loading">
                 <p>Loading data, please wait...</p>
               </div>
             </>
           ) : isEmpty === true ? (
             <>
-              <div>
+              <div className="section empty">
                 <p>No data...</p>
               </div>
             </>
