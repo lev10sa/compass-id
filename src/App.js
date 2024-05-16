@@ -9,7 +9,7 @@ import {
   PostEnView,
   PostIdView,
 } from "./pages";
-import { Navigation } from "./components";
+import { Navigation, Footer } from "./components";
 
 const App = () => {
   return (
@@ -26,6 +26,7 @@ const App = () => {
             <Route path="/post-view/id/:id" element={<PostIdView />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
     </>
   );

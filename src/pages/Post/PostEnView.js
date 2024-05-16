@@ -10,6 +10,15 @@ function PostEnView() {
   const { id } = useParams();
 
   const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
+  const [lang, setLang] = useState("en");
+  const postp = posts.slice(0, 3);
+
+  const langSet = (a, b) => {
+    setLang(a);
+    document.getElementById(a).classList.add("active");
+    document.getElementById(b).classList.remove("active");
+  };
 
   // Setting up useNavigate
   const navigate = useNavigate();
@@ -19,10 +28,19 @@ function PostEnView() {
     // create party loader callback function
     const getPost = async () => {
       try {
+        let uri = "";
+        lang === "en"
+          ? (uri = `https://seg-server.vercel.app/api/posts/en`)
+          : (uri = `https://seg-server.vercel.app/api/posts/id`);
+        lang === "id"
+          ? (uri = `https://seg-server.vercel.app/api/posts/id`)
+          : (uri = `https://seg-server.vercel.app/api/posts/en`);
         const url = `https://seg-server.vercel.app/api/posts/en/id/${id}`; // modify URL based on backend
         const datas = await axios.get(url); // get datas from URL with axios
+        const datap = await axios.get(uri); // get datas from URL with axios
         datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
         setPost(datas.data);
+        setPosts(datap.data);
         setIsLoading(false);
       } catch (error) {
         console.log(error.message); // display error message
@@ -30,7 +48,7 @@ function PostEnView() {
     };
 
     getPost(); // dependency array with only `search`
-  }, [id]); // dependency array with only `getParty`
+  }, [id, lang]); // dependency array with only `getParty`
 
   const selMain = (value) => {
     document.getElementById("main").src = document.getElementById(
@@ -142,6 +160,88 @@ function PostEnView() {
             </div>
           </div>
         )}
+        <div className="section"></div>
+        <div className="section"></div>
+        <div className="section post">
+          <div className="section headline">
+            <h5 style={{ float: "left" }}>Latest Posts</h5>
+            <button
+              type="button"
+              onClick={() => navigate("/posts")}
+              style={{
+                borderRadius: "10px",
+                background: "transparent",
+                color: "#111",
+                border: "1px hidden",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                float: "right",
+              }}
+              className="btn"
+            >
+              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+            </button>
+          </div>
+          <div className="section lang">
+            <span>Select Language:</span>
+            <button
+              type="button"
+              onClick={() => langSet("en", "id")}
+              id="en"
+              className="active"
+            >
+              English
+            </button>
+            <button type="button" onClick={() => langSet("id", "en")} id="id">
+              Indonesian
+            </button>
+          </div>
+          {isLoading === true ? (
+            <>
+              <div>
+                <p>Loading data, please wait...</p>
+              </div>
+            </>
+          ) : isEmpty === true ? (
+            <>
+              <div>
+                <p>No data...</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="scrollList">
+                {postp.map((item, index) => (
+                  <div
+                    onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
+                    rel="noreferrer"
+                    key={index}
+                    className="panel section"
+                  >
+                    <img src={item.banner} alt={item.banner} />
+                    <h3>{item.title.toUpperCase()}</h3>
+                    <p>
+                      <strong>Date:</strong> {formatTime(item.date)}
+                    </p>
+                    <p>
+                      <strong>Category:</strong> {item.category}
+                    </p>
+                    <p>
+                      <strong>Tags:</strong> {item.tags}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
+                      className="btn"
+                    >
+                      Read This post
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
       </div>
       <div className="section"></div>
       <div className="section"></div>
