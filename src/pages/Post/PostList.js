@@ -156,7 +156,10 @@ const PostList = () => {
 
           <>
             {posts.map((post, index) => (
-              <div className="event">
+              <div
+                onClick={() => navigate(`/post-view/${lang}/${post._id}`)}
+                className="event"
+              >
                 {post.banner !== "" ? (
                   <>
                     <img src={post.banner} alt={post.banner} />
