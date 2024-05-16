@@ -164,12 +164,12 @@ function Home() {
     },
     {
       src: "fas fa-book",
-      url: "/books",
+      url: "/",
       label: "Book",
     },
     {
       src: "fas fa-question-circle",
-      url: "/faqs",
+      url: "/",
       label: "FAQ",
     },
   ];
