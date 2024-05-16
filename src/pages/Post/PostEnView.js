@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-function PostView() {
+function PostEnView() {
   // Fetches latest Event count for serie generation (Optional)
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
@@ -19,7 +19,7 @@ function PostView() {
     // create party loader callback function
     const getPost = async () => {
       try {
-        const url = `https://seg-server.vercel.app/api/posts/id/${id}`; // modify URL based on backend
+        const url = `https://seg-server.vercel.app/api/posts/en/id/${id}`; // modify URL based on backend
         const datas = await axios.get(url); // get datas from URL with axios
         datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
         setPost(datas.data);
@@ -134,6 +134,9 @@ function PostView() {
               <p>
                 <strong>Category:</strong> {post.category}
               </p>
+              <p>
+                <strong>Tags:</strong> {post.tags}
+              </p>
             </div>
           </div>
         )}
@@ -144,4 +147,4 @@ function PostView() {
   );
 }
 
-export default PostView;
+export default PostEnView;

@@ -7,6 +7,7 @@ function Home() {
   const [post, setpost] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [lang, setLang] = useState("en");
   const posts = post.slice(0, 4);
 
   const navigate = useNavigate();
@@ -16,8 +17,13 @@ function Home() {
     alr();
 
     const getpost = async () => {
+      let url = "";
+      lang === "en"
+        ? (url = `https://seg-server.vercel.app/api/posts/en`)
+        : lang === "id"
+        ? (url = `https://seg-server.vercel.app/api/posts/id`)
+        : (url = `https://seg-server.vercel.app/api/posts/en`);
       try {
-        const url = "https://seg-server.vercel.app/api/posts";
         const datas = await axios.get(url);
         datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
         setpost(datas.data);
@@ -28,7 +34,7 @@ function Home() {
     };
 
     getpost();
-  }, []);
+  }, [lang]);
 
   const alr = () => {
     return alert(
@@ -333,6 +339,17 @@ function Home() {
                   className="btn"
                 >
                   <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
+              </div>
+              <div className="section">
+                <span>
+                  <strong>Language:</strong>
+                </span>
+                <button type="button" onClick={() => setLang("en")}>
+                  English
+                </button>
+                <button type="button" onClick={() => setLang("id")}>
+                  Indonesian
                 </button>
               </div>
               {isLoading === true ? (

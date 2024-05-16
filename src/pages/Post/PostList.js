@@ -10,6 +10,7 @@ const PostList = () => {
   const [search, setSearch] = useState(""); // state for search
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
+  const [lang, setLang] = useState("en");
 
   // setting up useNavigate
   const navigate = useNavigate();
@@ -19,13 +20,25 @@ const PostList = () => {
     const getposts = async () => {
       try {
         if (!search) {
-          const url = `https://seg-server.vercel.app/api/posts`; // modify URL based on backend
+          let url = "";
+          lang === "en"
+            ? (url = `https://seg-server.vercel.app/api/posts/en`)
+            : lang === "id"
+            ? (url = `https://seg-server.vercel.app/api/posts/id`)
+            : (url = `https://seg-server.vercel.app/api/posts/en`);
+          // modify URL based on backend
           const datas = await axios.get(url); // get datas from URL with axios
           datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
           setPosts(datas.data);
           setIsLoading(false);
         } else {
-          const url = `https://seg-server.vercel.app/api/posts/key/${search}`; // modify URL based on backend
+          let url = "";
+          lang === "en" && search !== ""
+            ? (url = `https://seg-server.vercel.app/api/posts/en/key/${search}`)
+            : lang === "id" && search !== ""
+            ? (url = `https://seg-server.vercel.app/api/posts/id/key/${search}`)
+            : (url = `https://seg-server.vercel.app/api/posts/en/key/${search}`);
+          // modify URL based on backend
           const datas = await axios.get(url); // get datas from URL with axios
           datas.data.length === 0 ? setIsEmpty(true) : setIsEmpty(false);
           setPosts(datas.data);
@@ -37,7 +50,7 @@ const PostList = () => {
     };
 
     getposts();
-  }, [search]); // dependency array with only `getposts`
+  }, [search, lang]); // dependency array with only `getposts`
 
   function formatTime(dateString) {
     // Create a new Date object from the provided dateString
@@ -111,6 +124,17 @@ const PostList = () => {
               placeholder="Search posts..."
             />
           </div>
+        </div>
+        <div className="section">
+          <span>
+            <strong>Language:</strong>
+          </span>
+          <button type="button" onClick={() => setLang("en")}>
+            English
+          </button>
+          <button type="button" onClick={() => setLang("id")}>
+            Indonesian
+          </button>
         </div>
         {isLoading ? (
           <div className="section">Loading Post Database...</div> // display status when loading
