@@ -112,136 +112,146 @@ function PostEnView() {
         ) : isEmpty ? (
           <div className="section empty">No data...</div> // display status when loading
         ) : (
-          <div className="section">
-            <div className="section headline">
-              <h4>Post View</h4>
-              <button onClick={() => navigate(`/posts`)} className="btn">
-                See Posts
-              </button>
-            </div>
-            <div className="posts section" key={post._id}>
-              <div className="film">
-                <img src={post.banner} alt={post.banner} id="main" />
-                <div className="panel">
-                  <img
-                    src={post.banner}
-                    alt={post.banner}
-                    id="main-0"
-                    onClick={() => selMain(0)}
-                    className="active"
-                  />
-                  {post.fileList.map((file, index) => (
+          <>
+            <div className="section">
+              <div className="section headline">
+                <h4>Post View</h4>
+                <button onClick={() => navigate(`/posts`)} className="btn">
+                  See Posts
+                </button>
+              </div>
+              <div className="posts section" key={post._id}>
+                <div className="film">
+                  <img src={post.banner} alt={post.banner} id="main" />
+                  <div className="panel">
                     <img
-                      src={file.url}
-                      alt={file.url}
-                      key={index + 1}
-                      id={`main-${index + 1}`}
-                      onClick={() => selMain(index + 1)}
+                      src={post.banner}
+                      alt={post.banner}
+                      id="main-0"
+                      onClick={() => selMain(0)}
+                      className="active"
                     />
-                  ))}
-                </div>
-              </div>
-              <div className="section"></div>
-              <div className="section sub">
-                <h2>{post.title.toUpperCase()}</h2>
-                <p>{formatTime(post.date)}</p>
-              </div>
-              <pre
-                className="section"
-                dangerouslySetInnerHTML={{ __html: post.body }}
-              />
-              <div className="section"></div>
-              <p>
-                <strong>Category:</strong> {post.category}
-              </p>
-              <p>
-                <strong>Tags:</strong> {post.tags}
-              </p>
-            </div>
-          </div>
-        )}
-        <div className="section"></div>
-        <div className="section"></div>
-        <div className="section post">
-          <div className="section headline">
-            <h5 style={{ float: "left" }}>Latest Posts</h5>
-            <button
-              type="button"
-              onClick={() => navigate("/posts")}
-              style={{
-                borderRadius: "10px",
-                background: "transparent",
-                color: "#111",
-                border: "1px hidden",
-                paddingLeft: "5px",
-                paddingRight: "5px",
-                float: "right",
-              }}
-              className="btn"
-            >
-              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-            </button>
-          </div>
-          <div className="section lang">
-            <span>Select Language:</span>
-            <button
-              type="button"
-              onClick={() => langSet("en", "id")}
-              id="en"
-              className="active"
-            >
-              English
-            </button>
-            <button type="button" onClick={() => langSet("id", "en")} id="id">
-              Indonesian
-            </button>
-          </div>
-          {isLoading === true ? (
-            <>
-              <div className="section loading">
-                <p>Loading data, please wait...</p>
-              </div>
-            </>
-          ) : isEmpty === true ? (
-            <>
-              <div className="section empty">
-                <p>No data...</p>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="scrollList">
-                {postp.map((item, index) => (
-                  <div
-                    onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
-                    rel="noreferrer"
-                    key={index}
-                    className="panel section"
-                  >
-                    <img src={item.banner} alt={item.banner} />
-                    <h3>{item.title.toUpperCase()}</h3>
-                    <p>
-                      <strong>Date:</strong> {formatTime(item.date)}
-                    </p>
-                    <p>
-                      <strong>Category:</strong> {item.category}
-                    </p>
-                    <p>
-                      <strong>Tags:</strong> {item.tags}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
-                      className="btn"
-                    >
-                      Read This post
-                    </button>
+                    {post.fileList.map((file, index) => (
+                      <img
+                        src={file.url}
+                        alt={file.url}
+                        key={index + 1}
+                        id={`main-${index + 1}`}
+                        onClick={() => selMain(index + 1)}
+                      />
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div className="section"></div>
+                <div className="section sub">
+                  <h2>{post.title.toUpperCase()}</h2>
+                  <p>{formatTime(post.date)}</p>
+                </div>
+                <pre
+                  className="section"
+                  dangerouslySetInnerHTML={{ __html: post.body }}
+                />
+                <div className="section"></div>
+                <p>
+                  <strong>Category:</strong> {post.category}
+                </p>
+                <p>
+                  <strong>Tags:</strong> {post.tags}
+                </p>
               </div>
-            </>
-          )}
-        </div>
+            </div>
+            <div className="section"></div>
+            <div className="section"></div>
+            <div className="section post">
+              <div className="section headline">
+                <h5 style={{ float: "left" }}>Latest Posts</h5>
+                <button
+                  type="button"
+                  onClick={() => navigate("/posts")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                  }}
+                  className="btn"
+                >
+                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
+              </div>
+              <div className="section lang">
+                <span>Select Language:</span>
+                <button
+                  type="button"
+                  onClick={() => langSet("en", "id")}
+                  id="en"
+                  className="active"
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  onClick={() => langSet("id", "en")}
+                  id="id"
+                >
+                  Indonesian
+                </button>
+              </div>
+              {isLoading === true ? (
+                <>
+                  <div className="section loading">
+                    <p>Loading data, please wait...</p>
+                  </div>
+                </>
+              ) : isEmpty === true ? (
+                <>
+                  <div className="section empty">
+                    <p>No data...</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="scrollList">
+                    {postp.map((item, index) => (
+                      <div
+                        onClick={() =>
+                          navigate(`/post-view/${lang}/${item._id}`)
+                        }
+                        rel="noreferrer"
+                        key={index}
+                        className="panel section"
+                      >
+                        <img src={item.banner} alt={item.banner} />
+                        <h3>{item.title.toUpperCase()}</h3>
+                        <p>
+                          <strong>Date:</strong> {formatTime(item.date)}
+                        </p>
+                        <p>
+                          <strong>Category:</strong> {item.category}
+                        </p>
+                        <p>
+                          <strong>Tags:</strong> {item.tags}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            navigate(`/post-view/${lang}/${item._id}`)
+                          }
+                          className="btn"
+                        >
+                          Read This post
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
       </div>
       <div className="section"></div>
       <div className="section"></div>
