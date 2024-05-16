@@ -133,7 +133,6 @@ function PostEnView() {
                 dangerouslySetInnerHTML={{ __html: post.body }}
               />
               <div className="section"></div>
-              <div className="section"></div>
               <p>
                 <strong>Category:</strong> {post.category}
               </p>
