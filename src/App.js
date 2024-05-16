@@ -1,7 +1,14 @@
 // import router kit
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, EventList, EventPartyAdd, PostList, PostView } from "./pages";
+import {
+  Home,
+  EventList,
+  EventPartyAdd,
+  PostList,
+  PostEnView,
+  PostIdView,
+} from "./pages";
 import { Navigation } from "./components";
 
 const App = () => {
@@ -15,7 +22,8 @@ const App = () => {
             <Route path="/events" element={<EventList />} />
             <Route path="/event-join/:id" element={<EventPartyAdd />} />
             <Route path="/posts" element={<PostList />} />
-            <Route path="/post-view/:id" element={<PostView />} />
+            <Route path="/post-view/en/:id" element={<PostEnView />} />
+            <Route path="/post-view/id/:id" element={<PostIdView />} />
           </Routes>
         </div>
       </Router>

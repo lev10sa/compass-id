@@ -385,7 +385,9 @@ function Home() {
                         </p>
                         <button
                           type="button"
-                          onClick={() => navigate(`/post-view/${item._id}`)}
+                          onClick={() =>
+                            navigate(`/post-view/${lang}/${item._id}`)
+                          }
                           className="btn"
                         >
                           Read This post

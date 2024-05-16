@@ -184,7 +184,7 @@ const PostList = () => {
                     )}
 
                     <button
-                      onClick={() => navigate(`/post-view/${post._id}`)}
+                      onClick={() => navigate(`/post-view/${lang}/${post._id}`)}
                       className="btn"
                     >
                       Read This post
