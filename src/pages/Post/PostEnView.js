@@ -125,11 +125,11 @@ function PostEnView() {
               </div>
               <div className="section"></div>
               <div className="section sub">
-                <h1>{post.title}</h1>
+                <h2>{post.title.toUpperCase()}</h2>
                 <p>{formatTime(post.date)}</p>
               </div>
-              <div className="section"></div>
               <pre dangerouslySetInnerHTML={{ __html: post.body }} />
+              <div className="section"></div>
               <div className="section"></div>
               <p>
                 <strong>Category:</strong> {post.category}

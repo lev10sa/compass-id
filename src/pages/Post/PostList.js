@@ -125,7 +125,7 @@ const PostList = () => {
             />
           </div>
         </div>
-        <div className="section">
+        <div className="section lang">
           <span>
             <strong>Language:</strong>
           </span>

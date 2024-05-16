@@ -339,7 +339,7 @@ function Home() {
               <span style={{ marginRight: "10px" }}>See More</span>&#10095;
             </button>
           </div>
-          <div className="section">
+          <div className="section lang">
             <span>
               <strong>Language:</strong>
             </span>
