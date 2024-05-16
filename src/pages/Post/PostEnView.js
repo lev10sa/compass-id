@@ -110,7 +110,7 @@ function PostEnView() {
         {isLoading ? (
           <div className="section loading">Loading post database...</div> // display status when loading
         ) : isEmpty ? (
-          <div className="section loading">No data...</div> // display status when loading
+          <div className="section empty">No data...</div> // display status when loading
         ) : (
           <div className="section">
             <div className="section headline">
@@ -198,13 +198,13 @@ function PostEnView() {
           </div>
           {isLoading === true ? (
             <>
-              <div>
+              <div className="section loading">
                 <p>Loading data, please wait...</p>
               </div>
             </>
           ) : isEmpty === true ? (
             <>
-              <div>
+              <div className="section empty">
                 <p>No data...</p>
               </div>
             </>

@@ -355,9 +355,9 @@ function EventPartyAdd() {
         )}
 
         {isLoading ? (
-          <div className="section"></div> // display status when loading
+          <div className="section loading">Loading data, please wait...</div> // display status when loading
         ) : isEmpty ? (
-          <div className="section"></div> // display status when loading
+          <div className="section empty">No data...</div> // display status when loading
         ) : (
           <div className="right">
             <div className="section headline">

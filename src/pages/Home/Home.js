@@ -283,7 +283,7 @@ function Home() {
           </div>
           {isLoading === true ? (
             <>
-              <div className="section">
+              <div className="section loading">
                 <p>Loading data, please wait...</p>
               </div>
             </>
