@@ -299,86 +299,101 @@ function Home() {
             </>
           )}
         </div>
-        <div className="section post">
-          <div className="section headline">
-            <h5 style={{ float: "left" }}>Latest Posts</h5>
-            <button
-              type="button"
-              onClick={() => navigate("/posts")}
-              style={{
-                borderRadius: "10px",
-                background: "transparent",
-                color: "#111",
-                border: "1px hidden",
-                paddingLeft: "5px",
-                paddingRight: "5px",
-                float: "right",
-              }}
-              className="btn"
-            >
-              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-            </button>
-          </div>
-          <div className="section lang">
-            <span>Select Language:</span>
-            <button
-              type="button"
-              onClick={() => langSet("en", "id")}
-              id="en"
-              className="active"
-            >
-              English
-            </button>
-            <button type="button" onClick={() => langSet("id", "en")} id="id">
-              Indonesian
-            </button>
-          </div>
-          {isLoading === true ? (
-            <>
-              <div className="section loading">
-                <p>Loading data, please wait...</p>
+        {isLoading ? (
+          <></>
+        ) : (
+          <>
+            <div className="section post">
+              <div className="section headline">
+                <h5 style={{ float: "left" }}>Latest Posts</h5>
+                <button
+                  type="button"
+                  onClick={() => navigate("/posts")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                  }}
+                  className="btn"
+                >
+                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
               </div>
-            </>
-          ) : isEmpty === true ? (
-            <>
-              <div className="section empty">
-                <p>No data...</p>
+              <div className="section lang">
+                <span>Select Language:</span>
+                <button
+                  type="button"
+                  onClick={() => langSet("en", "id")}
+                  id="en"
+                  className="active"
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  onClick={() => langSet("id", "en")}
+                  id="id"
+                >
+                  Indonesian
+                </button>
               </div>
-            </>
-          ) : (
-            <>
-              <div className="scrollList">
-                {posts.map((item, index) => (
-                  <div
-                    onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
-                    rel="noreferrer"
-                    key={index}
-                    className="panel"
-                  >
-                    <img src={item.banner} alt={item.banner} />
-                    <h3>{item.title.toUpperCase()}</h3>
-                    <p>
-                      <strong>Date:</strong> {formatTime(item.date)}
-                    </p>
-                    <p>
-                      <strong>Category:</strong> {item.category}
-                    </p>
-                    <p>
-                      <strong>Tags:</strong> {item.tags}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={() => navigate(`/post-view/${lang}/${item._id}`)}
-                      className="btn"
-                    >
-                      Read This post
-                    </button>
+              {isLoading === true ? (
+                <>
+                  <div className="section loading">
+                    <p>Loading data, please wait...</p>
                   </div>
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+                </>
+              ) : isEmpty === true ? (
+                <>
+                  <div className="section empty">
+                    <p>No data...</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="scrollList">
+                    {posts.map((item, index) => (
+                      <div
+                        onClick={() =>
+                          navigate(`/post-view/${lang}/${item._id}`)
+                        }
+                        rel="noreferrer"
+                        key={index}
+                        className="panel"
+                      >
+                        <img src={item.banner} alt={item.banner} />
+                        <h3>{item.title.toUpperCase()}</h3>
+                        <p>
+                          <strong>Date:</strong> {formatTime(item.date)}
+                        </p>
+                        <p>
+                          <strong>Category:</strong> {item.category}
+                        </p>
+                        <p>
+                          <strong>Tags:</strong> {item.tags}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() =>
+                            navigate(`/post-view/${lang}/${item._id}`)
+                          }
+                          className="btn"
+                        >
+                          Read This post
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
+
         <div className="partner">
           <div className="section headline">
             <h5>Our Services</h5>
