@@ -154,9 +154,9 @@ const PostList = () => {
         ) : (
           // display table after loading
 
-          <div className="section">
+          <>
             {posts.map((post, index) => (
-              <div className="event" key={index}>
+              <div className="event">
                 {post.banner !== "" ? (
                   <>
                     <img src={post.banner} alt={post.banner} />
@@ -213,7 +213,7 @@ const PostList = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </>
         )}
       </div>
       <div className="section"></div>

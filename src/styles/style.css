@@ -1234,7 +1234,7 @@ label {
 
   .event .btn {
     display: block;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     padding: 10px 10px;
     border: 1px hidden;
@@ -1242,20 +1242,12 @@ label {
     background: #111;
     color: #fff;
     text-decoration: none;
-    width: 95%;
+    width: 100%;
     float: left;
   }
 
   .event .btn:hover {
     background: #004;
-  }
-
-  .event .btn:nth-child(even) {
-    margin-right: 5px;
-  }
-
-  .event .btn:nth-child(odd) {
-    margin-left: 5px;
   }
 
   .party .left {
