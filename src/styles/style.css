@@ -1209,6 +1209,7 @@ label {
     object-fit: cover;
     object-position: center;
     display: block;
+    border-bottom: 1px solid #111;
   }
 
   .event .caption {
