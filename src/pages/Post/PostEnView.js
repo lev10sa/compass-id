@@ -128,7 +128,10 @@ function PostEnView() {
                 <h2>{post.title.toUpperCase()}</h2>
                 <p>{formatTime(post.date)}</p>
               </div>
-              <pre dangerouslySetInnerHTML={{ __html: post.body }} />
+              <pre
+                className="section"
+                dangerouslySetInnerHTML={{ __html: post.body }}
+              />
               <div className="section"></div>
               <div className="section"></div>
               <p>
