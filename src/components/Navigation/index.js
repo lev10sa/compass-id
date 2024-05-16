@@ -91,13 +91,13 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <i className="fas fa-calendar-alt"></i> <span>Event</span>
           </button>
-          <button onClick={() => navigate(`/`)}>
+          <button onClick={() => navigate(`/posts`)}>
             <i className="fas fa-file-alt"></i> <span>post</span>
           </button>
-          <button onClick={() => navigate(`/`)}>
+          <button onClick={() => navigate(`/books`)}>
             <i className="fas fa-book"></i> <span>Book</span>
           </button>
-          <button onClick={() => navigate(`/`)}>
+          <button onClick={() => navigate(`/faqs`)}>
             <i className="fas fa-question-circle"></i> <span>FAQ</span>
           </button>
         </div>
@@ -128,13 +128,13 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <span>Event</span> <i className="fas fa-calendar-alt"></i>
           </button>
-          <button onClick={() => navigate(`/events`)}>
+          <button onClick={() => navigate(`/posts`)}>
             <span>post</span> <i className="fas fa-file-alt"></i>
           </button>
-          <button onClick={() => navigate(`/events`)}>
+          <button onClick={() => navigate(`/books`)}>
             <span>Book</span> <i className="fas fa-book"></i>
           </button>
-          <button onClick={() => navigate(`/events`)}>
+          <button onClick={() => navigate(`/faqs`)}>
             <span>FAQ</span> <i className="fas fa-question-circle"></i>
           </button>
         </div>

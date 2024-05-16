@@ -340,9 +340,7 @@ function Home() {
             </button>
           </div>
           <div className="section lang">
-            <span>
-              <strong>Language:</strong>
-            </span>
+            <span>Language:</span>
             <button type="button" onClick={() => setLang("en")}>
               English
             </button>
@@ -373,12 +371,15 @@ function Home() {
                     className="panel"
                   >
                     <img src={item.banner} alt={item.banner} />
-                    <h3>{item.title}</h3>
+                    <h3>{item.title.toUpperCase()}</h3>
                     <p>
                       <strong>Date:</strong> {formatTime(item.date)}
                     </p>
                     <p>
                       <strong>Category:</strong> {item.category}
+                    </p>
+                    <p>
+                      <strong>Tags:</strong> {item.tags}
                     </p>
                     <button
                       type="button"

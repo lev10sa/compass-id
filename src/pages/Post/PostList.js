@@ -23,7 +23,8 @@ const PostList = () => {
           let url = "";
           lang === "en"
             ? (url = `https://seg-server.vercel.app/api/posts/en`)
-            : lang === "id"
+            : (url = `https://seg-server.vercel.app/api/posts/id`);
+          lang === "id"
             ? (url = `https://seg-server.vercel.app/api/posts/id`)
             : (url = `https://seg-server.vercel.app/api/posts/en`);
           // modify URL based on backend
@@ -35,7 +36,8 @@ const PostList = () => {
           let url = "";
           lang === "en" && search !== ""
             ? (url = `https://seg-server.vercel.app/api/posts/en/key/${search}`)
-            : lang === "id" && search !== ""
+            : (url = `https://seg-server.vercel.app/api/posts/id/key/${search}`);
+          lang === "id" && search !== ""
             ? (url = `https://seg-server.vercel.app/api/posts/id/key/${search}`)
             : (url = `https://seg-server.vercel.app/api/posts/en/key/${search}`);
           // modify URL based on backend
@@ -126,9 +128,7 @@ const PostList = () => {
           </div>
         </div>
         <div className="section lang">
-          <span>
-            <strong>Language:</strong>
-          </span>
+          <span>Language:</span>
           <button type="button" onClick={() => setLang("en")}>
             English
           </button>
@@ -142,57 +142,66 @@ const PostList = () => {
           <div className="section">No data...</div> // display status when loading
         ) : (
           // display table after loading
+
           <div className="section">
-            <div className="section">
-              {posts.map((post, index) => (
-                <div className="event" key={index}>
-                  {post.banner !== "" ? (
+            {posts.map((post, index) => (
+              <div className="event" key={index}>
+                {post.banner !== "" ? (
+                  <>
+                    <img src={post.banner} alt={post.banner} />
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                <div className="section caption">
+                  {post.title !== "" ? (
                     <>
-                      <img src={post.banner} alt={post.banner} />
+                      <h3 title={post.title}>{post.title.toUpperCase()}</h3>
                     </>
                   ) : (
                     <></>
                   )}
 
-                  <div className="section caption">
-                    {post.title !== "" ? (
-                      <>
-                        <h3 title={post.title}>{post.title}</h3>
-                      </>
-                    ) : (
-                      <></>
-                    )}
+                  {post.category !== "" ? (
+                    <>
+                      <p title={post.category}>
+                        <strong>Category:</strong> {post.category}
+                      </p>
+                    </>
+                  ) : (
+                    <></>
+                  )}
 
-                    {post.category !== "" ? (
-                      <>
-                        <p title={post.category}>
-                          <strong>Category:</strong> {post.category}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
+                  {post.tags !== "" ? (
+                    <>
+                      <p title={post.tags}>
+                        <strong>Tags:</strong> {post.tags}
+                      </p>
+                    </>
+                  ) : (
+                    <></>
+                  )}
 
-                    {post.date !== "" ? (
-                      <>
-                        <p>
-                          <strong>Date:</strong> {formatTime(post.date)}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
+                  {post.date !== "" ? (
+                    <>
+                      <p>
+                        <strong>Date:</strong> {formatTime(post.date)}
+                      </p>
+                    </>
+                  ) : (
+                    <></>
+                  )}
 
-                    <button
-                      onClick={() => navigate(`/post-view/${lang}/${post._id}`)}
-                      className="btn"
-                    >
-                      Read This post
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => navigate(`/post-view/${lang}/${post._id}`)}
+                    className="btn"
+                  >
+                    Read This post
+                  </button>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
