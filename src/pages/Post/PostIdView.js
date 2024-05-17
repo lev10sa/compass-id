@@ -25,6 +25,18 @@ function PostIdView() {
 
   // setting up useEffect to do tasks in real-time
   useEffect(() => {
+    const one = () => {
+      if (lang === "en") {
+        document.getElementById("en").classList.add("active");
+        document.getElementById("id").classList.remove("active");
+      } else if (lang === "id") {
+        document.getElementById("en").classList.remove("active");
+        document.getElementById("id").classList.add("active");
+      }
+    };
+
+    one();
+
     // create party loader callback function
     const getPost = async () => {
       try {
