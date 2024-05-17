@@ -16,7 +16,6 @@ function PostEnView() {
 
   const langSet = (a, b) => {
     setLang(a);
-    setIsLoading(true);
     document.getElementById(a).classList.add("active");
     document.getElementById(b).classList.remove("active");
   };
@@ -53,6 +52,7 @@ function PostEnView() {
 
   const handleClick = (val) => {
     window.location.hash = "banner";
+    setIsLoading(true);
     navigate(`/post-view/${lang}/${val}`);
   };
 
