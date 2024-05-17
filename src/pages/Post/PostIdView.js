@@ -51,9 +51,9 @@ function PostIdView() {
   }, [id, lang, isLoading]); // dependency array with only `getParty`
 
   const handleClick = (val) => {
-    window.location.hash = "banner";
-    setIsLoading(true);
     navigate(`/post-view/${lang}/${val}`);
+    setIsLoading(true);
+    window.location.hash = "banner";
   };
 
   const selMain = (value) => {
