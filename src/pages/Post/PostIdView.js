@@ -25,18 +25,6 @@ function PostIdView() {
 
   // setting up useEffect to do tasks in real-time
   useEffect(() => {
-    const one = () => {
-      if (lang === "en") {
-        document.getElementById("en").classList.add("active");
-        document.getElementById("id").classList.remove("active");
-      } else if (lang === "id") {
-        document.getElementById("en").classList.remove("active");
-        document.getElementById("id").classList.add("active");
-      }
-    };
-
-    one();
-
     // create party loader callback function
     const getPost = async () => {
       try {
@@ -206,7 +194,7 @@ function PostIdView() {
                   type="button"
                   onClick={() => langSet("en", "id")}
                   id="en"
-                  className="active"
+                  className={`${lang === "en" ? "active" : ""}`}
                 >
                   English
                 </button>
@@ -214,6 +202,7 @@ function PostIdView() {
                   type="button"
                   onClick={() => langSet("id", "en")}
                   id="id"
+                  className={`${lang === "id" ? "active" : ""}`}
                 >
                   Indonesian
                 </button>
