@@ -16,6 +16,7 @@ function PostIdView() {
 
   const langSet = (a, b) => {
     setLang(a);
+    setIsLoading(true);
     document.getElementById(a).classList.add("active");
     document.getElementById(b).classList.remove("active");
   };
@@ -48,7 +49,7 @@ function PostIdView() {
     };
 
     getPost(); // dependency array with only `search`
-  }, [id, lang]); // dependency array with only `getParty`
+  }, [id, lang, isLoading]); // dependency array with only `getParty`
 
   const handleClick = (val) => {
     window.location.hash = "banner";
