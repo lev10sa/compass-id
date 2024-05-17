@@ -223,7 +223,7 @@ function EventPartyAdd() {
   return (
     <>
       <div className="party container">
-        {isLoading ? (
+        {isLoading === true ? (
           <div className="section loading">Loading Event Database...</div> // display status when loading
         ) : isEmpty ? (
           <div className="section empty">No data...</div> // display status when loading
@@ -354,7 +354,7 @@ function EventPartyAdd() {
           </>
         )}
 
-        {isLoading ? (
+        {isLoading === true ? (
           <></> // display status when loading
         ) : isEmpty ? (
           <></> // display status when loading

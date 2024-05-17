@@ -304,7 +304,7 @@ function Home() {
             </>
           )}
         </div>
-        {isLoading ? (
+        {isLoading === true ? (
           <></>
         ) : (
           <>

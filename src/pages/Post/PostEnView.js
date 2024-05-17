@@ -113,7 +113,7 @@ function PostEnView() {
   return (
     <>
       <div className="party container">
-        {isLoading ? (
+        {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading
         ) : isEmpty ? (
           <div className="section empty">No data...</div> // display status when loading

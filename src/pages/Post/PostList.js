@@ -152,7 +152,7 @@ const PostList = () => {
             Indonesian
           </button>
         </div>
-        {isLoading ? (
+        {isLoading === true ? (
           <div className="section loading">Loading Post Database...</div> // display status when loading
         ) : isEmpty ? (
           <div className="section empty">No data...</div> // display status when loading

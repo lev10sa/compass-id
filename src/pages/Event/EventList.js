@@ -126,7 +126,7 @@ const EventList = () => {
             />
           </div>
         </div>
-        {isLoading ? (
+        {isLoading === true ? (
           <div className="section loading">Loading Event Database...</div> // display status when loading
         ) : isEmpty ? (
           <div className="section empty">No data...</div> // display status when loading
