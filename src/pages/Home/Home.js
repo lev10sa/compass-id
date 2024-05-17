@@ -228,6 +228,11 @@ function Home() {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   };
 
+  const handleClick = (val) => {
+    window.location.hash = "banner";
+    navigate(`/post-view/${lang}/${val}`);
+  };
+
   return (
     <>
       <div className="container">
@@ -358,9 +363,7 @@ function Home() {
                   <div className="scrollList">
                     {posts.map((item, index) => (
                       <div
-                        onClick={() =>
-                          navigate(`/post-view/${lang}/${item._id}`)
-                        }
+                        onClick={() => handleClick(item._id)}
                         rel="noreferrer"
                         key={index}
                         className="panel"
@@ -378,9 +381,7 @@ function Home() {
                         </p>
                         <button
                           type="button"
-                          onClick={() =>
-                            navigate(`/post-view/${lang}/${item._id}`)
-                          }
+                          onClick={() => handleClick(item._id)}
                           className="btn"
                         >
                           Read This post

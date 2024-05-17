@@ -50,6 +50,11 @@ function PostIdView() {
     getPost(); // dependency array with only `search`
   }, [id, lang]); // dependency array with only `getParty`
 
+  const handleClick = (val) => {
+    window.location.hash = "banner";
+    navigate(`/post-view/${lang}/${val}`);
+  };
+
   const selMain = (value) => {
     document.getElementById("main").src = document.getElementById(
       `main-${value}`
@@ -217,9 +222,7 @@ function PostIdView() {
                   <div className="scrollList">
                     {postp.map((item, index) => (
                       <div
-                        onClick={() =>
-                          navigate(`/post-view/${lang}/${item._id}`)
-                        }
+                        onClick={() => handleClick(item._id)}
                         rel="noreferrer"
                         key={index}
                         className="panel section"
@@ -237,9 +240,7 @@ function PostIdView() {
                         </p>
                         <button
                           type="button"
-                          onClick={() =>
-                            navigate(`/post-view/${lang}/${item._id}`)
-                          }
+                          onClick={() => handleClick(item._id)}
                           className="btn"
                         >
                           Read This post

@@ -15,6 +15,11 @@ const PostList = () => {
   // setting up useNavigate
   const navigate = useNavigate();
 
+  const handleClick = (val) => {
+    window.location.hash = "banner";
+    navigate(`/post-view/${lang}/${val}`);
+  };
+
   useEffect(() => {
     // create book loader callback function
     const getposts = async () => {
@@ -156,10 +161,7 @@ const PostList = () => {
 
           <>
             {posts.map((post, index) => (
-              <div
-                onClick={() => navigate(`/post-view/${lang}/${post._id}`)}
-                className="event"
-              >
+              <div onClick={() => handleClick(post._id)} className="event">
                 {post.banner !== "" ? (
                   <>
                     <img src={post.banner} alt={post.banner} />
@@ -207,10 +209,7 @@ const PostList = () => {
                     <></>
                   )}
 
-                  <button
-                    onClick={() => navigate(`/post-view/${lang}/${post._id}`)}
-                    className="btn"
-                  >
+                  <button onClick={() => handleClick(post._id)} className="btn">
                     Read This post
                   </button>
                 </div>
