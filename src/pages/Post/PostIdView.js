@@ -53,7 +53,10 @@ function PostIdView() {
   const handleClick = (val) => {
     navigate(`/post-view/${lang}/${val}`);
     setIsLoading(true);
-    window.location.href = "#banner";
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const selMain = (value) => {

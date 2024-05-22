@@ -229,7 +229,10 @@ function Home() {
   };
 
   const handleClick = (val) => {
-    window.location.href = "#banner";
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     navigate(`/post-view/${lang}/${val}`);
   };
 
