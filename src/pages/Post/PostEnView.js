@@ -21,7 +21,15 @@ function PostEnView() {
   };
 
   // Setting up useNavigate
-  const navigate = useNavigate();
+  const navigat = useNavigate();
+
+  const navigate = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigat(val);
+  };
 
   // setting up useEffect to do tasks in real-time
   useEffect(() => {

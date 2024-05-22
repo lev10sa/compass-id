@@ -36,7 +36,15 @@ function EventPartyAdd() {
   });
 
   // Setting up useNavigate
-  const navigate = useNavigate();
+  const navigat = useNavigate();
+
+  const navigate = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigat(val);
+  };
 
   const handleChange = (event) => {
     // For non-file inputs, set the value directly

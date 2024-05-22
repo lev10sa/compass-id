@@ -12,7 +12,15 @@ const EventList = () => {
   const [isEmpty, setIsEmpty] = useState(false);
 
   // setting up useNavigate
-  const navigate = useNavigate();
+  const navigat = useNavigate();
+
+  const navigate = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigat(val);
+  };
 
   // create currency format function
   function formatCurrency(number) {

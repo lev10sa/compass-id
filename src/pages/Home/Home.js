@@ -10,7 +10,15 @@ function Home() {
   const [lang, setLang] = useState("en");
   const posts = post.slice(0, 4);
 
-  const navigate = useNavigate();
+  const navigat = useNavigate();
+
+  const navigate = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigat(val);
+  };
 
   useEffect(() => {
     setCurrentTime(new Date());

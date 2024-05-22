@@ -13,7 +13,15 @@ const PostList = () => {
   const [lang, setLang] = useState("en");
 
   // setting up useNavigate
-  const navigate = useNavigate();
+  const navigat = useNavigate();
+
+  const navigate = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigat(val);
+  };
 
   const handleClick = (val) => {
     window.scrollTo({
