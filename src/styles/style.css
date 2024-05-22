@@ -185,8 +185,9 @@ label {
     margin-top: 1rem;
   }
 
-  .post .panel .btn {
-    width: 95%;
+  .post .panel .btn,
+  .post .scrollList .btn {
+    width: 90%;
     height: auto;
     display: block;
     overflow: hidden;
@@ -196,6 +197,10 @@ label {
     color: #fff;
     border-radius: 10px;
     margin-top: 2rem;
+  }
+
+  .post .scrollList .btn:hover {
+    background: #004;
   }
 
   .posts,
