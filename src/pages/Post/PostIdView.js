@@ -185,6 +185,16 @@ function PostIdView() {
                 <button
                   type="button"
                   onClick={() => navigate("/posts")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                    fontWeight: "400",
+                  }}
                   className="btn"
                 >
                   <span style={{ marginRight: "10px" }}>See More</span>&#10095;
