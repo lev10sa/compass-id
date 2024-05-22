@@ -53,7 +53,7 @@ function PostEnView() {
   const handleClick = (val) => {
     navigate(`/post-view/${lang}/${val}`);
     setIsLoading(true);
-    window.location.hash = "banner";
+    window.location.href = "#banner";
   };
 
   const selMain = (value) => {

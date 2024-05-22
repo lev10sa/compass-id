@@ -229,7 +229,7 @@ function Home() {
   };
 
   const handleClick = (val) => {
-    window.location.hash = "banner";
+    window.location.href = "#banner";
     navigate(`/post-view/${lang}/${val}`);
   };
 

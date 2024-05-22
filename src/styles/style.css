@@ -841,10 +841,12 @@ label {
   }
 
   .post .scrollList .btn {
-    width: auto;
-    padding: 10px 35px;
-    float: left;
-    margin-left: 15px;
+    width: 90%;
+    padding: 10px;
+  }
+
+  .post .scrollList .btn:hover {
+    background: #004;
   }
 
   #peg {
