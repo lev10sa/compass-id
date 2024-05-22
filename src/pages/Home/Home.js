@@ -298,23 +298,13 @@ function Home() {
               <span style={{ marginRight: "10px" }}>See More</span>&#10095;
             </button>
           </div>
-          {isLoading === true ? (
-            <>
-              <div className="section loading">
-                <p>Loading data, please wait...</p>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="section scrollList">
-                {books.map((book, index) => (
-                  <a href={book.url} target="_blank" rel="noreferrer">
-                    <img src={book.src} alt="" key={index} />
-                  </a>
-                ))}
-              </div>
-            </>
-          )}
+          <div className="section scrollList">
+            {books.map((book, index) => (
+              <a href={book.url} target="_blank" rel="noreferrer">
+                <img src={book.src} alt="" key={index} />
+              </a>
+            ))}
+          </div>
         </div>
         {isLoading === true ? (
           <></>
