@@ -840,6 +840,13 @@ label {
     object-position: center;
   }
 
+  .post .scrollList .btn {
+    width: auto;
+    padding: 10px 35px;
+    float: left;
+    margin-left: 15px;
+  }
+
   #peg {
     width: 100%;
     height: auto;

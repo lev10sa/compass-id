@@ -182,6 +182,7 @@ function PostIdView() {
                     paddingLeft: "5px",
                     paddingRight: "5px",
                     float: "right",
+                    fontWeight: "400",
                   }}
                   className="btn"
                 >
