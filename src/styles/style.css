@@ -1267,6 +1267,7 @@ label {
     text-decoration: none;
     width: 100%;
     float: left;
+    font-weight: bold;
   }
 
   .event .btn:hover {
