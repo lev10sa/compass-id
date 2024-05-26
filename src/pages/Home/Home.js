@@ -268,6 +268,20 @@ function Home() {
     navigate(`/event-join/${val}`);
   };
 
+  // create currency format function
+  function formatCurrency(number) {
+    // define options for formatting
+    const options = {
+      style: "currency", // set currency
+      currency: "IDR", // set currency code for Indonesian Rupiah (IDR)
+      minimumFractionDigits: 2, // set minimum decimal places to 2
+      maximumFractionDigits: 2, // set maximum decimal places to 2
+    };
+
+    // use toLocaleString() with the defined options
+    return new Intl.NumberFormat("id-ID", options).format(number);
+  }
+
   return (
     <>
       <div className="container">
@@ -378,18 +392,72 @@ function Home() {
                         key={index}
                         className="panel"
                       >
-                        <img src={item.img} alt={item.img} />
-                        <h3>{item.title.toUpperCase()}</h3>
-                        <p>
-                          <strong>Date:</strong> {formatTime(item.start)}
-                        </p>
-                        <p>
-                          <strong>Role:</strong> {item.model}
-                        </p>
-                        <p>
-                          <strong>Location:</strong>{" "}
-                          {item.address !== "" ? item.address : "-"}
-                        </p>
+                        {item.img !== "" ? (
+                          <>
+                            <img src={item.img} alt={item.img} />
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
+                        {item.title !== "" ? (
+                          <>
+                            <h3 title={item.title}>{item.title}</h3>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
+                        {item.pic !== "" ? (
+                          <>
+                            <p title={item.pic}>
+                              <strong>Speaker:</strong> {item.pic}
+                            </p>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
+                        {item.start !== "" ? (
+                          <>
+                            <p>
+                              <strong>Date:</strong> {formatTime(item.start)}
+                            </p>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
+                        {item.model !== "" ? (
+                          <>
+                            <p title={item.model}>
+                              <strong>Role:</strong> {item.model}
+                            </p>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
+                        {item.address !== "" ? (
+                          <>
+                            <p title={item.address}>
+                              <strong>Location:</strong> {item.address}
+                            </p>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+
+                        {item.price !== "" ? (
+                          <>
+                            <p>
+                              <strong>Price:</strong>{" "}
+                              {formatCurrency(item.price)}
+                            </p>
+                          </>
+                        ) : (
+                          <></>
+                        )}
                         <button
                           type="button"
                           onClick={() => handleEvent(item._id)}

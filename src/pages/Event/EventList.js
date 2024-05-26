@@ -174,7 +174,17 @@ const EventList = () => {
                     {event.start !== "" ? (
                       <>
                         <p>
-                          <strong>Time:</strong> {formatTime(event.start)}
+                          <strong>Date:</strong> {formatTime(event.start)}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {event.model !== "" ? (
+                      <>
+                        <p title={event.model}>
+                          <strong>Role:</strong> {event.model}
                         </p>
                       </>
                     ) : (
