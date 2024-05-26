@@ -4,11 +4,13 @@ import axios from "axios";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [post, setpost] = useState([]);
+  const [post, setPost] = useState([]);
+  const [event, setEvent] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [lang, setLang] = useState("en");
-  const posts = post.slice(0, 4);
+  const posts = post.slice(0, 3);
+  const events = event.slice(0, 3);
 
   const navigat = useNavigate();
 
@@ -35,7 +37,7 @@ function Home() {
       try {
         const datas = await axios.get(url);
         datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
-        setpost(datas.data);
+        setPost(datas.data);
         setIsLoading(false);
       } catch (error) {
         window.alert(error.message);
@@ -43,6 +45,20 @@ function Home() {
     };
 
     getpost();
+
+    const getevent = async () => {
+      let url = `https://seg-server.vercel.app/api/events`;
+      try {
+        const datas = await axios.get(url);
+        datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
+        setEvent(datas.data);
+        setIsLoading(false);
+      } catch (error) {
+        window.alert(error.message);
+      }
+    };
+
+    getevent();
   }, [lang]);
 
   const alr = () => {
@@ -58,28 +74,28 @@ function Home() {
       return (
         <h5>
           <i style={{ marginRight: "10px" }} className="fas fa-cloud-sun"></i>{" "}
-          Hello, Good Morning!
+          Hello Educators, Good Morning!
         </h5>
       );
     } else if (hours >= 12 && hours < 15) {
       return (
         <h5>
-          <i style={{ marginRight: "10px" }} className="fas fa-sun"></i> Hello,
-          Good Day!
+          <i style={{ marginRight: "10px" }} className="fas fa-sun"></i> Hello
+          Educators, Good Day!
         </h5>
       );
     } else if (hours >= 15 && hours < 18) {
       return (
         <h5>
           <i style={{ marginRight: "10px" }} className="fas fa-cloud-sun"></i>{" "}
-          Hello, Good Afternoon!
+          Hello Educators, Good Afternoon!
         </h5>
       );
     } else if (hours >= 18 && hours < 21) {
       return (
         <h5>
           <i style={{ marginRight: "10px" }} className="fas fa-cloud-moon"></i>{" "}
-          Hello, Good Evening!
+          Hello Educators, Good Evening!
         </h5>
       );
     } else if (hours >= 21 || hours < 5) {
@@ -89,7 +105,7 @@ function Home() {
             style={{ marginRight: "10px" }}
             className="fas fa-star-and-crescent"
           ></i>{" "}
-          Hello, Good Night!
+          Hello Educators, Good Night!
         </h5>
       );
     }
@@ -244,6 +260,14 @@ function Home() {
     navigate(`/post-view/${lang}/${val}`);
   };
 
+  const handleEvent = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigate(`/event-join/${val}`);
+  };
+
   return (
     <>
       <div className="container">
@@ -306,6 +330,82 @@ function Home() {
             ))}
           </div>
         </div>
+
+        {isLoading === true ? (
+          <></>
+        ) : (
+          <>
+            <div className="section post">
+              <div className="section headline">
+                <h5 style={{ float: "left" }}>Latest Events</h5>
+                <button
+                  type="button"
+                  onClick={() => navigate("/events")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                    fontWeight: "400",
+                  }}
+                  className="btn"
+                >
+                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
+              </div>
+              {isLoading === true ? (
+                <>
+                  <div className="section loading">
+                    <p>Loading data, please wait...</p>
+                  </div>
+                </>
+              ) : isEmpty === true ? (
+                <>
+                  <div className="section empty">
+                    <p>No data...</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="scrollList">
+                    {events.map((item, index) => (
+                      <div
+                        onClick={() => handleEvent(item._id)}
+                        rel="noreferrer"
+                        key={index}
+                        className="panel"
+                      >
+                        <img src={item.img} alt={item.img} />
+                        <h3>{item.title.toUpperCase()}</h3>
+                        <p>
+                          <strong>Date:</strong> {formatTime(item.start)}
+                        </p>
+                        <p>
+                          <strong>Role:</strong> {item.model}
+                        </p>
+                        <p>
+                          <strong>Location:</strong>{" "}
+                          {item.address !== "" ? item.address : "-"}
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => handleEvent(item._id)}
+                          className="btn"
+                        >
+                          Join This Event
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
+
         {isLoading === true ? (
           <></>
         ) : (
