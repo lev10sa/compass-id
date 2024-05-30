@@ -74,7 +74,7 @@ function Home() {
       return (
         <h5>
           <i style={{ marginRight: "10px" }} className="fas fa-cloud-sun"></i>{" "}
-          Hello Educators, Good Morning!
+          Hello, Good Morning!
         </h5>
       );
     } else if (hours >= 12 && hours < 15) {
@@ -88,14 +88,14 @@ function Home() {
       return (
         <h5>
           <i style={{ marginRight: "10px" }} className="fas fa-cloud-sun"></i>{" "}
-          Hello Educators, Good Afternoon!
+          Hello, Good Afternoon!
         </h5>
       );
     } else if (hours >= 18 && hours < 21) {
       return (
         <h5>
           <i style={{ marginRight: "10px" }} className="fas fa-cloud-moon"></i>{" "}
-          Hello Educators, Good Evening!
+          Hello, Good Evening!
         </h5>
       );
     } else if (hours >= 21 || hours < 5) {
@@ -105,7 +105,7 @@ function Home() {
             style={{ marginRight: "10px" }}
             className="fas fa-star-and-crescent"
           ></i>{" "}
-          Hello Educators, Good Night!
+          Hello, Good Night!
         </h5>
       );
     }
