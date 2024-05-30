@@ -10,7 +10,7 @@ const PostList = () => {
   const [search, setSearch] = useState(""); // state for search
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("id");
 
   // setting up useNavigate
   const navigat = useNavigate();
@@ -153,14 +153,14 @@ const PostList = () => {
           <span>Select Language:</span>
           <button
             type="button"
-            onClick={() => langSet("en", "id")}
-            id="en"
+            onClick={() => langSet("id", "en")}
+            id="id"
             className="active"
           >
-            English
+            Indonesia
           </button>
-          <button type="button" onClick={() => langSet("id", "en")} id="id">
-            Indonesian
+          <button type="button" onClick={() => langSet("en", "id")} id="en">
+            English
           </button>
         </div>
         {isLoading === true ? (
@@ -190,35 +190,7 @@ const PostList = () => {
                     <></>
                   )}
 
-                  {post.category !== "" ? (
-                    <>
-                      <p title={post.category}>
-                        <strong>Category:</strong> {post.category}
-                      </p>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-
-                  {post.tags !== "" ? (
-                    <>
-                      <p title={post.tags}>
-                        <strong>Tags:</strong> {post.tags}
-                      </p>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-
-                  {post.date !== "" ? (
-                    <>
-                      <p>
-                        <strong>Date:</strong> {formatTime(post.date)}
-                      </p>
-                    </>
-                  ) : (
-                    <></>
-                  )}
+                  <p className="dip">{post.body}</p>
 
                   <button onClick={() => handleClick(post._id)} className="btn">
                     Read This post

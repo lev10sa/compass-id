@@ -8,7 +8,7 @@ function Home() {
   const [event, setEvent] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("id");
   const posts = post.slice(0, 3);
   const events = event.slice(0, 3);
 
@@ -503,18 +503,18 @@ function Home() {
                 <span>Select Language:</span>
                 <button
                   type="button"
-                  onClick={() => langSet("en", "id")}
-                  id="en"
+                  onClick={() => langSet("id", "en")}
+                  id="id"
                   className="active"
                 >
-                  English
+                  Indonesia
                 </button>
                 <button
                   type="button"
-                  onClick={() => langSet("id", "en")}
-                  id="id"
+                  onClick={() => langSet("en", "id")}
+                  id="en"
                 >
-                  Indonesian
+                  English
                 </button>
               </div>
               {isLoading === true ? (
@@ -541,15 +541,7 @@ function Home() {
                       >
                         <img src={item.banner} alt={item.banner} />
                         <h3>{item.title.toUpperCase()}</h3>
-                        <p>
-                          <strong>Date:</strong> {formatTime(item.date)}
-                        </p>
-                        <p>
-                          <strong>Category:</strong> {item.category}
-                        </p>
-                        <p>
-                          <strong>Tags:</strong> {item.tags}
-                        </p>
+                        <p className="dip">{item.body}</p>
                         <button
                           type="button"
                           onClick={() => handleClick(item._id)}

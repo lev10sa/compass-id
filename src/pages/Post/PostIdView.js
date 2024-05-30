@@ -11,7 +11,7 @@ function PostIdView() {
 
   const [post, setPost] = useState([]);
   const [posts, setPosts] = useState([]);
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("id");
   const postp = posts.slice(0, 3);
 
   const langSet = (a, b) => {
@@ -204,19 +204,19 @@ function PostIdView() {
                 <span>Select Language:</span>
                 <button
                   type="button"
+                  onClick={() => langSet("id", "en")}
+                  id="id"
+                  className={`${lang === "id" ? "active" : ""}`}
+                >
+                  Indonesia
+                </button>
+                <button
+                  type="button"
                   onClick={() => langSet("en", "id")}
                   id="en"
                   className={`${lang === "en" ? "active" : ""}`}
                 >
                   English
-                </button>
-                <button
-                  type="button"
-                  onClick={() => langSet("id", "en")}
-                  id="id"
-                  className={`${lang === "id" ? "active" : ""}`}
-                >
-                  Indonesian
                 </button>
               </div>
               {isLoading === true ? (
@@ -243,15 +243,7 @@ function PostIdView() {
                       >
                         <img src={item.banner} alt={item.banner} />
                         <h3>{item.title.toUpperCase()}</h3>
-                        <p>
-                          <strong>Date:</strong> {formatTime(item.date)}
-                        </p>
-                        <p>
-                          <strong>Category:</strong> {item.category}
-                        </p>
-                        <p>
-                          <strong>Tags:</strong> {item.tags}
-                        </p>
+                        <p className="dip">{item.body}</p>
                         <button
                           type="button"
                           onClick={() => handleClick(item._id)}

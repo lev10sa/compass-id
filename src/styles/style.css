@@ -203,6 +203,17 @@ label {
     background: #004;
   }
 
+  .post .scrollList .dip {
+    width: 90%;
+    height: 100px;
+    display: block;
+    overflow: hidden;
+    text-overflow: initial;
+    white-space: initial;
+    font-size: 10pt;
+    color: #666;
+  }
+
   .posts,
   .posts .film,
   .posts .film .panel,
@@ -596,6 +607,17 @@ label {
     margin-left: 5px;
   }
 
+  .event .caption .dip {
+    width: 100%;
+    height: 100px;
+    display: block;
+    overflow: hidden;
+    text-overflow: initial;
+    white-space: initial;
+    font-size: 10pt;
+    color: #666;
+  }
+
   .party .section {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -852,6 +874,17 @@ label {
 
   .post .scrollList .btn:hover {
     background: #004;
+  }
+
+  .post .scrollList .dip {
+    width: 90%;
+    height: 100px;
+    display: block;
+    overflow: hidden;
+    text-overflow: initial;
+    white-space: initial;
+    font-size: 10pt;
+    color: #666;
   }
 
   #peg {
@@ -1272,6 +1305,17 @@ label {
 
   .event .btn:hover {
     background: #004;
+  }
+
+  .event .caption .dip {
+    width: 100%;
+    height: 100px;
+    display: block;
+    overflow: hidden;
+    text-overflow: initial;
+    white-space: initial;
+    font-size: 10pt;
+    color: #666;
   }
 
   .party .left {
