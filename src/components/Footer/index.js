@@ -49,13 +49,12 @@ function Footer() {
           <div className="section">
             <p>&copy; 2024 - PT Solusi Edukasi Gemilang</p>
           </div>
-          <div className="section">
-            <p>
-              Welcome to Compass Publishing Indonesia, this website is still
-              under construction, so perhaps some features wouldn't work
-              correctly.
-            </p>
-          </div>
+        </div>
+        <div className="section" style={{ background: "#000" }}>
+          <p>
+            This website is still under construction, so perhaps some features
+            wouldn't work correctly.
+          </p>
         </div>
       </div>
     </>
