@@ -24,7 +24,6 @@ function Home() {
 
   useEffect(() => {
     setCurrentTime(new Date());
-    alr();
 
     const getpost = async () => {
       let url = "";
@@ -60,12 +59,6 @@ function Home() {
 
     getevent();
   }, [lang]);
-
-  const alr = () => {
-    return alert(
-      "Welcome to Compass Publishing Indonesia, this website is still under construction, so perhaps some features wouldn't work correctly."
-    );
-  };
 
   const getGreeting = () => {
     const hours = currentTime.getHours();
