@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -110,39 +109,39 @@ function Home() {
   const books = [
     {
       src: "https://www.compasspub.com/userfiles/item/20200903161644_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20230508105235_itm.png",
-      url: "https://eb.compasspub.com/v2/?uri=books/Boost_English_1/work/&prev=23%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2019041295137_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/interact_1/work/&prev=19%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20200922145515_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/HangOut_Starter/work/&prev=19%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20200922134819_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/NF1/work/&prev=21%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2010052791452_itm.PNG",
-      url: "https://eb.compasspub.com/v2/?uri=books/SoundsGreat_1/work/&prev=15%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2022040811442_itm.jpg",
-      url: "'https://eb.compasspub.com/v2/?uri=books/Ni_Hao_1/work/&prev=15%27",
+      url: "",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2018032617514_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/BigShow_1/work/&prev=15%27",
+      url: "",
     },
     {
       src: "https://i.compasspub.com/userfiles/item/2023070595325_itm.jpg",
-      url: "https://compasspubindonesia.com",
+      url: "",
     },
   ];
 
@@ -276,35 +275,8 @@ function Home() {
     return new Intl.NumberFormat("id-ID", options).format(number);
   }
 
-  const getHelm = (val) => {
-    return (
-      <>
-        <title>Compass Publishing Indonesia | Home</title>
-        <meta
-          name="description"
-          content="Official Homepage of Compass Publishing Indonesia"
-        />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:title"
-          content="Compass Publishing Indonesia | Home"
-        />
-        <meta
-          property="og:description"
-          content="Official Homepage of Compass Publishing Indonesia"
-        />
-        <meta
-          property="og:image"
-          content="https://compasspubindonesia.com/logo192.png"
-        />
-        <meta property="og:url" content="https://compasspubindonesia.com/" />
-      </>
-    );
-  };
-
   return (
     <>
-      {<Helmet>{getHelm()}</Helmet>}
       <div className="container">
         <div className="panel">
           <div className="headline">

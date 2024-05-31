@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 function PostEnView() {
   // Fetches latest Event count for serie generation (Optional)
@@ -123,44 +122,8 @@ function PostEnView() {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   }
 
-  const getHelm = (val) => {
-    return (
-      <>
-        <Helmet>
-          <title>{val.title}</title>
-          <meta
-            name="description"
-            content={`${val.body.substring(0, 150)}...`}
-          />
-
-          {/* Open Graph meta tags for Facebook sharing */}
-          <meta
-            property="og:url"
-            content={`https://compasspubindonesia.com/post-view/en/${val._id}`}
-          />
-          <meta property="og:title" content={val.title} />
-          <meta
-            property="og:description"
-            content={`${val.body.substring(0, 150)}...`}
-          />
-          <meta property="og:image" content={val.banner} />
-
-          {/* Twitter meta tags for Twitter sharing */}
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={val.title} />
-          <meta
-            name="twitter:description"
-            content={`${val.body.substring(0, 150)}...`}
-          />
-          <meta name="twitter:image" content={val.banner} />
-        </Helmet>
-      </>
-    );
-  };
-
   return (
     <>
-      {getHelm(post)}
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading

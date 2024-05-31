@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 // create the main function
 const PostList = () => {
@@ -77,91 +76,14 @@ const PostList = () => {
     document.getElementById(b).classList.remove("active");
   };
 
-  function formatTime(dateString) {
-    // Create a new Date object from the provided dateString
-    const date = new Date(dateString);
-
-    // Define arrays for day names and month names
-    const daysOfWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-
-    // Get the day of the week, month, day, and year from the Date object
-    const dayOfWeek = daysOfWeek[date.getDay()];
-    const month = months[date.getMonth()];
-    const day = date.getDate();
-    const year = date.getFullYear();
-
-    // Get the hours and minutes from the Date object
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-
-    // Format the time as "HH.MM"
-    const time = `${hours < 10 ? "0" : ""}${hours}.${
-      minutes < 10 ? "0" : ""
-    }${minutes}`;
-
-    // Return the formatted date string
-    return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
-  }
-
   const handleSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
   };
 
-  const getHelm = (val) => {
-    return (
-      <>
-        <title>Compass Publishing Indonesia | Posts</title>
-        <meta
-          name="description"
-          content="List of Posts in Compass Publishing Indonesia"
-        />
-        <meta
-          property="og:title"
-          content="Compass Publishing Indonesia | Posts"
-        />
-        <meta
-          property="og:description"
-          content="List of Posts in Compass Publishing Indonesia"
-        />
-        <meta
-          property="og:image"
-          content="https://compasspubindonesia.com/logo192.png"
-        />
-        <meta
-          property="og:url"
-          content="https://compasspubindonesia.com/posts"
-        />
-      </>
-    );
-  };
-
   // render the display
   return (
     <>
-      {<Helmet>{getHelm()}</Helmet>}
       <div className="container">
         <div className="section headline">
           <h4>Post List</h4>
