@@ -30,7 +30,7 @@ function Footer() {
 
   return (
     <>
-      <div className="section footer">
+      <div className="footer">
         <div className="container section">
           <div className="section">
             {socials.map((soc, index) => (
