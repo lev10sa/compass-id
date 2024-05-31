@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function PostEnView() {
   // Fetches latest Event count for serie generation (Optional)
@@ -31,6 +32,18 @@ function PostEnView() {
     navigat(val);
   };
 
+  const getHelm = (val) => {
+    return (
+      <>
+        <Helmet>
+          <title>{val.title}</title>
+          <meta name="description" content={`${val.body}`} />
+          <link rel="apple-touch-icon" href={`${val.banner}`} />
+        </Helmet>
+      </>
+    );
+  };
+
   // setting up useEffect to do tasks in real-time
   useEffect(() => {
     // create party loader callback function
@@ -55,7 +68,8 @@ function PostEnView() {
       }
     };
 
-    getPost(); // dependency array with only `search`
+    getPost();
+    // dependency array with only `search`
   }, [id, lang, isLoading]); // dependency array with only `getParty`
 
   const handleClick = (val) => {
@@ -123,6 +137,7 @@ function PostEnView() {
 
   return (
     <>
+      {getHelm(post)}
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading

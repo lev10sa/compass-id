@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -275,8 +276,24 @@ function Home() {
     return new Intl.NumberFormat("id-ID", options).format(number);
   }
 
+  const getHelm = (val) => {
+    return (
+      <>
+        <Helmet>
+          <title>Compass Publishing Indonesia | Home</title>
+          <meta
+            name="description"
+            content="Official Homepage of Compass Publishing Indonesia"
+          />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        </Helmet>
+      </>
+    );
+  };
+
   return (
     <>
+      {getHelm()}
       <div className="container">
         <div className="panel">
           <div className="headline">

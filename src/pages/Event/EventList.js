@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // create the main function
 const EventList = () => {
@@ -114,9 +115,25 @@ const EventList = () => {
     setSearch(e.target.value);
   };
 
+  const getHelm = (val) => {
+    return (
+      <>
+        <Helmet>
+          <title>Compass Publishing Indonesia | Events</title>
+          <meta
+            name="description"
+            content="List of Events in Compass Publishing Indonesia"
+          />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        </Helmet>
+      </>
+    );
+  };
+
   // render the display
   return (
     <>
+      {getHelm()}
       <div className="container">
         <div className="section headline">
           <h4>Event List</h4>

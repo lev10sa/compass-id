@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function EventPartyAdd() {
   // Fetches latest Event count for serie generation (Optional)
@@ -228,8 +229,21 @@ function EventPartyAdd() {
     document.getElementById("peg").style = "display: none;";
   };
 
+  const getHelm = (val) => {
+    return (
+      <>
+        <Helmet>
+          <title>{val.title}</title>
+          <meta name="description" content={`${val.desc}`} />
+          <link rel="apple-touch-icon" href={`${val.img}`} />
+        </Helmet>
+      </>
+    );
+  };
+
   return (
     <>
+      {getHelm(event)}
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading Event Database...</div> // display status when loading

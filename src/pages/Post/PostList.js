@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // create the main function
 const PostList = () => {
@@ -129,9 +130,25 @@ const PostList = () => {
     setSearch(e.target.value);
   };
 
+  const getHelm = (val) => {
+    return (
+      <>
+        <Helmet>
+          <title>Compass Publishing Indonesia | Posts</title>
+          <meta
+            name="description"
+            content="List of Posts in Compass Publishing Indonesia"
+          />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+        </Helmet>
+      </>
+    );
+  };
+
   // render the display
   return (
     <>
+      {getHelm()}
       <div className="container">
         <div className="section headline">
           <h4>Post List</h4>

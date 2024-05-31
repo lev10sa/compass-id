@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function PostIdView() {
   // Fetches latest Event count for serie generation (Optional)
@@ -121,8 +122,21 @@ function PostIdView() {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   }
 
+  const getHelm = (val) => {
+    return (
+      <>
+        <Helmet>
+          <title>{val.title}</title>
+          <meta name="description" content={`${val.body}`} />
+          <link rel="apple-touch-icon" href={`${val.banner}`} />
+        </Helmet>
+      </>
+    );
+  };
+
   return (
     <>
+      {getHelm(post)}
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading
