@@ -232,17 +232,15 @@ function EventPartyAdd() {
   const getHelm = (val) => {
     return (
       <>
-        <Helmet>
-          <title>{val.title}</title>
-          <meta name="description" content={`${val.desc}`} />
-          <meta property="og:title" content={val.title} />
-          <meta property="og:description" content={`${val.desc}`} />
-          <meta property="og:image" content={`${val.img}`} />
-          <meta
-            property="og:url"
-            content={`https://compasspubindonesia.com/event-join/${val._id}`}
-          />
-        </Helmet>
+        <title>{val.title}</title>
+        <meta name="description" content={`${val.desc}`} />
+        <meta property="og:title" content={val.title} />
+        <meta property="og:description" content={`${val.desc}`} />
+        <meta property="og:image" content={`${val.img}`} />
+        <meta
+          property="og:url"
+          content={`https://compasspubindonesia.com/event-join/${val._id}`}
+        />
       </>
     );
   };

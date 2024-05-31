@@ -133,29 +133,27 @@ const PostList = () => {
   const getHelm = (val) => {
     return (
       <>
-        <Helmet>
-          <title>Compass Publishing Indonesia | Posts</title>
-          <meta
-            name="description"
-            content="List of Posts in Compass Publishing Indonesia"
-          />
-          <meta
-            property="og:title"
-            content="Compass Publishing Indonesia | Posts"
-          />
-          <meta
-            property="og:description"
-            content="List of Posts in Compass Publishing Indonesia"
-          />
-          <meta
-            property="og:image"
-            content="https://compasspubindonesia.com/logo192.png"
-          />
-          <meta
-            property="og:url"
-            content="https://compasspubindonesia.com/posts"
-          />
-        </Helmet>
+        <title>Compass Publishing Indonesia | Posts</title>
+        <meta
+          name="description"
+          content="List of Posts in Compass Publishing Indonesia"
+        />
+        <meta
+          property="og:title"
+          content="Compass Publishing Indonesia | Posts"
+        />
+        <meta
+          property="og:description"
+          content="List of Posts in Compass Publishing Indonesia"
+        />
+        <meta
+          property="og:image"
+          content="https://compasspubindonesia.com/logo192.png"
+        />
+        <meta
+          property="og:url"
+          content="https://compasspubindonesia.com/posts"
+        />
       </>
     );
   };

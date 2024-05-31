@@ -125,17 +125,15 @@ function PostIdView() {
   const getHelm = (val) => {
     return (
       <>
-        <Helmet>
-          <title>{val.title}</title>
-          <meta name="description" content={`${val.body}`} />
-          <meta property="og:title" content={val.title} />
-          <meta property="og:description" content={`${val.body}`} />
-          <meta property="og:image" content={`${val.banner}`} />
-          <meta
-            property="og:url"
-            content={`https://compasspubindonesia.com/post-view/en/${val._id}`}
-          />
-        </Helmet>
+        <title>{val.title}</title>
+        <meta name="description" content={`${val.body}`} />
+        <meta property="og:title" content={val.title} />
+        <meta property="og:description" content={`${val.body}`} />
+        <meta property="og:image" content={`${val.banner}`} />
+        <meta
+          property="og:url"
+          content={`https://compasspubindonesia.com/post-view/id/${val._id}`}
+        />
       </>
     );
   };
