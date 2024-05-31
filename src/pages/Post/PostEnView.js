@@ -142,16 +142,6 @@ function PostEnView() {
   return (
     <>
       {post.length > 0 && <Helmet>{getHelm(post)}</Helmet>}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `
-          <title>{val.title}</title>
-        <meta name="description" content={${post.body}} />
-        <meta property="og:title" content={${post.title}} />
-        <meta property="og:description" content={${post.body}} />
-        <meta property="og:image" content={${post.banner}} />`,
-        }}
-      />
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading
