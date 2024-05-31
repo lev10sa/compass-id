@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/index.css";
 import "./styles/style.css";
 import App from "./App";
-import { hydrate, render } from "react-dom";
+import ReactDOM from "react-dom/client";
 
 const APP = (
   <React.StrictMode>
@@ -10,9 +10,5 @@ const APP = (
   </React.StrictMode>
 );
 
-const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
-  hydrate(APP, rootElement);
-} else {
-  render(APP, rootElement);
-}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(APP);
