@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function PostEnView() {
   // Fetches latest Event count for serie generation (Optional)
@@ -122,8 +123,19 @@ function PostEnView() {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   }
 
+  // render the display
   return (
     <>
+      <Helmet>
+        <title>{post.title}</title>
+        <meta
+          property="og:url"
+          content={`https://www.compasspubindonesia.com/post-view/en/${post._id}`}
+        />
+        <meta property="og:title" content={`${post.title}`} />
+        <meta property="og:description" content={`${post.body}`} />
+        <meta property="og:image" content={`${post.banner}`} />
+      </Helmet>
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading

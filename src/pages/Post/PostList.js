@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // create the main function
 const PostList = () => {
@@ -84,6 +85,25 @@ const PostList = () => {
   // render the display
   return (
     <>
+      <Helmet>
+        <title>Posts | Compass Publishing Indonesia</title>
+        <meta
+          property="og:url"
+          content={`https://www.compasspubindonesia.com/posts`}
+        />
+        <meta
+          property="og:title"
+          content={`Posts | Compass Publishing Indonesia`}
+        />
+        <meta
+          property="og:description"
+          content={`List of Posts in Compass Publishing Indonesia`}
+        />
+        <meta
+          property="og:image"
+          content={`https://www.compasspubindonesia.com/logo192.png`}
+        />
+      </Helmet>
       <div className="container">
         <div className="section headline">
           <h4>Post List</h4>

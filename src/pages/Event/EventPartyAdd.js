@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function EventPartyAdd() {
   // Fetches latest Event count for serie generation (Optional)
@@ -230,6 +231,16 @@ function EventPartyAdd() {
 
   return (
     <>
+      <Helmet>
+        <title>{event.title}</title>
+        <meta
+          property="og:url"
+          content={`https://www.compasspubindonesia.com/event-join/${event._id}`}
+        />
+        <meta property="og:title" content={`${event.title}`} />
+        <meta property="og:description" content={`${event.desc}`} />
+        <meta property="og:image" content={`${event.img}`} />
+      </Helmet>
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading Event Database...</div> // display status when loading

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // create the main function
 const EventList = () => {
@@ -117,6 +118,25 @@ const EventList = () => {
   // render the display
   return (
     <>
+      <Helmet>
+        <title>Events | Compass Publishing Indonesia</title>
+        <meta
+          property="og:url"
+          content={`https://www.compasspubindonesia.com/events`}
+        />
+        <meta
+          property="og:title"
+          content={`Events | Compass Publishing Indonesia`}
+        />
+        <meta
+          property="og:description"
+          content={`List of Events in Compass Publishing Indonesia`}
+        />
+        <meta
+          property="og:image"
+          content={`https://www.compasspubindonesia.com/logo192.png`}
+        />
+      </Helmet>
       <div className="container">
         <div className="section headline">
           <h4>Event List</h4>
