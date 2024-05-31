@@ -163,7 +163,7 @@ const PostList = () => {
   // render the display
   return (
     <>
-      {getHelm()}
+      {<Helmet>{getHelm()}</Helmet>}
       <div className="container">
         <div className="section headline">
           <h4>Post List</h4>

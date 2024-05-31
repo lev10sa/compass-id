@@ -148,7 +148,7 @@ const EventList = () => {
   // render the display
   return (
     <>
-      {getHelm()}
+      {<Helmet>{getHelm()}</Helmet>}
       <div className="container">
         <div className="section headline">
           <h4>Event List</h4>

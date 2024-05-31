@@ -142,7 +142,7 @@ function PostIdView() {
 
   return (
     <>
-      {getHelm(post)}
+      {post.length > 0 && <Helmet>{getHelm(post)}</Helmet>}
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading post database...</div> // display status when loading

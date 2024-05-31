@@ -306,7 +306,7 @@ function Home() {
 
   return (
     <>
-      {getHelm()}
+      {<Helmet>{getHelm()}</Helmet>}
       <div className="container">
         <div className="panel">
           <div className="headline">

@@ -249,7 +249,7 @@ function EventPartyAdd() {
 
   return (
     <>
-      {getHelm(event)}
+      {event.length > 0 && <Helmet>{getHelm(event)}</Helmet>}
       <div className="party container">
         {isLoading === true ? (
           <div className="section loading">Loading Event Database...</div> // display status when loading
