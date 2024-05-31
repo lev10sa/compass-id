@@ -685,7 +685,7 @@ label {
     border-radius: 15px;
   }
 
-  .partner .thumbs img {
+  .partner .thumb img {
     width: 15%;
     height: auto;
     display: inline-block;
@@ -693,7 +693,7 @@ label {
     margin: 10px 5px;
   }
 
-  .partner .thumbs {
+  .partner .thumb {
     width: 100%;
     height: auto;
     display: block;
@@ -1364,7 +1364,7 @@ label {
     border: 1px solid #eee;
   }
 
-  .partner .thumbs img {
+  .partner .thumb img {
     width: 30%;
     height: auto;
     display: inline-block;
@@ -1372,7 +1372,7 @@ label {
     margin: 5px 5px;
   }
 
-  .partner .thumbs {
+  .partner .thumb {
     width: 100%;
     height: auto;
     display: block;

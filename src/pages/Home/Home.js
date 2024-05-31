@@ -576,13 +576,14 @@ function Home() {
           <div className="section headline">
             <h5>Our Services</h5>
           </div>
-          <div className="section thumbs">
+          <div className="section thumb">
             {partners.map((thumb, index) => (
               <>
                 <a
                   href={thumb.uri}
                   target="
                 _blank"
+                  key={index}
                 >
                   <img src={thumb.src} alt={thumb.src} />
                 </a>
