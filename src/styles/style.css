@@ -878,7 +878,7 @@ label {
 
   .post .scrollList .dip {
     width: 90%;
-    height: 100px;
+    height: 95px;
     display: block;
     overflow: hidden;
     text-overflow: initial;
@@ -1309,7 +1309,7 @@ label {
 
   .event .caption .dip {
     width: 100%;
-    height: 100px;
+    height: 95px;
     display: block;
     overflow: hidden;
     text-overflow: initial;

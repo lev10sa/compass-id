@@ -51,9 +51,9 @@ function Footer() {
           </div>
         </div>
         <div className="section" style={{ background: "#000" }}>
-          <p>
-            This website is still under construction, so perhaps some features
-            wouldn't work correctly.
+          <p style={{ fontSize: "10pt" }}>
+            Website ini sedang dalam pengembangan, sehingga beberapa fitur
+            mungkin tidak akan berjalan optimal.
           </p>
         </div>
       </div>
