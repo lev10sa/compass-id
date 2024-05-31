@@ -128,7 +128,13 @@ function PostIdView() {
         <Helmet>
           <title>{val.title}</title>
           <meta name="description" content={`${val.body}`} />
-          <link rel="apple-touch-icon" href={`${val.banner}`} />
+          <meta property="og:title" content={val.title} />
+          <meta property="og:description" content={`${val.body}`} />
+          <meta property="og:image" content={`${val.banner}`} />
+          <meta
+            property="og:url"
+            content={`https://compasspubindonesia.com/post-view/en/${val._id}`}
+          />
         </Helmet>
       </>
     );

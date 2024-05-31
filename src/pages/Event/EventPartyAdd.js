@@ -235,7 +235,13 @@ function EventPartyAdd() {
         <Helmet>
           <title>{val.title}</title>
           <meta name="description" content={`${val.desc}`} />
-          <link rel="apple-touch-icon" href={`${val.img}`} />
+          <meta property="og:title" content={val.title} />
+          <meta property="og:description" content={`${val.desc}`} />
+          <meta property="og:image" content={`${val.img}`} />
+          <meta
+            property="og:url"
+            content={`https://compasspubindonesia.com/event-join/${val._id}`}
+          />
         </Helmet>
       </>
     );

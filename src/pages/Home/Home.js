@@ -285,7 +285,20 @@ function Home() {
             name="description"
             content="Official Homepage of Compass Publishing Indonesia"
           />
-          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content="Compass Publishing Indonesia | Home"
+          />
+          <meta
+            property="og:description"
+            content="Official Homepage of Compass Publishing Indonesia"
+          />
+          <meta
+            property="og:image"
+            content="https://compasspubindonesia.com/logo192.png"
+          />
+          <meta property="og:url" content="https://compasspubindonesia.com/" />
         </Helmet>
       </>
     );
