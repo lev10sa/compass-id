@@ -122,6 +122,15 @@ function PostIdView() {
     return `${dayOfWeek}, ${day} ${month} ${year}. ${time} WIB`;
   }
 
+  const handleCopy = () => {
+    const uri = `https://www.compasspubindonesia.com/post-view.php?id=${post._id}&lang=${post.lang}`;
+    const copied = navigator.clipboard.writeText(uri);
+    if (copied) {
+      document.getElementById("fab").classList.add("active");
+      document.getElementById("lbs").innerText = "Link Copied";
+    }
+  };
+
   // render the display
   return (
     <>
@@ -274,6 +283,14 @@ function PostIdView() {
       </div>
       <div className="section"></div>
       <div className="section"></div>
+      <button
+        type="button"
+        onClick={() => handleCopy()}
+        className="fab"
+        id="fab"
+      >
+        <span id="lbs">Share</span> <i className="fas fa-share-alt"></i>
+      </button>
     </>
   );
 }

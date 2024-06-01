@@ -281,21 +281,18 @@ function Home() {
     <>
       <Helmet>
         <title>Home | Compass Publishing Indonesia</title>
-        <meta
-          property="og:url"
-          content={`https://www.compasspubindonesia.com`}
-        />
+        <meta property="og:url" content="https://www.compasspubindonesia.com" />
         <meta
           property="og:title"
-          content={`Home | Compass Publishing Indonesia`}
+          content="Home | Compass Publishing Indonesia"
         />
         <meta
           property="og:description"
-          content={`Official Homepage of Compass Publishing Indonesia`}
+          content="Official Homepage of Compass Publishing Indonesia"
         />
         <meta
           property="og:image"
-          content={`https://www.compasspubindonesia.com/logo192.png`}
+          content="https://www.compasspubindonesia.com/logo192.png"
         />
       </Helmet>
       <div className="container">

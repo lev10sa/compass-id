@@ -229,6 +229,15 @@ function EventPartyAdd() {
     document.getElementById("peg").style = "display: none;";
   };
 
+  const handleCopy = () => {
+    const uri = `https://www.compasspubindonesia.com/event-join.php?id=${event._id}`;
+    const copied = navigator.clipboard.writeText(uri);
+    if (copied) {
+      document.getElementById("fab").classList.add("active");
+      document.getElementById("lbs").innerText = "Link Copied";
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -533,6 +542,14 @@ function EventPartyAdd() {
       </div>
       <div className="section"></div>
       <div className="section"></div>
+      <button
+        type="button"
+        onClick={() => handleCopy()}
+        className="fab"
+        id="fab"
+      >
+        <span id="lbs">Share</span> <i className="fas fa-share-alt"></i>
+      </button>
     </>
   );
 }
