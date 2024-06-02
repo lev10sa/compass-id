@@ -115,6 +115,14 @@ const EventList = () => {
     setSearch(e.target.value);
   };
 
+  const handleEvent = (val) => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    navigate(`/event-join/${val}`);
+  };
+
   // render the display
   return (
     <>
@@ -163,7 +171,11 @@ const EventList = () => {
           <div className="section">
             <div className="section">
               {events.map((event, index) => (
-                <div className="event" key={index}>
+                <div
+                  className="event"
+                  key={index}
+                  onClick={() => handleEvent(event._id)}
+                >
                   {event.img !== "" ? (
                     <>
                       <img src={event.img} alt={event.img} />
