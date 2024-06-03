@@ -1481,3 +1481,12 @@ label {
     padding-bottom: 1rem;
   }
 }
+
+.psto a,
+.dip a {
+  text-transform: none !important;
+}
+
+.dipo a {
+  color: #111;
+}

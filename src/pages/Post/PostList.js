@@ -162,7 +162,10 @@ const PostList = () => {
                     <></>
                   )}
 
-                  <p className="dip">{post.body}</p>
+                  <pre
+                    className="dip"
+                    dangerouslySetInnerHTML={{ __html: post.body }}
+                  />
 
                   <button onClick={() => handleClick(post._id)} className="btn">
                     Read This post

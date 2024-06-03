@@ -187,7 +187,7 @@ function PostEnView() {
                   <p>{formatTime(post.date)}</p>
                 </div>
                 <pre
-                  className="section"
+                  className="section psto"
                   dangerouslySetInnerHTML={{ __html: post.body }}
                 />
                 <div className="section"></div>
@@ -265,7 +265,10 @@ function PostEnView() {
                       >
                         <img src={item.banner} alt={item.banner} />
                         <h3>{item.title.toUpperCase()}</h3>
-                        <p className="dip">{item.body}</p>
+                        <pre
+                          className="dip"
+                          dangerouslySetInnerHTML={{ __html: item.body }}
+                        />
                         <button
                           type="button"
                           onClick={() => handleClick(item._id)}

@@ -552,7 +552,10 @@ function Home() {
                       >
                         <img src={item.banner} alt={item.banner} />
                         <h3>{item.title.toUpperCase()}</h3>
-                        <p className="dip">{item.body}</p>
+                        <pre
+                          className="dip dipo"
+                          dangerouslySetInnerHTML={{ __html: item.body }}
+                        />
                         <button
                           type="button"
                           onClick={() => handleClick(item._id)}
