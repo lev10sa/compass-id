@@ -168,75 +168,66 @@ function Home() {
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20230508105235_itm.png",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
+      url: "https://eb.compasspub.com/v2/?uri=books/Boost_English_1/work/&prev=23",
+      name: "Boost English 1 - Student Book",
+      isbn: "9781685912758",
       category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      bookPrice: "140000",
+      ebookPrice: "70000",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2019041295137_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
+      url: "https://eb.compasspub.com/v2/?uri=books/interact_1/work/&prev=19",
+      name: "Interact 1 - Student Book",
+      isbn: "9781640150546",
       category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      bookPrice: "182000",
+      ebookPrice: "81000",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20200922145515_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
+      url: "https://eb.compasspub.com/v2/?uri=books/Hang_Out_1/work/&prev=19",
+      name: "Hang Out 1 - Student Book",
+      isbn: "9781613528372",
       category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      bookPrice: "161000",
+      ebookPrice: "70000",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20200922134819_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
+      url: "https://eb.compasspub.com/v2/?uri=books/NF1/work/&prev=21",
+      name: "New Frontiers 1 - Student Book",
+      isbn: "9781640152113",
       category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      bookPrice: "172000",
+      ebookPrice: "76000",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2010052791452_itm.PNG",
       url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      name: "Sounds Great 1 - Student Book",
+      isbn: "9781599665771",
+      category: "Phonics",
+      bookPrice: "156000",
+      ebookPrice: "68000",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2022040811442_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      url: "https://eb.compasspub.com/v2/?uri=books/Ni_Hao_1/work/&prev=15",
+      name: "Ni Hao Chinese 1 Student Book + Workbook",
+      isbn: "9781685911492",
+      category: "Chinese",
+      bookPrice: "149000",
+      ebookPrice: "74500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2018032617514_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
+      url: "https://eb.compasspub.com/v2/?uri=books/BigShow_1/work/&prev=15",
+      name: "Big Show 1 - Student Book",
+      isbn: "9781640151246",
       category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-    {
-      src: "https://i.compasspub.com/userfiles/item/2023070595325_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
+      bookPrice: "160000",
+      ebookPrice: "70000",
     },
   ];
 
@@ -362,8 +353,8 @@ function Home() {
     const options = {
       style: "currency", // set currency
       currency: "IDR", // set currency code for Indonesian Rupiah (IDR)
-      minimumFractionDigits: 2, // set minimum decimal places to 2
-      maximumFractionDigits: 2, // set maximum decimal places to 2
+      minimumFractionDigits: 0, // set minimum decimal places to 2
+      maximumFractionDigits: 0, // set maximum decimal places to 2
     };
 
     // use toLocaleString() with the defined options
@@ -453,7 +444,10 @@ function Home() {
                 <p>
                   <strong>{book.name}</strong>
                 </p>
-                <p>{formatCurrency(book.bookPrice)}</p>
+                <p>
+                  <i className="fas fa-book"></i>{" "}
+                  {formatCurrency(book.bookPrice)}
+                </p>
               </a>
             ))}
           </div>

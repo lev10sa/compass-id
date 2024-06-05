@@ -46,15 +46,17 @@ function Footer() {
               </>
             ))}
           </div>
-          <div className="section">
-            <p>&copy; 2024 - PT Solusi Edukasi Gemilang</p>
-          </div>
         </div>
         <div className="section" style={{ background: "#000" }}>
-          <p style={{ fontSize: "10pt" }}>
-            Website ini sedang dalam pengembangan, sehingga beberapa fitur
-            mungkin tidak akan berjalan optimal.
-          </p>
+          <div className="container">
+            <p style={{ fontSize: "10pt" }}>
+              Website ini sedang dalam pengembangan, sehingga beberapa fitur
+              mungkin tidak akan berjalan optimal.
+            </p>
+          </div>
+        </div>
+        <div className="section">
+          <p>&copy; 2024 - PT Solusi Edukasi Gemilang</p>
         </div>
       </div>
     </>
