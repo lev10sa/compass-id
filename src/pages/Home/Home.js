@@ -7,6 +7,7 @@ function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [post, setPost] = useState([]);
   const [event, setEvent] = useState([]);
+  const [book, setBook] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [lang, setLang] = useState("id");
@@ -107,42 +108,135 @@ function Home() {
 
   const greeting = getGreeting();
 
+  const bookd = [
+    {
+      src: "https://www.compasspub.com/userfiles/item/20200903161644_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/20200903161657_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey2/work/&prev=15",
+      name: "Odyssey 2 - Student Book and Workbook",
+      isbn: "9781640155985",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/20200903161710_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey3/work/&prev=15",
+      name: "Odyssey 3 - Student Book and Workbook",
+      isbn: "9781640155992",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/20200903161722_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey4/work/&prev=15",
+      name: "Odyssey 4 - Student Book and Workbook",
+      isbn: "9781640156005",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
+    },
+    {
+      src: "https://www.compasspub.com/userfiles/item/20200903161733_itm.jpg",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey5/work/&prev=15",
+      name: "Odyssey 5 - Student Book and Workbook",
+      isbn: "9781640156012",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
+    },
+  ];
+
   const books = [
     {
       src: "https://www.compasspub.com/userfiles/item/20200903161644_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20230508105235_itm.png",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2019041295137_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20200922145515_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/20200922134819_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2010052791452_itm.PNG",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2022040811442_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://www.compasspub.com/userfiles/item/2018032617514_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
     {
       src: "https://i.compasspub.com/userfiles/item/2023070595325_itm.jpg",
-      url: "",
+      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
+      name: "Odyssey 1 - Student Book and Workbook",
+      isbn: "9781640155978",
+      category: "Course Books",
+      bookPrice: "125000",
+      ebookPrice: "62500",
     },
   ];
 
@@ -308,7 +402,6 @@ function Home() {
               />
             </div>
           </div>
-          <div className="section"></div>
           <div className="section icons">
             {icons.map((icon, index) => (
               <>
@@ -349,8 +442,18 @@ function Home() {
           </div>
           <div className="section scrollList">
             {books.map((book, index) => (
-              <a href={book.url} target="_blank" rel="noreferrer">
-                <img src={book.src} alt="" key={index} />
+              <a
+                className="axe"
+                href={book.url}
+                target="_blank"
+                rel="noreferrer"
+                key={index}
+              >
+                <img src={book.src} alt={book.src} />
+                <p>
+                  <strong>{book.name}</strong>
+                </p>
+                <p>{formatCurrency(book.bookPrice)}</p>
               </a>
             ))}
           </div>

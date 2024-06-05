@@ -163,13 +163,6 @@ function PostEnView() {
                 <div className="film">
                   <img src={post.banner} alt={post.banner} id="main" />
                   <div className="panel">
-                    <img
-                      src={post.banner}
-                      alt={post.banner}
-                      id="main-0"
-                      onClick={() => selMain(0)}
-                      className="active"
-                    />
                     {post.fileList.map((file, index) => (
                       <img
                         src={file.url}

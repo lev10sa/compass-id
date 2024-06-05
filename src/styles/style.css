@@ -700,14 +700,45 @@ label {
     white-space: nowrap;
   }
 
-  .recom .scrollList img {
-    width: 15%;
-    height: 14rem;
+  .recom .scrollList .axe {
+    width: 12%;
+    height: auto;
     display: inline-block;
     overflow: hidden;
-    margin: auto 10px;
+    margin: auto 5px;
+  }
+
+  .recom .scrollList .axe p {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 2px auto auto 2px;
+    color: #999;
+    font-size: 10pt;
+  }
+
+  .recom .scrollList .axe strong {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 10px;
+    display: block;
+    color: #111;
+  }
+
+  .recom .scrollList .axe img {
+    width: 100%;
+    height: 11em;
+    display: block;
+    overflow: hidden;
     vertical-align: top;
-    border-radius: 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
   }
 
   .partner .thumb img {
@@ -1378,12 +1409,42 @@ label {
     white-space: nowrap;
   }
 
-  .recom .scrollList img {
-    width: 33%;
-    height: 11em;
+  .recom .scrollList .axe {
+    width: 29%;
+    height: auto;
     display: inline-block;
     overflow: hidden;
     margin: auto 5px;
+  }
+
+  .recom .scrollList .axe p {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 2px auto auto 2px;
+    color: #999;
+    font-size: 10pt;
+  }
+
+  .recom .scrollList .axe strong {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 10px;
+    display: block;
+    color: #111;
+  }
+
+  .recom .scrollList .axe img {
+    width: 100%;
+    height: 140px;
+    display: block;
+    overflow: hidden;
     vertical-align: top;
     border-radius: 10px;
     border: 1px solid #eee;
