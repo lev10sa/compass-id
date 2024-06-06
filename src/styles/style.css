@@ -839,6 +839,80 @@ label {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
+
+  .bog:nth-child(odd) {
+    width: 45%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin: 3rem 6rem auto auto;
+    clear: both;
+  }
+
+  .bog:nth-child(even) {
+    width: 45%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin: 3rem auto auto auto;
+    clear: both;
+  }
+
+  .bog .cover {
+    width: 25%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  .bog .caption {
+    width: 75%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0px 15px;
+  }
+
+  .bog .cover,
+  .bog .caption {
+    margin-bottom: 2rem;
+  }
+
+  .bog .cover img {
+    width: 100%;
+    height: 165px;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .bog .caption h3,
+  .bog .caption p {
+    margin: auto;
+  }
+
+  .bog .caption h3 {
+    text-transform: uppercase;
+    font-size: 15pt;
+    margin: auto auto 5px auto;
+  }
+
+  .bog .caption p {
+    font-size: 10pt;
+    margin: 5px auto;
+    color: #777;
+  }
+
+  .bog .caption .btn {
+    background: #111;
+    color: #fff;
+    padding: 5px 20px;
+    margin: 20px auto auto auto;
+    border-radius: 5px;
+    font-weight: 600;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1021,7 +1095,7 @@ label {
     z-index: 997;
     background: #fff;
     clear: both;
-    border-bottom: 0.5px solid #111;
+    border-bottom: 1px solid #111;
   }
 
   .navbar .logo {
@@ -1551,6 +1625,72 @@ label {
   .posts .section {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .bog {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #111;
+    clear: both;
+  }
+
+  .bog .cover {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  .bog .caption {
+    width: 70%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 0px 15px;
+  }
+
+  .bog .cover,
+  .bog .caption {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .bog .cover img {
+    width: 100%;
+    height: 150px;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .bog .caption h3,
+  .bog .caption p {
+    margin: auto;
+  }
+
+  .bog .caption h3 {
+    text-transform: uppercase;
+    font-size: 14pt;
+    margin: auto auto 5px auto;
+  }
+
+  .bog .caption p {
+    font-size: 10pt;
+    margin: 5px auto;
+    color: #777;
+  }
+
+  .bog .caption .btn {
+    background: #111;
+    color: #fff;
+    padding: 5px 20px;
+    margin: 10px auto auto auto;
+    border-radius: 5px;
+    font-weight: 600;
   }
 }
 

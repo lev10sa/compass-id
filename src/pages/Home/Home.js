@@ -158,7 +158,7 @@ function Home() {
     },
     {
       src: "fas fa-book",
-      url: "/",
+      url: "/books",
       label: "Book",
     },
     {
@@ -311,7 +311,7 @@ function Home() {
                 <h5 style={{ float: "left" }}>Recommendation</h5>
                 <button
                   type="button"
-                  onClick={() => navigate("/")}
+                  onClick={() => navigate("/books")}
                   style={{
                     borderRadius: "10px",
                     background: "transparent",

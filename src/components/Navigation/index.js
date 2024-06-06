@@ -102,7 +102,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/posts`)}>
             <i className="fas fa-file-alt"></i> <span>post</span>
           </button>
-          <button onClick={() => navigate(`/`)}>
+          <button onClick={() => navigate(`/books`)}>
             <i className="fas fa-book"></i> <span>Book</span>
           </button>
           <button onClick={() => navigate(`/`)}>
@@ -139,7 +139,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/posts`)}>
             <span>post</span> <i className="fas fa-file-alt"></i>
           </button>
-          <button onClick={() => navigate(`/`)}>
+          <button onClick={() => navigate(`/books`)}>
             <span>Book</span> <i className="fas fa-book"></i>
           </button>
           <button onClick={() => navigate(`/`)}>

@@ -10,6 +10,7 @@ import {
   PostIdView,
 } from "./pages";
 import { Navigation, Footer } from "./components";
+import BookList from "./pages/Book/BookList";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/posts" element={<PostList />} />
             <Route path="/post-view/en/:id" element={<PostEnView />} />
             <Route path="/post-view/id/:id" element={<PostIdView />} />
+            <Route path="/books" element={<BookList />} />
           </Routes>
         </div>
         <Footer />
