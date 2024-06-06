@@ -175,7 +175,7 @@ const BookList = () => {
                   )}
 
                   <button onClick={() => handlebook(book.url)} className="btn">
-                    PREVIEW THIS BOOK
+                    PREVIEW
                   </button>
                 </div>
               </div>
