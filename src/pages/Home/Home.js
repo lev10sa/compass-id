@@ -7,7 +7,7 @@ function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [post, setPost] = useState([]);
   const [event, setEvent] = useState([]);
-  const [book, setBook] = useState([]);
+  const [books, setBook] = useState([]);
   const [isEmpty, setIsEmpty] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
   const [lang, setLang] = useState("id");
@@ -60,6 +60,20 @@ function Home() {
     };
 
     getevent();
+
+    const getBooks = async () => {
+      let url = `https://seg-server.vercel.app/api/booki`;
+      try {
+        const datas = await axios.get(url);
+        datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
+        setBook(datas.data);
+        setIsLoading(false);
+      } catch (error) {
+        window.alert(error.message);
+      }
+    };
+
+    getBooks();
   }, [lang]);
 
   const getGreeting = () => {
@@ -107,129 +121,6 @@ function Home() {
   };
 
   const greeting = getGreeting();
-
-  const bookd = [
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200903161644_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200903161657_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey2/work/&prev=15",
-      name: "Odyssey 2 - Student Book and Workbook",
-      isbn: "9781640155985",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200903161710_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey3/work/&prev=15",
-      name: "Odyssey 3 - Student Book and Workbook",
-      isbn: "9781640155992",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200903161722_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey4/work/&prev=15",
-      name: "Odyssey 4 - Student Book and Workbook",
-      isbn: "9781640156005",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200903161733_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey5/work/&prev=15",
-      name: "Odyssey 5 - Student Book and Workbook",
-      isbn: "9781640156012",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-  ];
-
-  const books = [
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200903161644_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Odyssey 1 - Student Book and Workbook",
-      isbn: "9781640155978",
-      category: "Course Books",
-      bookPrice: "125000",
-      ebookPrice: "62500",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20230508105235_itm.png",
-      url: "https://eb.compasspub.com/v2/?uri=books/Boost_English_1/work/&prev=23",
-      name: "Boost English 1 - Student Book",
-      isbn: "9781685912758",
-      category: "Course Books",
-      bookPrice: "140000",
-      ebookPrice: "70000",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/2019041295137_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/interact_1/work/&prev=19",
-      name: "Interact 1 - Student Book",
-      isbn: "9781640150546",
-      category: "Course Books",
-      bookPrice: "182000",
-      ebookPrice: "81000",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200922145515_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Hang_Out_1/work/&prev=19",
-      name: "Hang Out 1 - Student Book",
-      isbn: "9781613528372",
-      category: "Course Books",
-      bookPrice: "161000",
-      ebookPrice: "70000",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/20200922134819_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/NF1/work/&prev=21",
-      name: "New Frontiers 1 - Student Book",
-      isbn: "9781640152113",
-      category: "Course Books",
-      bookPrice: "172000",
-      ebookPrice: "76000",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/2010052791452_itm.PNG",
-      url: "https://eb.compasspub.com/v2/?uri=books/Odyssey1/work/&prev=17",
-      name: "Sounds Great 1 - Student Book",
-      isbn: "9781599665771",
-      category: "Phonics",
-      bookPrice: "156000",
-      ebookPrice: "68000",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/2022040811442_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/Ni_Hao_1/work/&prev=15",
-      name: "Ni Hao Chinese 1 Student Book + Workbook",
-      isbn: "9781685911492",
-      category: "Chinese",
-      bookPrice: "149000",
-      ebookPrice: "74500",
-    },
-    {
-      src: "https://www.compasspub.com/userfiles/item/2018032617514_itm.jpg",
-      url: "https://eb.compasspub.com/v2/?uri=books/BigShow_1/work/&prev=15",
-      name: "Big Show 1 - Student Book",
-      isbn: "9781640151246",
-      category: "Course Books",
-      bookPrice: "160000",
-      ebookPrice: "70000",
-    },
-  ];
 
   const partners = [
     {
@@ -410,48 +301,55 @@ function Home() {
             ))}
           </div>
         </div>
-        <div className="section recom">
-          <div className="section headline">
-            <h5 style={{ float: "left" }}>Recommendation</h5>
-            <button
-              type="button"
-              onClick={() => navigate("/")}
-              style={{
-                borderRadius: "10px",
-                background: "transparent",
-                color: "#111",
-                border: "1px hidden",
-                paddingLeft: "5px",
-                paddingRight: "5px",
-                float: "right",
-                fontWeight: "400",
-              }}
-              className="btn"
-            >
-              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-            </button>
-          </div>
-          <div className="section scrollList">
-            {books.map((book, index) => (
-              <a
-                className="axe"
-                href={book.url}
-                target="_blank"
-                rel="noreferrer"
-                key={index}
-              >
-                <img src={book.src} alt={book.src} />
-                <p>
-                  <strong>{book.name}</strong>
-                </p>
-                <p>
-                  <i className="fas fa-book"></i>{" "}
-                  {formatCurrency(book.bookPrice)}
-                </p>
-              </a>
-            ))}
-          </div>
-        </div>
+
+        {isLoading === true ? (
+          <></>
+        ) : (
+          <>
+            <div className="section recom">
+              <div className="section headline">
+                <h5 style={{ float: "left" }}>Recommendation</h5>
+                <button
+                  type="button"
+                  onClick={() => navigate("/")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                    fontWeight: "400",
+                  }}
+                  className="btn"
+                >
+                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
+              </div>
+              <div className="section scrollList">
+                {books.map((book, index) => (
+                  <a
+                    className="axe"
+                    href={book.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={index}
+                  >
+                    <img src={book.src} alt={book.src} />
+                    <p>
+                      <strong>{book.name}</strong>
+                    </p>
+                    <p>
+                      <i className="fas fa-book"></i>{" "}
+                      {formatCurrency(book.bookPrice)}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
 
         {isLoading === true ? (
           <></>
