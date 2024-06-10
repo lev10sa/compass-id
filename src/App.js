@@ -11,6 +11,7 @@ import {
 } from "./pages";
 import { Navigation, Footer } from "./components";
 import BookList from "./pages/Book/BookList";
+import BookView from "./pages/Book/BookView";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/post-view/en/:id" element={<PostEnView />} />
             <Route path="/post-view/id/:id" element={<PostIdView />} />
             <Route path="/books" element={<BookList />} />
+            <Route path="/book-view/:id" element={<BookView />} />
           </Routes>
         </div>
         <Footer />

@@ -329,22 +329,23 @@ function Home() {
               </div>
               <div className="section scrollList">
                 {books.map((book, index) => (
-                  <a
+                  <button
                     className="axe"
-                    href={book.url}
-                    target="_blank"
-                    rel="noreferrer"
+                    onClick={() => navigate(`/book-view/${book._id}`)}
                     key={index}
                   >
                     <img src={book.src} alt={book.src} />
                     <p>
                       <strong>{book.name}</strong>
                     </p>
+                    <p style={{ textTransform: "uppercase" }}>
+                      <i className="fas fa-list"></i> {book.category}
+                    </p>
                     <p>
                       <i className="fas fa-book"></i>{" "}
                       {formatCurrency(book.bookPrice)}
                     </p>
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>

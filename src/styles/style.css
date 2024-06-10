@@ -346,7 +346,7 @@ label {
     z-index: 997;
     background: #fff;
     clear: both;
-    border-bottom: 0.5px solid #111;
+    border-bottom: 2px solid #ddd;
   }
 
   .navbar .logo {
@@ -363,7 +363,7 @@ label {
     height: auto;
     display: block;
     overflow: hidden;
-    float: right;
+    text-align: center;
     margin: 10px 10px;
   }
 
@@ -401,7 +401,7 @@ label {
   .navbar .taba button,
   .navbar .tabi button {
     display: inline-block;
-    margin: auto 10px;
+    margin: auto 5px;
     padding: 0.5rem 1rem;
     font-size: 0.9em;
   }
@@ -411,15 +411,23 @@ label {
     margin-right: 10px;
   }
 
+  .navbar .taba button {
+    font-weight: 500;
+    font-size: 12pt;
+    color: #666;
+  }
+
   .navbar .tabi button {
     background: #111;
     color: #fff;
     border-radius: 10px;
     margin-right: 2rem;
+    border: 1px solid #111;
   }
 
   .navbar .taba button:hover {
     font-weight: 600;
+    color: #111;
   }
 
   #sidenav {
@@ -441,7 +449,7 @@ label {
     overflow: hidden;
     background: #111;
     padding: 0;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #ddd;
     margin-top: 3.7rem;
   }
 
@@ -716,10 +724,11 @@ label {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin: 2px auto auto 2px;
-    color: #999;
+    margin: 5px auto auto 2px;
+    color: #777;
     font-size: 9pt;
     text-transform: none;
+    text-align: left;
   }
 
   .recom .scrollList .axe strong {
@@ -737,10 +746,9 @@ label {
 
   .recom .scrollList .axe img {
     width: 100%;
-    height: 13em;
+    height: 14em;
     display: block;
     overflow: hidden;
-    vertical-align: top;
     border-radius: 10px;
     border: 1px solid #eee;
   }
@@ -912,6 +920,61 @@ label {
     margin: 20px auto auto auto;
     border-radius: 5px;
     font-weight: 600;
+  }
+
+  .boog {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .boog .image {
+    width: 25%;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+    margin: 1rem auto;
+    vertical-align: top;
+  }
+
+  .boog .caption {
+    width: 75%;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1rem 2rem;
+  }
+
+  .boog .image img {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .boog .caption h1 {
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .boog .caption p {
+    padding: 1rem 0;
+    border-bottom: 1px solid #111;
+  }
+
+  .boog .caption .btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 15px 3rem;
+    border: 1px hidden;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    width: auto;
+    height: auto;
+    font-weight: bold;
   }
 }
 
@@ -1095,7 +1158,7 @@ label {
     z-index: 997;
     background: #fff;
     clear: both;
-    border-bottom: 1px solid #111;
+    border-bottom: 2px solid #ccc;
   }
 
   .navbar .logo {
@@ -1264,7 +1327,7 @@ label {
     margin-top: 3.6rem;
     background: #111;
     padding: 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid #ccc;
   }
 
   .banner img {
@@ -1497,7 +1560,7 @@ label {
     height: auto;
     display: inline-block;
     overflow: hidden;
-    margin: auto 5px;
+    margin: auto;
   }
 
   .recom .scrollList .axe p {
@@ -1507,10 +1570,11 @@ label {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin: 2px auto auto 2px;
+    margin: 3px auto 2px auto;
     color: #999;
-    font-size: 10pt;
+    font-size: 8pt;
     text-transform: none;
+    text-align: left;
   }
 
   .recom .scrollList .axe strong {
@@ -1519,18 +1583,18 @@ label {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin-top: 10px;
+    margin-top: 5px;
     display: block;
     color: #111;
     text-transform: uppercase;
+    font-size: 9pt;
   }
 
   .recom .scrollList .axe img {
     width: 100%;
-    height: 145px;
+    height: 135px;
     display: block;
     overflow: hidden;
-    vertical-align: top;
     border-radius: 10px;
     border: 1px solid #eee;
   }
@@ -1691,6 +1755,60 @@ label {
     margin: 10px auto auto auto;
     border-radius: 5px;
     font-weight: 600;
+  }
+
+  .boog {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .boog .image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+    margin: 1rem auto;
+  }
+
+  .boog .caption {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .boog .image img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+  }
+
+  .boog .caption h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .boog .caption p {
+    padding: 1rem 0;
+    border-bottom: 1px solid #111;
+  }
+
+  .boog .caption .btn {
+    display: block;
+    margin-top: 2rem;
+    padding: 15px 1rem;
+    border: 1px hidden;
+    border-radius: 10px;
+    background: #111;
+    color: #fff;
+    width: 100%;
+    height: auto;
+    float: left;
+    font-weight: bold;
   }
 }
 

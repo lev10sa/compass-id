@@ -118,11 +118,7 @@ const BookList = () => {
           // display table after loading
           <div className="section">
             {books.map((book, index) => (
-              <div
-                className="bog"
-                key={index}
-                onClick={() => handlebook(book.url)}
-              >
+              <div className="bog" key={index}>
                 <div className="cover">
                   {book.img !== "" ? (
                     <>
@@ -174,8 +170,20 @@ const BookList = () => {
                     <></>
                   )}
 
-                  <button onClick={() => handlebook(book.url)} className="btn">
+                  <button
+                    onClick={() => handlebook(book.url)}
+                    className="btn"
+                    style={{ fontWeight: "400", marginRight: "5px" }}
+                  >
                     PREVIEW
+                  </button>
+
+                  <button
+                    onClick={() => navigate(`/book-view/${book._id}`)}
+                    className="btn"
+                    style={{ fontWeight: "400", marginLeft: "5px" }}
+                  >
+                    DETAIL
                   </button>
                 </div>
               </div>
