@@ -331,7 +331,7 @@ function Home() {
                 {books.map((book, index) => (
                   <button
                     className="axe"
-                    onClick={() => navigate(`/book-view/${book._id}`)}
+                    onClick={() => navigate(`/books`)}
                     key={index}
                   >
                     <img src={book.src} alt={book.src} />
