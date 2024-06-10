@@ -82,7 +82,7 @@ function BookView() {
           content={`https://www.compasspubindonesia.com/book-view/${booked._id}`}
         />
         <meta property="og:title" content={`${booked.name}`} />
-        <meta property="og:description" content={`${booked.name}`} />
+        <meta property="og:description" content={`${booked.category}`} />
         <meta property="og:image" content={`${booked.src}`} />
       </Helmet>
       <div className="party container">
@@ -113,6 +113,17 @@ function BookView() {
                       ) : (
                         <></>
                       )}
+
+                      {booked.isbn !== "" ? (
+                        <>
+                          <p>
+                            <strong>ISBN:</strong> {booked.isbn}
+                          </p>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+
                       {booked.category !== "" ? (
                         <>
                           <p>

@@ -28,9 +28,9 @@ if (isset($_GET['id'])) {
 
         ?>
             <title><?= htmlspecialchars($data['name']); ?></title>
-            <meta name="description" content="<?= htmlspecialchars($data['name']); ?>" />
+            <meta name="description" content="<?= htmlspecialchars($data['category']); ?>" />
             <meta property="og:title" content="<?= htmlspecialchars($data['name']); ?>" />
-            <meta property="og:description" content="<?= htmlspecialchars($data['name']); ?>" />
+            <meta property="og:description" content="<?= htmlspecialchars($data['category']); ?>" />
             <meta property="og:image" content="<?= $data['src']; ?>" />
             <meta property="og:url" content="<?= $uru; ?>" />
         <?php
