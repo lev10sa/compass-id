@@ -148,22 +148,10 @@ const BookList = () => {
                     <></>
                   )}
 
-                  {book.bookPrice !== "" ? (
+                  {book.cefr !== "" ? (
                     <>
                       <p>
-                        <strong>Book Price:</strong>{" "}
-                        {formatCurrency(book.bookPrice)}
-                      </p>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-
-                  {book.ebookPrice !== "" ? (
-                    <>
-                      <p>
-                        <strong>E-Book Price:</strong>{" "}
-                        {formatCurrency(book.ebookPrice)}
+                        <strong>CEFR Level:</strong> {book.cefr}
                       </p>
                     </>
                   ) : (

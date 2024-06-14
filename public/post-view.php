@@ -1,14 +1,15 @@
 <?php
 
+$lang = htmlspecialchars($_GET['lang']);  // Sanitize language
+$id = htmlspecialchars($_GET['id']); // Sanitize ID
+
+// Build the API URL
+$url = "https://seg-server.vercel.app/api/posts/" . $lang . "/id/" . $id;
+$uru = htmlspecialchars("https://compasspubindonesia.com/post-view.php?id=" . $id . "&lang=" . $lang);
+$urd = htmlspecialchars("https://compasspubindonesia.com/post-view/" . $lang . "/" . $id);
+
 // Check for GET parameters and sanitize them
 if (isset($_GET['id']) && isset($_GET['lang'])) {
-
-    $lang = htmlspecialchars($_GET['lang']);  // Sanitize language
-    $id = htmlspecialchars($_GET['id']); // Sanitize ID
-
-    // Build the API URL
-    $url = "https://seg-server.vercel.app/api/posts/" . $lang . "/id/" . $id;
-    $uru = htmlspecialchars("https://compasspubindonesia.com/post-view/" . $lang . "/" . $id);
 
     $res = file_get_contents($url);
     $data = json_decode($res, true);
@@ -51,7 +52,7 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
 
         <?php if ($data) { ?>
             <script>
-                window.open('<?= $uru; ?>', "_self");
+                window.open('<?= $urd; ?>', "_self");
             </script>
         <?php } else { ?>
             <p>No data found for the provided ID and language.</p>
@@ -62,10 +63,13 @@ if (isset($_GET['id']) && isset($_GET['lang'])) {
     </html>
 <?php
 
-
 } else {
-    // Display message if parameters are missing or empty
-    echo "Missing or invalid ID and/or language parameters.";
+
+?>
+    <script>
+        window.open('<?= $urd; ?>', "_self");
+    </script>
+<?php
 }
 
 ?>

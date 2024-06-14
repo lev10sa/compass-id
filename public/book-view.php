@@ -1,14 +1,14 @@
 <?php
 
+$id = htmlspecialchars($_GET['id']); // Sanitize ID
+
+// Build the API URL
+$url = "https://seg-server.vercel.app/api/booked/id/" . $id;
+$uru = htmlspecialchars("https://compasspubindonesia.com/book-view/" . $id);
+$urd = htmlspecialchars("https://compasspubindonesia.com/book-view.php?id=" . $id);
+
 // Check for GET parameters and sanitize them
 if (isset($_GET['id'])) {
-
-    // Sanitize language
-    $id = htmlspecialchars($_GET['id']); // Sanitize ID
-
-    // Build the API URL
-    $url = "https://seg-server.vercel.app/api/booked/id/" . $id;
-    $uru = htmlspecialchars("https://compasspubindonesia.com/book-view/" . $id);
 
     $res = file_get_contents($url);
     $data = json_decode($res, true);
@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
 
         <?php if ($data) { ?>
             <script>
-                window.open('<?= $uru; ?>', "_self");
+                window.open('<?= $urd; ?>', "_self");
             </script>
         <?php } else { ?>
             <p>No data found for the provided ID and language.</p>
@@ -64,8 +64,12 @@ if (isset($_GET['id'])) {
 
 
 } else {
-    // Display message if parameters are missing or empty
-    echo "Missing or invalid ID and/or language parameters.";
+
+?>
+    <script>
+        window.open('<?= $urd; ?>', "_self");
+    </script>
+<?php
 }
 
 ?>

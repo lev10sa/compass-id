@@ -134,22 +134,10 @@ function BookView() {
                         <></>
                       )}
 
-                      {booked.bookPrice !== "" ? (
+                      {booked.cefr !== "" ? (
                         <>
                           <p>
-                            <strong>Book Price:</strong>{" "}
-                            {formatCurrency(booked.bookPrice)}
-                          </p>
-                        </>
-                      ) : (
-                        <></>
-                      )}
-
-                      {booked.ebookPrice !== "" ? (
-                        <>
-                          <p>
-                            <strong>E-Book Price:</strong>{" "}
-                            {formatCurrency(booked.ebookPrice)}
+                            <strong>CEFR Level:</strong> {booked.cefr}
                           </p>
                         </>
                       ) : (

@@ -341,9 +341,8 @@ function Home() {
                     <p style={{ textTransform: "uppercase" }}>
                       <i className="fas fa-list"></i> {book.category}
                     </p>
-                    <p>
-                      <i className="fas fa-book"></i>{" "}
-                      {formatCurrency(book.bookPrice)}
+                    <p style={{ textTransform: "uppercase" }}>
+                      <i className="fas fa-sort"></i> {book.cefr}
                     </p>
                   </button>
                 ))}
