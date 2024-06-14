@@ -187,7 +187,12 @@ const EventList = () => {
                   <div className="section caption">
                     {event.title !== "" ? (
                       <>
-                        <h3 title={event.title}>{event.title}</h3>
+                        <h3
+                          title={event.title}
+                          style={{ textTransform: "uppercase" }}
+                        >
+                          {event.title}
+                        </h3>
                       </>
                     ) : (
                       <></>
