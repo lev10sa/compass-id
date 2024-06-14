@@ -144,7 +144,11 @@ const PostList = () => {
 
           <>
             {posts.map((post, index) => (
-              <div onClick={() => handleClick(post._id)} className="event">
+              <div
+                onClick={() => handleClick(post._id)}
+                className="event"
+                key={index}
+              >
                 {post.banner !== "" ? (
                   <>
                     <img src={post.banner} alt={post.banner} />

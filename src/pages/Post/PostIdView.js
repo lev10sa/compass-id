@@ -251,7 +251,6 @@ function PostIdView() {
                     {postp.map((item, index) => (
                       <div
                         onClick={() => handleClick(item._id)}
-                        rel="noreferrer"
                         key={index}
                         className="panel section"
                       >

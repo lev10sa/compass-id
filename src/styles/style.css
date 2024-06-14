@@ -175,13 +175,13 @@ label {
   }
 
   .post .panel {
-    width: 32%;
+    width: 31%;
     height: auto;
     display: inline-block;
     overflow: hidden;
     border: 1px solid #111;
     border-radius: 10px;
-    margin: 1rem 0.5rem;
+    margin: 2rem 0.5rem;
   }
 
   .post .panel img {
@@ -576,7 +576,7 @@ label {
   }
 
   .event {
-    width: 30%;
+    width: 31%;
     height: auto;
     display: inline-block;
     overflow: hidden;
@@ -591,6 +591,7 @@ label {
     object-fit: cover;
     object-position: top;
     display: block;
+    border-bottom: 1px solid;
   }
 
   .event .caption {

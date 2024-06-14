@@ -541,7 +541,6 @@ function Home() {
                     {posts.map((item, index) => (
                       <div
                         onClick={() => handleClick(item._id)}
-                        rel="noreferrer"
                         key={index}
                         className="panel"
                       >
