@@ -357,6 +357,92 @@ function Home() {
           <>
             <div className="section post">
               <div className="section headline">
+                <h5 style={{ float: "left" }}>Latest Posts</h5>
+                <button
+                  type="button"
+                  onClick={() => navigate("/posts")}
+                  style={{
+                    borderRadius: "10px",
+                    background: "transparent",
+                    color: "#111",
+                    border: "1px hidden",
+                    paddingLeft: "5px",
+                    paddingRight: "5px",
+                    float: "right",
+                    fontWeight: "400",
+                  }}
+                  className="btn"
+                >
+                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+                </button>
+              </div>
+              <div className="section lang">
+                <span>Select Language:</span>
+                <button
+                  type="button"
+                  onClick={() => langSet("id", "en")}
+                  id="id"
+                  className="active"
+                >
+                  Indonesia
+                </button>
+                <button
+                  type="button"
+                  onClick={() => langSet("en", "id")}
+                  id="en"
+                >
+                  English
+                </button>
+              </div>
+              {isLoading === true ? (
+                <>
+                  <div className="section loading">
+                    <p>Loading data, please wait...</p>
+                  </div>
+                </>
+              ) : isEmpty === true ? (
+                <>
+                  <div className="section empty">
+                    <p>No data...</p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="scrollList">
+                    {posts.map((item, index) => (
+                      <div
+                        onClick={() => handleClick(item._id)}
+                        key={index}
+                        className="panel"
+                      >
+                        <img src={item.banner} alt={item.banner} />
+                        <h3>{item.title.toUpperCase()}</h3>
+                        <pre
+                          className="dip dipo"
+                          dangerouslySetInnerHTML={{ __html: item.body }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => handleClick(item._id)}
+                          className="btn"
+                        >
+                          Read This post
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
+
+        {isLoading === true ? (
+          <></>
+        ) : (
+          <>
+            <div className="section post">
+              <div className="section headline">
                 <h5 style={{ float: "left" }}>Latest Events</h5>
                 <button
                   type="button"
@@ -470,92 +556,6 @@ function Home() {
                           className="btn"
                         >
                           Join This Event
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </>
-        )}
-
-        {isLoading === true ? (
-          <></>
-        ) : (
-          <>
-            <div className="section post">
-              <div className="section headline">
-                <h5 style={{ float: "left" }}>Latest Posts</h5>
-                <button
-                  type="button"
-                  onClick={() => navigate("/posts")}
-                  style={{
-                    borderRadius: "10px",
-                    background: "transparent",
-                    color: "#111",
-                    border: "1px hidden",
-                    paddingLeft: "5px",
-                    paddingRight: "5px",
-                    float: "right",
-                    fontWeight: "400",
-                  }}
-                  className="btn"
-                >
-                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-                </button>
-              </div>
-              <div className="section lang">
-                <span>Select Language:</span>
-                <button
-                  type="button"
-                  onClick={() => langSet("id", "en")}
-                  id="id"
-                  className="active"
-                >
-                  Indonesia
-                </button>
-                <button
-                  type="button"
-                  onClick={() => langSet("en", "id")}
-                  id="en"
-                >
-                  English
-                </button>
-              </div>
-              {isLoading === true ? (
-                <>
-                  <div className="section loading">
-                    <p>Loading data, please wait...</p>
-                  </div>
-                </>
-              ) : isEmpty === true ? (
-                <>
-                  <div className="section empty">
-                    <p>No data...</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="scrollList">
-                    {posts.map((item, index) => (
-                      <div
-                        onClick={() => handleClick(item._id)}
-                        key={index}
-                        className="panel"
-                      >
-                        <img src={item.banner} alt={item.banner} />
-                        <h3>{item.title.toUpperCase()}</h3>
-                        <pre
-                          className="dip dipo"
-                          dangerouslySetInnerHTML={{ __html: item.body }}
-                        />
-                        <button
-                          type="button"
-                          onClick={() => handleClick(item._id)}
-                          className="btn"
-                        >
-                          Read This post
                         </button>
                       </div>
                     ))}
