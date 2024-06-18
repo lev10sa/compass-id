@@ -614,7 +614,6 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="section"></div>
         <div className="section about">
           <div className="section headline">
             <h5>Tentang Kami</h5>
@@ -636,6 +635,7 @@ function Home() {
             </p>
           </div>
         </div>
+        <div className="section"></div>
       </div>
     </>
   );
