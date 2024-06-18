@@ -615,6 +615,27 @@ function Home() {
           </div>
         </div>
         <div className="section"></div>
+        <div className="section about">
+          <div className="section headline">
+            <h5>Tentang Kami</h5>
+          </div>
+          <div className="section">
+            <p>
+              COMPASS PUBLISHING INDONESIA adalah representatif dari COMPASS
+              PUBLISHING Korea Selatan yang menghasilkan solusi-solusi inovatif
+              terkait ELT bagi para guru dan influencer untuk siswa sejak tahun
+              1999. Kami menyediakan berbagai layanan yang berkaitan dengan
+              buku-buku ELT, buku-buku digital ELT, aplikasi-aplikasi ELT, dan
+              Layanan Webinar Edukasi Top Class untuk menaikkan taraf kompetensi
+              guru-guru di Indonesia dalam memenuhi kebutuhan dalam menjalankan
+              kurikulum, kemampuan bahasa, kecakapan digital, dan pengelolaan
+              psikologi dalam kelas. Kami hadir sebagai Sahabat Guru Sepanjang
+              Masa dalam rangka meningkatkan kualitas pendidikan di Indonesia.
+              Kami memotivasi semua orang untuk menginspirasi dalam mengajar dan
+              menginspirasi dalam belajar.
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );
