@@ -253,7 +253,7 @@ function PostEnView() {
                       <div
                         onClick={() => handleClick(item._id)}
                         key={index}
-                        className="panel section"
+                        className="panel"
                       >
                         <img src={item.banner} alt={item.banner} />
                         <h3>{item.title.toUpperCase()}</h3>
