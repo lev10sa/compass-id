@@ -51,7 +51,7 @@ if (isset($_GET['id'])) {
 
         <?php if ($data) { ?>
             <script>
-                window.open('<?= $urd; ?>', "_self");
+                window.open('<?= $uru; ?>', "_self");
             </script>
         <?php } else { ?>
             <p>No data found for the provided ID and language.</p>
@@ -67,7 +67,7 @@ if (isset($_GET['id'])) {
 
 ?>
     <script>
-        window.open('<?= $urd; ?>', "_self");
+        window.open('<?= $uru; ?>', "_self");
     </script>
 <?php
 }

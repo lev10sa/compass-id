@@ -854,7 +854,7 @@ label {
     height: auto;
     display: inline-block;
     overflow: hidden;
-    margin: 3rem 6rem auto auto;
+    margin: 3rem 4rem auto auto;
     clear: both;
   }
 
@@ -891,7 +891,7 @@ label {
 
   .bog .cover img {
     width: 100%;
-    height: 165px;
+    height: 150px;
     display: block;
     overflow: hidden;
     border-radius: 10px;
