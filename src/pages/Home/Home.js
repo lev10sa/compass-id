@@ -62,7 +62,7 @@ function Home() {
     getevent();
 
     const getBooks = async () => {
-      let url = `https://seg-server.vercel.app/api/booki`;
+      let url = `https://seg-server.vercel.app/api/booked`;
       try {
         const datas = await axios.get(url);
         datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
@@ -308,7 +308,7 @@ function Home() {
           <>
             <div className="section recom">
               <div className="section headline">
-                <h5 style={{ float: "left" }}>Recommendation</h5>
+                <h5 style={{ float: "left" }}>Recommendations</h5>
                 <button
                   type="button"
                   onClick={() => navigate("/books")}
@@ -331,7 +331,7 @@ function Home() {
                 {books.map((book, index) => (
                   <button
                     className="axe"
-                    onClick={() => navigate(`/books`)}
+                    onClick={() => navigate(`/book-view/${book._id}`)}
                     key={index}
                   >
                     <img src={book.src} alt={book.src} />
