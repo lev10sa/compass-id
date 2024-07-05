@@ -1,0 +1,374 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold !important;
+  margin: 10px auto !important;
+  padding: auto !important;
+  display: block !important;
+  font-family: Sans-Serif !important;
+}
+
+p {
+  margin: 10px auto !important;
+  padding: auto !important;
+  display: block !important;
+  font-family: Sans-Serif !important;
+}
+
+
+.nv {
+  width: 100% !important;
+  height: auto !important;
+  z-index: 997 !important;
+  display: block !important;
+  border: 1px hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden !important;
+  background: #307008 !important;
+}
+
+.ft {
+  width: 100% !important;
+  height: auto !important;
+  z-index: 997 !important;
+  display: block !important;
+  border: 1px hidden !important;
+  overflow: hidden !important;
+  background: #307008 !important;
+}
+
+.yl {
+  color: #ffde59 !important;
+}
+
+.nv .lg {
+  width: 85px !important;
+  height: auto !important;
+  border: 1px hidden !important;
+  margin: 5px 5px 5px 5px !important;
+  display: inline-block !important;
+}
+
+.nv .lg img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border: 1px hidden !important;
+}
+
+a.mn, .mn {
+  color: #ffde59 !important;
+  margin: 6px 8px !important;
+  font-size: 19pt !important;
+}
+
+.mn i {
+  font-size: 28pt !important;
+}
+
+.es {
+  font-size: 12pt !important;
+  border: 1px hidden !important;
+  border-radius: 10px !important;
+  display: inline-block !important;
+  color: #307008 !important;
+  background: #ffde59 !important;
+  margin: 8px !important;
+  padding: 5px 10px !important;
+  font-weight: bold !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+.bn {
+  width: 100% !important;
+  height: 94vh !important;
+  border: 1px hidden !important;
+  display: block !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background: #000 !important;
+}
+
+.bn img {
+  width: 100% !important;
+  height: 94vh !important;
+  border: 1px hidden !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.sn {
+  width: 65% !important;
+  height: 100vh !important;
+  display: none !important;
+  border: 1px hidden !important;
+  overflow: hidden !important;
+  background: #004832 !important;
+  color: #ffde59 !important;
+  z-index: 998 !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.cpz {
+  width: 100% !important;
+}
+
+#za div, #zb div, #zc div {
+  width: 100% !important;
+  min-height: 50px !important;
+  margin: 15px auto !important;
+  padding: 10px 15px !important;
+  display: block !important;
+  vertical-align: top !important;
+}
+
+.vm div {
+  width: 100% !important;
+  height: auto !important;
+  margin: auto !important;
+  display: block !important;
+  vertical-align: top !important;
+}
+
+.pus div {
+  display: inline-block !important;
+  margin: 5px !important;
+  width: 35% !important;
+}
+
+.pus div img {
+  width: 100% !important;
+  height: auto !important;
+  border: 2px solid #fff !important;
+  border-radius: 10px !important;
+}
+
+}
+
+@media only screen and (min-width: 601px) {
+
+.bn {
+  width: 100% !important;
+  height: 725px !important;
+  border: 1px hidden !important;
+  display: block !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background: #000 !important;
+}
+
+.bn img {
+  width: 100% !important;
+  height: 725px !important;
+  border: 1px hidden !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.sn {
+  width: 35% !important;
+  height: 100vh !important;
+  display: none !important;
+  border: 1px hidden !important;
+  overflow: hidden !important;
+  background: #004832 !important;
+  color: #ffde59 !important;
+  z-index: 998 !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+}
+
+.cpz {
+  width: 75% !important;
+}
+
+#za div, #zb div, #zc div {
+  width: 48% !important;
+  min-height: 300px !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  margin: 15px 5px !important;
+  padding: 10px 15px !important;
+}
+
+.vm div {
+  width: 100% !important;
+  min-height: 300px !important;
+  display: inline-block !important;
+  vertical-align: top !important;
+  margin: 15px auto !important;
+  padding: 10px !important;
+}
+
+.pus div {
+  display: inline-block !important;
+  margin: 5px !important;
+  width: 30% !important;
+}
+
+.pus div img {
+  width: 100% !important;
+  height: auto !important;
+  border: 2px solid #fff !important;
+  border-radius: 10px !important;
+}
+
+}
+
+.bnn {
+  width: 100% !important;
+  height: auto !important;
+  border: 1px hidden !important;
+  display: block !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.bnn img {
+  width: 100% !important;
+  max-height: 400px !important;
+  border: 1px hidden !important;
+  display: block !important;
+}
+
+.cp {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border: 1px hidden !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.cp .cpz {
+  color: #fff !important;
+  z-index: 5 !important;
+  margin: 10px 20px !important;
+}
+
+.cp .btn {
+  margin: 20px 0px 10px 0px !important;
+  font-size: 12pt !important;
+  border: 1px hidden !important;
+  border-radius: 10px !important;
+  display: inline-block !important;
+  color: #307008 !important;
+  background: #ffde59 !important;
+  font-weight: bold !important;
+}
+
+.cpin a {
+  width: 10px !important;
+  height: 10px !important;
+  background: #fff !important;
+  border: 1px hidden !important;
+  display: inline-block !important;
+  margin: 5px !important;
+  border-radius: 50% !important;
+}
+
+.cpin a.active {
+  background: #ffde59 !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+#imb, #imc, #imd, #ime, #imf, #cvb, #cvc, #cvd, #cve, #cvf, #zb, #zc {
+  display: none !important;
+}
+
+.act {
+  display: block !important;
+}
+
+.ctk {
+  width: auto !important;
+  height: auto !important;
+  color: #ffde59 !important;
+  background: #307008 !important;
+  font-weight: bold !important;
+  border-radius: 30px !important;
+  font-size: 12pt !important;
+  margin: 25px auto !important;
+  padding: 5px 30px !important;
+}
+
+.bg {
+  border-radius: 10px !important;
+}
+
+.ft a {
+  display: inline-block !important;
+  margin: 5px !important;
+  color: #fff !important;
+}
+
+#za div, #zb div, #zc div {
+  border: 2px solid #fff !important;
+  border-radius: 15px !important;
+}
+
+.pry {
+  background: #004832 !important;
+  color: #ffde59 !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border: 1px hidden !important;
+}
+
+.pus {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border: 1px hidden !important;
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  clear: both !important;
+  white-space: nowrap !important;
+}
+
+.snl a {
+  display: block !important;
+  width: 95% !important;
+  height: auto !important;
+  border-bottom: 1px solid #aaa !important;
+  color: #fff !important;
+  margin: 15px 5px !important;
+  padding: 10px 15px !important;
+}
+
+.snl a:hover, .lnk a:hover, .ft a:hover {
+  color: #ffde59 !important;
+}
+
+.fm {
+  min-height: 80vh !important;
+}
+
+.snl, .lnk {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border: 1px hidden !important;
+  overflow: hidden !important;
+}
+
+.lnk a {
+  display: inline-block !important;
+  margin: 5px !important;
+  color: #fff !important;
+}

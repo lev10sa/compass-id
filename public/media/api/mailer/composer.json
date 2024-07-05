@@ -1,0 +1,19 @@
+{
+    "name": "u0_a274/mailer",
+    "autoload": {
+        "psr-4": {
+            "U0A274\\Mailer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "uncover-id",
+            "email": "uncover-all.86@gmail.com"
+        }
+    ],
+    "require": {
+      
+      "phpoffice/phpspreadsheet": "^1.20"
+      
+    }
+}
