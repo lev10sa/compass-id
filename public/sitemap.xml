@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://compasspubindonesia.com/</loc>
+    <lastmod>2024-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/events</loc>
+    <lastmod>2024-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/posts</loc>
+    <lastmod>2024-07-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/books</loc>
+    <lastmod>2024-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/event-join/</loc>
+    <lastmod>2024-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/post-view/en/</loc>
+    <lastmod>2024-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/post-view/id/</loc>
+    <lastmod>2024-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://compasspubindonesia.com/book-view/</loc>
+    <lastmod>2024-06-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.compasspubindonesia.com/</loc>
     <lastmod>2024-07-03</lastmod>
     <changefreq>daily</changefreq>
@@ -48,5 +96,4 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
-  
 </urlset>
