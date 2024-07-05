@@ -62,7 +62,7 @@ function Home() {
     getevent();
 
     const getBooks = async () => {
-      let url = `https://seg-server.vercel.app/api/booked/key/1`;
+      let url = `https://seg-server.vercel.app/api/booked/key/1%20-`;
       try {
         const datas = await axios.get(url);
         datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
