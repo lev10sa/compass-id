@@ -327,7 +327,7 @@ function Home() {
                   <span style={{ marginRight: "10px" }}>See More</span>&#10095;
                 </button>
               </div>
-              <div className="scrollList">
+              <div className="section scrollList">
                 {books.map((book, index) => (
                   <button
                     className="axe"
