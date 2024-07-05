@@ -115,12 +115,6 @@ const Navigation = () => {
           id="images"
           key={currentIndex}
         />
-        <button className="prev" onClick={handlePrev}>
-          &#10094;
-        </button>
-        <button className="next" onClick={handleNext}>
-          &#10095;
-        </button>
       </div>
       <div id="sidenav">
         <div className="plain sidenav-wrapper" onClick={openMenu}></div>
