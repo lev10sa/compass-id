@@ -147,6 +147,11 @@ function Home() {
 
   const icons = [
     {
+      src: "fas fa-home",
+      url: "/",
+      label: "Home",
+    },
+    {
       src: "fas fa-calendar-alt",
       url: "/events",
       label: "Event",
@@ -160,11 +165,6 @@ function Home() {
       src: "fas fa-book",
       url: "/books",
       label: "Book",
-    },
-    {
-      src: "fas fa-question-circle",
-      url: "/",
-      label: "FAQ",
     },
   ];
 
@@ -327,7 +327,7 @@ function Home() {
                   <span style={{ marginRight: "10px" }}>See More</span>&#10095;
                 </button>
               </div>
-              <div className="section scrollList">
+              <div className="scrollList">
                 {books.map((book, index) => (
                   <button
                     className="axe"
@@ -340,9 +340,6 @@ function Home() {
                     </p>
                     <p style={{ textTransform: "uppercase" }}>
                       <i className="fas fa-list"></i> {book.category}
-                    </p>
-                    <p style={{ textTransform: "uppercase" }}>
-                      <i className="fas fa-stream"></i> {book.cefr}
                     </p>
                   </button>
                 ))}
