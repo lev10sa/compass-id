@@ -105,9 +105,6 @@ const Navigation = () => {
           <button onClick={() => navigate(`/books`)}>
             <i className="fas fa-book"></i> <span>Book</span>
           </button>
-          <button onClick={() => navigate(`/`)}>
-            <i className="fas fa-question-circle"></i> <span>FAQ</span>
-          </button>
         </div>
       </div>
       <div id="banner" className="section banner">
@@ -141,9 +138,6 @@ const Navigation = () => {
           </button>
           <button onClick={() => navigate(`/books`)}>
             <span>Book</span> <i className="fas fa-book"></i>
-          </button>
-          <button onClick={() => navigate(`/`)}>
-            <span>FAQ</span> <i className="fas fa-question-circle"></i>
           </button>
         </div>
       </div>

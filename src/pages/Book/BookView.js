@@ -45,20 +45,6 @@ function BookView() {
     // dependency array with only `search`
   }, [id, isLoading]); // dependency array with only `getParty`
 
-  // create currency format function
-  function formatCurrency(number) {
-    // define options for formatting
-    const options = {
-      style: "currency", // set currency
-      currency: "IDR", // set currency code for Indonesian Rupiah (IDR)
-      minimumFractionDigits: 0, // set minimum decimal places to 2
-      maximumFractionDigits: 0, // set maximum decimal places to 2
-    };
-
-    // use toLocaleString() with the defined options
-    return new Intl.NumberFormat("id-ID", options).format(number);
-  }
-
   const handleCopy = () => {
     const uri = `https://www.compasspubindonesia.com/book-view.php?id=${booked._id}`;
     const copied = navigator.clipboard.writeText(uri);
