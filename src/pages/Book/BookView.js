@@ -28,7 +28,7 @@ function BookView() {
     // create party loader callback function
     const getBook = async () => {
       try {
-        const uri = "https://seg-server.vercel.app/api/booki";
+        const uri = "https://seg-server.vercel.app/api/booked";
         const url = `https://seg-server.vercel.app/api/booked/id/${id}`; // modify URL based on backend
         const datas = await axios.get(url); // get datas from URL with axios
         const datap = await axios.get(uri); // get datas from URL with axios
@@ -168,7 +168,7 @@ function BookView() {
                 </button>
               </div>
               <div className="section scrollList">
-                {booked.map((book, index) => (
+                {booki.map((book, index) => (
                   <button
                     className="axe"
                     onClick={() => navigate(`/book-view/${book._id}`)}
