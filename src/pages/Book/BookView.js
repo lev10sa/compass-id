@@ -168,7 +168,7 @@ function BookView() {
                 </button>
               </div>
               <div className="section scrollList">
-                {booki.map((book, index) => (
+                {booked.map((book, index) => (
                   <button
                     className="axe"
                     onClick={() => navigate(`/book-view/${book._id}`)}
