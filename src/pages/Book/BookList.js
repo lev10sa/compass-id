@@ -12,6 +12,8 @@ const BookList = () => {
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
 
+  const limit = books.length;
+
   // setting up useNavigate
   const navigat = useNavigate();
 
@@ -94,6 +96,9 @@ const BookList = () => {
               onInput={handleSearch} // update search state on change
               placeholder="Search books..."
             />
+          </div>
+          <div>
+            <p style={{fontSize: "10pt"}}>Results: { limit } Books</p>
           </div>
         </div>
         {isLoading === true ? (
