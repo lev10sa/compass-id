@@ -96,9 +96,7 @@ const BookList = () => {
               onInput={handleSearch} // update search state on change
               placeholder="Search books..."
             />
-          </div>
-          <div>
-            <p style={{fontSize: "10pt"}}>Results: { limit } Books</p>
+            <p style={{fontSize: "10pt"}}>Results: { books.length } Books</p>
           </div>
         </div>
         {isLoading === true ? (
