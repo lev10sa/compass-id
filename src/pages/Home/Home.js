@@ -564,6 +564,9 @@ function Home() {
         )}
 
         <div className="section about">
+          <div className="section headline">
+            <h5>About Us</h5>
+          </div>
           <div className="section">
             <img
               src={"/assets/img/banner/a.jpg"}
@@ -575,9 +578,6 @@ function Home() {
                 borderRadius: "10px",
               }}
             />
-          </div>
-          <div className="section headline">
-            <h5>About Us</h5>
           </div>
           <div className="section">
             <p>
@@ -610,18 +610,18 @@ function Home() {
             <h5>Tentang Kami</h5>
           </div>
           <div className="section">
-            <div className="section">
-              <img
-                src={"/assets/img/banner/b.jpg"}
-                alt={`b.jpg`}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  borderRadius: "10px",
-                }}
-              />
-            </div>
+            <img
+              src={"/assets/img/banner/b.jpg"}
+              alt={`b.jpg`}
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "10px",
+              }}
+            />
+          </div>
+          <div className="section">
             <p>
               COMPASS PUBLISHING INDONESIA adalah representatif dari COMPASS
               PUBLISHING Korea Selatan yang menghasilkan solusi-solusi inovatif
