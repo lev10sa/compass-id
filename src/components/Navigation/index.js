@@ -54,22 +54,6 @@ const Navigation = () => {
     return () => clearInterval(intervalId);
   }, [images.length]);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) =>
-      prev === images.length - 1 ? prev - images.length + 1 : prev + 1
-    );
-    document.getElementById("images").classList.remove("active");
-    document.getElementById("images").classList.add("active");
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? prev + images.length - 1 : prev - 1
-    );
-    document.getElementById("images").classList.remove("active");
-    document.getElementById("images").classList.add("active");
-  };
-
   // display of the navbar
   return (
     <>

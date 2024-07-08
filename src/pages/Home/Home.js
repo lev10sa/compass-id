@@ -583,6 +583,11 @@ function Home() {
           </div>
         </div>
         <div className="section about">
+          <img
+            src={"/assets/img/banner/a.jpg"}
+            alt={`a.jpg`}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
           <div className="section headline">
             <h5>About Us</h5>
           </div>
@@ -612,6 +617,12 @@ function Home() {
           </div>
         </div>
         <div className="section about">
+          <img
+            src={"/assets/img/banner/b.jpg"}
+            alt={`b.jpg`}
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+
           <div className="section headline">
             <h5>Tentang Kami</h5>
           </div>
