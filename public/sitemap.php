@@ -25,6 +25,7 @@ $dom->preserveWhiteSpace = false;
 
 // Create root element and append it
 $root = $dom->createElement('urlset');
+$root->setAttribute("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9");
 $dom->appendChild($root);
 
 foreach ($subdo as $sub) {
@@ -33,7 +34,7 @@ foreach ($subdo as $sub) {
   $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com" . $sub);
   $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
   $changefreqElement = $dom->createElement('changefreq', 'daily');
-  $priorityElement = $dom->createElement('priority', '0.8');
+  $priorityElement = $dom->createElement('priority', '1.0');
 
   $urlElement->appendChild($locElement);
   $urlElement->appendChild($lastmodElement);
@@ -49,7 +50,7 @@ foreach ($eventData as $event) {
   $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/event-join/" . $event["_id"]);
   $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
   $changefreqElement = $dom->createElement('changefreq', 'daily');
-  $priorityElement = $dom->createElement('priority', '0.8');
+  $priorityElement = $dom->createElement('priority', '1.0');
 
   $urlElement->appendChild($locElement);
   $urlElement->appendChild($lastmodElement);
@@ -65,7 +66,7 @@ foreach ($postEnData as $postEn) {
   $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/post/en/" . $postEn["_id"]);
   $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
   $changefreqElement = $dom->createElement('changefreq', 'daily');
-  $priorityElement = $dom->createElement('priority', '0.8');
+  $priorityElement = $dom->createElement('priority', '1.0');
 
   $urlElement->appendChild($locElement);
   $urlElement->appendChild($lastmodElement);
@@ -80,7 +81,7 @@ foreach ($postIdData as $postId) {
   $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/post/id/" . $postId["_id"]);
   $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
   $changefreqElement = $dom->createElement('changefreq', 'daily');
-  $priorityElement = $dom->createElement('priority', '0.8');
+  $priorityElement = $dom->createElement('priority', '1.0');
 
   $urlElement->appendChild($locElement);
   $urlElement->appendChild($lastmodElement);
@@ -95,7 +96,7 @@ foreach ($bookData as $book) {
   $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/book-view/" . $book["_id"]);
   $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
   $changefreqElement = $dom->createElement('changefreq', 'daily');
-  $priorityElement = $dom->createElement('priority', '0.8');
+  $priorityElement = $dom->createElement('priority', '1.0');
 
   $urlElement->appendChild($locElement);
   $urlElement->appendChild($lastmodElement);
