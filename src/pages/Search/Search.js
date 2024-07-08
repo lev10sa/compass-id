@@ -258,7 +258,11 @@ function Search() {
                           <div className="cover">
                             {book.img !== "" ? (
                               <>
-                                <img src={book.src} alt={book.src} />
+                                <img
+                                  loading="lazy"
+                                  src={book.src}
+                                  alt={book.src}
+                                />
                               </>
                             ) : (
                               <></>
@@ -369,7 +373,11 @@ function Search() {
                         >
                           {post.banner !== "" ? (
                             <>
-                              <img src={post.banner} alt={post.banner} />
+                              <img
+                                loading="lazy"
+                                src={post.banner}
+                                alt={post.banner}
+                              />
                             </>
                           ) : (
                             <></>
@@ -439,7 +447,11 @@ function Search() {
                         >
                           {event.img !== "" ? (
                             <>
-                              <img src={event.img} alt={event.img} />
+                              <img
+                                loading="lazy"
+                                src={event.img}
+                                alt={event.img}
+                              />
                             </>
                           ) : (
                             <></>

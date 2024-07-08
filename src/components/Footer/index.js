@@ -41,7 +41,7 @@ function Footer() {
                 _blank"
                   key={index}
                 >
-                  <img src={soc.src} alt="" />
+                  <img loading="lazy" src={soc.src} alt="" />
                 </a>
               </>
             ))}

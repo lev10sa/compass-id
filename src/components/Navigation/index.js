@@ -60,7 +60,7 @@ const Navigation = () => {
       <div className="navbar">
         <div className="logo">
           <button onClick={() => navigate(`/`)}>
-            <img src="/logo.png" alt="logo" />
+            <img loading="lazy" src="/logo.png" alt="logo" />
           </button>
         </div>
         <div className="tabs">
@@ -103,7 +103,7 @@ const Navigation = () => {
       <div id="sidenav">
         <div className="plain sidenav-wrapper" onClick={openMenu}></div>
         <div className="sidenav animate__animated animate__slideInLeft">
-          <img src="/logo.png" alt="logo" />
+          <img loading="lazy" src="/logo.png" alt="logo" />
           <div className="header">NAVIGATION</div>
           <button onClick={() => navigate(`/`)}>
             <span>Home</span> <i className="fas fa-home"></i>

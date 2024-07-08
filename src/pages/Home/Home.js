@@ -328,7 +328,7 @@ function Home() {
                 onClick={() => navigate(`/book-view/${book._id}`)}
                 key={index}
               >
-                <img src={book.src} alt={book.src} />
+                <img loading="lazy" src={book.src} alt={book.src} />
                 <p>
                   <strong>{book.name}</strong>
                 </p>
@@ -383,7 +383,7 @@ function Home() {
                 key={index}
                 className="panel"
               >
-                <img src={item.banner} alt={item.banner} />
+                <img loading="lazy" src={item.banner} alt={item.banner} />
                 <h3>{item.title.toUpperCase()}</h3>
                 <pre
                   className="dip dipo"
@@ -433,7 +433,7 @@ function Home() {
               >
                 {item.img !== "" ? (
                   <>
-                    <img src={item.img} alt={item.img} />
+                    <img loading="lazy" src={item.img} alt={item.img} />
                   </>
                 ) : (
                   <></>
@@ -521,7 +521,7 @@ function Home() {
                 _blank"
                   key={index}
                 >
-                  <img src={thumb.src} alt={thumb.src} />
+                  <img loading="lazy" src={thumb.src} alt={thumb.src} />
                 </a>
               </>
             ))}

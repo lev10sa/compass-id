@@ -117,7 +117,7 @@ const BookList = () => {
                 <div className="cover">
                   {book.img !== "" ? (
                     <>
-                      <img src={book.src} alt={book.src} />
+                      <img loading="lazy" src={book.src} alt={book.src} />
                     </>
                   ) : (
                     <></>

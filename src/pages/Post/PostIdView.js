@@ -164,7 +164,12 @@ function PostIdView() {
               </div>
               <div className="posts section" key={post._id}>
                 <div className="film">
-                  <img src={post.banner} alt={post.banner} id="main" />
+                  <img
+                    loading="lazy"
+                    src={post.banner}
+                    alt={post.banner}
+                    id="main"
+                  />
                   <div className="panel">
                     {post.fileList.map((file, index) => (
                       <img
@@ -258,7 +263,11 @@ function PostIdView() {
                         key={index}
                         className="panel"
                       >
-                        <img src={item.banner} alt={item.banner} />
+                        <img
+                          loading="lazy"
+                          src={item.banner}
+                          alt={item.banner}
+                        />
                         <h3>{item.title.toUpperCase()}</h3>
                         <pre
                           className="dip"
