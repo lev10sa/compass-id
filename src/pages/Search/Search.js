@@ -222,9 +222,7 @@ function Search() {
         </div>
         {search === "" ? (
           <>
-            <div className="section empty">
-              No data, please search anything...
-            </div>
+            <div className="section empty"></div>
           </>
         ) : (
           <div className="section">
@@ -232,9 +230,7 @@ function Search() {
               <>
                 {books.length === 0 ? (
                   <>
-                    <div className="section empty">
-                      No data, please search anything...
-                    </div>
+                    <div className="section empty"></div>
                   </>
                 ) : (
                   <>
@@ -324,9 +320,7 @@ function Search() {
               <>
                 {posts.length === 0 ? (
                   <>
-                    <div className="section empty">
-                      No data, please search anything...
-                    </div>
+                    <div className="section empty"></div>
                   </>
                 ) : (
                   <>
@@ -414,9 +408,7 @@ function Search() {
               <>
                 {events.length === 0 ? (
                   <>
-                    <div className="section empty">
-                      No data, please search anything...
-                    </div>
+                    <div className="section empty"></div>
                   </>
                 ) : (
                   <>
