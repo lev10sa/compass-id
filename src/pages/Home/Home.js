@@ -278,9 +278,9 @@ function Home() {
             <div className="section">
               <input
                 type="text"
-                autoComplete="on"
                 className="input"
                 placeholder="Search anything..."
+                onClick={() => navigate("/search")}
               />
             </div>
           </div>

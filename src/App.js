@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Home,
+  Search,
   EventList,
   EventPartyAdd,
   PostList,
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/post-view/id/:id" element={<PostIdView />} />
             <Route path="/books" element={<BookList />} />
             <Route path="/book-view/:id" element={<BookView />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </div>
         <Footer />
