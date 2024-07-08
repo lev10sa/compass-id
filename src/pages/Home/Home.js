@@ -563,31 +563,14 @@ function Home() {
           </>
         )}
 
-        <div className="partner">
-          <div className="section headline">
-            <h5>Our Services</h5>
-          </div>
-          <div className="section thumb">
-            {partners.map((thumb, index) => (
-              <>
-                <a
-                  href={thumb.uri}
-                  target="
-                _blank"
-                  key={index}
-                >
-                  <img src={thumb.src} alt={thumb.src} />
-                </a>
-              </>
-            ))}
-          </div>
-        </div>
         <div className="section about">
-          <img
-            src={"/assets/img/banner/a.jpg"}
-            alt={`a.jpg`}
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
+          <div className="section">
+            <img
+              src={"/assets/img/banner/b.jpg"}
+              alt={`a.jpg`}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
           <div className="section headline">
             <h5>About Us</h5>
           </div>
@@ -616,13 +599,15 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="section about">
-          <img
-            src={"/assets/img/banner/b.jpg"}
-            alt={`b.jpg`}
-            style={{ width: "100%", height: "auto", display: "block" }}
-          />
 
+        <div className="section about">
+          <div className="section">
+            <img
+              src={"/assets/img/banner/b.jpg"}
+              alt={`b.jpg`}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
           <div className="section headline">
             <h5>Tentang Kami</h5>
           </div>
@@ -643,6 +628,27 @@ function Home() {
             </p>
           </div>
         </div>
+
+        <div className="partner">
+          <div className="section headline">
+            <h5>Our Services</h5>
+          </div>
+          <div className="section thumb">
+            {partners.map((thumb, index) => (
+              <>
+                <a
+                  href={thumb.uri}
+                  target="
+                _blank"
+                  key={index}
+                >
+                  <img src={thumb.src} alt={thumb.src} />
+                </a>
+              </>
+            ))}
+          </div>
+        </div>
+
         <div className="section"></div>
       </div>
     </>
