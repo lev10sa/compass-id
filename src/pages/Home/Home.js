@@ -8,8 +8,6 @@ function Home() {
   const [post, setPost] = useState([]);
   const [event, setEvent] = useState([]);
   const [books, setBook] = useState([]);
-  const [isEmpty, setIsEmpty] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
   const [lang, setLang] = useState("id");
   const posts = post.slice(0, 3);
   const events = event.slice(0, 3);
@@ -37,9 +35,8 @@ function Home() {
         : (url = `https://seg-server.vercel.app/api/posts/en`);
       try {
         const datas = await axios.get(url);
-        datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
+
         setPost(datas.data);
-        setIsLoading(false);
       } catch (error) {
         window.alert(error.message);
       }
@@ -51,9 +48,8 @@ function Home() {
       let url = `https://seg-server.vercel.app/api/events`;
       try {
         const datas = await axios.get(url);
-        datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
+
         setEvent(datas.data);
-        setIsLoading(false);
       } catch (error) {
         window.alert(error.message);
       }
@@ -65,9 +61,7 @@ function Home() {
       let url = `https://seg-server.vercel.app/api/booked/key/%201%20`;
       try {
         const datas = await axios.get(url);
-        datas.data.length !== 0 ? setIsEmpty(false) : setIsEmpty(true);
         setBook(datas.data);
-        setIsLoading(false);
       } catch (error) {
         window.alert(error.message);
       }
@@ -257,6 +251,10 @@ function Home() {
     <>
       <Helmet>
         <title>Home | Compass Publishing Indonesia</title>
+        <meta
+          name="description"
+          content="Official Homepage of Compass Publishing Indonesia"
+        />
         <meta property="og:url" content="https://www.compasspubindonesia.com" />
         <meta
           property="og:title"
@@ -377,45 +375,30 @@ function Home() {
               English
             </button>
           </div>
-          {isLoading === true ? (
-            <>
-              <div className="section loading">
-                <p>Loading data, please wait...</p>
+
+          <div className="scrollList">
+            {posts.map((item, index) => (
+              <div
+                onClick={() => handleClick(item._id)}
+                key={index}
+                className="panel"
+              >
+                <img src={item.banner} alt={item.banner} />
+                <h3>{item.title.toUpperCase()}</h3>
+                <pre
+                  className="dip dipo"
+                  dangerouslySetInnerHTML={{ __html: item.body }}
+                />
+                <button
+                  type="button"
+                  onClick={() => handleClick(item._id)}
+                  className="btn"
+                >
+                  Read This post
+                </button>
               </div>
-            </>
-          ) : isEmpty === true ? (
-            <>
-              <div className="section empty">
-                <p>No data...</p>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="scrollList">
-                {posts.map((item, index) => (
-                  <div
-                    onClick={() => handleClick(item._id)}
-                    key={index}
-                    className="panel"
-                  >
-                    <img src={item.banner} alt={item.banner} />
-                    <h3>{item.title.toUpperCase()}</h3>
-                    <pre
-                      className="dip dipo"
-                      dangerouslySetInnerHTML={{ __html: item.body }}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => handleClick(item._id)}
-                      className="btn"
-                    >
-                      Read This post
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
+            ))}
+          </div>
         </div>
 
         <div className="section post">
@@ -439,99 +422,90 @@ function Home() {
               <span style={{ marginRight: "10px" }}>See More</span>&#10095;
             </button>
           </div>
-          {isEmpty === true ? (
-            <>
-              <div className="section empty">
-                <p>No data...</p>
+
+          <div className="scrollList">
+            {events.map((item, index) => (
+              <div
+                onClick={() => handleEvent(item._id)}
+                rel="noreferrer"
+                key={index}
+                className="panel"
+              >
+                {item.img !== "" ? (
+                  <>
+                    <img src={item.img} alt={item.img} />
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {item.title !== "" ? (
+                  <>
+                    <h3 title={item.title}>{item.title}</h3>
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {item.pic !== "" ? (
+                  <>
+                    <p title={item.pic}>
+                      <strong>Speaker:</strong> {item.pic}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {item.start !== "" ? (
+                  <>
+                    <p>
+                      <strong>Date:</strong> {formatTime(item.start)}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {item.model !== "" ? (
+                  <>
+                    <p title={item.model}>
+                      <strong>Role:</strong> {item.model}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {item.address !== "" ? (
+                  <>
+                    <p title={item.address}>
+                      <strong>Location:</strong> {item.address}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
+
+                {item.price !== "" ? (
+                  <>
+                    <p>
+                      <strong>Price:</strong> {formatCurrency(item.price)}
+                    </p>
+                  </>
+                ) : (
+                  <></>
+                )}
+                <button
+                  type="button"
+                  onClick={() => handleEvent(item._id)}
+                  className="btn"
+                >
+                  Join This Event
+                </button>
               </div>
-            </>
-          ) : (
-            <>
-              <div className="scrollList">
-                {events.map((item, index) => (
-                  <div
-                    onClick={() => handleEvent(item._id)}
-                    rel="noreferrer"
-                    key={index}
-                    className="panel"
-                  >
-                    {item.img !== "" ? (
-                      <>
-                        <img src={item.img} alt={item.img} />
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {item.title !== "" ? (
-                      <>
-                        <h3 title={item.title}>{item.title}</h3>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {item.pic !== "" ? (
-                      <>
-                        <p title={item.pic}>
-                          <strong>Speaker:</strong> {item.pic}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {item.start !== "" ? (
-                      <>
-                        <p>
-                          <strong>Date:</strong> {formatTime(item.start)}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {item.model !== "" ? (
-                      <>
-                        <p title={item.model}>
-                          <strong>Role:</strong> {item.model}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {item.address !== "" ? (
-                      <>
-                        <p title={item.address}>
-                          <strong>Location:</strong> {item.address}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
-                    {item.price !== "" ? (
-                      <>
-                        <p>
-                          <strong>Price:</strong> {formatCurrency(item.price)}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-                    <button
-                      type="button"
-                      onClick={() => handleEvent(item._id)}
-                      className="btn"
-                    >
-                      Join This Event
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
+            ))}
+          </div>
         </div>
 
         <div className="partner">
@@ -630,6 +604,7 @@ function Home() {
           </div>
         </div>
 
+        <div className="section"></div>
         <div className="section"></div>
       </div>
     </>
