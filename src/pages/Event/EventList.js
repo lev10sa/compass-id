@@ -131,6 +131,10 @@ const EventList = () => {
       <Helmet>
         <title>Events | Compass Publishing Indonesia</title>
         <meta
+          name="description"
+          content="List of events in Compass Publishing Indonesia"
+        />
+        <meta
           property="og:url"
           content={`https://www.compasspubindonesia.com/events`}
         />
@@ -140,7 +144,7 @@ const EventList = () => {
         />
         <meta
           property="og:description"
-          content={`List of Events in Compass Publishing Indonesia`}
+          content={`List of events in Compass Publishing Indonesia`}
         />
         <meta
           property="og:image"

@@ -162,6 +162,10 @@ function Search() {
       <Helmet>
         <title>Search | Compass Publishing Indonesia</title>
         <meta
+          name="description"
+          content="Find anything in Compass Publishing Indonesia"
+        />
+        <meta
           property="og:url"
           content={`https://www.compasspubindonesia.com/search`}
         />

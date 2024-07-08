@@ -65,6 +65,10 @@ const BookList = () => {
       <Helmet>
         <title>Books | Compass Publishing Indonesia</title>
         <meta
+          name="description"
+          content="List of books in Compass Publishing Indonesia"
+        />
+        <meta
           property="og:url"
           content={`https://www.compasspubindonesia.com/books`}
         />
@@ -97,7 +101,9 @@ const BookList = () => {
               placeholder="Search books..."
             />
           </div>
-          <p style={{fontSize: "11pt", float: "left", display: "block"}}>Result: { limit } Books</p>
+          <p style={{ fontSize: "11pt", float: "left", display: "block" }}>
+            Result: {limit} Books
+          </p>
         </div>
         {isLoading === true ? (
           <div className="section loading">Loading book Database...</div> // display status when loading

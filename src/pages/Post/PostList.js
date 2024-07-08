@@ -90,6 +90,10 @@ const PostList = () => {
       <Helmet>
         <title>Posts | Compass Publishing Indonesia</title>
         <meta
+          name="description"
+          content="List of posts in Compass Publishing Indonesia"
+        />
+        <meta
           property="og:url"
           content={`https://www.compasspubindonesia.com/posts`}
         />
@@ -99,7 +103,7 @@ const PostList = () => {
         />
         <meta
           property="og:description"
-          content={`List of Posts in Compass Publishing Indonesia`}
+          content={`List of posts in Compass Publishing Indonesia`}
         />
         <meta
           property="og:image"
@@ -122,7 +126,9 @@ const PostList = () => {
               placeholder="Search posts..."
             />
           </div>
-          <p style={{fontSize: "11pt", float: "left", display: "block"}}>Result: { limit } Posts</p>
+          <p style={{ fontSize: "11pt", float: "left", display: "block" }}>
+            Result: {limit} Posts
+          </p>
         </div>
         <div className="section lang">
           <span>Select Language:</span>

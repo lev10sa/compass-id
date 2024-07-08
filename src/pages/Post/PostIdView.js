@@ -135,12 +135,16 @@ function PostIdView() {
   return (
     <>
       <Helmet>
-        <title>{post.title}</title>
+        <title>{post.title} | Compass Publishing Indonesia</title>
+        <meta name="description" content={`${post.body}`} />
         <meta
           property="og:url"
           content={`https://www.compasspubindonesia.com/post-view/id/${post._id}`}
         />
-        <meta property="og:title" content={`${post.title}`} />
+        <meta
+          property="og:title"
+          content={`${post.title} | Compass Publishing Indonesia`}
+        />
         <meta property="og:description" content={`${post.body}`} />
         <meta property="og:image" content={`${post.banner}`} />
       </Helmet>

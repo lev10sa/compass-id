@@ -241,12 +241,16 @@ function EventPartyAdd() {
   return (
     <>
       <Helmet>
-        <title>{event.title}</title>
+        <title>{event.title} | Compass Publishing Indonesia</title>
+        <meta name="description" content={`${event.desc}`} />
         <meta
           property="og:url"
           content={`https://www.compasspubindonesia.com/event-join/${event._id}`}
         />
-        <meta property="og:title" content={`${event.title}`} />
+        <meta
+          property="og:title"
+          content={`${event.title} | Compass Publishing Indonesia`}
+        />
         <meta property="og:description" content={`${event.desc}`} />
         <meta property="og:image" content={`${event.img}`} />
       </Helmet>
