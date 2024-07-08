@@ -50,8 +50,7 @@ function Footer() {
         <div className="section" style={{ background: "#000" }}>
           <div className="container">
             <p style={{ fontSize: "10pt" }}>
-              Website ini sedang dalam pengembangan, sehingga beberapa fitur
-              mungkin tidak akan berjalan optimal.
+              Perhatian: Website ini sedang dalam pengembangan.
             </p>
             <p style={{ fontSize: "10pt" }}>
               &copy; 2024 - PT Solusi Edukasi Gemilang
