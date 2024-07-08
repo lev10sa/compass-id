@@ -152,9 +152,9 @@ function Home() {
       label: "Home",
     },
     {
-      src: "fas fa-calendar-alt",
-      url: "/events",
-      label: "Event",
+      src: "fas fa-book",
+      url: "/books",
+      label: "Book",
     },
     {
       src: "fas fa-file-alt",
@@ -162,9 +162,9 @@ function Home() {
       label: "post",
     },
     {
-      src: "fas fa-book",
-      url: "/books",
-      label: "Book",
+      src: "fas fa-calendar-alt",
+      url: "/events",
+      label: "Event",
     },
   ];
 
@@ -302,266 +302,257 @@ function Home() {
           </div>
         </div>
 
-        {isLoading === true ? (
-          <></>
-        ) : (
-          <>
-            <div className="section recom">
-              <div className="section headline">
-                <h5 style={{ float: "left" }}>Recommendations</h5>
-                <button
-                  type="button"
-                  onClick={() => navigate("/books")}
-                  style={{
-                    borderRadius: "10px",
-                    background: "transparent",
-                    color: "#111",
-                    border: "1px hidden",
-                    paddingLeft: "5px",
-                    paddingRight: "5px",
-                    float: "right",
-                    fontWeight: "400",
-                  }}
-                  className="btn"
-                >
-                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-                </button>
+        <div className="section recom">
+          <div className="section headline">
+            <h5 style={{ float: "left" }}>Recommendations</h5>
+            <button
+              type="button"
+              onClick={() => navigate("/books")}
+              style={{
+                borderRadius: "10px",
+                background: "transparent",
+                color: "#111",
+                border: "1px hidden",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                float: "right",
+                fontWeight: "400",
+              }}
+              className="btn"
+            >
+              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+            </button>
+          </div>
+          <div className="section scrollList">
+            {books.map((book, index) => (
+              <button
+                className="axe"
+                onClick={() => navigate(`/book-view/${book._id}`)}
+                key={index}
+              >
+                <img src={book.src} alt={book.src} />
+                <p>
+                  <strong>{book.name}</strong>
+                </p>
+                <p style={{ textTransform: "uppercase" }}>
+                  <i className="fas fa-list"></i> {book.category}
+                </p>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="section post">
+          <div className="section headline">
+            <h5 style={{ float: "left" }}>Latest Posts</h5>
+            <button
+              type="button"
+              onClick={() => navigate("/posts")}
+              style={{
+                borderRadius: "10px",
+                background: "transparent",
+                color: "#111",
+                border: "1px hidden",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                float: "right",
+                fontWeight: "400",
+              }}
+              className="btn"
+            >
+              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+            </button>
+          </div>
+          <div className="section lang">
+            <span>Select Language:</span>
+            <button
+              type="button"
+              onClick={() => langSet("id", "en")}
+              id="id"
+              className="active"
+            >
+              Indonesia
+            </button>
+            <button type="button" onClick={() => langSet("en", "id")} id="en">
+              English
+            </button>
+          </div>
+          {isLoading === true ? (
+            <>
+              <div className="section loading">
+                <p>Loading data, please wait...</p>
               </div>
-              <div className="section scrollList">
-                {books.map((book, index) => (
-                  <button
-                    className="axe"
-                    onClick={() => navigate(`/book-view/${book._id}`)}
+            </>
+          ) : isEmpty === true ? (
+            <>
+              <div className="section empty">
+                <p>No data...</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="scrollList">
+                {posts.map((item, index) => (
+                  <div
+                    onClick={() => handleClick(item._id)}
                     key={index}
+                    className="panel"
                   >
-                    <img src={book.src} alt={book.src} />
-                    <p>
-                      <strong>{book.name}</strong>
-                    </p>
-                    <p style={{ textTransform: "uppercase" }}>
-                      <i className="fas fa-list"></i> {book.category}
-                    </p>
-                  </button>
+                    <img src={item.banner} alt={item.banner} />
+                    <h3>{item.title.toUpperCase()}</h3>
+                    <pre
+                      className="dip dipo"
+                      dangerouslySetInnerHTML={{ __html: item.body }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => handleClick(item._id)}
+                      className="btn"
+                    >
+                      Read This post
+                    </button>
+                  </div>
                 ))}
               </div>
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
 
-        {isLoading === true ? (
-          <></>
-        ) : (
-          <>
-            <div className="section post">
-              <div className="section headline">
-                <h5 style={{ float: "left" }}>Latest Posts</h5>
-                <button
-                  type="button"
-                  onClick={() => navigate("/posts")}
-                  style={{
-                    borderRadius: "10px",
-                    background: "transparent",
-                    color: "#111",
-                    border: "1px hidden",
-                    paddingLeft: "5px",
-                    paddingRight: "5px",
-                    float: "right",
-                    fontWeight: "400",
-                  }}
-                  className="btn"
-                >
-                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-                </button>
+        <div className="section post">
+          <div className="section headline">
+            <h5 style={{ float: "left" }}>Latest Events</h5>
+            <button
+              type="button"
+              onClick={() => navigate("/events")}
+              style={{
+                borderRadius: "10px",
+                background: "transparent",
+                color: "#111",
+                border: "1px hidden",
+                paddingLeft: "5px",
+                paddingRight: "5px",
+                float: "right",
+                fontWeight: "400",
+              }}
+              className="btn"
+            >
+              <span style={{ marginRight: "10px" }}>See More</span>&#10095;
+            </button>
+          </div>
+          {isEmpty === true ? (
+            <>
+              <div className="section empty">
+                <p>No data...</p>
               </div>
-              <div className="section lang">
-                <span>Select Language:</span>
-                <button
-                  type="button"
-                  onClick={() => langSet("id", "en")}
-                  id="id"
-                  className="active"
-                >
-                  Indonesia
-                </button>
-                <button
-                  type="button"
-                  onClick={() => langSet("en", "id")}
-                  id="en"
-                >
-                  English
-                </button>
+            </>
+          ) : (
+            <>
+              <div className="scrollList">
+                {events.map((item, index) => (
+                  <div
+                    onClick={() => handleEvent(item._id)}
+                    rel="noreferrer"
+                    key={index}
+                    className="panel"
+                  >
+                    {item.img !== "" ? (
+                      <>
+                        <img src={item.img} alt={item.img} />
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {item.title !== "" ? (
+                      <>
+                        <h3 title={item.title}>{item.title}</h3>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {item.pic !== "" ? (
+                      <>
+                        <p title={item.pic}>
+                          <strong>Speaker:</strong> {item.pic}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {item.start !== "" ? (
+                      <>
+                        <p>
+                          <strong>Date:</strong> {formatTime(item.start)}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {item.model !== "" ? (
+                      <>
+                        <p title={item.model}>
+                          <strong>Role:</strong> {item.model}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {item.address !== "" ? (
+                      <>
+                        <p title={item.address}>
+                          <strong>Location:</strong> {item.address}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+
+                    {item.price !== "" ? (
+                      <>
+                        <p>
+                          <strong>Price:</strong> {formatCurrency(item.price)}
+                        </p>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => handleEvent(item._id)}
+                      className="btn"
+                    >
+                      Join This Event
+                    </button>
+                  </div>
+                ))}
               </div>
-              {isLoading === true ? (
-                <>
-                  <div className="section loading">
-                    <p>Loading data, please wait...</p>
-                  </div>
-                </>
-              ) : isEmpty === true ? (
-                <>
-                  <div className="section empty">
-                    <p>No data...</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="scrollList">
-                    {posts.map((item, index) => (
-                      <div
-                        onClick={() => handleClick(item._id)}
-                        key={index}
-                        className="panel"
-                      >
-                        <img src={item.banner} alt={item.banner} />
-                        <h3>{item.title.toUpperCase()}</h3>
-                        <pre
-                          className="dip dipo"
-                          dangerouslySetInnerHTML={{ __html: item.body }}
-                        />
-                        <button
-                          type="button"
-                          onClick={() => handleClick(item._id)}
-                          className="btn"
-                        >
-                          Read This post
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </>
-        )}
+            </>
+          )}
+        </div>
 
-        {isLoading === true ? (
-          <></>
-        ) : (
-          <>
-            <div className="section post">
-              <div className="section headline">
-                <h5 style={{ float: "left" }}>Latest Events</h5>
-                <button
-                  type="button"
-                  onClick={() => navigate("/events")}
-                  style={{
-                    borderRadius: "10px",
-                    background: "transparent",
-                    color: "#111",
-                    border: "1px hidden",
-                    paddingLeft: "5px",
-                    paddingRight: "5px",
-                    float: "right",
-                    fontWeight: "400",
-                  }}
-                  className="btn"
+        <div className="partner">
+          <div className="section headline">
+            <h5>Our Services</h5>
+          </div>
+          <div className="section thumb">
+            {partners.map((thumb, index) => (
+              <>
+                <a
+                  href={thumb.uri}
+                  target="
+                _blank"
+                  key={index}
                 >
-                  <span style={{ marginRight: "10px" }}>See More</span>&#10095;
-                </button>
-              </div>
-              {isLoading === true ? (
-                <>
-                  <div className="section loading">
-                    <p>Loading data, please wait...</p>
-                  </div>
-                </>
-              ) : isEmpty === true ? (
-                <>
-                  <div className="section empty">
-                    <p>No data...</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="scrollList">
-                    {events.map((item, index) => (
-                      <div
-                        onClick={() => handleEvent(item._id)}
-                        rel="noreferrer"
-                        key={index}
-                        className="panel"
-                      >
-                        {item.img !== "" ? (
-                          <>
-                            <img src={item.img} alt={item.img} />
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        {item.title !== "" ? (
-                          <>
-                            <h3 title={item.title}>{item.title}</h3>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        {item.pic !== "" ? (
-                          <>
-                            <p title={item.pic}>
-                              <strong>Speaker:</strong> {item.pic}
-                            </p>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        {item.start !== "" ? (
-                          <>
-                            <p>
-                              <strong>Date:</strong> {formatTime(item.start)}
-                            </p>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        {item.model !== "" ? (
-                          <>
-                            <p title={item.model}>
-                              <strong>Role:</strong> {item.model}
-                            </p>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        {item.address !== "" ? (
-                          <>
-                            <p title={item.address}>
-                              <strong>Location:</strong> {item.address}
-                            </p>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-
-                        {item.price !== "" ? (
-                          <>
-                            <p>
-                              <strong>Price:</strong>{" "}
-                              {formatCurrency(item.price)}
-                            </p>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                        <button
-                          type="button"
-                          onClick={() => handleEvent(item._id)}
-                          className="btn"
-                        >
-                          Join This Event
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </div>
-          </>
-        )}
+                  <img src={thumb.src} alt={thumb.src} />
+                </a>
+              </>
+            ))}
+          </div>
+        </div>
 
         <div className="section about">
           <div className="section headline">
@@ -636,26 +627,6 @@ function Home() {
               Kami memotivasi semua orang untuk menginspirasi dalam mengajar dan
               menginspirasi dalam belajar.
             </p>
-          </div>
-        </div>
-
-        <div className="partner">
-          <div className="section headline">
-            <h5>Our Services</h5>
-          </div>
-          <div className="section thumb">
-            {partners.map((thumb, index) => (
-              <>
-                <a
-                  href={thumb.uri}
-                  target="
-                _blank"
-                  key={index}
-                >
-                  <img src={thumb.src} alt={thumb.src} />
-                </a>
-              </>
-            ))}
           </div>
         </div>
 
