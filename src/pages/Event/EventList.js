@@ -12,6 +12,8 @@ const EventList = () => {
   const [isLoading, setIsLoading] = useState(true); // state for loading
   const [isEmpty, setIsEmpty] = useState(false);
 
+  const limit = events.length;
+
   // setting up useNavigate
   const navigat = useNavigate();
 
@@ -161,6 +163,9 @@ const EventList = () => {
               placeholder="Search Events..."
             />
           </div>
+          <p style={{ fontSize: "11pt", float: "left", display: "block" }}>
+            Result: {limit} Events
+          </p>
         </div>
         {isLoading === true ? (
           <div className="section loading">Loading Event Database...</div> // display status when loading
