@@ -28,7 +28,7 @@ function BookView() {
     // create party loader callback function
     const getBook = async () => {
       try {
-        const uri = "https://seg-server.vercel.app/api/booked/key/1%20-";
+        const uri = "https://seg-server.vercel.app/api/booked/key/%201%20";
         const url = `https://seg-server.vercel.app/api/booked/id/${id}`; // modify URL based on backend
         const datas = await axios.get(url); // get datas from URL with axios
         const datap = await axios.get(uri); // get datas from URL with axios
