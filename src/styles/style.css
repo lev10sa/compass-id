@@ -328,7 +328,7 @@ label {
   }
 
   .container {
-    width: 70%;
+    width: 75%;
     height: auto;
     display: block;
     overflow: hidden;
@@ -976,6 +976,16 @@ label {
     width: auto;
     height: auto;
     font-weight: bold;
+  }
+
+  .about {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    vertical-align: top;
+    padding: 5px 10px;
+    font-size: 11pt;
   }
 }
 

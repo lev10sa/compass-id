@@ -71,7 +71,9 @@ const Navigation = () => {
         <div className="tabi">
           <button
             className="btn"
-            onClick={() => window.open("https://wa.me/6285174448002", "_blank")}
+            onClick={() =>
+              window.open("mailto:cs@compasspubindonesia.com", "_blank")
+            }
           >
             <i className="fas fa-headset"></i> <span>Contact Us</span>
           </button>

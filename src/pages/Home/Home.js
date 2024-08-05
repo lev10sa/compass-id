@@ -528,10 +528,11 @@ function Home() {
           </div>
         </div>
 
+        <div className="section headline">
+          <h5>About Us / Tentang Kami</h5>
+        </div>
+
         <div className="section about">
-          <div className="section headline">
-            <h5>About Us</h5>
-          </div>
           <div className="section">
             <img
               src={"/assets/img/banner/a.jpg"}
@@ -571,9 +572,6 @@ function Home() {
         </div>
 
         <div className="section about">
-          <div className="section headline">
-            <h5>Tentang Kami</h5>
-          </div>
           <div className="section">
             <img
               src={"/assets/img/banner/b.jpg"}
@@ -588,18 +586,27 @@ function Home() {
           </div>
           <div className="section">
             <p>
-              COMPASS PUBLISHING INDONESIA adalah representatif dari COMPASS
-              PUBLISHING Korea Selatan yang menghasilkan solusi-solusi inovatif
-              terkait ELT bagi para guru dan influencer untuk siswa sejak tahun
-              1999. Kami menyediakan berbagai layanan yang berkaitan dengan
-              buku-buku ELT, buku-buku digital ELT, aplikasi-aplikasi ELT, dan
-              Layanan Webinar Edukasi Top Class untuk menaikkan taraf kompetensi
-              guru-guru di Indonesia dalam memenuhi kebutuhan dalam menjalankan
-              kurikulum, kemampuan bahasa, kecakapan digital, dan pengelolaan
-              psikologi dalam kelas. Kami hadir sebagai Sahabat Guru Sepanjang
-              Masa dalam rangka meningkatkan kualitas pendidikan di Indonesia.
-              Kami memotivasi semua orang untuk menginspirasi dalam mengajar dan
-              menginspirasi dalam belajar.
+              <a
+                href="https://compasspubindonesia.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Compass Publishing Indonesia
+              </a>{" "}
+              adalah representatif dari{" "}
+              <a href="https://compasspub.com" target="_blank" rel="noreferrer">
+                Compass Publishing
+              </a>{" "}
+              Korea Selatan yang menghasilkan berbagai solusi inovatif seputar
+              ELT bagi para guru dan influencer sejak tahun 1999. Kami
+              menyediakan berbagai layanan yang berkaitan dengan berbagai buku
+              ELT, buku digital ELT, aplikasi ELT, dan Layanan Webinar Edukasi
+              Top Class untuk meningkatkan taraf kompetensi para guru di
+              Indonesia dalam menjalankan kurikulum, kemampuan bahasa, kecakapan
+              digital, dan pengelolaan psikologi dalam kelas. Kami hadir sebagai
+              Sahabat Guru Sepanjang Masa dalam rangka meningkatkan kualitas
+              pendidikan di Indonesia. Kami memotivasi semua orang untuk
+              menginspirasi dalam mengajar dan menginspirasi dalam belajar.
             </p>
           </div>
         </div>
