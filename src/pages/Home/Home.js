@@ -164,8 +164,8 @@ function Home() {
 
   const langSet = (a, b) => {
     setLang(a);
-    document.getElementById(a).classList.add("active");
-    document.getElementById(b).classList.remove("active");
+    document.querySelectorAll(`.` + a).classList.add("active");
+    document.querySelectorAll(`.` + b).classList.remove("active");
   };
 
   const formatTime = (dateString) => {
@@ -366,12 +366,15 @@ function Home() {
             <button
               type="button"
               onClick={() => langSet("id", "en")}
-              id="id"
-              className="active"
+              className="id active"
             >
               Indonesia
             </button>
-            <button type="button" onClick={() => langSet("en", "id")} id="en">
+            <button
+              type="button"
+              onClick={() => langSet("en", "id")}
+              className="en"
+            >
               English
             </button>
           </div>
@@ -538,12 +541,15 @@ function Home() {
           <button
             type="button"
             onClick={() => langSet("id", "en")}
-            id="id"
-            className="active"
+            className="id active"
           >
             Indonesia
           </button>
-          <button type="button" onClick={() => langSet("en", "id")} id="en">
+          <button
+            type="button"
+            onClick={() => langSet("en", "id")}
+            className="en"
+          >
             English
           </button>
         </div>
