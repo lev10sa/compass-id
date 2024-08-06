@@ -169,7 +169,8 @@ label {
     display: block;
   }
 
-  #mobile-about {
+  #mobile-about,
+  #about-lang {
     display: none;
   }
 
@@ -1002,7 +1003,8 @@ label {
     display: none;
   }
 
-  #mobile-about {
+  #mobile-about,
+  #about-lang {
     display: block;
   }
 

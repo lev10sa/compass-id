@@ -533,7 +533,7 @@ function Home() {
         <div className="section headline">
           <h5>About Us / Tentang Kami</h5>
         </div>
-        <div className="section lang">
+        <div id="about-lang" className="section lang">
           <span>Select Language:</span>
           <button
             type="button"
