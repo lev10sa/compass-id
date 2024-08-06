@@ -164,8 +164,8 @@ function Home() {
 
   const langSet = (a, b) => {
     setLang(a);
-    document.querySelectorAll(`.` + a).classList.add("active");
-    document.querySelectorAll(`.` + b).classList.remove("active");
+    document.querySelectorAll(`.${a}`).classList.add("active");
+    document.querySelectorAll(`.${b}`).classList.remove("active");
   };
 
   const formatTime = (dateString) => {
