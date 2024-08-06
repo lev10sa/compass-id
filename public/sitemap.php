@@ -5,12 +5,9 @@ $date = date('Y-m-d');
 $bookUrl = "https://seg-server.vercel.app/api/booked";
 $bookRes = file_get_contents($bookUrl);
 $bookData = json_decode($bookRes, true);
-$postEnUrl = "https://seg-server.vercel.app/api/posts/en";
-$postEnRes = file_get_contents($postEnUrl);
-$postEnData = json_decode($postEnRes, true);
 $postIdUrl = "https://seg-server.vercel.app/api/posts/id";
 $postIdRes = file_get_contents($postIdUrl);
-$postIdData = json_decode($postRes, true);
+$postIdData = json_decode($postIdRes, true);
 $eventUrl = "https://seg-server.vercel.app/api/events";
 $eventRes = file_get_contents($eventUrl);
 $eventData = json_decode($eventRes, true);
@@ -60,25 +57,9 @@ foreach ($eventData as $event) {
   $root->appendChild($urlElement);
 }
 
-// Repeat for other data sources (modify element names and data)
-foreach ($postEnData as $postEn) {
-  $urlElement = $dom->createElement('url');
-  $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/post/en/" . $postEn["_id"]);
-  $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
-  $changefreqElement = $dom->createElement('changefreq', 'daily');
-  $priorityElement = $dom->createElement('priority', '1.0');
-
-  $urlElement->appendChild($locElement);
-  $urlElement->appendChild($lastmodElement);
-  $urlElement->appendChild($changefreqElement);
-  $urlElement->appendChild($priorityElement);
-
-  $root->appendChild($urlElement);
-}
-
 foreach ($postIdData as $postId) {
   $urlElement = $dom->createElement('url');
-  $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/post/id/" . $postId["_id"]);
+  $locElement = $dom->createElement('loc', "https://www.compasspubindonesia.com/post-view/id/" . $postId["_id"]);
   $lastmodElement = $dom->createElement('lastmod', $date); // Update lastmod if needed
   $changefreqElement = $dom->createElement('changefreq', 'daily');
   $priorityElement = $dom->createElement('priority', '1.0');
