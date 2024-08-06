@@ -528,6 +528,8 @@ function Home() {
           </div>
         </div>
 
+        <div className="section"></div>
+
         <div className="section headline">
           <h5>About Us / Tentang Kami</h5>
         </div>
