@@ -165,6 +165,14 @@ label {
 }
 
 @media only screen and (min-width: 601px) {
+  #desktop-about {
+    display: block;
+  }
+
+  #mobile-about {
+    display: none;
+  }
+
   .post .scrollList {
     width: 100%;
     height: auto;
@@ -990,6 +998,14 @@ label {
 }
 
 @media only screen and (max-width: 600px) {
+  #desktop-about {
+    display: none;
+  }
+
+  #mobile-about {
+    display: block;
+  }
+
   .post .panel {
     width: 100%;
     height: auto;
