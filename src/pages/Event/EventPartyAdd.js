@@ -367,7 +367,7 @@ function EventPartyAdd() {
                 </button>
               </div>
               <div className="section"></div>
-              {parseInt(event.price, 12) > 0 ?? (
+              {parseInt(event.price, 12) !== 0 ?? (
                 <div>
                   <p>
                     Untuk mendaftar, silakan lakukan pembayaran via transfer ke
@@ -514,7 +514,7 @@ function EventPartyAdd() {
                     <option value="Onsite">Onsite | Luring</option>
                   </select>
                 </div>
-                {parseInt(event.price, 12) > 0 ?? (
+                {parseInt(event.price, 12) !== 0 ?? (
                   <div className="field">
                     <label className="label">
                       Proof of Payment | Bukti Pembayaran
