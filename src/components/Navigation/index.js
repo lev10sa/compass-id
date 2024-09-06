@@ -75,7 +75,7 @@ const Navigation = () => {
               window.open("mailto:cs@compasspubindonesia.com", "_blank")
             }
           >
-            <i className="fas fa-headset"></i> <span>Contact Us</span>
+            <i className="fab fa-whatsapp-square"></i> <span>Contact Us</span>
           </button>
         </div>
         <div className="taba">
