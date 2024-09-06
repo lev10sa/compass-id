@@ -73,7 +73,8 @@ const Navigation = () => {
             className="btn"
             onClick={() => window.open("https://wa.me/6285174448002", "_blank")}
           >
-            <i className="fab fa-whatsapp-square"></i> <span>Contact Us</span>
+            <i className="fab fa-whatsapp" style={{ fontSize: "16pt" }}></i>{" "}
+            <span>Contact Us</span>
           </button>
         </div>
         <div className="taba">
