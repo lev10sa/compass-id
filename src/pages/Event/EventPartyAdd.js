@@ -367,18 +367,20 @@ function EventPartyAdd() {
                 </button>
               </div>
               <div className="section"></div>
-              <div>
-                <p>
-                  Untuk mendaftar, silakan lakukan pembayaran via transfer ke
-                  no. rekening BCA atas nama PT. SOLUSI EDUKASI GEMILANG,
-                  berikut ini:
-                  <br />
-                  <br />
-                  BCA - 4685015898
-                  <br />
-                  PT. Solusi Edukasi Gemilang
-                </p>
-              </div>
+              {event.price > 0 ?? (
+                <div>
+                  <p>
+                    Untuk mendaftar, silakan lakukan pembayaran via transfer ke
+                    no. rekening BCA atas nama PT. SOLUSI EDUKASI GEMILANG,
+                    berikut ini:
+                    <br />
+                    <br />
+                    BCA - 4685015898
+                    <br />
+                    PT. Solusi Edukasi Gemilang
+                  </p>
+                </div>
+              )}
               <div className="section"></div>
               <div className="section"></div>
               <div className="section"></div>
@@ -512,26 +514,28 @@ function EventPartyAdd() {
                     <option value="Onsite">Onsite | Luring</option>
                   </select>
                 </div>
-                <div className="field">
-                  <label className="label">
-                    Proof of Payment | Bukti Pembayaran
-                  </label>
-                  <br />
-                  <label style={{ fontSize: "10pt" }}>
-                    Please attach your proof of payment bank slip transfer |
-                    Sisipkan bukti slip pembayaran
-                  </label>
-                  <input
-                    type="file"
-                    autoComplete="on"
-                    className="input"
-                    id="img"
-                    name="img"
-                    onChange={handleFile}
-                    placeholder="Proof of Payment | Bukti Pembayaran"
-                    required
-                  />
-                </div>
+                {event.price > 0 ?? (
+                  <div className="field">
+                    <label className="label">
+                      Proof of Payment | Bukti Pembayaran
+                    </label>
+                    <br />
+                    <label style={{ fontSize: "10pt" }}>
+                      Please attach your proof of payment bank slip transfer |
+                      Sisipkan bukti slip pembayaran
+                    </label>
+                    <input
+                      type="file"
+                      autoComplete="on"
+                      className="input"
+                      id="img"
+                      name="img"
+                      onChange={handleFile}
+                      placeholder="Proof of Payment | Bukti Pembayaran"
+                      required
+                    />
+                  </div>
+                )}
                 <div className="section">
                   <div className="controls forms">
                     <button type="submit" className="btn" id="submit">
