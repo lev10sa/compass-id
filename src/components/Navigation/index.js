@@ -71,9 +71,7 @@ const Navigation = () => {
         <div className="tabi">
           <button
             className="btn"
-            onClick={() =>
-              window.open("mailto:cs@compasspubindonesia.com", "_blank")
-            }
+            onClick={() => window.open("https://wa.me/6285174448002", "_blank")}
           >
             <i className="fab fa-whatsapp-square"></i> <span>Contact Us</span>
           </button>
