@@ -367,7 +367,7 @@ function EventPartyAdd() {
                 </button>
               </div>
               <div className="section"></div>
-              {event.price !== 0 ? (
+              {parseInt(event.price, 12) > 0 ?? (
                 <div>
                   <p>
                     Untuk mendaftar, silakan lakukan pembayaran via transfer ke
@@ -380,8 +380,6 @@ function EventPartyAdd() {
                     PT. Solusi Edukasi Gemilang
                   </p>
                 </div>
-              ) : (
-                <></>
               )}
               <div className="section"></div>
               <div className="section"></div>
@@ -516,7 +514,7 @@ function EventPartyAdd() {
                     <option value="Onsite">Onsite | Luring</option>
                   </select>
                 </div>
-                {event.price !== 0 ? (
+                {parseInt(event.price, 12) > 0 ?? (
                   <div className="field">
                     <label className="label">
                       Proof of Payment | Bukti Pembayaran
@@ -537,8 +535,6 @@ function EventPartyAdd() {
                       required
                     />
                   </div>
-                ) : (
-                  <></>
                 )}
                 <div className="section">
                   <div className="controls forms">
