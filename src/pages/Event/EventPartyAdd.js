@@ -9,8 +9,6 @@ function EventPartyAdd() {
   const [isEmpty, setIsEmpty] = useState(false);
 
   const { id } = useParams();
-  const pierce = parseInt(event.price, 12);
-  console.log(pierce);
 
   const [event, setEvent] = useState({
     title: "",
@@ -48,6 +46,9 @@ function EventPartyAdd() {
     });
     navigat(val);
   };
+
+  const pierce = parseInt(event.price, 12);
+  console.log(pierce);
 
   const handleChange = (event) => {
     // For non-file inputs, set the value directly
