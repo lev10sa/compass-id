@@ -47,7 +47,7 @@ function EventPartyAdd() {
     navigat(val);
   };
 
-  const pierce = parseInt(event.price, 12);
+  const pierce = parseFloat(event.price, 12);
   console.log(pierce);
 
   const handleChange = (event) => {
@@ -370,7 +370,7 @@ function EventPartyAdd() {
                 </button>
               </div>
               <div className="section"></div>
-              {pierce !== 0 ?? (
+              {pierce > 0 ? (
                 <div>
                   <p>
                     Untuk mendaftar, silakan lakukan pembayaran via transfer ke
@@ -383,6 +383,8 @@ function EventPartyAdd() {
                     PT. Solusi Edukasi Gemilang
                   </p>
                 </div>
+              ) : (
+                <></>
               )}
               <div className="section"></div>
               <div className="section"></div>
@@ -517,7 +519,7 @@ function EventPartyAdd() {
                     <option value="Onsite">Onsite | Luring</option>
                   </select>
                 </div>
-                {pierce !== 0 ?? (
+                {pierce > 0 ? (
                   <div className="field">
                     <label className="label">
                       Proof of Payment | Bukti Pembayaran
@@ -538,6 +540,8 @@ function EventPartyAdd() {
                       required
                     />
                   </div>
+                ) : (
+                  <></>
                 )}
                 <div className="section">
                   <div className="controls forms">

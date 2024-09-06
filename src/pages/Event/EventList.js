@@ -207,16 +207,6 @@ const EventList = () => {
                       <></>
                     )}
 
-                    {event.pic !== "" ? (
-                      <>
-                        <p title={event.pic}>
-                          <strong>Speaker:</strong> {event.pic}
-                        </p>
-                      </>
-                    ) : (
-                      <></>
-                    )}
-
                     {event.start !== "" ? (
                       <>
                         <p>
