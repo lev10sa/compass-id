@@ -502,22 +502,26 @@ function EventPartyAdd() {
                     required
                   />
                 </div>
-                <div className="field">
-                  <label className="label">Attendance | Kehadiran</label>
-                  <select
-                    id="room"
-                    name="room"
-                    value={eventData.room}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">
-                      --- Select Attendance | Pilih Kehadiran ---
-                    </option>
-                    <option value="Online">Online | Daring</option>
-                    <option value="Onsite">Onsite | Luring</option>
-                  </select>
-                </div>
+                {event.model === "Hybrid (Online & Onsite)" ? (
+                  <div className="field">
+                    <label className="label">Attendance | Kehadiran</label>
+                    <select
+                      id="room"
+                      name="room"
+                      value={eventData.room}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">
+                        --- Select Attendance | Pilih Kehadiran ---
+                      </option>
+                      <option value="Online">Online | Daring</option>
+                      <option value="Onsite">Onsite | Luring</option>
+                    </select>
+                  </div>
+                ) : (
+                  <></>
+                )}
                 {pierce > 0 ? (
                   <div className="field">
                     <label className="label">
