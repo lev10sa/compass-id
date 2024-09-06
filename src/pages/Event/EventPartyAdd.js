@@ -9,6 +9,8 @@ function EventPartyAdd() {
   const [isEmpty, setIsEmpty] = useState(false);
 
   const { id } = useParams();
+  const pierce = parseInt(event.price, 12);
+  console.log(pierce);
 
   const [event, setEvent] = useState({
     title: "",
@@ -367,7 +369,7 @@ function EventPartyAdd() {
                 </button>
               </div>
               <div className="section"></div>
-              {parseInt(event.price, 12) !== 0 ?? (
+              {pierce !== 0 ?? (
                 <div>
                   <p>
                     Untuk mendaftar, silakan lakukan pembayaran via transfer ke
@@ -514,7 +516,7 @@ function EventPartyAdd() {
                     <option value="Onsite">Onsite | Luring</option>
                   </select>
                 </div>
-                {parseInt(event.price, 12) !== 0 ?? (
+                {pierce !== 0 ?? (
                   <div className="field">
                     <label className="label">
                       Proof of Payment | Bukti Pembayaran
