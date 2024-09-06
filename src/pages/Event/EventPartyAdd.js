@@ -48,7 +48,6 @@ function EventPartyAdd() {
   };
 
   const pierce = parseFloat(event.price, 12);
-  console.log(pierce);
 
   const handleChange = (event) => {
     // For non-file inputs, set the value directly
