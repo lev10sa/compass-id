@@ -451,16 +451,6 @@ function Home() {
                   <></>
                 )}
 
-                {item.pic !== "" ? (
-                  <>
-                    <p title={item.pic}>
-                      <strong>Speaker:</strong> {item.pic}
-                    </p>
-                  </>
-                ) : (
-                  <></>
-                )}
-
                 {item.start !== "" ? (
                   <>
                     <p>
