@@ -109,6 +109,10 @@ const PostList = () => {
           property="og:image"
           content={`https://www.compasspubindonesia.com/logo192.png`}
         />
+        <link
+          rel="canonical"
+          href={`https://www.compasspubindonesia.com/posts`}
+        />
       </Helmet>
       <div className="container">
         <div className="section headline">

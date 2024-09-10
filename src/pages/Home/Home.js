@@ -259,7 +259,10 @@ function Home() {
           name="description"
           content="Official Homepage of Compass Publishing Indonesia"
         />
-        <meta property="og:url" content="https://www.compasspubindonesia.com" />
+        <meta
+          property="og:url"
+          content="https://www.compasspubindonesia.com/"
+        />
         <meta
           property="og:title"
           content="Home | Compass Publishing Indonesia"
@@ -272,6 +275,7 @@ function Home() {
           property="og:image"
           content="https://www.compasspubindonesia.com/logo192.png"
         />
+        <link rel="canonical" href={`https://www.compasspubindonesia.com/`} />
       </Helmet>
       <div className="container">
         <div className="panel">

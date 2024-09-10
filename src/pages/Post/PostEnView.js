@@ -148,6 +148,10 @@ function PostEnView() {
         />
         <meta property="og:description" content={`${post.body}`} />
         <meta property="og:image" content={`${post.banner}`} />
+        <link
+          rel="canonical"
+          href={`https://www.compasspubindonesia.com/post-view/en/${post._id}`}
+        />
       </Helmet>
       <div className="party container">
         {isLoading === true ? (

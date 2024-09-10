@@ -147,6 +147,10 @@ function PostIdView() {
         />
         <meta property="og:description" content={`${post.body}`} />
         <meta property="og:image" content={`${post.banner}`} />
+        <link
+          rel="canonical"
+          href={`https://www.compasspubindonesia.com/post-view/id/${post._id}`}
+        />
       </Helmet>
       <div className="party container">
         {isLoading === true ? (

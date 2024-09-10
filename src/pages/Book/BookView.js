@@ -74,6 +74,10 @@ function BookView() {
         />
         <meta property="og:description" content={`${booked.category}`} />
         <meta property="og:image" content={`${booked.src}`} />
+        <link
+          rel="canonical"
+          href={`https://www.compasspubindonesia.com/book-view/${booked._id}`}
+        />
       </Helmet>
       <div className="party container">
         {isLoading === true ? (

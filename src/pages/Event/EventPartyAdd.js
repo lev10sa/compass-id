@@ -255,6 +255,10 @@ function EventPartyAdd() {
         />
         <meta property="og:description" content={`${event.desc}`} />
         <meta property="og:image" content={`${event.img}`} />
+        <link
+          rel="canonical"
+          href={`https://www.compasspubindonesia.com/event-join/${event._id}`}
+        />
       </Helmet>
       <div className="party container">
         {isLoading === true ? (
