@@ -13,7 +13,7 @@ function PostIdView() {
   const [post, setPost] = useState([]);
   const [posts, setPosts] = useState([]);
   const [lang, setLang] = useState("id");
-  const postp = posts.slice(0, 3);
+  const postp = posts.slice(0, 6);
 
   const langSet = (a, b) => {
     setLang(a);
@@ -135,7 +135,7 @@ function PostIdView() {
   return (
     <>
       <Helmet>
-        <title>{post.title} | Compass Publishing Indonesia</title>
+        <title>{`${post.title}`} | Compass Publishing Indonesia</title>
         <meta name="description" content={`${post.body}`} />
         <meta
           property="og:url"
@@ -145,7 +145,7 @@ function PostIdView() {
           property="og:title"
           content={`${post.title} | Compass Publishing Indonesia`}
         />
-        <meta property="og:description" content={`${post.body}`} />
+        <meta property="og:description" content={`${post.title}`} />
         <meta property="og:image" content={`${post.banner}`} />
         <link
           rel="canonical"

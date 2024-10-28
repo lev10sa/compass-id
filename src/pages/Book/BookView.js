@@ -62,7 +62,7 @@ function BookView() {
   return (
     <>
       <Helmet>
-        <title>{booked.name} | Compass Publishing Indonesia</title>
+        <title>{`${booked.name}`} | Compass Publishing Indonesia</title>
         <meta name="description" content={`${booked.category}`} />
         <meta
           property="og:url"

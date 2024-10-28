@@ -9,7 +9,7 @@ function Home() {
   const [event, setEvent] = useState([]);
   const [books, setBook] = useState([]);
   const [lang, setLang] = useState("id");
-  const posts = post.slice(0, 3);
+  const posts = post.slice(0, 6);
   const events = event.slice(0, 3);
 
   const navigat = useNavigate();
@@ -646,92 +646,106 @@ function Home() {
         </div>
 
         <div id="desktop-about">
-          <div className="section about">
-            <div className="section">
-              <img
-                src={"/assets/img/banner/a.jpg"}
-                alt={`a.jpg`}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  borderRadius: "10px",
-                }}
-              />
-            </div>
-            <div className="section">
-              <p>
-                <a
-                  href="https://compasspubindonesia.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Compass Publishing Indonesia
-                </a>{" "}
-                is a representative from{" "}
-                <a
-                  href="https://compasspub.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Compass Publishing
-                </a>{" "}
-                South Korea which produce innovative ELT solutions for teachers
-                and their influence towards students since 1999. We provide all
-                services related to ELT books, ELT digital books, ELT
-                applications, and Top Class Education Webinar Services for
-                Indonesian teachers upskill needs in curriculum insight,
-                language skill, digital skill, and class psychology management.
-                We positioned as Sahabat Guru Sepanjang Masa in order to develop
-                the education quality in Indonesia. We motivate all to inspire
-                to teach, inspire to learn.
-              </p>
-            </div>
-          </div>
-
-          <div className="section about">
-            <div className="section">
-              <img
-                src={"/assets/img/banner/b.jpg"}
-                alt={`b.jpg`}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  borderRadius: "10px",
-                }}
-              />
-            </div>
-            <div className="section">
-              <p>
-                <a
-                  href="https://compasspubindonesia.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Compass Publishing Indonesia
-                </a>{" "}
-                adalah representatif dari{" "}
-                <a
-                  href="https://compasspub.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Compass Publishing
-                </a>{" "}
-                Korea Selatan yang menghasilkan berbagai solusi inovatif seputar
-                ELT bagi para guru dan influencer sejak tahun 1999. Kami
-                menyediakan berbagai layanan yang berkaitan dengan berbagai buku
-                ELT, buku digital ELT, aplikasi ELT, dan Layanan Webinar Edukasi
-                Top Class untuk meningkatkan taraf kompetensi para guru di
-                Indonesia dalam menjalankan kurikulum, kemampuan bahasa,
-                kecakapan digital, dan pengelolaan psikologi dalam kelas. Kami
-                hadir sebagai Sahabat Guru Sepanjang Masa dalam rangka
-                meningkatkan kualitas pendidikan di Indonesia. Kami memotivasi
-                semua orang untuk menginspirasi dalam mengajar dan menginspirasi
-                dalam belajar.
-              </p>
-            </div>
+          {lang === "en" ? (
+            <>
+              <div className="section about">
+                <div className="section">
+                  <img
+                    src={"/assets/img/banner/a.jpg"}
+                    alt={`a.jpg`}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "10px",
+                    }}
+                  />
+                </div>
+                <div className="section">
+                  <p>
+                    <a
+                      href="https://compasspubindonesia.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Compass Publishing Indonesia
+                    </a>{" "}
+                    is a representative from{" "}
+                    <a
+                      href="https://compasspub.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Compass Publishing
+                    </a>{" "}
+                    South Korea which produce innovative ELT solutions for
+                    teachers and their influence towards students since 1999. We
+                    provide all services related to ELT books, ELT digital
+                    books, ELT applications, and Top Class Education Webinar
+                    Services for Indonesian teachers upskill needs in curriculum
+                    insight, language skill, digital skill, and class psychology
+                    management. We positioned as Sahabat Guru Sepanjang Masa in
+                    order to develop the education quality in Indonesia. We
+                    motivate all to inspire to teach, inspire to learn.
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : lang === "id" ? (
+            <>
+              <div className="section about">
+                <div className="section">
+                  <img
+                    src={"/assets/img/banner/b.jpg"}
+                    alt={`b.jpg`}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "10px",
+                    }}
+                  />
+                </div>
+                <div className="section">
+                  <p>
+                    <a
+                      href="https://compasspubindonesia.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Compass Publishing Indonesia
+                    </a>{" "}
+                    adalah representatif dari{" "}
+                    <a
+                      href="https://compasspub.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Compass Publishing
+                    </a>{" "}
+                    Korea Selatan yang menghasilkan berbagai solusi inovatif
+                    seputar ELT bagi para guru dan influencer sejak tahun 1999.
+                    Kami menyediakan berbagai layanan yang berkaitan dengan
+                    berbagai buku ELT, buku digital ELT, aplikasi ELT, dan
+                    Layanan Webinar Edukasi Top Class untuk meningkatkan taraf
+                    kompetensi para guru di Indonesia dalam menjalankan
+                    kurikulum, kemampuan bahasa, kecakapan digital, dan
+                    pengelolaan psikologi dalam kelas. Kami hadir sebagai
+                    Sahabat Guru Sepanjang Masa dalam rangka meningkatkan
+                    kualitas pendidikan di Indonesia. Kami memotivasi semua
+                    orang untuk menginspirasi dalam mengajar dan menginspirasi
+                    dalam belajar.
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+          <div className="thub">
+            <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
+            <img src={"/assets/img/about/b.jpg"} alt={`b.jpg`} />
+            <img src={"/assets/img/about/c.jpg"} alt={`c.jpg`} />
           </div>
         </div>
 
