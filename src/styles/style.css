@@ -1897,7 +1897,7 @@ label {
     height: auto;
     display: block;
     overflow: hidden;
-    margin: 1.5rem 5px;
+    margin: 2rem auto;
     border-radius: 10px;
     border: 1px solid #000;
   }
