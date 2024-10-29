@@ -1014,15 +1014,16 @@ label {
     display: inline-block;
     overflow: hidden;
     margin: 2rem 0.5rem;
-  }
-
-  .thub div img {
-    margin: 1rem auto;
-    width: 100%;
+    border: 1px solid #000;
     border-radius: 20px;
   }
 
+  .thub div img {
+    width: 100%;
+  }
+
   .thub div p {
+    margin: 1rem auto;
     font-size: 11pt;
     font-weight: bold;
   }
@@ -1897,15 +1898,16 @@ label {
     display: block;
     overflow: hidden;
     margin: 1rem 5px;
+    border-radius: 10px;
+    border: 1px solid #000;
   }
 
   .thub div img {
-    margin: 1rem auto;
     width: 100%;
-    border-radius: 10px;
   }
 
   .thub div p {
+    margin: 1rem auto;
     font-size: 11pt;
     font-weight: bold;
   }
