@@ -716,6 +716,8 @@ label {
     overflow-y: hidden;
     overflow-x: scroll;
     white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: transparent transparent;
   }
 
   .recom .scrollList .axe {
@@ -724,6 +726,7 @@ label {
     display: inline-block;
     overflow: hidden;
     margin: auto 5px;
+    scroll-snap-align: start;
   }
 
   .recom .scrollList .axe p {
@@ -1616,6 +1619,8 @@ label {
     overflow-y: hidden;
     overflow-x: scroll;
     white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: transparent transparent;
   }
 
   .recom .scrollList .axe {
@@ -1624,6 +1629,7 @@ label {
     display: inline-block;
     overflow: hidden;
     margin: auto;
+    scroll-snap-align: start;
   }
 
   .recom .scrollList .axe p {
