@@ -181,7 +181,7 @@ label {
   }
 
   .post .panel {
-    width: 31%;
+    width: 31.5%;
     height: auto;
     display: inline-block;
     overflow: hidden;
@@ -237,10 +237,10 @@ label {
 
   .post .scrollList .dip {
     width: 90%;
-    height: 100px;
+    height: 65px;
     display: block;
     overflow: hidden;
-    text-overflow: initial;
+    text-overflow: inherit;
     white-space: initial;
     font-size: 10pt;
     color: #666;
@@ -1144,7 +1144,7 @@ label {
 
   .post .scrollList .dip {
     width: 90%;
-    height: 95px;
+    height: 65px;
     display: block;
     overflow: hidden;
     text-overflow: initial;
