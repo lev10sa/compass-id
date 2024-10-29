@@ -160,6 +160,11 @@ function Home() {
       url: "/events",
       label: "Event",
     },
+    {
+      src: "fas fa-users",
+      url: "/forum",
+      label: "Forum",
+    },
   ];
 
   const langSet = (a, b) => {
@@ -643,6 +648,45 @@ function Home() {
           ) : (
             <></>
           )}
+          <div className="thub">
+            <h3>
+              {lang === "id"
+                ? "Kami berkomitmen untuk menjadi sahabat guru dalam:"
+                : lang === "en"
+                ? "We have bold commitment to be teachers partner in:"
+                : ""}
+            </h3>
+            <div>
+              <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
+              <h5>
+                {lang === "id"
+                  ? "Pengembangan Diri"
+                  : lang === "en"
+                  ? "Self Development"
+                  : ""}
+              </h5>
+            </div>
+            <div>
+              <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
+              <h5>
+                {lang === "id"
+                  ? "Peningkatan Keterampilan"
+                  : lang === "en"
+                  ? "Skill Enhancement"
+                  : ""}
+              </h5>
+            </div>
+            <div>
+              <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
+              <h5>
+                {lang === "id"
+                  ? "Materi Pembelajaran"
+                  : lang === "en"
+                  ? "Learning Subject"
+                  : ""}
+              </h5>
+            </div>
+          </div>
         </div>
 
         <div id="desktop-about">
@@ -743,9 +787,43 @@ function Home() {
             <></>
           )}
           <div className="thub">
-            <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
-            <img src={"/assets/img/about/b.jpg"} alt={`b.jpg`} />
-            <img src={"/assets/img/about/c.jpg"} alt={`c.jpg`} />
+            <h3>
+              {lang === "id"
+                ? "Kami berkomitmen untuk menjadi sahabat guru dalam:"
+                : lang === "en"
+                ? "We have bold commitment to be teachers partner in:"
+                : ""}
+            </h3>
+            <div>
+              <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
+              <h5>
+                {lang === "id"
+                  ? "Pengembangan Diri"
+                  : lang === "en"
+                  ? "Self Development"
+                  : ""}
+              </h5>
+            </div>
+            <div>
+              <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
+              <h5>
+                {lang === "id"
+                  ? "Peningkatan Keterampilan"
+                  : lang === "en"
+                  ? "Skill Enhancement"
+                  : ""}
+              </h5>
+            </div>
+            <div>
+              <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
+              <h5>
+                {lang === "id"
+                  ? "Materi Pembelajaran"
+                  : lang === "en"
+                  ? "Learning Subject"
+                  : ""}
+              </h5>
+            </div>
           </div>
         </div>
 

@@ -336,7 +336,7 @@ label {
   }
 
   .container {
-    width: 80%;
+    width: 75%;
     height: auto;
     display: block;
     overflow: hidden;
@@ -986,13 +986,37 @@ label {
   }
 
   .about {
-    display: inline-block;
-    width: 50%;
+    display: block;
+    width: 100%;
     height: auto;
     overflow: hidden;
-    vertical-align: top;
     padding: 5px 10px;
     font-size: 11pt;
+  }
+
+  .thub {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 5px 10px;
+    font-size: 11pt;
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+
+  .thub div {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin: 2rem 0.5rem;
+  }
+
+  .thub div img {
+    margin: 1rem auto;
+    width: 100%;
+    border-radius: 20px;
   }
 }
 
@@ -1649,7 +1673,7 @@ label {
   }
 
   .icons button {
-    width: 25%;
+    width: 20%;
     height: auto;
     display: inline-block;
     overflow: hidden;
@@ -1843,6 +1867,35 @@ label {
     height: auto;
     float: left;
     font-weight: bold;
+  }
+
+  .thub {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 5px 10px;
+    font-size: 11pt;
+    margin: 1.5rem auto;
+    text-align: center;
+  }
+
+  .thub div {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    overflow: hidden;
+    margin: 1rem 5px;
+  }
+
+  .thub div img {
+    margin: 1rem auto;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .thub div h5 {
+    font-size: 11pt;
   }
 }
 
