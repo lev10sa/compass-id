@@ -658,33 +658,33 @@ function Home() {
             </h3>
             <div>
               <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
-              <h5>
+              <p>
                 {lang === "id"
                   ? "Pengembangan Diri"
                   : lang === "en"
                   ? "Self Development"
                   : ""}
-              </h5>
+              </p>
             </div>
             <div>
               <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
-              <h5>
+              <p>
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
                   : lang === "en"
                   ? "Skill Enhancement"
                   : ""}
-              </h5>
+              </p>
             </div>
             <div>
               <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
-              <h5>
+              <p>
                 {lang === "id"
                   ? "Materi Pembelajaran"
                   : lang === "en"
                   ? "Learning Subject"
                   : ""}
-              </h5>
+              </p>
             </div>
           </div>
         </div>
@@ -796,33 +796,33 @@ function Home() {
             </h3>
             <div>
               <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
-              <h5>
+              <p>
                 {lang === "id"
                   ? "Pengembangan Diri"
                   : lang === "en"
                   ? "Self Development"
                   : ""}
-              </h5>
+              </p>
             </div>
             <div>
               <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
-              <h5>
+              <p>
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
                   : lang === "en"
                   ? "Skill Enhancement"
                   : ""}
-              </h5>
+              </p>
             </div>
             <div>
               <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
-              <h5>
+              <p>
                 {lang === "id"
                   ? "Materi Pembelajaran"
                   : lang === "en"
                   ? "Learning Subject"
                   : ""}
-              </h5>
+              </p>
             </div>
           </div>
         </div>

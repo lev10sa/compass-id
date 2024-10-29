@@ -1018,6 +1018,11 @@ label {
     width: 100%;
     border-radius: 20px;
   }
+
+  .thub div p {
+    font-size: 11pt;
+    font-weight: bold;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -1894,8 +1899,9 @@ label {
     border-radius: 10px;
   }
 
-  .thub div h5 {
+  .thub div p {
     font-size: 11pt;
+    font-weight: bold;
   }
 }
 
