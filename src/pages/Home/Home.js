@@ -649,13 +649,13 @@ function Home() {
             <></>
           )}
           <div className="thub">
-            <h3>
+            <h5>
               {lang === "id"
                 ? "Kami berkomitmen untuk menjadi sahabat guru dalam:"
                 : lang === "en"
                 ? "We have bold commitment to be teachers partner in:"
                 : ""}
-            </h3>
+            </h5>
             <div>
               <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
               <p>
@@ -787,13 +787,13 @@ function Home() {
             <></>
           )}
           <div className="thub">
-            <h3>
+            <h5>
               {lang === "id"
                 ? "Kami berkomitmen untuk menjadi sahabat guru dalam:"
                 : lang === "en"
                 ? "We have bold commitment to be teachers partner in:"
                 : ""}
-            </h3>
+            </h5>
             <div>
               <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
               <p>
