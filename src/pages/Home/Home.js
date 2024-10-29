@@ -160,11 +160,6 @@ function Home() {
       url: "/events",
       label: "Event",
     },
-    {
-      src: "fas fa-users",
-      url: "/forum",
-      label: "Forum",
-    },
   ];
 
   const langSet = (a, b) => {
@@ -310,6 +305,17 @@ function Home() {
                 </button>
               </>
             ))}
+            <button
+              type="button"
+              onClick={() =>
+                window.open("https://compasspubindonesia.com/forum", "_blank")
+              }
+            >
+              <span>
+                <i className="fas fa-users"></i>
+              </span>
+              <label>Forum</label>
+            </button>
           </div>
         </div>
 
