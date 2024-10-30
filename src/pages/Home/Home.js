@@ -130,8 +130,8 @@ function Home() {
       uri: "https://global.playbigbox.com",
     },
     {
-      src: "/assets/img/partner/e.jpg",
-      uri: "https://mathpid.com",
+      src: "/assets/img/partner/d.jpg",
+      uri: "",
     },
   ];
 
