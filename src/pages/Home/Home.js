@@ -133,10 +133,6 @@ function Home() {
       src: "/assets/img/partner/e.jpg",
       uri: "https://mathpid.com",
     },
-    {
-      src: "/assets/img/partner/d.jpg",
-      uri: "https://mathpid.com",
-    },
   ];
 
   const icons = [
