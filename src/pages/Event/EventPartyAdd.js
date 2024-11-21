@@ -10,18 +10,7 @@ function EventPartyAdd() {
 
   const { id } = useParams();
 
-  const [event, setEvent] = useState({
-    title: "",
-    pic: "",
-    model: "",
-    img: "",
-    desc: "",
-    start: "",
-    end: "",
-    group: "",
-    address: "",
-    price: "",
-  });
+  const [event, setEvent] = useState({});
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [eventData, setEventData] = useState({
@@ -319,6 +308,18 @@ function EventPartyAdd() {
                       <strong>Role:</strong>
                     </p>
                     <p>{event.model}</p>
+                  </div>
+                ) : (
+                  <></>
+                )}
+                {event.phone !== "" ? (
+                  <div className="section">
+                    <p>
+                      <strong>Contact:</strong>
+                    </p>
+                    <p>
+                      <a href={`tel:${event.phone}`}>{event.phone}</a>
+                    </p>
                   </div>
                 ) : (
                   <></>
