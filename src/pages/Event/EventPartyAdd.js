@@ -312,13 +312,15 @@ function EventPartyAdd() {
                 ) : (
                   <></>
                 )}
-                {event.phone !== "" ? (
+                {event.contact !== "" ? (
                   <div className="section">
                     <p>
                       <strong>Contact:</strong>
                     </p>
                     <p>
-                      <a href={`tel:${event.phone}`}>{event.phone}</a>
+                      <a href={`https://wa.me/62${event.contact}`}>
+                        {event.contact}
+                      </a>
                     </p>
                   </div>
                 ) : (
@@ -385,6 +387,14 @@ function EventPartyAdd() {
                     BCA - 4685015898
                     <br />
                     PT. Solusi Edukasi Gemilang
+                    <br />
+                    <br />
+                    Informasi selengkapnya, hubungi:
+                    <br />
+                    CS -{" "}
+                    <a href={`https://wa.me/62${event.contact}`}>
+                      {event.contact}
+                    </a>
                   </p>
                 </div>
               ) : (
