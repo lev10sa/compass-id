@@ -387,14 +387,20 @@ function EventPartyAdd() {
                     BCA - 4685015898
                     <br />
                     PT. Solusi Edukasi Gemilang
-                    <br />
-                    <br />
-                    Informasi selengkapnya, hubungi:
-                    <br />
-                    CS -{" "}
-                    <a href={`https://wa.me/62${event.contact}`}>
-                      {event.contact}
-                    </a>
+                    {event.contact !== "" ? (
+                      <>
+                        <br />
+                        <br />
+                        Informasi selengkapnya, hubungi:
+                        <br />
+                        CS -{" "}
+                        <a href={`https://wa.me/62${event.contact}`}>
+                          {event.contact}
+                        </a>
+                      </>
+                    ) : (
+                      <></>
+                    )}
                   </p>
                 </div>
               ) : (
