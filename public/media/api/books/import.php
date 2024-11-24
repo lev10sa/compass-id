@@ -7,7 +7,7 @@ $json = file_get_contents($api);
 $data = json_decode($json, true);
 
 if ($data) {
-    $stmt = $con->prepare("INSERT INTO books (isbn, name, category, bookPrice, ebookPrice, createdAt) VALUES (:isbn, :name, :category, :bookPrice, :ebookPrice, :createdAt)");
+    $stmt = $con->prepare("INSERT IGNORE INTO books (isbn, name, category, bookPrice, ebookPrice, createdAt) VALUES (:isbn, :name, :category, :bookPrice, :ebookPrice, :createdAt)");
 
     foreach ($data as $book) {
         $stmt->bindParam(':isbn', $book['isbn']);
@@ -27,3 +27,5 @@ if ($data) {
 } else {
     echo "No data fetched from API.";
 }
+
+?>

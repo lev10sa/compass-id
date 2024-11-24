@@ -16,10 +16,12 @@ if ($method === "GET") {
     if ($key !== "") {
         $sql = "SELECT * FROM books WHERE isbn LIKE '%$key%' OR name LIKE '%$key%' OR category LIKE '%$key%' ORDER BY name ASC";
         $data = $con->query($sql);
+        $data->setFetchMode(PDO::FETCH_ASSOC);
         $books = $data->fetchAll();
     } else {
         $sql = "SELECT * FROM books ORDER BY name ASC";
         $data = $con->query($sql);
+        $data->setFetchMode(PDO::FETCH_ASSOC);
         $books = $data->fetchAll();
     }
 
