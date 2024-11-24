@@ -60,7 +60,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forum | Compass Publishing Indonesia</title>
         <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="https://compasspubindonesia.com/forum/style.css">
     </head>
 
     <body>
