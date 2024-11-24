@@ -14,10 +14,12 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
     $em = $_POST['em'];
     $pn = $_POST['pn'];
     $pw = $_POST['pw'];
+    $pp = "https://compasspubindonesia.com/user.png";
+    $cp = "https://compasspubindonesia.com/cover.png";
 
     if (isset($un) && isset($fn) && isset($bd) && isset($gn) && isset($em) && isset($pn) && isset($pw)) {
 
-        $inssql = "INSERT IGNORE INTO accounts (username, name, birthdate, gender, email, phone, password, dt) VALUES ('$un', '$fn', '$bd', '$gn', '$em', '$pn', '$pw', NOW())";
+        $inssql = "INSERT IGNORE INTO accounts (username, name, birthdate, gender, email, phone, password, profile_pic, cover_pic, dt) VALUES ('$un', '$fn', '$bd', '$gn', '$em', '$pn', '$pw', '$pp', '$cp' NOW())";
         $ins = $con->query($inssql);
 
         if ($ins) {
