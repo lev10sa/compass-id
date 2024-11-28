@@ -15,6 +15,7 @@ try {
 
     $con = new PDO("mysql:host=$svn;dbname=$db", $sun, $spw);
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $con->query("SET time_zone = '+07:00'");
 } catch (PDOException $e) {
     print $e->getMessage();
 }
