@@ -108,5 +108,3 @@ if ($dataEn) {
 } else {
     echo "No data fetched from EN API.\n";
 }
-
-?>

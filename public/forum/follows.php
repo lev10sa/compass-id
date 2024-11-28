@@ -70,8 +70,8 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum | Compass Publishing Indonesia</title>
     <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://compasspubindonesia.com/forum/login.css">
-    <link rel="stylesheet" href="https://compasspubindonesia.com/forum/home.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./home.css">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -483,7 +483,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
 </script>
 <script>
     let copi = (vla) => {
-        let uri = "https://compasspubindonesia.com/forum/post.php?post_id=" + vla
+        let uri = "./post.php?post_id=" + vla
         navigator.clipboard.writeText(uri)
         alert('Tautan tersalin!')
     }

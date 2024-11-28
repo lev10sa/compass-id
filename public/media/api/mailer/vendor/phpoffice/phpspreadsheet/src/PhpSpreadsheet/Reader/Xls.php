@@ -1312,7 +1312,7 @@ class Xls extends BaseReader
                     }
                 }
                 //    Named Value
-                    //    TODO Provide support for named values
+                //    TODO Provide support for named values
             }
         }
         $this->data = '';
@@ -1741,7 +1741,7 @@ class Xls extends BaseReader
             } else {
                 //    Set comment for the cell
                 $this->phpSheet->getComment($cellAddress)->setText($this->parseRichText($noteText));
-//                                                    ->setAuthor($author)
+                //                                                    ->setAuthor($author)
             }
         }
     }
@@ -3049,7 +3049,7 @@ class Xls extends BaseReader
                         $len = min($charsLeft, $limitpos - $pos);
                         for ($j = 0; $j < $len; ++$j) {
                             $retstr .= $recordData[$pos + $j]
-                            . chr(0);
+                                . chr(0);
                         }
                         $charsLeft -= $len;
                         $isCompressed = false;
@@ -7874,7 +7874,7 @@ class Xls extends BaseReader
         }
 
         // offset: 0; size: 2; Rule Count
-//        $ruleCount = self::getUInt2d($recordData, 0);
+        //        $ruleCount = self::getUInt2d($recordData, 0);
 
         // offset: var; size: var; cell range address list with
         $cellRangeAddressList = ($this->version == self::XLS_BIFF8)
@@ -7984,9 +7984,7 @@ class Xls extends BaseReader
         $this->setCFRules($cellRangeAddresses, $type, $operator, $formula1, $formula2, $style);
     }
 
-    private function getCFStyleOptions(int $options, Style $style): void
-    {
-    }
+    private function getCFStyleOptions(int $options, Style $style): void {}
 
     private function getCFFontStyle(string $options, Style $style): void
     {
@@ -8005,13 +8003,9 @@ class Xls extends BaseReader
         }
     }
 
-    private function getCFAlignmentStyle(string $options, Style $style): void
-    {
-    }
+    private function getCFAlignmentStyle(string $options, Style $style): void {}
 
-    private function getCFBorderStyle(string $options, Style $style): void
-    {
-    }
+    private function getCFBorderStyle(string $options, Style $style): void {}
 
     private function getCFFillStyle(string $options, Style $style): void
     {
@@ -8036,9 +8030,7 @@ class Xls extends BaseReader
         }
     }
 
-    private function getCFProtectionStyle(string $options, Style $style): void
-    {
-    }
+    private function getCFProtectionStyle(string $options, Style $style): void {}
 
     /**
      * @return null|float|int|string

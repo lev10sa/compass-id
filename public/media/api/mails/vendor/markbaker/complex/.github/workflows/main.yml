@@ -1,5 +1,5 @@
 name: main
-on: [ push, pull_request ]
+on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -8,15 +8,15 @@ jobs:
         experimental:
           - false
         php-version:
-          - '7.2'
-          - '7.3'
-          - '7.4'
-          - '8.0'
-          - '8.1'
-          - '8.2'
+          - "7.2"
+          - "7.3"
+          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
 
         include:
-          - php-version: 'nightly'
+          - php-version: "nightly"
             experimental: true
 
     name: PHP ${{ matrix.php-version }}

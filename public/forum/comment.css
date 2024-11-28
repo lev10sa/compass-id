@@ -17,7 +17,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     position: sticky;
     bottom: 0;
     background: #fff;
@@ -31,7 +31,7 @@
     overflow-y: scroll;
     padding: 10px 10px;
     margin: 5px auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .maked input[type="file"] {
@@ -39,7 +39,7 @@
     height: auto;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 5px auto;
@@ -50,7 +50,7 @@
     background: blue;
     color: #fff;
     padding: 8px 10px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 5px;
   }
 
@@ -75,11 +75,11 @@
 
   .mid .posted .post {
     margin: auto auto 1rem auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posted .post .fig {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 0;
     position: relative;
   }
@@ -90,7 +90,7 @@
     width: 80px;
     height: auto;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     border-radius: 5px;
@@ -123,7 +123,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
     margin: 5px auto;
   }
@@ -170,7 +170,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posted .post .panel,
@@ -184,7 +184,7 @@
   }
 
   .mid .posted .post .cnt {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .posted .post .cnt p {
@@ -232,7 +232,7 @@
     margin: 10px auto;
     font-size: 10pt;
     font-weight: bold;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 15px;
   }
 
@@ -244,7 +244,7 @@
     clear: both;
     margin: 1.5rem auto;
     text-align: left;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .comment .cmnt .fig .image {
@@ -261,7 +261,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
     margin: 5px auto;
   }
@@ -311,7 +311,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     margin: 10px 10px;
   }
 
@@ -342,7 +342,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #999;
     position: sticky;
     bottom: 3rem;
     background: #fff;
@@ -356,7 +356,7 @@
     overflow-y: scroll;
     padding: 10px 10px;
     margin: 5px auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .makedt input[type="file"] {
@@ -364,7 +364,7 @@
     height: auto;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 5px 10px;
@@ -376,7 +376,7 @@
     background: blue;
     color: #fff;
     padding: 8px 10px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 5px;
   }
 
@@ -401,11 +401,11 @@
 
   .mid .posted .post {
     margin: auto auto 5px auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posted .post .fig {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 0;
     position: relative;
     clear: both;
@@ -417,7 +417,7 @@
     width: 80px;
     height: auto;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     border-radius: 5px;
@@ -450,7 +450,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
     margin: 5px auto;
   }
@@ -497,7 +497,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posted .post .panel,
@@ -511,7 +511,7 @@
   }
 
   .mid .posted .post .cnt {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .posted .post .cnt p {
@@ -558,7 +558,7 @@
     margin: 10px auto;
     font-size: 10pt;
     font-weight: bold;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 15px;
   }
 
@@ -570,7 +570,7 @@
     clear: both;
     margin: 1.5rem auto;
     text-align: left;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .comment .cmnt .fig .image {
@@ -587,7 +587,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
     margin: 5px auto;
   }
@@ -637,7 +637,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     margin: 10px 10px;
   }
 

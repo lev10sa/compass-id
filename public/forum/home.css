@@ -19,7 +19,7 @@
     display: inline-block;
     overflow: hidden;
     overflow-y: scroll;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #999;
     vertical-align: top;
   }
 
@@ -41,7 +41,7 @@
 
   .left .hero {
     width: 90%;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 10px 10px;
     border-radius: 10px;
     clear: both;
@@ -61,7 +61,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
   }
 
@@ -104,7 +104,7 @@
     overflow: hidden;
     margin: 15px auto;
     padding: 10px 15px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     text-align: left;
     text-decoration: none;
     font-size: 11pt;
@@ -122,7 +122,7 @@
   }
 
   .left .tabs .logi a {
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 10px;
     text-align: center;
   }
@@ -154,7 +154,7 @@
     position: sticky;
     clear: both;
     text-align: left;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .tabs a {
@@ -180,7 +180,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .make textarea {
@@ -191,7 +191,7 @@
     overflow-y: scroll;
     padding: 10px 10px;
     margin: 5px auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .make input[type="file"] {
@@ -199,7 +199,7 @@
     height: auto;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 5px auto;
@@ -210,7 +210,7 @@
     background: blue;
     color: #fff;
     padding: 8px 10px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 5px;
   }
 
@@ -235,11 +235,11 @@
 
   .mid .posed .pos {
     margin: 1rem auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posed .pos .fig {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 0;
     position: relative;
   }
@@ -250,7 +250,7 @@
     width: 80px;
     height: auto;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     border-radius: 5px;
@@ -283,7 +283,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
     margin: 5px auto;
   }
@@ -330,7 +330,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posed .pos .panel,
@@ -344,7 +344,7 @@
   }
 
   .mid .posed .pos .cnt {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .posed .pos .cnt p {
@@ -382,7 +382,7 @@
     display: inline-block;
     overflow: hidden;
     overflow-y: scroll;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid #999;
   }
 
   .right .srch,
@@ -400,7 +400,7 @@
     display: block;
     overflow: hidden;
     padding: 5px 15px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 30px;
   }
 
@@ -410,7 +410,7 @@
 
   .right .rec p {
     font-weight: bold;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 15px 5px;
   }
 
@@ -420,7 +420,7 @@
     display: block;
     margin: 1rem auto;
     text-align: left;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 10px;
     clear: both;
   }
@@ -440,7 +440,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
   }
 
@@ -486,7 +486,7 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     border-radius: 5px;
@@ -506,7 +506,7 @@
     top: 0;
     background: #fff;
     z-index: 1000;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     clear: both;
   }
 
@@ -533,7 +533,7 @@
     bottom: 0;
     background: #fff;
     z-index: 1000;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #999;
     clear: both;
     text-align: center;
   }
@@ -558,11 +558,11 @@
   }
 
   .left {
-    width: 100%;
+    width: 75%;
     height: 100vh;
     display: none;
     overflow: hidden;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #999;
     position: fixed;
     top: 0;
     left: 0;
@@ -604,7 +604,7 @@
 
   .left .hero {
     width: 90%;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 10px 10px;
     border-radius: 10px;
     clear: both;
@@ -624,7 +624,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
   }
 
@@ -667,7 +667,7 @@
     overflow: hidden;
     margin: 15px auto;
     padding: 10px 15px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     text-align: left;
     text-decoration: none;
     font-size: 11pt;
@@ -685,7 +685,7 @@
   }
 
   .left .tabs .logi a {
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 10px;
     text-align: center;
   }
@@ -716,7 +716,7 @@
     top: 0;
     clear: both;
     text-align: left;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .tabs a {
@@ -743,7 +743,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .make textarea {
@@ -754,7 +754,7 @@
     overflow-y: scroll;
     padding: 10px 10px;
     margin: 5px auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .make input[type="file"] {
@@ -762,7 +762,7 @@
     height: auto;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 5px 5px;
@@ -773,7 +773,7 @@
     background: blue;
     color: #fff;
     padding: 8px 10px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     border-radius: 5px;
   }
 
@@ -796,11 +796,11 @@
   .mid .posed .pos {
     width: 98%;
     margin: 1rem auto;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posed .pos .fig {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     padding: 10px 0;
     position: relative;
     clear: both;
@@ -812,7 +812,7 @@
     width: 80px;
     height: auto;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     border-radius: 5px;
@@ -845,7 +845,7 @@
     height: 40px;
     display: block;
     overflow: hidden;
-    border: 1px double #aaa;
+    border: 1px double #999;
     border-radius: 50%;
     margin: 5px auto;
   }
@@ -892,7 +892,7 @@
     height: auto;
     display: block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .posed .pos .panel,
@@ -906,7 +906,7 @@
   }
 
   .mid .posed .pos .cnt {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .mid .posed .pos .cnt p {

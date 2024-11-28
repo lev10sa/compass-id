@@ -12,7 +12,7 @@ echo $x, PHP_EOL;
 $x = new Complex(123, 456);
 echo $x, PHP_EOL;
 
-$x = new Complex(array(123,456,'j'));
+$x = new Complex(array(123, 456, 'j'));
 echo $x, PHP_EOL;
 
 $x = new Complex('1.23e-4--2.34e-5i');

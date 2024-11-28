@@ -27,5 +27,3 @@ if ($data) {
 } else {
     echo "No data fetched from API.";
 }
-
-?>

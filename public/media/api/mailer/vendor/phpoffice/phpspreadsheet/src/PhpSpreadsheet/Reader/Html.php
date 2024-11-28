@@ -625,7 +625,7 @@ class Html extends BaseReader
                     $cellContent .= $domText;
                 }
                 //    but if we have a rich text run instead, we need to append it correctly
-                    //    TODO
+                //    TODO
             } elseif ($child instanceof DOMElement) {
                 $this->processDomElementBody($sheet, $row, $column, $cellContent, $child);
             }

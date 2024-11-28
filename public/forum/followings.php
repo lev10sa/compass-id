@@ -37,9 +37,9 @@ if (isset($_GET['un'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forum | Compass Publishing Indonesia</title>
         <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="https://compasspubindonesia.com/forum/login.css">
-        <link rel="stylesheet" href="https://compasspubindonesia.com/forum/home.css">
-        <link rel="stylesheet" href="https://compasspubindonesia.com/forum/followers.css">
+        <link rel="stylesheet" href="./login.css">
+        <link rel="stylesheet" href="./home.css">
+        <link rel="stylesheet" href="./followers.css">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -323,7 +323,7 @@ if (isset($_GET['un'])) {
     </script>
     <script>
         let copi = (vel) => {
-            let uri = `https://compasspubindonesia.com/forum/post.php?post_id=${vel}`;
+            let uri = `./post.php?post_id=${vel}`;
             let copied = navigator.clipboard.writeText(uri);
             if (copied) {
                 alert('Tautan tersalin!');

@@ -90,11 +90,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <i className="fas fa-calendar-alt"></i> <span>Event</span>
           </button>
-          <button
-            onClick={() =>
-              window.open("https://compasspubindonesia.com/forum", "_blank")
-            }
-          >
+          <button onClick={() => window.open("./", "_blank")}>
             <i className="fas fa-users"></i> <span>Forum</span>
           </button>
         </div>
@@ -126,11 +122,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <span>Event</span> <i className="fas fa-calendar-alt"></i>
           </button>
-          <button
-            onClick={() =>
-              window.open("https://compasspubindonesia.com/forum", "_blank")
-            }
-          >
+          <button onClick={() => window.open("./", "_blank")}>
             <i className="fas fa-users"></i> <span>Forum</span>
           </button>
         </div>

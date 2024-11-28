@@ -131,7 +131,12 @@ class Sample
             $writer = IOFactory::createWriter($spreadsheet, $writerType);
             $callStartTime = microtime(true);
             $writer->save($path);
-            $this->logWrite($writer, $path, /** @scrutinizer ignore-type */ $callStartTime);
+            $this->logWrite(
+                $writer,
+                $path,
+                /** @scrutinizer ignore-type */
+                $callStartTime
+            );
         }
 
         $this->logEndingNotes();
@@ -169,7 +174,9 @@ class Sample
     {
         $originalExtension = pathinfo($filename, PATHINFO_EXTENSION);
 
-        return $this->getTemporaryFolder() . '/' . str_replace('.' . /** @scrutinizer ignore-type */ $originalExtension, '.' . $extension, basename($filename));
+        return $this->getTemporaryFolder() . '/' . str_replace('.' .
+            /** @scrutinizer ignore-type */
+            $originalExtension, '.' . $extension, basename($filename));
     }
 
     /**

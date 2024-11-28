@@ -83,7 +83,7 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
         restore_error_handler();
 
         $body = $doc->getElementsByTagName('html')->item(0)-> // <html>
-                      getElementsByTagName('body')->item(0);  // <body>
+            getElementsByTagName('body')->item(0);  // <body>
 
         $div = $body->getElementsByTagName('div')->item(0); // <div>
         $tokens = array();
@@ -188,7 +188,7 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
         if ($node->nodeType === XML_TEXT_NODE) {
             $data = $this->getData($node); // Handle variable data property
             if ($data !== null) {
-              $tokens[] = $this->factory->createText($data);
+                $tokens[] = $this->factory->createText($data);
             }
             return false;
         } elseif ($node->nodeType === XML_CDATA_SECTION_NODE) {
@@ -274,9 +274,7 @@ class HTMLPurifier_Lexer_DOMLex extends HTMLPurifier_Lexer
      * @param int $errno
      * @param string $errstr
      */
-    public function muteErrorHandler($errno, $errstr)
-    {
-    }
+    public function muteErrorHandler($errno, $errstr) {}
 
     /**
      * Callback function for undoing escaping of stray angled brackets

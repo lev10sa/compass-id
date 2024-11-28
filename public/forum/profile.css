@@ -12,7 +12,7 @@
 
   .tomo {
     margin: auto auto 1rem auto;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .tomo .cover img {
@@ -20,7 +20,7 @@
     object-fit: cover;
     object-position: center;
 
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .tomo .hero .pic {
@@ -78,7 +78,7 @@
 
   .tomo .panel {
     text-align: center;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #999;
   }
 
   .tomo .panel a {
@@ -130,7 +130,7 @@
   .mid .form input,
   .mid .form select {
     padding: 10px 15px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .form button,
@@ -163,14 +163,14 @@
 
   .tomo {
     margin: auto auto 1rem auto;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .tomo .cover img {
     height: 120px;
     object-fit: cover;
     object-position: center;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .tomo .hero .pic {
@@ -228,7 +228,7 @@
 
   .tomo .panel {
     text-align: center;
-    border-top: 1px solid #aaa;
+    border-top: 1px solid #999;
   }
 
   .tomo .panel a {
@@ -280,7 +280,7 @@
   .mid .form input,
   .mid .form select {
     padding: 10px 15px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
   }
 
   .mid .form button,

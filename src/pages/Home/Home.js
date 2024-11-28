@@ -301,12 +301,7 @@ function Home() {
                 </button>
               </>
             ))}
-            <button
-              type="button"
-              onClick={() =>
-                window.open("https://compasspubindonesia.com/forum", "_blank")
-              }
-            >
+            <button type="button" onClick={() => window.open("./", "_blank")}>
               <span>
                 <i className="fas fa-users"></i>
               </span>

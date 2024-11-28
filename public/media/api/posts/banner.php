@@ -63,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $response['errors'] = ['No files were uploaded.'];
         }
     }
-
 } else {
     $response['errors'] = ['Invalid request method.'];
 }

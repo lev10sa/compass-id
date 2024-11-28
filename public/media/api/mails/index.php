@@ -20,22 +20,22 @@ try {
         $way = $_POST['end'];
         $pname = $_POST['name'];
         $email = $_POST['email'];
-        
+
         $body = "Halo <strong>" . $pname . "</strong>!<br><br>Terimakasih telah mendaftar untuk turut berpartisipasi dalam acara <strong>" . $name . "</strong>.<br><br>Silakan klik link di bawah ini untuk bergabung ke dalam grup yang telah kami sediakan, untuk informasi dan koordinasi acara lebih lanjut.<br><br>" . $group . "<br><br>Terimakasih.";
 
-$grip = date("Y-m-d", strtotime($wax))."T".date("H:i:s", strtotime($wax));
- $gripp = date("Y-m-d", strtotime($way))."T".date("H:i:s", strtotime($way));
- $eventStart = date_create($grip, new DateTimeZone('Asia/Jakarta'));
- $eventEnd = date_create($gripp, new DateTimeZone('Asia/Jakarta'));
+        $grip = date("Y-m-d", strtotime($wax)) . "T" . date("H:i:s", strtotime($wax));
+        $gripp = date("Y-m-d", strtotime($way)) . "T" . date("H:i:s", strtotime($way));
+        $eventStart = date_create($grip, new DateTimeZone('Asia/Jakarta'));
+        $eventEnd = date_create($gripp, new DateTimeZone('Asia/Jakarta'));
 
-$icsContent = "BEGIN:VCALENDAR
+        $icsContent = "BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
 DTSTAMP:" . date('Ymd\THis') . "
-DTSTART:".$eventStart->format('Ymd\THis')."
-DTEND:".$eventEnd->format('Ymd\THis')."
-SUMMARY:".$trn." - Konseling
-DESCRIPTION:Jadwal dibuat oleh ".$fnm." untuk ditangani oleh ".$trn." perihal ".$tp.".
+DTSTART:" . $eventStart->format('Ymd\THis') . "
+DTEND:" . $eventEnd->format('Ymd\THis') . "
+SUMMARY:" . $trn . " - Konseling
+DESCRIPTION:Jadwal dibuat oleh " . $fnm . " untuk ditangani oleh " . $trn . " perihal " . $tp . ".
 END:VEVENT
 END:VCALENDAR";
 
@@ -61,8 +61,6 @@ END:VCALENDAR";
 
         // Kirim email
         $mail->send();
-    
-
 } catch (Exception $e) {
-    print "Failed: " . $e->getMessage();
+        print "Failed: " . $e->getMessage();
 }

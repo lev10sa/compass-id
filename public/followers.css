@@ -13,7 +13,7 @@
     height: auto;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     margin: 1rem 5px;
     text-align: center;
     border-radius: 10px;
@@ -25,7 +25,7 @@
     display: block;
     overflow: hidden;
     font-size: 12pt;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     width: 98%;
     height: auto;
     padding: 15px 15px;
@@ -39,7 +39,7 @@
     object-fit: cover;
     object-position: center;
     margin-bottom: 10px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .flower .flow a,
@@ -75,7 +75,7 @@
     overflow: hidden;
     margin: 15px auto 10px auto;
     border-radius: 30px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     color: #fff;
@@ -102,7 +102,7 @@
     height: auto;
     display: inline-block;
     overflow: hidden;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     margin: 0.5rem 10px;
     text-align: center;
     border-radius: 10px;
@@ -114,7 +114,7 @@
     display: block;
     overflow: hidden;
     font-size: 12pt;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
     width: 98%;
     height: auto;
     padding: 15px 15px;
@@ -128,7 +128,7 @@
     object-fit: cover;
     object-position: center;
     margin-bottom: 10px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #999;
   }
 
   .flower .flow a,
@@ -164,7 +164,7 @@
     overflow: hidden;
     margin: 15px auto 10px auto;
     border-radius: 30px;
-    border: 1px solid #aaa;
+    border: 1px solid #999;
     padding: 5px 10px;
     font-weight: initial;
     color: #fff;
