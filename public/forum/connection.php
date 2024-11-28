@@ -2,6 +2,8 @@
 
 session_start();
 
+error_reporting(0);
+
 $svn = "localhost";
 $sun = "u802091730_compass";
 $spw = "CompassPub2024!";
