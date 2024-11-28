@@ -405,7 +405,7 @@
   }
 
   .right .rec {
-    margin: 2rem auto;
+    margin: auto auto 2rem auto;
   }
 
   .right .rec p {
@@ -475,6 +475,7 @@
     font-weight: inherit;
     color: #666;
     border: 1px hidden;
+    padding: 0 0;
   }
 
   .right .rec .fig .fol {
