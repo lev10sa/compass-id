@@ -2,8 +2,6 @@
 
 session_start();
 
-error_reporting(0);
-
 $svn = "localhost";
 $sun = "u802091730_compass";
 $spw = "CompassPub2024!";
@@ -21,11 +19,11 @@ try {
 
     $accSQL = "CREATE TABLE IF NOT EXISTS accounts (
     id int not null auto_increment primary key,
-    username text(3000) not null,
+    username varchar(30) not null unique,
     name text(3000) not null,
     birthdate text(3000) not null,
     gender text(3000) not null,
-    email text(3000) not null,
+    email varchar(99) not null unique,
     phone text(3000) not null,
     password text(3000) not null,
     profile_pic text(3000),
@@ -38,7 +36,6 @@ try {
     id int not null auto_increment primary key,
     acc_id text(3000) not null,
     post_id text(3000) not null,
-    reply_id text(3000) not null,
     comm_id text(3000) not null,
     dt datetime not null
     )";
@@ -57,28 +54,37 @@ try {
     post_id text(3000) not null,
     acc_id text(3000) not null,
     body text(3000) not null,
+    media text(3000) not null,
     dt datetime not null
     )";
     $con->query($commSQL);
 
-    $replySQL = "CREATE TABLE IF NOT EXISTS replies (
+    $msgSQL = "CREATE TABLE IF NOT EXISTS messages (
     id int not null auto_increment primary key,
-    acc_id text(3000) not null,
-    post_id text(3000) not null,
-    comm_id text(3000) not null,
+    acc_main text(3000) not null,
+    acc_sec text(3000) not null,
     body text(3000) not null,
+    media text(3000) not null,
+    status text(3000) not null,
     dt datetime not null
     )";
-    $con->query($replySQL);
+    $con->query($msgSQL);
 
     $postSQL = "CREATE TABLE IF NOT EXISTS posts (
     id int not null auto_increment primary key,
     acc_id text(3000) not null,
-    media text(3000) not null,
+    media text(3000),
     body text(3000) not null,
     dt datetime not null
     )";
     $con->query($postSQL);
+
+    $saveSQL = "CREATE TABLE IF NOT EXISTS saves (
+    id int not null auto_increment primary key,
+    acc_id text(3000) not null,
+    post_id text(3000) not null
+    )";
+    $con->query($saveSQL);
 
     $visitSQL = "CREATE TABLE IF NOT EXISTS visitors (
     id int not null auto_increment primary key,

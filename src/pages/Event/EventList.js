@@ -191,7 +191,12 @@ const EventList = () => {
                 >
                   {event.img !== "" ? (
                     <>
-                      <img loading="lazy" src={event.img} alt={event.img} />
+                      <img
+                        loading="lazy"
+                        loading="lazy"
+                        src={event.img}
+                        alt={event.img}
+                      />
                     </>
                   ) : (
                     <></>

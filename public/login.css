@@ -5,10 +5,82 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+pre {
+  white-space: break-spaces;
+}
+
 a,
 button,
-img {
+img,
+input[type="submit"] {
   cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 1.7em;
+}
+
+h2 {
+  font-size: 1.55em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 0.9em;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+pre {
+  font-size: 0.9em;
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+.shdw {
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+pre,
+label {
+  margin: 5px auto;
 }
 
 @media only screen and (min-width: 601px) {
@@ -20,7 +92,7 @@ img {
   }
 
   .login .banner {
-    width: 57%;
+    width: 55%;
     height: 100vh;
     overflow: hidden;
     border-right: 1px solid #000;
@@ -41,7 +113,7 @@ img {
   }
 
   .login .form {
-    width: 40%;
+    width: 43%;
     height: 100vh;
     display: block;
     overflow: hidden;
@@ -88,13 +160,12 @@ img {
   .login .form button,
   .login .form a {
     margin: 1.5rem auto;
-    padding: 15px 15px;
+    padding: 10px 15px;
     background: blue;
     color: #fff;
-    font-weight: bold;
     text-align: center;
     text-decoration: none;
-    font-size: 11pt;
+    font-size: 10pt;
   }
 
   .login .form a {
@@ -157,13 +228,12 @@ img {
   .login .form button,
   .login .form a {
     margin: 1.5rem auto;
-    padding: 15px 15px;
+    padding: 10px 15px;
     background: blue;
     color: #fff;
-    font-weight: bold;
     text-align: center;
     text-decoration: none;
-    font-size: 11pt;
+    font-size: 10pt;
   }
 
   .login .form a {

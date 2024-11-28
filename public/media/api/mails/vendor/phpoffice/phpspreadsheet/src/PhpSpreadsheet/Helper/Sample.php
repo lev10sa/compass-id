@@ -138,7 +138,9 @@ class Sample
             }
             $callStartTime = microtime(true);
             $writer->save($path);
-            $this->logWrite($writer, $path, /** @scrutinizer ignore-type */ $callStartTime);
+            $this->logWrite($writer, $path,
+            /** @scrutinizer ignore-type */
+            $callStartTime);
             if ($this->isCli() === false) {
                 echo '<a href="./download.php?type=' . pathinfo($path, PATHINFO_EXTENSION) . '&name=' . basename($path) . '">Download ' . basename($path) . '</a><br />';
             }
@@ -177,7 +179,9 @@ class Sample
     {
         $originalExtension = pathinfo($filename, PATHINFO_EXTENSION);
 
-        return $this->getTemporaryFolder() . '/' . str_replace('.' . /** @scrutinizer ignore-type */ $originalExtension, '.' . $extension, basename($filename));
+        return $this->getTemporaryFolder() . '/' . str_replace('.' .
+        /** @scrutinizer ignore-type */
+        $originalExtension, '.' . $extension, basename($filename));
     }
 
     /**
@@ -203,7 +207,7 @@ class Sample
     public function log(string $message): void
     {
         $eol = $this->isCli() ? PHP_EOL : '<br />';
-        echo($this->isCli() ? date('H:i:s ') : '') . $message . $eol;
+        echo ($this->isCli() ? date('H:i:s ') : '') . $message . $eol;
     }
 
     public function renderChart(Chart $chart, string $fileName): void
@@ -221,7 +225,7 @@ class Sample
             $this->log('Rendered image: ' . $fileName);
             $imageData = file_get_contents($fileName);
             if ($imageData !== false) {
-                echo '<div><img src="data:image/gif;base64,' . base64_encode($imageData) . '" /></div>';
+                echo '<div><img loading="lazy" src="data:image/gif;base64,' . base64_encode($imageData) . '" /></div>';
             }
         } catch (Throwable $e) {
             $this->log('Error rendering chart: ' . $e->getMessage() . PHP_EOL);

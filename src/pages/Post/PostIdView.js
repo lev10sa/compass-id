@@ -170,6 +170,7 @@ function PostIdView() {
                 <div className="film">
                   <img
                     loading="lazy"
+                    loading="lazy"
                     src={post.banner}
                     alt={post.banner}
                     id="main"
@@ -177,6 +178,7 @@ function PostIdView() {
                   <div className="panel">
                     {post.fileList.map((file, index) => (
                       <img
+                        loading="lazy"
                         src={file.url}
                         alt={file.url}
                         key={index + 1}
@@ -268,6 +270,7 @@ function PostIdView() {
                         className="panel"
                       >
                         <img
+                          loading="lazy"
                           loading="lazy"
                           src={item.banner}
                           alt={item.banner}

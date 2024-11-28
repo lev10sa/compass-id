@@ -60,7 +60,7 @@ const Navigation = () => {
       <div className="navbar">
         <div className="logo">
           <button onClick={() => navigate(`/`)}>
-            <img loading="lazy" src="/logo.png" alt="logo" />
+            <img loading="lazy" loading="lazy" src="/logo.png" alt="logo" />
           </button>
         </div>
         <div className="tabs">
@@ -101,6 +101,7 @@ const Navigation = () => {
       </div>
       <div id="banner" className="section banner">
         <img
+          loading="lazy"
           src={images[currentIndex].url}
           alt={images[currentIndex].url}
           className="animate__animated animate__fadeIn active"
@@ -111,7 +112,7 @@ const Navigation = () => {
       <div id="sidenav">
         <div className="plain sidenav-wrapper" onClick={openMenu}></div>
         <div className="sidenav animate__animated animate__slideInLeft">
-          <img loading="lazy" src="/logo.png" alt="logo" />
+          <img loading="lazy" loading="lazy" src="/logo.png" alt="logo" />
           <div className="header">NAVIGATION</div>
           <button onClick={() => navigate(`/`)}>
             <span>Home</span> <i className="fas fa-home"></i>

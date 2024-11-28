@@ -96,7 +96,12 @@ function BookView() {
               <div className="boog section">
                 <div className="section">
                   <div className="image">
-                    <img loading="lazy" src={booked.src} alt={booked.src} />
+                    <img
+                      loading="lazy"
+                      loading="lazy"
+                      src={booked.src}
+                      alt={booked.src}
+                    />
                   </div>
                   <div className="caption">
                     <div className="section">
@@ -182,7 +187,12 @@ function BookView() {
                     onClick={() => navigate(`/book-view/${book._id}`)}
                     key={index}
                   >
-                    <img loading="lazy" src={book.src} alt={book.src} />
+                    <img
+                      loading="lazy"
+                      loading="lazy"
+                      src={book.src}
+                      alt={book.src}
+                    />
                     <p>
                       <strong>{book.name}</strong>
                     </p>

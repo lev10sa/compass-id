@@ -89,8 +89,10 @@ class HTMLPurifier_Generator
         // Basic algorithm
         $html = '';
         for ($i = 0, $size = count($tokens); $i < $size; $i++) {
-            if ($this->_scriptFix && $tokens[$i]->name === 'script'
-                && $i + 2 < $size && $tokens[$i+2] instanceof HTMLPurifier_Token_End) {
+            if (
+                $this->_scriptFix && $tokens[$i]->name === 'script'
+                && $i + 2 < $size && $tokens[$i + 2] instanceof HTMLPurifier_Token_End
+            ) {
                 // script special case
                 // the contents of the script block must be ONE token
                 // for this to work.
@@ -106,11 +108,11 @@ class HTMLPurifier_Generator
             $tidy->parseString(
                 $html,
                 array(
-                   'indent'=> true,
-                   'output-xhtml' => $this->_xhtml,
-                   'show-body-only' => true,
-                   'indent-spaces' => 2,
-                   'wrap' => 68,
+                    'indent' => true,
+                    'output-xhtml' => $this->_xhtml,
+                    'show-body-only' => true,
+                    'indent-spaces' => 2,
+                    'wrap' => 68,
                 ),
                 'utf8'
             );
@@ -141,7 +143,6 @@ class HTMLPurifier_Generator
         if (!$token instanceof HTMLPurifier_Token) {
             trigger_error('Cannot generate HTML from non-HTMLPurifier_Token object', E_USER_WARNING);
             return '';
-
         } elseif ($token instanceof HTMLPurifier_Token_Start) {
             $attr = $this->generateAttributes($token->attr, $token->name);
             if ($this->_flashCompat) {
@@ -153,7 +154,6 @@ class HTMLPurifier_Generator
                 }
             }
             return '<' . $token->name . ($attr ? ' ' : '') . $attr . '>';
-
         } elseif ($token instanceof HTMLPurifier_Token_End) {
             $_extra = '';
             if ($this->_flashCompat) {
@@ -162,24 +162,20 @@ class HTMLPurifier_Generator
                 }
             }
             return $_extra . '</' . $token->name . '>';
-
         } elseif ($token instanceof HTMLPurifier_Token_Empty) {
             if ($this->_flashCompat && $token->name == "param" && !empty($this->_flashStack)) {
-                $this->_flashStack[count($this->_flashStack)-1]->param[$token->attr['name']] = $token->attr['value'];
+                $this->_flashStack[count($this->_flashStack) - 1]->param[$token->attr['name']] = $token->attr['value'];
             }
             $attr = $this->generateAttributes($token->attr, $token->name);
-             return '<' . $token->name . ($attr ? ' ' : '') . $attr .
-                ( $this->_xhtml ? ' /': '' ) // <br /> v. <br>
+            return '<' . $token->name . ($attr ? ' ' : '') . $attr .
+                ($this->_xhtml ? ' /' : '') // <br /> v. <br>
                 . '>';
-
         } elseif ($token instanceof HTMLPurifier_Token_Text) {
             return $this->escape($token->data, ENT_NOQUOTES);
-
         } elseif ($token instanceof HTMLPurifier_Token_Comment) {
             return '<!--' . $token->data . '-->';
         } else {
             return '';
-
         }
     }
 
@@ -232,11 +228,11 @@ class HTMLPurifier_Generator
             // angled brackets, quotes or spaces.  However, when parsing
             // HTML (for example, when you assign to innerHTML), it
             // treats backticks as quotes.  Thus,
-            //      <img alt="``" />
+            //      <img loading="lazy" alt="``" />
             // becomes
-            //      <img alt=`` />
+            //      <img loading="lazy" alt=`` />
             // becomes
-            //      <img alt='' />
+            //      <img loading="lazy" alt='' />
             // Fortunately, all we need to do is trigger an appropriate
             // quoting style, which we do by adding an extra space.
             // This also is consistent with the W3C spec, which states
@@ -257,7 +253,7 @@ class HTMLPurifier_Generator
                     }
                 }
             }
-            $html .= $key.'="'.$this->escape($value).'" ';
+            $html .= $key . '="' . $this->escape($value) . '" ';
         }
         return rtrim($html);
     }

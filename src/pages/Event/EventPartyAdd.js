@@ -268,6 +268,7 @@ function EventPartyAdd() {
               {event.img !== "" ? (
                 <div className="section">
                   <img
+                    loading="lazy"
                     src={event.img}
                     alt={event.img}
                     onClick={() => window.open(event.img, "_blank")}

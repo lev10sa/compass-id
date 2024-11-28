@@ -4,7 +4,7 @@ include './connection.php';
 
 if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
 
-    header('location: ./home.php');
+    header('location: ./trends.php');
 } else {
 
     $em = $_POST['email'];
@@ -20,7 +20,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         if ($num == 1) {
             $_SESSION['s_em'] = $em;
             $_SESSION['s_pw'] = $pw;
-            header('location: ./home.php');
+            header('location: ./trends.php');
         } else {
 
 ?>
@@ -41,7 +41,19 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forum | Compass Publishing Indonesia</title>
         <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="https://compasspubindonesia.com/style.css">
+        <link rel="stylesheet" href="https://compasspubindonesia.com/login.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     </head>
 
     <body>
@@ -49,9 +61,9 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         <section class="login">
 
             <div class="form">
-                <img src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', 'blank')">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', '_self')">
                 <h1>Masuki Forum, dan telusuri berbagai sudut pandang.</h1>
-                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="blabla@blabla.com" required>
                     <label for="pass">Password</label>
@@ -62,9 +74,9 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
             </div>
 
             <div class="banner">
-                <img src="https://compasspubindonesia.com//assets/img/banner/c.jpg" alt="">
-                <img src="https://compasspubindonesia.com//assets/img/banner/b.jpg" alt="">
-                <img src="https://compasspubindonesia.com//assets/img/banner/d.jpg" alt="">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/c.jpg" alt="">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/b.jpg" alt="">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/d.jpg" alt="">
             </div>
 
         </section>

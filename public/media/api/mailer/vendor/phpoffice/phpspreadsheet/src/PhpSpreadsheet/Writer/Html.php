@@ -675,7 +675,7 @@ class Html extends BaseWriter
                     }
                 }
 
-                $html .= '<img style="position: absolute; z-index: 1; left: ' .
+                $html .= '<img loading="lazy" style="position: absolute; z-index: 1; left: ' .
                     $drawing->getOffsetX() . 'px; top: ' . $drawing->getOffsetY() . 'px; width: ' .
                     $drawing->getWidth() . 'px; height: ' . $drawing->getHeight() . 'px;" src="' .
                     $imageData . '" alt="' . $filedesc . '" />';
@@ -693,7 +693,7 @@ class Html extends BaseWriter
                     //  max-width: 100% ensures that image doesnt overflow containing cell
                     //  width: X sets width of supplied image.
                     //  As a result, images bigger than cell will be contained and images smaller will not get stretched
-                    $html .= '<img alt="' . $filedesc . '" src="' . $dataUri . '" style="max-width:100%;width:' . $drawing->getWidth() . 'px;" />';
+                    $html .= '<img loading="lazy" alt="' . $filedesc . '" src="' . $dataUri . '" style="max-width:100%;width:' . $drawing->getWidth() . 'px;" />';
                 }
             }
         }
@@ -731,7 +731,7 @@ class Html extends BaseWriter
                         $base64 = base64_encode($picture);
                         $imageData = 'data:' . $imageDetails['mime'] . ';base64,' . $base64;
 
-                        $html .= '<img style="position: absolute; z-index: 1; left: ' . $chartCoordinates['xOffset'] . 'px; top: ' . $chartCoordinates['yOffset'] . 'px; width: ' . $imageDetails[0] . 'px; height: ' . $imageDetails[1] . 'px;" src="' . $imageData . '" alt="' . $filedesc . '" />' . PHP_EOL;
+                        $html .= '<img loading="lazy" style="position: absolute; z-index: 1; left: ' . $chartCoordinates['xOffset'] . 'px; top: ' . $chartCoordinates['yOffset'] . 'px; width: ' . $imageDetails[0] . 'px; height: ' . $imageDetails[1] . 'px;" src="' . $imageData . '" alt="' . $filedesc . '" />' . PHP_EOL;
                     }
                     unlink($chartFileName);
                 }

@@ -343,7 +343,12 @@ function Home() {
                 onClick={() => navigate(`/book-view/${book._id}`)}
                 key={index}
               >
-                <img loading="lazy" src={book.src} alt={book.src} />
+                <img
+                  loading="lazy"
+                  loading="lazy"
+                  src={book.src}
+                  alt={book.src}
+                />
                 <p>
                   <strong>{book.name}</strong>
                 </p>
@@ -398,7 +403,12 @@ function Home() {
                 key={index}
                 className="panel"
               >
-                <img loading="lazy" src={item.banner} alt={item.banner} />
+                <img
+                  loading="lazy"
+                  loading="lazy"
+                  src={item.banner}
+                  alt={item.banner}
+                />
                 <h3>{item.title.toUpperCase()}</h3>
                 <pre
                   className="dip dipo"
@@ -448,7 +458,12 @@ function Home() {
               >
                 {item.img !== "" ? (
                   <>
-                    <img loading="lazy" src={item.img} alt={item.img} />
+                    <img
+                      loading="lazy"
+                      loading="lazy"
+                      src={item.img}
+                      alt={item.img}
+                    />
                   </>
                 ) : (
                   <></>
@@ -526,7 +541,12 @@ function Home() {
                 _blank"
                   key={index}
                 >
-                  <img loading="lazy" src={thumb.src} alt={thumb.src} />
+                  <img
+                    loading="lazy"
+                    loading="lazy"
+                    src={thumb.src}
+                    alt={thumb.src}
+                  />
                 </a>
               </>
             ))}
@@ -559,6 +579,7 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
+                    loading="lazy"
                     src={"/assets/img/banner/a.jpg"}
                     alt={`a.jpg`}
                     style={{
@@ -604,6 +625,7 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
+                    loading="lazy"
                     src={"/assets/img/banner/b.jpg"}
                     alt={`b.jpg`}
                     style={{
@@ -659,7 +681,11 @@ function Home() {
                 : ""}
             </h5>
             <div>
-              <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
+              <img
+                loading="lazy"
+                src={"/assets/img/about/a.jpg"}
+                alt={`a.jpg`}
+              />
               <p>
                 {lang === "id"
                   ? "Pengembangan Diri"
@@ -669,7 +695,11 @@ function Home() {
               </p>
             </div>
             <div>
-              <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
+              <img
+                loading="lazy"
+                src={"/assets/img/about/b.jpg"}
+                alt={`a.jpg`}
+              />
               <p>
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
@@ -679,7 +709,11 @@ function Home() {
               </p>
             </div>
             <div>
-              <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
+              <img
+                loading="lazy"
+                src={"/assets/img/about/c.jpg"}
+                alt={`a.jpg`}
+              />
               <p>
                 {lang === "id"
                   ? "Materi Pembelajaran"
@@ -697,6 +731,7 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
+                    loading="lazy"
                     src={"/assets/img/banner/a.jpg"}
                     alt={`a.jpg`}
                     style={{
@@ -742,6 +777,7 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
+                    loading="lazy"
                     src={"/assets/img/banner/b.jpg"}
                     alt={`b.jpg`}
                     style={{
@@ -797,7 +833,11 @@ function Home() {
                 : ""}
             </h5>
             <div>
-              <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
+              <img
+                loading="lazy"
+                src={"/assets/img/about/a.jpg"}
+                alt={`a.jpg`}
+              />
               <p>
                 {lang === "id"
                   ? "Pengembangan Diri"
@@ -807,7 +847,11 @@ function Home() {
               </p>
             </div>
             <div>
-              <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
+              <img
+                loading="lazy"
+                src={"/assets/img/about/b.jpg"}
+                alt={`a.jpg`}
+              />
               <p>
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
@@ -817,7 +861,11 @@ function Home() {
               </p>
             </div>
             <div>
-              <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
+              <img
+                loading="lazy"
+                src={"/assets/img/about/c.jpg"}
+                alt={`a.jpg`}
+              />
               <p>
                 {lang === "id"
                   ? "Materi Pembelajaran"

@@ -4,7 +4,7 @@ include './connection.php';
 
 if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
 
-    header('location: ./home.php');
+    header('location: ./trends.php');
 } else {
 
     $un = $_POST['un'];
@@ -19,7 +19,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
 
     if (isset($un) && isset($fn) && isset($bd) && isset($gn) && isset($em) && isset($pn) && isset($pw)) {
 
-        $inssql = "INSERT IGNORE INTO accounts (username, name, birthdate, gender, email, phone, password, profile_pic, cover_pic, dt) VALUES ('$un', '$fn', '$bd', '$gn', '$em', '$pn', '$pw', '$pp', '$cp' NOW())";
+        $inssql = "INSERT IGNORE INTO accounts (username, name, birthdate, gender, email, phone, password, profile_pic, cover_pic, dt) VALUES ('$un', '$fn', '$bd', '$gn', '$em', '$pn', '$pw', '$pp', '$cp', NOW())";
         $ins = $con->query($inssql);
 
         if ($ins) {
@@ -32,7 +32,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
             if ($num == 1) {
                 $_SESSION['s_em'] = $em;
                 $_SESSION['s_pw'] = $pw;
-                header('location: ./home.php');
+                header('location: ./trends.php');
             } else {
 
 ?>
@@ -62,7 +62,19 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forum | Compass Publishing Indonesia</title>
         <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="https://compasspubindonesia.com/style.css">
+        <link rel="stylesheet" href="https://compasspubindonesia.com/login.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     </head>
 
     <body>
@@ -70,9 +82,9 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         <section class="login">
 
             <div class="form">
-                <img src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', 'blank')">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', '_self')">
                 <h1>Bergabung bersama komunitas pengajar, dan bagikan kisahmu.</h1>
-                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                     <label for="un">ID Pengguna</label>
                     <input type="text" name="un" id="un" placeholder="Contoh: blabla_official" required>
                     <label for="fn">Nama Lengkap</label>
@@ -97,9 +109,9 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
             </div>
 
             <div class="banner">
-                <img src="https://compasspubindonesia.com//assets/img/banner/c.jpg" alt="">
-                <img src="https://compasspubindonesia.com//assets/img/banner/b.jpg" alt="">
-                <img src="https://compasspubindonesia.com//assets/img/banner/d.jpg" alt="">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/c.jpg" alt="">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/b.jpg" alt="">
+                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/d.jpg" alt="">
             </div>
 
         </section>

@@ -8235,7 +8235,7 @@ var $jscomp$this = this;
               var $autocompleteOption = $("<li></li>");
               if (!!_entry.data) {
                 $autocompleteOption.append(
-                  '<img src="' +
+                  '<img loading="lazy" src="' +
                     _entry.data +
                     '" class="right circle"><span>' +
                     _entry.key +
@@ -14425,7 +14425,9 @@ var $jscomp$this = this;
             // add icons
             var iconUrl = option.getAttribute("data-icon");
             if (!!iconUrl) {
-              var imgEl = $('<img alt="" src="' + iconUrl + '">');
+              var imgEl = $(
+                '<img loading="lazy" alt="" src="' + iconUrl + '">'
+              );
               liEl.prepend(imgEl);
             }
 
