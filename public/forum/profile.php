@@ -245,11 +245,11 @@ if (isset($_GET['un'])) {
                             <div class="panel">
                                 <a><?php if ($prf['gender'] == 'Laki-laki') { ?><i class="fas fa-mars"></i> <?= $prf['gender']; ?><?php } else if ($prf['gender'] == 'Perempuan') { ?><i class="fas fa-venus"></i> <?= $prf['gender']; ?><?php } ?></a>
                                 <?php
-                                $sqlf = "SELECT COUNT(*) FROM follows WHERE acc_main = '$id'";
+                                $sqlf = "SELECT COUNT(*) FROM follows WHERE acc_main = '$ids'";
                                 $st = $con->query($sqlf);
                                 $fti = $st->fetchColumn();
 
-                                $sqlfd = "SELECT COUNT(*) FROM follows WHERE acc_sec = '$id'";
+                                $sqlfd = "SELECT COUNT(*) FROM follows WHERE acc_sec = '$ids'";
                                 $std = $con->query($sqlfd);
                                 $ftid = $std->fetchColumn();
                                 ?>
