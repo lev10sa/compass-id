@@ -458,7 +458,7 @@ if (isset($_GET['un'])) {
                                             <?php
                                             if (!$flot && !$flodt) {
 
-                                                if ($_SESSION['s_em'] !== $pos['email']) {
+                                                if ($_SESSION['s_em'] !== $p3['email']) {
 
                                             ?>
                                                     <a href="./profile.php?un=<?= $prf['username']; ?>&acc_main=<?= $id ?>&acc_sec=<?= $idPer3 ?>&type=follow">Ikuti</a>

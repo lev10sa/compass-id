@@ -411,7 +411,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
                                     <?php
                                     if (!$flot && !$flodt) {
 
-                                        if ($_SESSION['s_em'] !== $pos['email']) {
+                                        if ($_SESSION['s_em'] !== $p3['email']) {
 
                                     ?>
                                             <a href="./saved.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow">Ikuti</a>
