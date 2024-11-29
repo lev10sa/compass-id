@@ -82,7 +82,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
         <section class="login">
 
             <div class="form">
-                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', '_self')">
+                <img loading="lazy" src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', '_self')">
                 <h1>Bergabung bersama komunitas pengajar, dan bagikan kisahmu.</h1>
                 <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
                     <label for="un">ID Pengguna</label>
@@ -109,9 +109,9 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
             </div>
 
             <div class="banner">
-                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/c.jpg" alt="">
-                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/b.jpg" alt="">
-                <img loading="lazy" loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/d.jpg" alt="">
+                <img loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/c.jpg" alt="">
+                <img loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/b.jpg" alt="">
+                <img loading="lazy" src="https://compasspubindonesia.com//assets/img/banner/d.jpg" alt="">
             </div>
 
         </section>

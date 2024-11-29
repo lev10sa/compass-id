@@ -301,7 +301,12 @@ function Home() {
                 </button>
               </>
             ))}
-            <button type="button" onClick={() => window.open("./", "_blank")}>
+            <button
+              type="button"
+              onClick={() =>
+                window.open("https://forum.compasspubindonesia.com", "_blank")
+              }
+            >
               <span>
                 <i className="fas fa-users"></i>
               </span>
@@ -338,12 +343,7 @@ function Home() {
                 onClick={() => navigate(`/book-view/${book._id}`)}
                 key={index}
               >
-                <img
-                  loading="lazy"
-                  loading="lazy"
-                  src={book.src}
-                  alt={book.src}
-                />
+                <img loading="lazy" src={book.src} alt={book.src} />
                 <p>
                   <strong>{book.name}</strong>
                 </p>
@@ -398,12 +398,7 @@ function Home() {
                 key={index}
                 className="panel"
               >
-                <img
-                  loading="lazy"
-                  loading="lazy"
-                  src={item.banner}
-                  alt={item.banner}
-                />
+                <img loading="lazy" src={item.banner} alt={item.banner} />
                 <h3>{item.title.toUpperCase()}</h3>
                 <pre
                   className="dip dipo"
