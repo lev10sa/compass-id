@@ -285,7 +285,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <pre><?= $pos['body']; ?></pre>
+                                        <pre><?= stripslashes($pos['body']); ?></pre>
                                         <?php
                                         if ($pos['media'] !== '') {
                                         ?>

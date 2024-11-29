@@ -337,7 +337,7 @@ if (isset($_GET['un'])) {
                                     </div>
                                 </div>
                                 <div class="content">
-                                    <pre><?= $pos['body']; ?></pre>
+                                    <pre><?= stripslashes($pos['body']); ?></pre>
                                     <?php
                                     if ($pos['media'] !== '') {
                                     ?>

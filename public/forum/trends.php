@@ -287,7 +287,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                 </div>
                             </div>
                             <div class="content">
-                                <pre><?= $pos['body']; ?></pre>
+                                <pre><?= stripslashes($pos['body']); ?></pre>
                                 <?php
                                 if ($pos['media'] !== '') {
                                 ?>
