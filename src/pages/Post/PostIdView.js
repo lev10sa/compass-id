@@ -271,7 +271,6 @@ function PostIdView() {
                       >
                         <img
                           loading="lazy"
-                          loading="lazy"
                           src={item.banner}
                           alt={item.banner}
                         />

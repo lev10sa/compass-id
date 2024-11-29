@@ -264,7 +264,6 @@ function Search() {
                               <>
                                 <img
                                   loading="lazy"
-                                  loading="lazy"
                                   src={book.src}
                                   alt={book.src}
                                 />
@@ -380,7 +379,6 @@ function Search() {
                             <>
                               <img
                                 loading="lazy"
-                                loading="lazy"
                                 src={post.banner}
                                 alt={post.banner}
                               />
@@ -454,7 +452,6 @@ function Search() {
                           {event.img !== "" ? (
                             <>
                               <img
-                                loading="lazy"
                                 loading="lazy"
                                 src={event.img}
                                 alt={event.img}
