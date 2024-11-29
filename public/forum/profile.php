@@ -99,9 +99,9 @@ if (isset($_GET['un'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Forum | Compass Publishing Indonesia</title>
         <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="./login.css">
-        <link rel="stylesheet" href="./home.css">
-        <link rel="stylesheet" href="./profile.css">
+        <link rel="stylesheet" href="https://forum.compasspubindonesia.com/login.css">
+        <link rel="stylesheet" href="https://forum.compasspubindonesia.com/home.css">
+        <link rel="stylesheet" href="https://forum.compasspubindonesia.com/profile.css">
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
