@@ -451,11 +451,12 @@
   }
 
   .right .rec .fig .label {
-    width: 46%;
+    width: 48%;
     height: auto;
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
+    padding: 0 10px 0 0;
   }
 
   .right .rec .fig .label a,
