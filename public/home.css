@@ -85,6 +85,7 @@
   }
 
   .left .hero .label a {
+    text-transform: capitalize;
     font-size: 11pt;
     font-weight: bold;
     text-decoration: none;
@@ -308,6 +309,7 @@
   }
 
   .mid .posed .pos .label a {
+    text-transform: capitalize;
     font-size: 11pt;
     text-decoration: none;
     font-weight: bold;
@@ -648,6 +650,7 @@
   }
 
   .left .hero .label a {
+    text-transform: capitalize;
     font-size: 11pt;
     font-weight: bold;
     text-decoration: none;
@@ -870,6 +873,7 @@
   }
 
   .mid .posed .pos .label a {
+    text-transform: capitalize;
     font-size: 11pt;
     text-decoration: none;
     font-weight: bold;

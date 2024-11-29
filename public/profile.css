@@ -64,6 +64,7 @@
   }
 
   .tomo .hero .label a {
+    text-transform: capitalize;
     font-size: 16pt;
     font-weight: bold;
     text-decoration: none;
@@ -214,6 +215,7 @@
   }
 
   .tomo .hero .label a {
+    text-transform: capitalize;
     font-size: 14pt;
     font-weight: bold;
     text-decoration: none;
