@@ -448,12 +448,7 @@ function Home() {
               >
                 {item.img !== "" ? (
                   <>
-                    <img
-                      loading="lazy"
-                      loading="lazy"
-                      src={item.img}
-                      alt={item.img}
-                    />
+                    <img loading="lazy" l src={item.img} alt={item.img} />
                   </>
                 ) : (
                   <></>
@@ -531,12 +526,7 @@ function Home() {
                 _blank"
                   key={index}
                 >
-                  <img
-                    loading="lazy"
-                    loading="lazy"
-                    src={thumb.src}
-                    alt={thumb.src}
-                  />
+                  <img loading="lazy" l src={thumb.src} alt={thumb.src} />
                 </a>
               </>
             ))}

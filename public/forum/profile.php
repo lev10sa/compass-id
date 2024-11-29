@@ -381,12 +381,12 @@ if (isset($_GET['un'])) {
                                     <?php
                                     if ($liked == 1) {
                                     ?>
-                                        <a href="./profile.php?un=<?= $pref['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unlike" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-thumbs-up"></i>Disukai</a>
+                                        <a href="./profile.php?un=<?= $prf['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unlike" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-thumbs-up"></i>Disukai</a>
                                     <?php
                                     } else {
 
                                     ?>
-                                        <a href="./profile.php?un=<?= $pref['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=like" target="_self" rel="noopener noreferrer"><i class="fas fa-thumbs-up"></i>Suka</a>
+                                        <a href="./profile.php?un=<?= $prf['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=like" target="_self" rel="noopener noreferrer"><i class="fas fa-thumbs-up"></i>Suka</a>
                                     <?php
                                     }
 
@@ -395,11 +395,11 @@ if (isset($_GET['un'])) {
                                     <?php
                                     if ($svdsc == 1) {
                                     ?>
-                                        <a href="./profile.php?un=<?= $pref['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unsave" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-bookmark"></i>Disimpan</a>
+                                        <a href="./profile.php?un=<?= $prf['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unsave" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-bookmark"></i>Disimpan</a>
                                     <?php
                                     } else {
                                     ?>
-                                        <a href="./profile.php?un=<?= $pref['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=save" target="_self" rel="noopener noreferrer"><i class="fas fa-bookmark"></i>Simpan</a>
+                                        <a href="./profile.php?un=<?= $prf['username']; ?>&acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=save" target="_self" rel="noopener noreferrer"><i class="fas fa-bookmark"></i>Simpan</a>
                                     <?php
                                     }
                                     ?>

@@ -171,7 +171,7 @@ function PostEnView() {
                 <div className="film">
                   <img
                     loading="lazy"
-                    loading="lazy"
+                    l
                     src={post.banner}
                     alt={post.banner}
                     id="main"

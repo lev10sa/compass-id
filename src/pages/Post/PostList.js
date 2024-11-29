@@ -164,12 +164,7 @@ const PostList = () => {
               >
                 {post.banner !== "" ? (
                   <>
-                    <img
-                      loading="lazy"
-                      loading="lazy"
-                      src={post.banner}
-                      alt={post.banner}
-                    />
+                    <img loading="lazy" l src={post.banner} alt={post.banner} />
                   </>
                 ) : (
                   <></>
