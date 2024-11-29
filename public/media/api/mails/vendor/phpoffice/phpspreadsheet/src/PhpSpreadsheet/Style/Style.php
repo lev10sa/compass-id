@@ -206,7 +206,7 @@ class Style extends Supervisor
         if ($this->isSupervisor) {
             $pRange = $this->getSelectedCells();
 
-            // Uppercase coordinate and strip any Worksheet reference from the selected range
+            // uppercase coordinate and strip any Worksheet reference from the selected range
             $pRange = strtoupper($pRange);
             if (strpos($pRange, '!') !== false) {
                 $pRangeWorksheet = StringHelper::strToUpper(trim(substr($pRange, 0, (int) strrpos($pRange, '!')), "'"));
@@ -699,13 +699,13 @@ class Style extends Supervisor
     {
         return md5(
             $this->fill->getHashCode() .
-            $this->font->getHashCode() .
-            $this->borders->getHashCode() .
-            $this->alignment->getHashCode() .
-            $this->numberFormat->getHashCode() .
-            $this->protection->getHashCode() .
-            ($this->quotePrefix ? 't' : 'f') .
-            __CLASS__
+                $this->font->getHashCode() .
+                $this->borders->getHashCode() .
+                $this->alignment->getHashCode() .
+                $this->numberFormat->getHashCode() .
+                $this->protection->getHashCode() .
+                ($this->quotePrefix ? 't' : 'f') .
+                __CLASS__
         );
     }
 

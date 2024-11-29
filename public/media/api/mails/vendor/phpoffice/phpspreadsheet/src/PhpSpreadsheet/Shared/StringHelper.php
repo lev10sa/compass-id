@@ -330,7 +330,10 @@ class StringHelper
         mb_substitute_character(65533); // Unicode substitution character
         // Phpstan does not think this can return false.
         $returnValue = mb_convert_encoding($textValue, 'UTF-8', 'UTF-8');
-        mb_substitute_character(/** @scrutinizer ignore-type */ $subst);
+        mb_substitute_character(
+            /** @scrutinizer ignore-type */
+            $subst
+        );
 
         return self::returnString($returnValue);
     }

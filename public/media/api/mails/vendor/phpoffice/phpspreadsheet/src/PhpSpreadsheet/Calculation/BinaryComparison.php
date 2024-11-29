@@ -74,22 +74,22 @@ class BinaryComparison
     private static function evaluateComparison($operand1, $operand2, string $operator, bool $useLowercaseFirstComparison): bool
     {
         switch ($operator) {
-            //    Equality
+                //    Equality
             case '=':
                 return self::equal($operand1, $operand2);
-            //    Greater than
+                //    Greater than
             case '>':
                 return self::greaterThan($operand1, $operand2, $useLowercaseFirstComparison);
-            //    Less than
+                //    Less than
             case '<':
                 return self::lessThan($operand1, $operand2, $useLowercaseFirstComparison);
-            //    Greater than or equal
+                //    Greater than or equal
             case '>=':
                 return self::greaterThanOrEqual($operand1, $operand2, $useLowercaseFirstComparison);
-            //    Less than or equal
+                //    Less than or equal
             case '<=':
                 return self::lessThanOrEqual($operand1, $operand2, $useLowercaseFirstComparison);
-            //    Inequality
+                //    Inequality
             case '<>':
                 return self::notEqual($operand1, $operand2);
             default:

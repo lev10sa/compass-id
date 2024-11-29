@@ -127,7 +127,7 @@ class Column
     public function setColumnIndex($column)
     {
         $this->setEvaluatedFalse();
-        // Uppercase coordinate
+        // capitalize coordinate
         $column = strtoupper($column);
         if ($this->parent !== null) {
             $this->parent->testColumnInRange($column);

@@ -330,7 +330,9 @@ class StringHelper
         mb_substitute_character(65533); // Unicode substitution character
         // Phpstan does not think this can return false.
         $returnValue = mb_convert_encoding($textValue, 'UTF-8', 'UTF-8');
-        mb_substitute_character(/** @scrutinizer ignore-type */ $subst);
+        mb_substitute_character(
+        /** @scrutinizer ignore-type */
+        $subst);
 
         return self::returnString($returnValue);
     }
@@ -485,7 +487,7 @@ class StringHelper
 
     /**
      * Convert a UTF-8 encoded string to title/proper case
-     * (uppercase every first character in each word, lower case all other characters).
+     * (capitalize every first character in each word, lower case all other characters).
      *
      * @param string $textValue UTF-8 encoded string
      */
@@ -512,8 +514,8 @@ class StringHelper
     }
 
     /**
-     * Reverse the case of a string, so that all uppercase characters become lowercase
-     * and all lowercase characters become uppercase.
+     * Reverse the case of a string, so that all capitalize characters become lowercase
+     * and all lowercase characters become capitalize.
      *
      * @param string $textValue UTF-8 encoded string
      */

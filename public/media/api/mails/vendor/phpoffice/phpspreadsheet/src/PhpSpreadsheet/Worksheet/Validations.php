@@ -19,9 +19,9 @@ class Validations
     {
         if (is_string($cellAddress)) {
             [$worksheet, $address] = Worksheet::extractSheetTitle($cellAddress, true);
-//            if (!empty($worksheet) && $worksheet !== $this->getTitle()) {
-//                throw new Exception('Reference is not for this worksheet');
-//            }
+            //            if (!empty($worksheet) && $worksheet !== $this->getTitle()) {
+            //                throw new Exception('Reference is not for this worksheet');
+            //            }
 
             return empty($worksheet) ? strtoupper("$address") : $worksheet . '!' . strtoupper("$address");
         }
@@ -102,7 +102,7 @@ class Validations
 
     public static function definedNameToCoordinate(string $coordinate, Worksheet $worksheet): string
     {
-        // Uppercase coordinate
+        // uppercase coordinate
         $coordinate = strtoupper($coordinate);
         // Eliminate leading equal sign
         $testCoordinate = (string) preg_replace('/^=/', '', $coordinate);

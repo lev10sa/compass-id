@@ -23,7 +23,7 @@ class DataValidations
     public function load(): void
     {
         foreach ($this->worksheetXml->dataValidations->dataValidation as $dataValidation) {
-            // Uppercase coordinate
+            // capitalize coordinate
             $range = strtoupper((string) $dataValidation['sqref']);
             $rangeSet = explode(' ', $range);
             foreach ($rangeSet as $range) {

@@ -331,7 +331,7 @@ if (isset($_GET['un'])) {
                                         <img loading="lazy" src="<?= htmlspecialchars($pos['profile_pic']); ?>" alt="">
                                     </div>
                                     <div class="label">
-                                        <a href="./profile.php?un=<?= $pref['username']; ?>&un=<?= htmlspecialchars($pos['username']); ?>"><?= htmlspecialchars($pos['name']); ?></a>
+                                        <a href="./profile.php?un=<?= $pref['username']; ?>&un=<?= htmlspecialchars($pos['username']); ?>"><?= ucwords(htmlspecialchars($pos['name'])); ?></a>
                                         <p>@<?= htmlspecialchars($pos['username']); ?></p>
                                         <p><?= htmlspecialchars($pos['dt']); ?> WIB</p>
                                     </div>

@@ -399,7 +399,7 @@ function Home() {
                 className="panel"
               >
                 <img loading="lazy" src={item.banner} alt={item.banner} />
-                <h3>{item.title.toUpperCase()}</h3>
+                <h3>{item.title.touppercase()}</h3>
                 <pre
                   className="dip dipo"
                   dangerouslySetInnerHTML={{ __html: item.body }}

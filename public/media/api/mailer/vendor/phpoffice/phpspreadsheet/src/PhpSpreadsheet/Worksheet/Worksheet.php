@@ -591,7 +591,9 @@ class Worksheet implements IComparable
         } else {
             // Insert the chart at the requested index
             // @phpstan-ignore-next-line
-            array_splice(/** @scrutinizer ignore-type */ $this->chartCollection, $chartIndex, 0, [$chart]);
+            array_splice(
+            /** @scrutinizer ignore-type */
+            $this->chartCollection, $chartIndex, 0, [$chart]);
         }
 
         return $chart;
@@ -1481,7 +1483,7 @@ class Worksheet implements IComparable
      */
     public function getColumnDimension(string $column): ColumnDimension
     {
-        // Uppercase coordinate
+        // capitalize coordinate
         $column = strtoupper($column);
 
         // Fetch dimensions
@@ -2550,7 +2552,9 @@ class Worksheet implements IComparable
             } elseif ($num > $highRow) {
                 $num -= $numberOfRows;
                 $cloneDimension = clone $rowDimension;
-                $cloneDimension->setRowIndex(/** @scrutinizer ignore-type */ $num);
+                $cloneDimension->setRowIndex(
+                /** @scrutinizer ignore-type */
+                $num);
                 $holdRowDimensions[$num] = $cloneDimension;
             }
         }

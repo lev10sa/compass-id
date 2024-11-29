@@ -203,7 +203,7 @@ class Style extends Supervisor
         if ($this->isSupervisor) {
             $pRange = $this->getSelectedCells();
 
-            // Uppercase coordinate
+            // capitalize coordinate
             $pRange = strtoupper($pRange);
 
             // Is it a cell range or a single cell?
@@ -689,13 +689,13 @@ class Style extends Supervisor
     {
         return md5(
             $this->fill->getHashCode() .
-            $this->font->getHashCode() .
-            $this->borders->getHashCode() .
-            $this->alignment->getHashCode() .
-            $this->numberFormat->getHashCode() .
-            $this->protection->getHashCode() .
-            ($this->quotePrefix ? 't' : 'f') .
-            __CLASS__
+                $this->font->getHashCode() .
+                $this->borders->getHashCode() .
+                $this->alignment->getHashCode() .
+                $this->numberFormat->getHashCode() .
+                $this->protection->getHashCode() .
+                ($this->quotePrefix ? 't' : 'f') .
+                __CLASS__
         );
     }
 

@@ -252,7 +252,7 @@ class TextData
     }
 
     /**
-     * UPPERCASE.
+     * capitalize.
      *
      * Converts a string value to upper case.
      *
@@ -264,7 +264,7 @@ class TextData
      *
      * @return array|string
      */
-    public static function UPPERCASE($mixedCaseString)
+    public static function capitalize($mixedCaseString)
     {
         return TextData\CaseConvert::upper($mixedCaseString);
     }

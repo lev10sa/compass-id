@@ -391,7 +391,7 @@ function Search() {
                             {post.title !== "" ? (
                               <>
                                 <h3 title={post.title}>
-                                  {post.title.toUpperCase()}
+                                  {post.title.touppercase()}
                                 </h3>
                               </>
                             ) : (

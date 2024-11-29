@@ -173,7 +173,7 @@ const PostList = () => {
                 <div className="section caption">
                   {post.title !== "" ? (
                     <>
-                      <h3 title={post.title}>{post.title.toUpperCase()}</h3>
+                      <h3 title={post.title}>{post.title.touppercase()}</h3>
                     </>
                   ) : (
                     <></>

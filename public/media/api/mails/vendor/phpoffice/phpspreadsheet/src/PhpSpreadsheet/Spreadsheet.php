@@ -385,7 +385,11 @@ class Spreadsheet implements JsonSerializable
     {
         $extension = pathinfo($path, PATHINFO_EXTENSION);
 
-        return substr(/** @scrutinizer ignore-type */$extension, 0);
+        return substr(
+            /** @scrutinizer ignore-type */
+            $extension,
+            0
+        );
     }
 
     /**
@@ -973,13 +977,13 @@ class Spreadsheet implements JsonSerializable
      */
     public function addDefinedName(DefinedName $definedName): void
     {
-        $upperCaseName = StringHelper::strToUpper($definedName->getName());
+        $uppercaseName = StringHelper::strToUpper($definedName->getName());
         if ($definedName->getScope() == null) {
             // global scope
-            $this->definedNames[$upperCaseName] = $definedName;
+            $this->definedNames[$uppercaseName] = $definedName;
         } else {
             // local scope
-            $this->definedNames[$definedName->getScope()->getTitle() . '!' . $upperCaseName] = $definedName;
+            $this->definedNames[$definedName->getScope()->getTitle() . '!' . $uppercaseName] = $definedName;
         }
     }
 

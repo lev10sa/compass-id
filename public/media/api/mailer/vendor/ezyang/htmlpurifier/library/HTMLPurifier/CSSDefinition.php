@@ -95,7 +95,7 @@ class HTMLPurifier_CSSDefinition extends HTMLPurifier_Definition
         $this->info['list-style'] = new HTMLPurifier_AttrDef_CSS_ListStyle($config);
 
         $this->info['text-transform'] = new HTMLPurifier_AttrDef_Enum(
-            array('uppercase', 'uppercase', 'lowercase', 'none'),
+            array('capitalize', 'capitalize', 'lowercase', 'none'),
             false
         );
         $this->info['color'] = new HTMLPurifier_AttrDef_CSS_Color();
