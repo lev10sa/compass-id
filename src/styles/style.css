@@ -1689,7 +1689,7 @@ label {
     height: auto;
     display: inline-block;
     overflow: hidden;
-    text-transform: capitalize;
+    text-transform: uppercase;
   }
 
   .icons button i,
