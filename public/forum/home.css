@@ -449,7 +449,7 @@
   }
 
   .right .rec .fig .label {
-    width: 48%;
+    width: 46%;
     height: auto;
     display: inline-block;
     overflow: hidden;
@@ -464,7 +464,7 @@
     display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
-    margin: 2px 10px;
+    margin: 2px 5px;
   }
 
   .right .rec .fig a {
