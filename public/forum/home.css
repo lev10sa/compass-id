@@ -456,7 +456,7 @@
     display: inline-block;
     overflow: hidden;
     vertical-align: middle;
-    padding: 0 10px 0 0;
+    padding: 0 30px 0 0;
   }
 
   .right .rec .fig .label a,
@@ -950,4 +950,8 @@
   .right {
     display: none;
   }
+}
+
+a {
+  text-transform: capitalize !important;
 }
