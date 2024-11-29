@@ -158,6 +158,8 @@
     border-bottom: 1px solid #999;
     position: sticky;
     top: 0;
+    background: #fff;
+    z-index: 1001;
   }
 
   .mid .tabs a {
