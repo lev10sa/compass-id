@@ -571,7 +571,7 @@ function _classCallCheck(instance, Constructor) {
     return function (str) {
       return str
         .replace(camelRegex, function (letter, index) {
-          return letter[index === 0 ? "toLowerCase" : "tocapitalize"]();
+          return letter[index === 0 ? "toLowerCase" : "touppercase"]();
         })
         .replace(whiteSpace, "");
     };
@@ -589,7 +589,7 @@ function _classCallCheck(instance, Constructor) {
         return cache[prop];
       }
 
-      var ucProp = prop.charAt(0).tocapitalize() + prop.slice(1),
+      var ucProp = prop.charAt(0).touppercase() + prop.slice(1),
         prefixes = ["webkit", "moz", "ms", "o"],
         props = (prop + " " + prefixes.join(ucProp + " ") + ucProp).split(" ");
 
@@ -12125,7 +12125,7 @@ var $jscomp$this = this;
               (this.el.value || this.options.defaultTime || "") + ""
             ).split(":");
             if (this.options.twelveHour && !(typeof value[1] === "undefined")) {
-              if (value[1].tocapitalize().indexOf("AM") > 0) {
+              if (value[1].touppercase().indexOf("AM") > 0) {
                 this.amOrPm = "AM";
               } else {
                 this.amOrPm = "PM";

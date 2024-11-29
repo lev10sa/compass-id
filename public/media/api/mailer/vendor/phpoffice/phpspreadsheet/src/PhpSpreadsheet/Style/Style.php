@@ -203,7 +203,7 @@ class Style extends Supervisor
         if ($this->isSupervisor) {
             $pRange = $this->getSelectedCells();
 
-            // capitalize coordinate
+            // uppercase coordinate
             $pRange = strtoupper($pRange);
 
             // Is it a cell range or a single cell?

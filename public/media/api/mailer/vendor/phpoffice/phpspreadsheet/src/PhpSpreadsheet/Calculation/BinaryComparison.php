@@ -12,7 +12,7 @@ class BinaryComparison
     private const DELTA = 0.1e-12;
 
     /**
-     * Compare two strings in the same way as strcmp() except that lowercase come before capitalize letters.
+     * Compare two strings in the same way as strcmp() except that lowercase come before uppercase letters.
      *
      * @param null|string $str1 First string value for the comparison
      * @param null|string $str2 Second string value for the comparison

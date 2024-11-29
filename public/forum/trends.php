@@ -153,7 +153,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                             <img loading="lazy" src="<?= htmlspecialchars($prf['profile_pic']); ?>" alt="">
                         </div>
                         <div class="label">
-                            <a href="./profile.php?un=<?= htmlspecialchars($prf['username']); ?>"><?= htmlspecialchars($prf['name']); ?></a>
+                            <a href="./profile.php?un=<?= htmlspecialchars($prf['username']); ?>"><?= ucwords(htmlspecialchars($prf['name'])); ?></a>
                             <p>@<?= htmlspecialchars($prf['username']); ?></p>
                         </div>
                     </div>

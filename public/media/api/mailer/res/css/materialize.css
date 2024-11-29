@@ -5017,7 +5017,7 @@ small {
   margin-right: 24px;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .card
@@ -5174,7 +5174,7 @@ small {
   height: 48px;
   padding: 0;
   margin: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .tabs .tab a {
@@ -5278,7 +5278,7 @@ small {
   height: 36px;
   line-height: 36px;
   padding: 0 16px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
 }

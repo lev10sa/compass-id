@@ -99,7 +99,7 @@ class Validations
 
     public static function definedNameToCoordinate(string $coordinate, Worksheet $worksheet): string
     {
-        // capitalize coordinate
+        // uppercase coordinate
         $coordinate = strtoupper($coordinate);
         // Eliminate leading equal sign
         $testCoordinate = (string) preg_replace('/^=/', '', $coordinate);

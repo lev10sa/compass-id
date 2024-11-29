@@ -166,7 +166,7 @@ if (isset($_GET['post_id'])) {
                                 <img loading="lazy" src="<?= htmlspecialchars($prf['profile_pic']); ?>" alt="">
                             </div>
                             <div class="label">
-                                <a href="./profile.php?un=<?= htmlspecialchars($prf['username']); ?>"><?= htmlspecialchars($prf['name']); ?></a>
+                                <a href="./profile.php?un=<?= htmlspecialchars($prf['username']); ?>"><?= ucwords(htmlspecialchars($prf['name'])); ?></a>
                                 <p>@<?= htmlspecialchars($prf['username']); ?></p>
                             </div>
                         </div>

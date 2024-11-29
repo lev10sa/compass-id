@@ -645,7 +645,7 @@ class Functions
     {
         $worksheet = $cell->getWorksheet();
         $spreadsheet = $worksheet->getParentOrThrow();
-        // capitalize coordinate
+        // uppercase coordinate
         $pCoordinatex = strtoupper($coordinate);
         // Eliminate leading equal sign
         $pCoordinatex = (string) preg_replace('/^=/', '', $pCoordinatex);

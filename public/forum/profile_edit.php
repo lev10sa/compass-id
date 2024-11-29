@@ -240,7 +240,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
                                 <img loading="lazy" src="<?= htmlspecialchars($prf['profile_pic']); ?>" alt="">
                             </div>
                             <div class="label">
-                                <a href="./profile.php?un=<?= $un; ?>&un=<?= htmlspecialchars($prf['username']); ?>"><?= htmlspecialchars($prf['name']); ?></a>
+                                <a href="./profile.php?un=<?= $un; ?>&un=<?= htmlspecialchars($prf['username']); ?>"><?= ucwords(htmlspecialchars($prf['name'])); ?></a>
                                 <p>@<?= htmlspecialchars($prf['username']); ?></p>
                             </div>
                         </div>

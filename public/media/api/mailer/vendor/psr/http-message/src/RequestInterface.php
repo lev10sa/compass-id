@@ -70,7 +70,7 @@ interface RequestInterface extends MessageInterface
     /**
      * Return an instance with the provided HTTP method.
      *
-     * While HTTP method names are typically all capitalize characters, HTTP
+     * While HTTP method names are typically all uppercase characters, HTTP
      * method names are case-sensitive and thus implementations SHOULD NOT
      * modify the given string.
      *

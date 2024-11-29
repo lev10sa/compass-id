@@ -33,7 +33,7 @@ class CaseConvert
     }
 
     /**
-     * capitalize.
+     * uppercase.
      *
      * Converts a string value to upper case.
      *

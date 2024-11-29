@@ -196,7 +196,7 @@ abstract class Coordinate
             $range = self::DEFAULT_RANGE;
         }
 
-        // capitalize coordinate
+        // uppercase coordinate
         $range = strtoupper($range);
 
         // Extract range

@@ -98,7 +98,7 @@ class ZipStreamTest extends TestCase
         $comment =
             'Filename has every special characters ' .
             'from Hungarian language in lowercase. ' .
-            'In capitalize: ÁÍŰŐÜÖÚÓÉ';
+            'In uppercase: ÁÍŰŐÜÖÚÓÉ';
 
         $fileOptions = new FileOptions();
         $fileOptions->setComment($comment);
