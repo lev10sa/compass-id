@@ -6,10 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="./favicon.ico">
-  <link rel="stylesheet" href="https://forum.compasspubindonesia.com/res/css/style.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="https://forum.compasspubindonesia.com/res/css/materialize.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="https://forum.compasspubindonesia.com/res/css/materialize.min.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="https://forum.compasspubindonesia.com/res/css/material-icons.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="./res/css/style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="./res/css/materialize.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="./res/css/materialize.min.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="./res/css/material-icons.css" type="text/css" media="all" />
   <link rel="stylesheet" href="cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <link
     rel="stylesheet"

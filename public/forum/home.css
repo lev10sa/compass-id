@@ -85,7 +85,7 @@
   }
 
   .left .hero .label a {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 11pt;
     font-weight: bold;
     text-decoration: none;
@@ -110,7 +110,7 @@
     text-decoration: none;
     font-size: 11pt;
     color: #111;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .left .tabs a i {
@@ -311,7 +311,7 @@
   }
 
   .mid .posed .pos .label a {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 11pt;
     text-decoration: none;
     font-weight: bold;
@@ -653,7 +653,7 @@
   }
 
   .left .hero .label a {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 11pt;
     font-weight: bold;
     text-decoration: none;
@@ -678,7 +678,7 @@
     text-decoration: none;
     font-size: 11pt;
     color: #111;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .left .tabs a i {
@@ -876,7 +876,7 @@
   }
 
   .mid .posed .pos .label a {
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: 11pt;
     text-decoration: none;
     font-weight: bold;

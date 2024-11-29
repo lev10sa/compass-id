@@ -134,7 +134,7 @@ label {
 
   .login .form h1 {
     font-size: 18pt;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 2rem auto;
   }
 
@@ -202,7 +202,7 @@ label {
 
   .login .form h1 {
     font-size: 21.8pt;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 3rem auto;
   }
 
