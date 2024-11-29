@@ -166,7 +166,7 @@ if (isset($_GET['un'])) {
                     ?>
                             <div class="flow">
                                 <img src="<?= $pos['profile_pic']; ?>" />
-                                <a href="./profile.php?un=<?= $pos['username']; ?>"><?= $pos['name']; ?></a>
+                                <a href="./profile.php?un=<?= $pos['username']; ?>"><?= ucwords(htmlspecialchars($pos['name'])); ?></a>
                                 <p>@<?= $pos['username']; ?></p>
                                 <?php
 
