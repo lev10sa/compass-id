@@ -404,7 +404,7 @@ if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
                                     <img loading="lazy" src="<?= htmlspecialchars($p3['profile_pic']); ?>" alt="">
                                 </div>
                                 <div class="label">
-                                    <a href="./profile.php?un=<?= htmlspecialchars($p3['username']); ?>"><?= htmlspecialchars($p3['name']); ?></a>
+                                    <a href="./profile.php?un=<?= htmlspecialchars($p3['username']); ?>"><?= ucwords(htmlspecialchars($p3['name'])); ?></a>
                                     <p>@<?= htmlspecialchars($p3['username']); ?></p>
                                 </div>
                                 <div class="fol">
