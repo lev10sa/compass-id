@@ -20,7 +20,7 @@ if (isset($_GET['acc_main']) && isset($_GET['acc_sec']) && isset($_GET['type']))
                 $fiSQL = "INSERT INTO notifications (acc_main, acc_sec, fol_id, dt) VALUES ('$acc_main', '$acc_sec', '$fol_id', NOW())";
                 $con->query($fiSQL);
             }
-            header('location: ./follows.php');
+            header('location: ./trends.php');
         }
 
         if ($_GET['type'] == 'unfollow') {
@@ -28,7 +28,7 @@ if (isset($_GET['acc_main']) && isset($_GET['acc_sec']) && isset($_GET['type']))
             $con->query($ulfSQL);
             $ulfsSQL = "DELETE FROM notifications WHERE acc_main = '$acc_main' AND acc_sec = '$acc_sec' AND fol_id LIKE '%$fol_id%'";
             $con->query($ulfsSQL);
-            header('location: ./follows.php');
+            header('location: ./trends.php');
         }
     } else {
 
@@ -46,21 +46,21 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
         if ($_GET['type'] == 'like') {
             $lkSQL = "INSERT IGNORE INTO likes (acc_id, post_id, dt) VALUES ('$acc_id', '$post_id', NOW())";
             $con->query($lkSQL);
-            header('location: ./follows.php');
+            header('location: ./trends.php');
         } else if ($_GET['type'] == 'unlike') {
             $ulkSQL = "DELETE FROM likes WHERE likes.acc_id = '$acc_id' AND likes.post_id = '$post_id'";
             $con->query($ulkSQL);
-            header('location: ./follows.php');
+            header('location: ./trends.php');
         }
 
         if ($_GET['type'] == 'save') {
             $lkSQL = "INSERT IGNORE INTO saves (acc_id, post_id) VALUES ('$acc_id', '$post_id')";
             $con->query($lkSQL);
-            header('location: ./follows.php');
+            header('location: ./trends.php');
         } else if ($_GET['type'] == 'unsave') {
             $ulkSQL = "DELETE FROM saves WHERE saves.acc_id = '$acc_id' AND saves.post_id = '$post_id'";
             $con->query($ulkSQL);
-            header('location: ./follows.php');
+            header('location: ./trends.php');
         }
     } else {
 
@@ -85,6 +85,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
     <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./login.css">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./chats.css">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -217,11 +218,11 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
 
         <div class="mid">
             <div class="tabs">
-                <a href="./trends.php">Terkini</a>
+                <a href="./trends.php" class="active">Terkini</a>
                 <?php
                 if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
                 ?>
-                    <a href="./follows.php" class="active">Diikuti</a>
+                    <a href="./follows.php">Diikuti</a>
                     <a href="./saved.php">Disimpan</a>
                 <?php
                 }
@@ -243,7 +244,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
             <div class="posed">
                 <?php
 
-                $sqlArt = "SELECT follows.acc_main, follows.acc_sec, accounts.username, accounts.name, accounts.email, accounts.profile_pic, posts.id, posts.dt, posts.body, posts.media, posts.acc_id FROM accounts, posts, follows WHERE posts.acc_id = follows.acc_sec AND accounts.id = posts.acc_id AND follows.acc_main = '$id' ORDER BY posts.dt DESC LIMIT 30";
+                $sqlArt = "SELECT accounts.username, accounts.name, accounts.email, accounts.profile_pic, posts.id, posts.dt, posts.body, posts.media, posts.acc_id FROM accounts, posts WHERE accounts.id = posts.acc_id ORDER BY posts.dt DESC LIMIT 30";
                 $selArt = $con->query($sqlArt);
                 $selArt->setFetchMode(PDO::FETCH_ASSOC);
                 $art = $selArt->fetchAll();
@@ -272,7 +273,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                     if ($_SESSION['s_em'] !== $pos['email']) {
 
                                 ?>
-                                        <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow" class="fol">Ikuti</a>
+                                        <a href="./trends.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow" class="fol">Ikuti</a>
                                     <?php
 
                                     } else if ($pos['acc_id'] == $id) {
@@ -284,13 +285,12 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                 } else if ($flo) {
 
                                     ?>
-                                    <a onclick="unfol(<?= $pos['acc_id'] ?>)" class="ufol">Mengikuti</a>
-
+                                    <a onclick="unfol(<?= $pos['acc_id']; ?>)" class="ufol">Mengikuti</a>
                                 <?php
                                 } else if ($flod) {
 
                                 ?>
-                                    <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow" class="fol">Ikuti Balik</a>
+                                    <a href="./trends.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow" class="fol">Ikuti Balik</a>
                                 <?php
                                 }
 
@@ -349,12 +349,12 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                 <?php
                                 if ($liked == 1) {
                                 ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unlike" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-thumbs-up"></i>Disukai</a>
+                                    <a href="./trends.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unlike" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-thumbs-up"></i>Disukai</a>
                                 <?php
                                 } else {
 
                                 ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=like" target="_self" rel="noopener noreferrer"><i class="fas fa-thumbs-up"></i>Suka</a>
+                                    <a href="./trends.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=like" target="_self" rel="noopener noreferrer"><i class="fas fa-thumbs-up"></i>Suka</a>
                                 <?php
                                 }
 
@@ -363,11 +363,11 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                 <?php
                                 if ($svdsc == 1) {
                                 ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unsave" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-bookmark"></i>Disimpan</a>
+                                    <a href="./trends.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unsave" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-bookmark"></i>Disimpan</a>
                                 <?php
                                 } else {
                                 ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=save" target="_self" rel="noopener noreferrer"><i class="fas fa-bookmark"></i>Simpan</a>
+                                    <a href="./trends.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=save" target="_self" rel="noopener noreferrer"><i class="fas fa-bookmark"></i>Simpan</a>
                                 <?php
                                 }
                                 ?>
@@ -428,7 +428,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                     if ($_SESSION['s_em'] !== $p3['email']) {
 
                                 ?>
-                                        <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti</a>
+                                        <a href="./trends.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti</a>
                                     <?php
 
                                     }
@@ -440,7 +440,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                 } else if ($flodt) {
 
                                 ?>
-                                    <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti Balik</a>
+                                    <a href="./trends.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti Balik</a>
                                 <?php
                                 }
 
@@ -490,18 +490,20 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
     }
 </script>
 <script>
-    let unfol = (vlb) => {
-
-        if (confirm('Berhenti mengikuti orang ini?')) {
-            window.open("./follows.php?acc_main=<?= $id ?>&acc_sec=" + vlb + "&type=unfollow", '_self')
+    let copi = (vel) => {
+        let uri = `./post.php?post_id=${vel}`;
+        let copied = navigator.clipboard.writeText(uri);
+        if (copied) {
+            alert('Tautan tersalin!');
         }
-
     }
 </script>
 <script>
-    let copi = (vla) => {
-        let uri = "./post.php?post_id=" + vla
-        navigator.clipboard.writeText(uri)
-        alert('Tautan tersalin!')
+    let unfol = (vlb) => {
+
+        if (confirm('Berhenti mengikuti orang ini?')) {
+            window.open("./trends.php?acc_main=<?= $id; ?>&acc_sec=" + vlb + "&type=unfollow", '_self')
+        }
+
     }
 </script>

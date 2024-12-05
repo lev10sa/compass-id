@@ -20,7 +20,7 @@ if (isset($_GET['acc_main']) && isset($_GET['acc_sec']) && isset($_GET['type']))
                 $fiSQL = "INSERT INTO notifications (acc_main, acc_sec, fol_id, dt) VALUES ('$acc_main', '$acc_sec', '$fol_id', NOW())";
                 $con->query($fiSQL);
             }
-            header('location: ./follows.php');
+            header('location: ./notify.php');
         }
 
         if ($_GET['type'] == 'unfollow') {
@@ -28,7 +28,7 @@ if (isset($_GET['acc_main']) && isset($_GET['acc_sec']) && isset($_GET['type']))
             $con->query($ulfSQL);
             $ulfsSQL = "DELETE FROM notifications WHERE acc_main = '$acc_main' AND acc_sec = '$acc_sec' AND fol_id LIKE '%$fol_id%'";
             $con->query($ulfsSQL);
-            header('location: ./follows.php');
+            header('location: ./notify.php');
         }
     } else {
 
@@ -46,21 +46,21 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
         if ($_GET['type'] == 'like') {
             $lkSQL = "INSERT IGNORE INTO likes (acc_id, post_id, dt) VALUES ('$acc_id', '$post_id', NOW())";
             $con->query($lkSQL);
-            header('location: ./follows.php');
+            header('location: ./notify.php');
         } else if ($_GET['type'] == 'unlike') {
             $ulkSQL = "DELETE FROM likes WHERE likes.acc_id = '$acc_id' AND likes.post_id = '$post_id'";
             $con->query($ulkSQL);
-            header('location: ./follows.php');
+            header('location: ./notify.php');
         }
 
         if ($_GET['type'] == 'save') {
             $lkSQL = "INSERT IGNORE INTO saves (acc_id, post_id) VALUES ('$acc_id', '$post_id')";
             $con->query($lkSQL);
-            header('location: ./follows.php');
+            header('location: ./notify.php');
         } else if ($_GET['type'] == 'unsave') {
             $ulkSQL = "DELETE FROM saves WHERE saves.acc_id = '$acc_id' AND saves.post_id = '$post_id'";
             $con->query($ulkSQL);
-            header('location: ./follows.php');
+            header('location: ./notify.php');
         }
     } else {
 
@@ -85,6 +85,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
     <link rel="icon" href="https://compasspubindonesia.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./login.css">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./notify.css">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -155,7 +156,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                         $sqlPos = "INSERT INTO posts (acc_id, body, media, dt) VALUES (:acc_id, :body, :media, NOW())";
                         $stmt = $con->prepare($sqlPos);
                         $stmt->execute(['acc_id' => $id, 'body' => $body, 'media' => $media]);
-                        header('location: ./trends.php');
+                        header('location: ./notify.php');
                     }
 
                     $sqlsv = "SELECT COUNT(*) FROM saves WHERE acc_id = :id";
@@ -217,169 +218,27 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
 
         <div class="mid">
             <div class="tabs">
-                <a href="./trends.php">Terkini</a>
                 <?php
                 if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
                 ?>
-                    <a href="./follows.php" class="active">Diikuti</a>
-                    <a href="./saved.php">Disimpan</a>
+                    <a href="./notify.php" class="active">Notifikasi</a>
                 <?php
                 }
                 ?>
             </div>
-            <?php
-            if (isset($_SESSION['s_em']) && isset($_SESSION['s_pw'])) {
-            ?>
-                <div class="make">
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                        <textarea name="body" id="body" placeholder="Tuliskan sesuatu. (max. 1000 karakter)" required maxlength="1000"></textarea>
-                        <input type="file" name="mediam" id="mediam" accept="image/jpg, image/png, image/jpeg, image/webp">
-                        <input type="submit" name="r_ok" id="r_ok" value="POSTING">
-                    </form>
+            <div class="notify">
+                <div class="list">
+                    <p><a href="./notify">User 1</a> mengikuti anda.</p>
+                    <label>2024-12-05 12:18:30 WIB</label>
                 </div>
-            <?php
-            }
-            ?>
-            <div class="posed">
-                <?php
-
-                $sqlArt = "SELECT follows.acc_main, follows.acc_sec, accounts.username, accounts.name, accounts.email, accounts.profile_pic, posts.id, posts.dt, posts.body, posts.media, posts.acc_id FROM accounts, posts, follows WHERE posts.acc_id = follows.acc_sec AND accounts.id = posts.acc_id AND follows.acc_main = '$id' ORDER BY posts.dt DESC LIMIT 30";
-                $selArt = $con->query($sqlArt);
-                $selArt->setFetchMode(PDO::FETCH_ASSOC);
-                $art = $selArt->fetchAll();
-
-                if ($art) {
-
-                    foreach ($art as $pos) {
-
-                ?>
-                        <div class="pos">
-                            <div class="fig">
-                                <?php
-
-                                $idp = $pos['acc_id'];
-
-                                $sqlflo = "SELECT * FROM follows WHERE acc_main = '$id' AND acc_sec = '$idp'";
-                                $stmto = $con->query($sqlflo);
-                                $flo = $stmto->fetchAll();
-
-                                $sqlflod = "SELECT * FROM follows WHERE acc_main = '$idp' AND acc_sec = '$id'";
-                                $stmtd = $con->query($sqlflod);
-                                $flod = $stmtd->fetchAll();
-
-                                if (!$flo && !$flod) {
-
-                                    if ($_SESSION['s_em'] !== $pos['email']) {
-
-                                ?>
-                                        <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow" class="fol">Ikuti</a>
-                                    <?php
-
-                                    } else if ($pos['acc_id'] == $id) {
-
-                                    ?>
-                                        <a href="./post_edit.php?post_id=<?= $pos['id'] ?>" class="ufol"><i class="fas fa-edit"></i> Edit</a>
-                                    <?php
-                                    }
-                                } else if ($flo) {
-
-                                    ?>
-                                    <a onclick="unfol(<?= $pos['acc_id'] ?>)" class="ufol">Mengikuti</a>
-
-                                <?php
-                                } else if ($flod) {
-
-                                ?>
-                                    <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $pos['acc_id'] ?>&type=follow" class="fol">Ikuti Balik</a>
-                                <?php
-                                }
-
-                                ?>
-                                <div class="image">
-                                    <img loading="lazy" src="<?= htmlspecialchars($pos['profile_pic']); ?>" alt="">
-                                </div>
-                                <div class="label">
-                                    <a href="./profile.php?un=<?= htmlspecialchars($pos['username']); ?>"><?= ucwords(htmlspecialchars($pos['name'])); ?></a>
-                                    <p>@<?= htmlspecialchars($pos['username']); ?></p>
-                                    <p><?= htmlspecialchars($pos['dt']); ?> WIB</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <pre><?= stripslashes($pos['body']); ?></pre>
-                                <?php
-                                if ($pos['media'] !== '') {
-                                ?>
-                                    <img loading="lazy" src="<?= htmlspecialchars($pos['media']); ?>" alt="">
-                                <?php
-
-                                }
-
-                                ?>
-                            </div>
-                            <?php
-
-                            $posId = $pos['id'];
-
-                            $sqlLike = "SELECT COUNT(*) FROM likes, posts WHERE likes.post_id = posts.id AND likes.post_id = '$posId'";
-                            $selLike = $con->query($sqlLike);
-                            $likes = $selLike->fetchColumn();
-
-                            $sqlComm = "SELECT COUNT(*) FROM comments WHERE post_id = '$posId'";
-                            $selComm = $con->query($sqlComm);
-                            $comms = $selComm->fetchColumn();
-
-                            $sqlSvd = "SELECT COUNT(*) FROM posts, saves WHERE posts.id = saves.post_id AND saves.post_id = '$posId'";
-                            $selSvd = $con->query($sqlSvd);
-                            $svds = $selSvd->fetchColumn();
-
-                            $sqlLikes = "SELECT COUNT(*) FROM likes, posts WHERE likes.post_id = posts.id AND likes.acc_id = '$id' AND likes.post_id = '$posId'";
-                            $selLikes = $con->query($sqlLikes);
-                            $liked = $selLikes->fetchColumn();
-
-                            $sqlSvds = "SELECT COUNT(*) FROM posts, saves WHERE posts.id = saves.post_id AND saves.acc_id = '$id' AND saves.post_id = '$posId'";
-                            $selSvds = $con->query($sqlSvds);
-                            $svdsc = $selSvds->fetchColumn();
-                            ?>
-                            <div class="cnt">
-                                <p><?= $likes; ?> Menyukai</p>
-                                <p><?= $comms; ?> Mengomentari</p>
-                                <p><?= $svds; ?> Tersimpan</p>
-                            </div>
-                            <div class="panel">
-                                <?php
-                                if ($liked == 1) {
-                                ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unlike" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-thumbs-up"></i>Disukai</a>
-                                <?php
-                                } else {
-
-                                ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=like" target="_self" rel="noopener noreferrer"><i class="fas fa-thumbs-up"></i>Suka</a>
-                                <?php
-                                }
-
-                                ?>
-                                <a href="./post.php?post_id=<?= $pos['id'] ?>" target="_self" rel="noopener noreferrer"><i class="fas fa-comment"></i>Komentar</a>
-                                <?php
-                                if ($svdsc == 1) {
-                                ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=unsave" target="_self" rel="noopener noreferrer" class="active"><i class="fas fa-bookmark"></i>Disimpan</a>
-                                <?php
-                                } else {
-                                ?>
-                                    <a href="./follows.php?acc_id=<?= $id; ?>&post_id=<?= $pos['id'] ?>&type=save" target="_self" rel="noopener noreferrer"><i class="fas fa-bookmark"></i>Simpan</a>
-                                <?php
-                                }
-                                ?>
-                                <a onclick="copi(<?= $pos['id'] ?>)"><i class="fas fa-share"></i>Bagikan</a>
-                            </div>
-                        </div>
-                <?php
-
-                    }
-                }
-
-                ?>
+                <div class="list">
+                    <p><a href="./notify">User 2</a> mengomentari <a href="./notify">postingan</a> anda.</p>
+                    <label>2024-12-05 12:18:30 WIB</label>
+                </div>
+                <div class="list" id="active">
+                    <p><a href="./notify">User 3</a> menyukai <a href="./notify">postingan</a> anda.</p>
+                    <label>2024-12-05 12:18:30 WIB</label>
+                </div>
             </div>
         </div>
 
@@ -428,7 +287,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                     if ($_SESSION['s_em'] !== $p3['email']) {
 
                                 ?>
-                                        <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti</a>
+                                        <a href="./notify.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti</a>
                                     <?php
 
                                     }
@@ -440,7 +299,7 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                                 } else if ($flodt) {
 
                                 ?>
-                                    <a href="./follows.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti Balik</a>
+                                    <a href="./notify.php?acc_main=<?= $id ?>&acc_sec=<?= $p3['id'] ?>&type=follow">Ikuti Balik</a>
                                 <?php
                                 }
 
@@ -490,18 +349,20 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
     }
 </script>
 <script>
-    let unfol = (vlb) => {
-
-        if (confirm('Berhenti mengikuti orang ini?')) {
-            window.open("./follows.php?acc_main=<?= $id ?>&acc_sec=" + vlb + "&type=unfollow", '_self')
+    let copi = (vel) => {
+        let uri = `./post.php?post_id=${vel}`;
+        let copied = navigator.clipboard.writeText(uri);
+        if (copied) {
+            alert('Tautan tersalin!');
         }
-
     }
 </script>
 <script>
-    let copi = (vla) => {
-        let uri = "./post.php?post_id=" + vla
-        navigator.clipboard.writeText(uri)
-        alert('Tautan tersalin!')
+    let unfol = (vlb) => {
+
+        if (confirm('Berhenti mengikuti orang ini?')) {
+            window.open("./notify.php?acc_main=<?= $id; ?>&acc_sec=" + vlb + "&type=unfollow", '_self')
+        }
+
     }
 </script>

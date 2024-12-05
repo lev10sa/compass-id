@@ -4,8 +4,6 @@ date_default_timezone_set('Asia/Jakarta');
 
 session_start();
 
-error_reporting(0);
-
 $svn = "localhost";
 $sun = "u802091730_compass";
 $spw = "CompassPub2024!";
@@ -98,6 +96,19 @@ try {
     dt datetime not null
     )";
     $con->query($visitSQL);
+
+    $ntfSQL = "CREATE TABLE IF NOT EXISTS notifications (
+    id int not null auto_increment primary key,
+    acc_main text(3000) not null,
+    acc_sec text(3000) not null,
+    post_id text(3000),
+    comm_id text(3000),
+    like_id text(3000),
+    fol_id text(3000),
+    status text(3000),
+    dt datetime not null
+    )";
+    $con->query($ntfSQL);
 } catch (PDOException $e) {
     print $e->getMessage();
 }

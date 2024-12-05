@@ -11,10 +11,23 @@ if (isset($_GET['acc_main']) && isset($_GET['acc_sec']) && isset($_GET['type']))
         if ($_GET['type'] == 'follow') {
             $flSQL = "INSERT IGNORE INTO follows (acc_main, acc_sec, dt) VALUES ('$acc_main', '$acc_sec', NOW())";
             $con->query($flSQL);
+            $selfoSQL = "SELECT * FROM follows WHERE acc_main = '$acc_main' AND acc_sec = '$acc_sec'";
+            $selfo = $con->query($selfoSQL);
+            $selfo->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($selfo as $slfo) {
+
+                $fol_id = $slfo['id'];
+                $fiSQL = "INSERT INTO notifications (acc_main, acc_sec, fol_id, dt) VALUES ('$acc_main', '$acc_sec', '$fol_id', NOW())";
+                $con->query($fiSQL);
+            }
             header('location: ./trends.php');
-        } else if ($_GET['type'] == 'unfollow') {
+        }
+
+        if ($_GET['type'] == 'unfollow') {
             $ulfSQL = "DELETE FROM follows WHERE acc_main = '$acc_main' AND acc_sec = '$acc_sec'";
             $con->query($ulfSQL);
+            $ulfsSQL = "DELETE FROM notifications WHERE acc_main = '$acc_main' AND acc_sec = '$acc_sec' AND fol_id LIKE '%$fol_id%'";
+            $con->query($ulfsSQL);
             header('location: ./trends.php');
         }
     } else {
@@ -91,6 +104,8 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
     <div class="navbar">
         <img loading="lazy" class="logo" src="https://compasspubindonesia.com/logo.png" alt="" onclick="window.open('./', '_self')">
         <a onclick="menu(1)"><i class="fas fa-bars"></i></a>
+        <a href="./notify.php"><i class="fas fa-bell"></i> (0)</a>
+        <a href="./chats.php"><i class="fas fa-envelope"></i> (0)</a>
     </div>
 
     <div class="body">
@@ -167,6 +182,8 @@ if (isset($_GET['acc_id']) && isset($_GET['post_id']) && isset($_GET['type'])) {
                 ?>
                     <a href="./"><i class="fas fa-home"></i> Beranda</a>
                     <a href="./search_user.php?key="><i class="fas fa-search"></i> Cari</a>
+                    <a href="./notify.php"><i class="fas fa-bell"></i> Notifikasi (0)</a>
+                    <a href="./chats.php"><i class="fas fa-envelope"></i> Pesan (0)</a>
                     <a href="./profile.php?un=<?= $prf['username']; ?>"><i class="fas fa-user-circle"></i> Profil</a>
                     <a href="./followers.php?un=<?= $prf['username']; ?>"><i class="fas fa-user-plus"></i> Koneksi</a>
                     <a href="./saved.php"><i class="fas fa-bookmark"></i> Tersimpan</a>
