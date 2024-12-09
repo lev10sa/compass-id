@@ -304,7 +304,7 @@ function Home() {
             <button
               type="button"
               onClick={() =>
-                window.open("https://forum.compasspubindonesia.com", "_blank")
+                window.open("https://compasspubindonesia.com/forum", "_blank")
               }
             >
               <span>
@@ -399,7 +399,7 @@ function Home() {
                 className="panel"
               >
                 <img loading="lazy" src={item.banner} alt={item.banner} />
-                <h3>{item.title.touppercase()}</h3>
+                <h3>{item.title.toUpperCase()}</h3>
                 <pre
                   className="dip dipo"
                   dangerouslySetInnerHTML={{ __html: item.body }}
@@ -448,7 +448,7 @@ function Home() {
               >
                 {item.img !== "" ? (
                   <>
-                    <img loading="lazy" l src={item.img} alt={item.img} />
+                    <img loading="lazy" src={item.img} alt={item.img} />
                   </>
                 ) : (
                   <></>
@@ -526,7 +526,7 @@ function Home() {
                 _blank"
                   key={index}
                 >
-                  <img loading="lazy" l src={thumb.src} alt={thumb.src} />
+                  <img loading="lazy" src={thumb.src} alt={thumb.src} />
                 </a>
               </>
             ))}
@@ -559,7 +559,6 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
-                    loading="lazy"
                     src={"/assets/img/banner/a.jpg"}
                     alt={`a.jpg`}
                     style={{
@@ -605,7 +604,6 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
-                    loading="lazy"
                     src={"/assets/img/banner/b.jpg"}
                     alt={`b.jpg`}
                     style={{
@@ -661,11 +659,7 @@ function Home() {
                 : ""}
             </h5>
             <div>
-              <img
-                loading="lazy"
-                src={"/assets/img/about/a.jpg"}
-                alt={`a.jpg`}
-              />
+              <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
               <p>
                 {lang === "id"
                   ? "Pengembangan Diri"
@@ -675,11 +669,7 @@ function Home() {
               </p>
             </div>
             <div>
-              <img
-                loading="lazy"
-                src={"/assets/img/about/b.jpg"}
-                alt={`a.jpg`}
-              />
+              <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
               <p>
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
@@ -689,11 +679,7 @@ function Home() {
               </p>
             </div>
             <div>
-              <img
-                loading="lazy"
-                src={"/assets/img/about/c.jpg"}
-                alt={`a.jpg`}
-              />
+              <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
               <p>
                 {lang === "id"
                   ? "Materi Pembelajaran"
@@ -711,7 +697,6 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
-                    loading="lazy"
                     src={"/assets/img/banner/a.jpg"}
                     alt={`a.jpg`}
                     style={{
@@ -757,7 +742,6 @@ function Home() {
               <div className="section about">
                 <div className="section">
                   <img
-                    loading="lazy"
                     src={"/assets/img/banner/b.jpg"}
                     alt={`b.jpg`}
                     style={{
@@ -813,11 +797,7 @@ function Home() {
                 : ""}
             </h5>
             <div>
-              <img
-                loading="lazy"
-                src={"/assets/img/about/a.jpg"}
-                alt={`a.jpg`}
-              />
+              <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
               <p>
                 {lang === "id"
                   ? "Pengembangan Diri"
@@ -827,11 +807,7 @@ function Home() {
               </p>
             </div>
             <div>
-              <img
-                loading="lazy"
-                src={"/assets/img/about/b.jpg"}
-                alt={`a.jpg`}
-              />
+              <img src={"/assets/img/about/b.jpg"} alt={`a.jpg`} />
               <p>
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
@@ -841,11 +817,7 @@ function Home() {
               </p>
             </div>
             <div>
-              <img
-                loading="lazy"
-                src={"/assets/img/about/c.jpg"}
-                alt={`a.jpg`}
-              />
+              <img src={"/assets/img/about/c.jpg"} alt={`a.jpg`} />
               <p>
                 {lang === "id"
                   ? "Materi Pembelajaran"

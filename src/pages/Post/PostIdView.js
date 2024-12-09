@@ -170,7 +170,6 @@ function PostIdView() {
                 <div className="film">
                   <img
                     loading="lazy"
-                    l
                     src={post.banner}
                     alt={post.banner}
                     id="main"
@@ -178,7 +177,6 @@ function PostIdView() {
                   <div className="panel">
                     {post.fileList.map((file, index) => (
                       <img
-                        loading="lazy"
                         src={file.url}
                         alt={file.url}
                         key={index + 1}
@@ -190,7 +188,7 @@ function PostIdView() {
                 </div>
                 <div className="section"></div>
                 <div className="section sub">
-                  <h2>{post.title.touppercase()}</h2>
+                  <h2>{post.title.toUpperCase()}</h2>
                   <p>{formatTime(post.date)}</p>
                 </div>
                 <pre
@@ -274,7 +272,7 @@ function PostIdView() {
                           src={item.banner}
                           alt={item.banner}
                         />
-                        <h3>{item.title.touppercase()}</h3>
+                        <h3>{item.title.toUpperCase()}</h3>
                         <pre
                           className="dip"
                           dangerouslySetInnerHTML={{ __html: item.body }}

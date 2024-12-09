@@ -164,7 +164,7 @@ const PostList = () => {
               >
                 {post.banner !== "" ? (
                   <>
-                    <img loading="lazy" l src={post.banner} alt={post.banner} />
+                    <img loading="lazy" src={post.banner} alt={post.banner} />
                   </>
                 ) : (
                   <></>
@@ -173,7 +173,7 @@ const PostList = () => {
                 <div className="section caption">
                   {post.title !== "" ? (
                     <>
-                      <h3 title={post.title}>{post.title.touppercase()}</h3>
+                      <h3 title={post.title}>{post.title.toUpperCase()}</h3>
                     </>
                   ) : (
                     <></>

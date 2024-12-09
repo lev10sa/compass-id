@@ -90,14 +90,17 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <i className="fas fa-calendar-alt"></i> <span>Event</span>
           </button>
-          <button onClick={() => window.open("./", "_blank")}>
+          <button
+            onClick={() =>
+              window.open("https://compasspubindonesia.com/forum", "_blank")
+            }
+          >
             <i className="fas fa-users"></i> <span>Forum</span>
           </button>
         </div>
       </div>
       <div id="banner" className="section banner">
         <img
-          loading="lazy"
           src={images[currentIndex].url}
           alt={images[currentIndex].url}
           className="animate__animated animate__fadeIn active"
@@ -122,7 +125,11 @@ const Navigation = () => {
           <button onClick={() => navigate(`/events`)}>
             <span>Event</span> <i className="fas fa-calendar-alt"></i>
           </button>
-          <button onClick={() => window.open("./", "_blank")}>
+          <button
+            onClick={() =>
+              window.open("https://compasspubindonesia.com/forum", "_blank")
+            }
+          >
             <i className="fas fa-users"></i> <span>Forum</span>
           </button>
         </div>
