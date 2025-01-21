@@ -194,7 +194,11 @@ function PostEnView() {
                 </div>
                 <pre
                   className="section psto"
-                  id="drig"
+                  style={{
+                    overflow: "hidden",
+                    height: "auto",
+                    display: "block",
+                  }}
                   dangerouslySetInnerHTML={{ __html: post.body }}
                 />
                 <div className="section"></div>
