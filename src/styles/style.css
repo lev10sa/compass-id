@@ -1921,3 +1921,8 @@ label {
 .dipo a {
   color: #111;
 }
+
+pre.drig {
+  overflow: hidden !important;
+  height: fit-content !important;
+}

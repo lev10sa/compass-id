@@ -192,7 +192,7 @@ function PostIdView() {
                   <p>{formatTime(post.date)}</p>
                 </div>
                 <pre
-                  className="section psto"
+                  className="section psto drig"
                   dangerouslySetInnerHTML={{ __html: post.body }}
                 />
                 <div className="section"></div>
