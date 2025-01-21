@@ -1925,5 +1925,5 @@ label {
 #drig {
   white-space: initial;
   overflow: hidden;
-  height: 750px;
+  height: 750px !important;
 }
