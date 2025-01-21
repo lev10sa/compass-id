@@ -148,7 +148,7 @@ function Home() {
     },
     {
       src: "fas fa-file-alt",
-      url: "/posts",
+      url: "/blogs",
       label: "post",
     },
     {
@@ -360,7 +360,7 @@ function Home() {
             <h5 style={{ float: "left" }}>Latest Posts</h5>
             <button
               type="button"
-              onClick={() => navigate("/posts")}
+              onClick={() => navigate("/blogs")}
               style={{
                 borderRadius: "10px",
                 background: "transparent",
