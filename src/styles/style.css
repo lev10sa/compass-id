@@ -1921,3 +1921,10 @@ label {
 .dipo a {
   color: #111;
 }
+
+.pstog {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
