@@ -193,7 +193,8 @@ function PostEnView() {
                   <p>{formatTime(post.date)}</p>
                 </div>
                 <pre
-                  className="section psto drig"
+                  className="section psto"
+                  id="drig"
                   dangerouslySetInnerHTML={{ __html: post.body }}
                 />
                 <div className="section"></div>

@@ -193,6 +193,7 @@ function PostIdView() {
                 </div>
                 <pre
                   className="section psto drig"
+                  id="drig"
                   dangerouslySetInnerHTML={{ __html: post.body }}
                 />
                 <div className="section"></div>

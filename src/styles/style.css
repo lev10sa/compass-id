@@ -1922,7 +1922,8 @@ label {
   color: #111;
 }
 
-pre.drig {
-  overflow: hidden !important;
-  height: fit-content !important;
+#drig {
+  white-space: initial;
+  overflow: hidden;
+  height: auto;
 }
