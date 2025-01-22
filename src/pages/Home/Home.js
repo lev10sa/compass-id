@@ -133,6 +133,10 @@ function Home() {
       src: "/assets/img/partner/d.jpg",
       uri: "",
     },
+    {
+      src: "/assets/img/partner/f.jpg",
+      uri: "https://readingoceans.com",
+    },
   ];
 
   const icons = [
