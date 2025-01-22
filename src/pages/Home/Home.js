@@ -306,7 +306,7 @@ function Home() {
               }
             >
               <span>
-                <i className="fas fa-file"></i>
+                <i className="fas fa-file-alt"></i>
               </span>
               <label>Blog</label>
             </button>
