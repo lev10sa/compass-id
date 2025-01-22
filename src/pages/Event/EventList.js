@@ -238,7 +238,11 @@ const EventList = () => {
                         </p>
                       </>
                     ) : (
-                      <></>
+                      <>
+                        <p title={event.address}>
+                          <strong>Location:</strong> -
+                        </p>
+                      </>
                     )}
 
                     {event.price !== "" ? (
