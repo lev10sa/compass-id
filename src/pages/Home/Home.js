@@ -135,7 +135,7 @@ function Home() {
     },
     {
       src: "/assets/img/partner/f.jpg",
-      uri: "https://readingoceans.com",
+      uri: "https://www.readingoceans.com",
     },
   ];
 
