@@ -498,7 +498,11 @@ function Home() {
                     </p>
                   </>
                 ) : (
-                  <></>
+                  <>
+                    <p title={item.address}>
+                      <strong>Location:</strong> -
+                    </p>
+                  </>
                 )}
 
                 {item.price !== "" ? (
