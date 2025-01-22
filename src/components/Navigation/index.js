@@ -84,8 +84,8 @@ const Navigation = () => {
           <button onClick={() => navigate(`/books`)}>
             <i className="fas fa-book"></i> <span>Book</span>
           </button>
-          <button onClick={() => navigate(`/blogs`)}>
-            <i className="fas fa-file-alt"></i> <span>post</span>
+          <button onClick={() => navigate(`/blogs/id`)}>
+            <i className="fas fa-file-alt"></i> <span>BLOG</span>
           </button>
           <button onClick={() => navigate(`/events`)}>
             <i className="fas fa-calendar-alt"></i> <span>Event</span>
@@ -119,8 +119,8 @@ const Navigation = () => {
           <button onClick={() => navigate(`/books`)}>
             <span>Book</span> <i className="fas fa-book"></i>
           </button>
-          <button onClick={() => navigate(`/blogs`)}>
-            <span>post</span> <i className="fas fa-file-alt"></i>
+          <button onClick={() => navigate(`/blogs/id`)}>
+            <span>BLOG</span> <i className="fas fa-file-alt"></i>
           </button>
           <button onClick={() => navigate(`/events`)}>
             <span>Event</span> <i className="fas fa-calendar-alt"></i>

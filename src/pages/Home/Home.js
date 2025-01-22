@@ -147,11 +147,6 @@ function Home() {
       label: "Book",
     },
     {
-      src: "fas fa-file-alt",
-      url: "/blogs",
-      label: "post",
-    },
-    {
       src: "fas fa-calendar-alt",
       url: "/events",
       label: "Event",
@@ -304,6 +299,20 @@ function Home() {
             <button
               type="button"
               onClick={() =>
+                window.open(
+                  "https://compasspubindonesia.com/blogs/id",
+                  "_blank"
+                )
+              }
+            >
+              <span>
+                <i className="fas fa-file"></i>
+              </span>
+              <label>Blog</label>
+            </button>
+            <button
+              type="button"
+              onClick={() =>
                 window.open("https://compasspubindonesia.com/forum", "_blank")
               }
             >
@@ -360,7 +369,7 @@ function Home() {
             <h5 style={{ float: "left" }}>Latest Posts</h5>
             <button
               type="button"
-              onClick={() => navigate("/blogs")}
+              onClick={() => navigate("/blogs/id")}
               style={{
                 borderRadius: "10px",
                 background: "transparent",
