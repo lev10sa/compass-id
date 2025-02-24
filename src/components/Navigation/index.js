@@ -84,7 +84,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/books`)}>
             <i className="fas fa-book"></i> <span>Book</span>
           </button>
-          <button onClick={() => navigate(`/blogs/id`)}>
+          <button onClick={() => navigate(`/blogs/category/id/`)}>
             <i className="fas fa-file-alt"></i> <span>BLOG</span>
           </button>
           <button onClick={() => navigate(`/events`)}>
@@ -119,7 +119,7 @@ const Navigation = () => {
           <button onClick={() => navigate(`/books`)}>
             <span>Book</span> <i className="fas fa-book"></i>
           </button>
-          <button onClick={() => navigate(`/blogs/id`)}>
+          <button onClick={() => navigate(`/blogs/category/id/`)}>
             <span>BLOG</span> <i className="fas fa-file-alt"></i>
           </button>
           <button onClick={() => navigate(`/events`)}>
