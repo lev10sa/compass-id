@@ -44,7 +44,7 @@ var _createClass = (function () {
 function _possibleConstructorReturn(self, call) {
   if (!self) {
     throw new ReferenceError(
-      "this hasn't been initialised - super() hasn't been called"
+      "this hasn't been initialised - super() hasn't been called",
     );
   }
   return call && (typeof call === "object" || typeof call === "function")
@@ -56,7 +56,7 @@ function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError(
       "Super expression must either be null or a function, not " +
-        typeof superClass
+        typeof superClass,
     );
   }
   subClass.prototype = Object.create(superClass && superClass.prototype, {
@@ -109,8 +109,8 @@ function _classCallCheck(instance, Constructor) {
     var elems = classMatch.test(selector)
       ? context.getElementsByClassName(selector.slice(1))
       : singlet.test(selector)
-      ? context.getElementsByTagName(selector)
-      : context.querySelectorAll(selector);
+        ? context.getElementsByTagName(selector)
+        : context.querySelectorAll(selector);
     return elems;
   }
 
@@ -155,10 +155,10 @@ function _classCallCheck(instance, Constructor) {
         ? // If an ID use the faster getElementById check
           doc.getElementById(selector.slice(1))
         : htmlMatch.test(selector)
-        ? // If HTML, parse it into real elements
-          parseHTML(selector)
-        : // else use `find`
-          find(selector, context);
+          ? // If HTML, parse it into real elements
+            parseHTML(selector)
+          : // else use `find`
+            find(selector, context);
 
       // If function, use as shortcut for DOM ready
     } else if (isFunction(selector)) {
@@ -266,14 +266,14 @@ function _classCallCheck(instance, Constructor) {
       isString(selector)
         ? matches
         : /* Match a cash element */
-        selector.cash
-        ? function (el) {
-            return selector.is(el);
-          }
-        : /* Direct comparison */
-          function (el, selector) {
-            return el === selector;
-          }
+          selector.cash
+          ? function (el) {
+              return selector.is(el);
+            }
+          : /* Direct comparison */
+            function (el, selector) {
+              return el === selector;
+            }
     );
   }
 
@@ -281,7 +281,7 @@ function _classCallCheck(instance, Constructor) {
     return cash(
       slice.call(collection).filter(function (item, index, self) {
         return self.indexOf(item) === index;
-      })
+      }),
     );
   }
 
@@ -539,7 +539,7 @@ function _classCallCheck(instance, Constructor) {
       return cash(
         filter.call(this, function (e) {
           return comparator(e, selector);
-        })
+        }),
       );
     },
 
@@ -877,16 +877,16 @@ function _classCallCheck(instance, Constructor) {
         ? function (v) {
             return v.insertAdjacentHTML(
               prepend ? "afterbegin" : "beforeend",
-              child
+              child,
             );
           }
         : function (v, i) {
             return insertElement(
               v,
               i === 0 ? child : child.cloneNode(true),
-              prepend
+              prepend,
             );
-          }
+          },
     );
   }
 
@@ -915,7 +915,7 @@ function _classCallCheck(instance, Constructor) {
       return cash(
         this.map(function (v) {
           return v.cloneNode(true);
-        })
+        }),
       );
     },
 
@@ -1303,7 +1303,7 @@ M.initializeJqueryWrapper = function (plugin, pluginName, classRef) {
 
     // Return error if an unrecognized  method name is passed in
     jQuery.error(
-      "Method " + methodOrOptions + " does not exist on jQuery." + pluginName
+      "Method " + methodOrOptions + " does not exist on jQuery." + pluginName,
     );
   };
 };
@@ -1335,7 +1335,7 @@ M.AutoInit = function (context) {
     Timepicker: root.querySelectorAll(".timepicker:not(.no-autoinit)"),
     Tooltip: root.querySelectorAll(".tooltipped:not(.no-autoinit)"),
     FloatingActionButton: root.querySelectorAll(
-      ".fixed-action-btn:not(.no-autoinit)"
+      ".fixed-action-btn:not(.no-autoinit)",
     ),
   };
 
@@ -1682,8 +1682,8 @@ $jscomp.getGlobal = function (e) {
   return "undefined" != typeof window && window === e
     ? e
     : "undefined" != typeof global && null != global
-    ? global
-    : e;
+      ? global
+      : e;
 };
 $jscomp.global = $jscomp.getGlobal(this);
 $jscomp.SYMBOL_PREFIX = "jscomp_symbol_";
@@ -1778,7 +1778,7 @@ $jscomp.polyfill(
         };
   },
   "es6-impl",
-  "es3"
+  "es3",
 );
 var $jscomp$this = this;
 (function (r) {
@@ -1864,10 +1864,10 @@ var $jscomp$this = this;
       return b < 1 / 6
         ? a + 6 * (c - a) * b
         : 0.5 > b
-        ? c
-        : b < 2 / 3
-        ? a + (c - a) * (2 / 3 - b) * 6
-        : a;
+          ? c
+          : b < 2 / 3
+            ? a + (c - a) * (2 / 3 - b) * 6
+            : a;
     }
     var d =
       /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(a) ||
@@ -1890,7 +1890,7 @@ var $jscomp$this = this;
     if (
       (a =
         /([\+\-]?[0-9#\.]+)(%|px|pt|em|rem|in|cm|mm|ex|ch|pc|vw|vh|vmin|vmax|deg|rad|turn)?$/.exec(
-          a
+          a,
         ))
     )
       return a[2];
@@ -1906,7 +1906,7 @@ var $jscomp$this = this;
     if (c in a.style)
       return (
         getComputedStyle(a).getPropertyValue(
-          c.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()
+          c.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(),
         ) || "0"
       );
   }
@@ -1978,7 +1978,7 @@ var $jscomp$this = this;
       case "line":
         return F(
           { x: a.getAttribute("x1"), y: a.getAttribute("y1") },
-          { x: a.getAttribute("x2"), y: a.getAttribute("y2") }
+          { x: a.getAttribute("x2"), y: a.getAttribute("y2") },
         );
       case "polyline":
         return M(a);
@@ -2013,7 +2013,9 @@ var $jscomp$this = this;
         var f = /rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(b);
         b = f ? "rgba(" + f[1] + ",1)" : b;
       } else b = h.hex(b) ? T(b) : h.hsl(b) ? U(b) : void 0;
-    } else (f = (f = y(b)) ? b.substr(0, b.length - f.length) : b), (b = c && !/\s/g.test(b) ? f + c : f);
+    } else
+      (f = (f = y(b)) ? b.substr(0, b.length - f.length) : b),
+        (b = c && !/\s/g.test(b) ? f + c : f);
     b += "";
     return {
       original: b,
@@ -2112,11 +2114,11 @@ var $jscomp$this = this;
             } else b = void 0;
             return b;
           });
-        })
+        }),
       ),
       function (a) {
         return !h.und(a);
-      }
+      },
     );
   }
   function R(a, c, d, b) {
@@ -2126,11 +2128,11 @@ var $jscomp$this = this;
           Math,
           c.map(function (b) {
             return b[a];
-          })
+          }),
         )
       : f
-      ? b.delay
-      : d.offset + b.delay + b.duration;
+        ? b.delay
+        : d.offset + b.delay + b.duration;
   }
   function fa(a) {
     var c = D(ga, a),
@@ -2339,7 +2341,7 @@ var $jscomp$this = this;
     },
     W =
       "translateX translateY translateZ rotate rotateX rotateY rotateZ scale scaleX scaleY scaleZ skewX skewY perspective".split(
-        " "
+        " ",
       ),
     H,
     h = {
@@ -2438,7 +2440,8 @@ var $jscomp$this = this;
           ? a
           : -Math.pow(2, 10 * (a - 1)) *
               Math.sin(
-                (2 * (a - 1 - (b / (2 * Math.PI)) * Math.asin(1)) * Math.PI) / b
+                (2 * (a - 1 - (b / (2 * Math.PI)) * Math.asin(1)) * Math.PI) /
+                  b,
               );
       }
       var c = "Quad Cubic Quart Quint Sine Expo Circ Back Elastic".split(" "),
@@ -2493,7 +2496,7 @@ var $jscomp$this = this;
                   ? d
                   : A.apply($jscomp$this, d);
               };
-            })(f)
+            })(f),
           ),
           (f = { type: f.type });
       }
@@ -2631,8 +2634,8 @@ var $jscomp$this = this;
           this,
           Collapsible,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this3.el.M_Collapsible = _this3;
@@ -2701,12 +2704,12 @@ var $jscomp$this = this;
               this._handleCollapsibleKeydown.bind(this);
             this.el.addEventListener(
               "click",
-              this._handleCollapsibleClickBound
+              this._handleCollapsibleClickBound,
             );
             this.$headers.each(function (header) {
               header.addEventListener(
                 "keydown",
-                _this4._handleCollapsibleKeydownBound
+                _this4._handleCollapsibleKeydownBound,
               );
             });
           },
@@ -2722,12 +2725,12 @@ var $jscomp$this = this;
 
             this.el.removeEventListener(
               "click",
-              this._handleCollapsibleClickBound
+              this._handleCollapsibleClickBound,
             );
             this.$headers.each(function (header) {
               header.removeEventListener(
                 "keydown",
-                _this5._handleCollapsibleKeydownBound
+                _this5._handleCollapsibleKeydownBound,
               );
             });
           },
@@ -2933,7 +2936,7 @@ var $jscomp$this = this;
             return _get(
               Collapsible.__proto__ || Object.getPrototypeOf(Collapsible),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -2954,7 +2957,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Collapsible;
@@ -3002,8 +3005,8 @@ var $jscomp$this = this;
           this,
           Dropdown,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this9.el.M_Dropdown = _this9;
@@ -3102,13 +3105,13 @@ var $jscomp$this = this;
             // Trigger keydown handler
             this.el.addEventListener(
               "keydown",
-              this._handleTriggerKeydownBound
+              this._handleTriggerKeydownBound,
             );
 
             // Item click handler
             this.dropdownEl.addEventListener(
               "click",
-              this._handleDropdownClickBound
+              this._handleDropdownClickBound,
             );
 
             // Hover event handlers
@@ -3116,16 +3119,16 @@ var $jscomp$this = this;
               this._handleMouseEnterBound = this._handleMouseEnter.bind(this);
               this.el.addEventListener(
                 "mouseenter",
-                this._handleMouseEnterBound
+                this._handleMouseEnterBound,
               );
               this._handleMouseLeaveBound = this._handleMouseLeave.bind(this);
               this.el.addEventListener(
                 "mouseleave",
-                this._handleMouseLeaveBound
+                this._handleMouseLeaveBound,
               );
               this.dropdownEl.addEventListener(
                 "mouseleave",
-                this._handleMouseLeaveBound
+                this._handleMouseLeaveBound,
               );
 
               // Click event handlers
@@ -3144,25 +3147,25 @@ var $jscomp$this = this;
           value: function _removeEventHandlers() {
             this.el.removeEventListener(
               "keydown",
-              this._handleTriggerKeydownBound
+              this._handleTriggerKeydownBound,
             );
             this.dropdownEl.removeEventListener(
               "click",
-              this._handleDropdownClickBound
+              this._handleDropdownClickBound,
             );
 
             if (this.options.hover) {
               this.el.removeEventListener(
                 "mouseenter",
-                this._handleMouseEnterBound
+                this._handleMouseEnterBound,
               );
               this.el.removeEventListener(
                 "mouseleave",
-                this._handleMouseLeaveBound
+                this._handleMouseLeaveBound,
               );
               this.dropdownEl.removeEventListener(
                 "mouseleave",
-                this._handleMouseLeaveBound
+                this._handleMouseLeaveBound,
               );
             } else {
               this.el.removeEventListener("click", this._handleClickBound);
@@ -3176,19 +3179,19 @@ var $jscomp$this = this;
             document.body.addEventListener(
               "click",
               this._handleDocumentClickBound,
-              true
+              true,
             );
             document.body.addEventListener(
               "touchend",
-              this._handleDocumentClickBound
+              this._handleDocumentClickBound,
             );
             document.body.addEventListener(
               "touchmove",
-              this._handleDocumentTouchmoveBound
+              this._handleDocumentTouchmoveBound,
             );
             this.dropdownEl.addEventListener(
               "keydown",
-              this._handleDropdownKeydownBound
+              this._handleDropdownKeydownBound,
             );
           },
         },
@@ -3199,19 +3202,19 @@ var $jscomp$this = this;
             document.body.removeEventListener(
               "click",
               this._handleDocumentClickBound,
-              true
+              true,
             );
             document.body.removeEventListener(
               "touchend",
-              this._handleDocumentClickBound
+              this._handleDocumentClickBound,
             );
             document.body.removeEventListener(
               "touchmove",
-              this._handleDocumentTouchmoveBound
+              this._handleDocumentTouchmoveBound,
             );
             this.dropdownEl.removeEventListener(
               "keydown",
-              this._handleDropdownKeydownBound
+              this._handleDropdownKeydownBound,
             );
           },
         },
@@ -3485,7 +3488,7 @@ var $jscomp$this = this;
               this.el,
               closestOverflowParent,
               dropdownBounds,
-              this.options.coverTrigger ? 0 : triggerBRect.height
+              this.options.coverTrigger ? 0 : triggerBRect.height,
             );
 
             var verticalAlignment = "top";
@@ -3717,7 +3720,7 @@ var $jscomp$this = this;
             return _get(
               Dropdown.__proto__ || Object.getPrototypeOf(Dropdown),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -3738,7 +3741,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Dropdown;
@@ -3797,8 +3800,8 @@ var $jscomp$this = this;
           this,
           Modal,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this13.el.M_Modal = _this13;
@@ -3869,7 +3872,7 @@ var $jscomp$this = this;
             }
             this.$overlay[0].addEventListener(
               "click",
-              this._handleOverlayClickBound
+              this._handleOverlayClickBound,
             );
             this.el.addEventListener("click", this._handleModalCloseClickBound);
           },
@@ -3884,16 +3887,16 @@ var $jscomp$this = this;
             if (Modal._count === 0) {
               document.body.removeEventListener(
                 "click",
-                this._handleTriggerClick
+                this._handleTriggerClick,
               );
             }
             this.$overlay[0].removeEventListener(
               "click",
-              this._handleOverlayClickBound
+              this._handleOverlayClickBound,
             );
             this.el.removeEventListener(
               "click",
-              this._handleModalCloseClickBound
+              this._handleModalCloseClickBound,
             );
           },
 
@@ -4011,7 +4014,7 @@ var $jscomp$this = this;
                   _this14.options.onOpenEnd.call(
                     _this14,
                     _this14.el,
-                    _this14._openingTrigger
+                    _this14._openingTrigger,
                   );
                 }
               },
@@ -4119,7 +4122,7 @@ var $jscomp$this = this;
               this.options.onOpenStart.call(
                 this,
                 this.el,
-                this._openingTrigger
+                this._openingTrigger,
               );
             }
 
@@ -4179,7 +4182,7 @@ var $jscomp$this = this;
               document.removeEventListener(
                 "focus",
                 this._handleFocusBound,
-                true
+                true,
               );
             }
 
@@ -4197,7 +4200,7 @@ var $jscomp$this = this;
             return _get(
               Modal.__proto__ || Object.getPrototypeOf(Modal),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -4218,7 +4221,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Modal;
@@ -4278,8 +4281,8 @@ var $jscomp$this = this;
           this,
           Materialbox,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this16.el.M_Materialbox = _this16;
@@ -4342,7 +4345,7 @@ var $jscomp$this = this;
               this._handleMaterialboxClick.bind(this);
             this.el.addEventListener(
               "click",
-              this._handleMaterialboxClickBound
+              this._handleMaterialboxClickBound,
             );
           },
 
@@ -4355,7 +4358,7 @@ var $jscomp$this = this;
           value: function _removeEventHandlers() {
             this.el.removeEventListener(
               "click",
-              this._handleMaterialboxClickBound
+              this._handleMaterialboxClickBound,
             );
           },
 
@@ -4754,7 +4757,7 @@ var $jscomp$this = this;
             return _get(
               Materialbox.__proto__ || Object.getPrototypeOf(Materialbox),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -4775,7 +4778,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Materialbox;
@@ -4806,8 +4809,8 @@ var $jscomp$this = this;
           this,
           Parallax,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this21.el.M_Parallax = _this21;
@@ -4861,20 +4864,20 @@ var $jscomp$this = this;
             if (Parallax._parallaxes.length === 0) {
               Parallax._handleScrollThrottled = M.throttle(
                 Parallax._handleScroll,
-                5
+                5,
               );
               window.addEventListener(
                 "scroll",
-                Parallax._handleScrollThrottled
+                Parallax._handleScrollThrottled,
               );
 
               Parallax._handleWindowResizeThrottled = M.throttle(
                 Parallax._handleWindowResize,
-                5
+                5,
               );
               window.addEventListener(
                 "resize",
-                Parallax._handleWindowResizeThrottled
+                Parallax._handleWindowResizeThrottled,
               );
             }
           },
@@ -4884,17 +4887,17 @@ var $jscomp$this = this;
           value: function _removeEventHandlers() {
             this.$img[0].removeEventListener(
               "load",
-              this._handleImageLoadBound
+              this._handleImageLoadBound,
             );
 
             if (Parallax._parallaxes.length === 0) {
               window.removeEventListener(
                 "scroll",
-                Parallax._handleScrollThrottled
+                Parallax._handleScrollThrottled,
               );
               window.removeEventListener(
                 "resize",
-                Parallax._handleWindowResizeThrottled
+                Parallax._handleWindowResizeThrottled,
               );
             }
           },
@@ -4943,7 +4946,7 @@ var $jscomp$this = this;
             return _get(
               Parallax.__proto__ || Object.getPrototypeOf(Parallax),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -4984,7 +4987,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Parallax;
@@ -5036,8 +5039,8 @@ var $jscomp$this = this;
           this,
           Tabs,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this22.el.M_Tabs = _this22;
@@ -5244,7 +5247,7 @@ var $jscomp$this = this;
           value: function _setupActiveTabLink() {
             // If the location.hash matches one of the links, use that as the active tab.
             this.$activeTabLink = $(
-              this.$tabLinks.filter('[href="' + location.hash + '"]')
+              this.$tabLinks.filter('[href="' + location.hash + '"]'),
             );
 
             // If no match is found, use the first link or any with class 'active' as the initial active tab.
@@ -5294,7 +5297,7 @@ var $jscomp$this = this;
             });
 
             var $tabsWrapper = $(
-              '<div class="tabs-content carousel carousel-slider"></div>'
+              '<div class="tabs-content carousel carousel-slider"></div>',
             );
             $tabsContent.first().before($tabsWrapper);
             $tabsWrapper.append($tabsContent);
@@ -5398,7 +5401,7 @@ var $jscomp$this = this;
             return Math.ceil(
               this.tabsWidth -
                 el.position().left -
-                el[0].getBoundingClientRect().width
+                el[0].getBoundingClientRect().width,
             );
           },
 
@@ -5477,7 +5480,7 @@ var $jscomp$this = this;
             return _get(
               Tabs.__proto__ || Object.getPrototypeOf(Tabs),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -5498,7 +5501,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Tabs;
@@ -5547,8 +5550,8 @@ var $jscomp$this = this;
           this,
           Tooltip,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this26.el.M_Tooltip = _this26;
@@ -5616,11 +5619,11 @@ var $jscomp$this = this;
           value: function _removeEventHandlers() {
             this.el.removeEventListener(
               "mouseenter",
-              this._handleMouseEnterBound
+              this._handleMouseEnterBound,
             );
             this.el.removeEventListener(
               "mouseleave",
-              this._handleMouseLeaveBound
+              this._handleMouseLeaveBound,
             );
             this.el.removeEventListener("focus", this._handleFocusBound, true);
             this.el.removeEventListener("blur", this._handleBlurBound, true);
@@ -5638,7 +5641,7 @@ var $jscomp$this = this;
             this.options = $.extend(
               {},
               this.options,
-              this._getAttributeOptions()
+              this._getAttributeOptions(),
             );
             this._updateTooltipContent();
             this._setEnterDelayTimeout(isManual);
@@ -5740,7 +5743,7 @@ var $jscomp$this = this;
               targetLeft,
               targetTop,
               tooltipWidth,
-              tooltipHeight
+              tooltipHeight,
             );
             $(tooltip).css({
               top: newCoordinates.y + "px",
@@ -5871,7 +5874,7 @@ var $jscomp$this = this;
             return _get(
               Tooltip.__proto__ || Object.getPrototypeOf(Tooltip),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -5892,7 +5895,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Tooltip;
@@ -6245,7 +6248,7 @@ var $jscomp$this = this;
     function () {
       Waves.displayEffect();
     },
-    false
+    false,
   );
 })(window);
 (function ($, anim) {
@@ -6588,7 +6591,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Toast;
@@ -6657,8 +6660,8 @@ var $jscomp$this = this;
           this,
           Sidenav,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this31.el.M_Sidenav = _this31;
@@ -6764,25 +6767,25 @@ var $jscomp$this = this;
 
             this.dragTarget.addEventListener(
               "touchmove",
-              this._handleDragTargetDragBound
+              this._handleDragTargetDragBound,
             );
             this.dragTarget.addEventListener(
               "touchend",
-              this._handleDragTargetReleaseBound
+              this._handleDragTargetReleaseBound,
             );
             this._overlay.addEventListener(
               "touchmove",
-              this._handleCloseDragBound
+              this._handleCloseDragBound,
             );
             this._overlay.addEventListener(
               "touchend",
-              this._handleCloseReleaseBound
+              this._handleCloseReleaseBound,
             );
             this.el.addEventListener("touchmove", this._handleCloseDragBound);
             this.el.addEventListener("touchend", this._handleCloseReleaseBound);
             this.el.addEventListener(
               "click",
-              this._handleCloseTriggerClickBound
+              this._handleCloseTriggerClickBound,
             );
 
             // Add resize for side nav fixed
@@ -6799,44 +6802,44 @@ var $jscomp$this = this;
             if (Sidenav._sidenavs.length === 1) {
               document.body.removeEventListener(
                 "click",
-                this._handleTriggerClick
+                this._handleTriggerClick,
               );
             }
 
             this.dragTarget.removeEventListener(
               "touchmove",
-              this._handleDragTargetDragBound
+              this._handleDragTargetDragBound,
             );
             this.dragTarget.removeEventListener(
               "touchend",
-              this._handleDragTargetReleaseBound
+              this._handleDragTargetReleaseBound,
             );
             this._overlay.removeEventListener(
               "touchmove",
-              this._handleCloseDragBound
+              this._handleCloseDragBound,
             );
             this._overlay.removeEventListener(
               "touchend",
-              this._handleCloseReleaseBound
+              this._handleCloseReleaseBound,
             );
             this.el.removeEventListener(
               "touchmove",
-              this._handleCloseDragBound
+              this._handleCloseDragBound,
             );
             this.el.removeEventListener(
               "touchend",
-              this._handleCloseReleaseBound
+              this._handleCloseReleaseBound,
             );
             this.el.removeEventListener(
               "click",
-              this._handleCloseTriggerClickBound
+              this._handleCloseTriggerClickBound,
             );
 
             // Remove resize for side nav fixed
             if (this.isFixed) {
               window.removeEventListener(
                 "resize",
-                this._handleWindowResizeBound
+                this._handleWindowResizeBound,
               );
             }
           },
@@ -7327,7 +7330,7 @@ var $jscomp$this = this;
             return _get(
               Sidenav.__proto__ || Object.getPrototypeOf(Sidenav),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -7348,7 +7351,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Sidenav;
@@ -7403,8 +7406,8 @@ var $jscomp$this = this;
           this,
           ScrollSpy,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this35.el.M_ScrollSpy = _this35;
@@ -7443,16 +7446,16 @@ var $jscomp$this = this;
             ScrollSpy._elements.splice(ScrollSpy._elements.indexOf(this), 1);
             ScrollSpy._elementsInView.splice(
               ScrollSpy._elementsInView.indexOf(this),
-              1
+              1,
             );
             ScrollSpy._visibleElements.splice(
               ScrollSpy._visibleElements.indexOf(this.$el),
-              1
+              1,
             );
             ScrollSpy._count--;
             this._removeEventHandlers();
             $(this.options.getActiveElement(this.$el.attr("id"))).removeClass(
-              this.options.activeClass
+              this.options.activeClass,
             );
             this.el.M_ScrollSpy = undefined;
           },
@@ -7471,7 +7474,7 @@ var $jscomp$this = this;
               window.addEventListener("scroll", this._handleWindowScrollBound);
               window.addEventListener(
                 "resize",
-                this._handleThrottledResizeBound
+                this._handleThrottledResizeBound,
               );
               document.body.addEventListener("click", this._handleTriggerClick);
             }
@@ -7487,15 +7490,15 @@ var $jscomp$this = this;
             if (ScrollSpy._count === 0) {
               window.removeEventListener(
                 "scroll",
-                this._handleWindowScrollBound
+                this._handleWindowScrollBound,
               );
               window.removeEventListener(
                 "resize",
-                this._handleThrottledResizeBound
+                this._handleThrottledResizeBound,
               );
               document.body.removeEventListener(
                 "click",
-                this._handleTriggerClick
+                this._handleTriggerClick,
               );
             }
           },
@@ -7547,7 +7550,7 @@ var $jscomp$this = this;
               top,
               right,
               bottom,
-              left
+              left,
             );
             for (var i = 0; i < intersections.length; i++) {
               var scrollspy = intersections[i];
@@ -7590,14 +7593,14 @@ var $jscomp$this = this;
             ScrollSpy._visibleElements = ScrollSpy._visibleElements.filter(
               function (value) {
                 return value.height() != 0;
-              }
+              },
             );
 
             if (ScrollSpy._visibleElements[0]) {
               $(
                 this.options.getActiveElement(
-                  ScrollSpy._visibleElements[0].attr("id")
-                )
+                  ScrollSpy._visibleElements[0].attr("id"),
+                ),
               ).removeClass(this.options.activeClass);
               if (
                 ScrollSpy._visibleElements[0][0].M_ScrollSpy &&
@@ -7613,8 +7616,8 @@ var $jscomp$this = this;
 
             $(
               this.options.getActiveElement(
-                ScrollSpy._visibleElements[0].attr("id")
-              )
+                ScrollSpy._visibleElements[0].attr("id"),
+              ),
             ).addClass(this.options.activeClass);
           },
         },
@@ -7626,27 +7629,27 @@ var $jscomp$this = this;
             ScrollSpy._visibleElements = ScrollSpy._visibleElements.filter(
               function (value) {
                 return value.height() != 0;
-              }
+              },
             );
 
             if (ScrollSpy._visibleElements[0]) {
               $(
                 this.options.getActiveElement(
-                  ScrollSpy._visibleElements[0].attr("id")
-                )
+                  ScrollSpy._visibleElements[0].attr("id"),
+                ),
               ).removeClass(this.options.activeClass);
 
               ScrollSpy._visibleElements = ScrollSpy._visibleElements.filter(
                 function (el) {
                   return el.attr("id") != _this36.$el.attr("id");
-                }
+                },
               );
               if (ScrollSpy._visibleElements[0]) {
                 // Check if empty
                 $(
                   this.options.getActiveElement(
-                    ScrollSpy._visibleElements[0].attr("id")
-                  )
+                    ScrollSpy._visibleElements[0].attr("id"),
+                  ),
                 ).addClass(this.options.activeClass);
               }
             }
@@ -7660,7 +7663,7 @@ var $jscomp$this = this;
             return _get(
               ScrollSpy.__proto__ || Object.getPrototypeOf(ScrollSpy),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -7710,7 +7713,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return ScrollSpy;
@@ -7799,8 +7802,8 @@ var $jscomp$this = this;
           this,
           Autocomplete,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this37.el.M_Autocomplete = _this37;
@@ -7868,31 +7871,31 @@ var $jscomp$this = this;
             this.el.addEventListener("blur", this._handleInputBlurBound);
             this.el.addEventListener(
               "keyup",
-              this._handleInputKeyupAndFocusBound
+              this._handleInputKeyupAndFocusBound,
             );
             this.el.addEventListener(
               "focus",
-              this._handleInputKeyupAndFocusBound
+              this._handleInputKeyupAndFocusBound,
             );
             this.el.addEventListener("keydown", this._handleInputKeydownBound);
             this.el.addEventListener("click", this._handleInputClickBound);
             this.container.addEventListener(
               "mousedown",
-              this._handleContainerMousedownAndTouchstartBound
+              this._handleContainerMousedownAndTouchstartBound,
             );
             this.container.addEventListener(
               "mouseup",
-              this._handleContainerMouseupAndTouchendBound
+              this._handleContainerMouseupAndTouchendBound,
             );
 
             if (typeof window.ontouchstart !== "undefined") {
               this.container.addEventListener(
                 "touchstart",
-                this._handleContainerMousedownAndTouchstartBound
+                this._handleContainerMousedownAndTouchstartBound,
               );
               this.container.addEventListener(
                 "touchend",
-                this._handleContainerMouseupAndTouchendBound
+                this._handleContainerMouseupAndTouchendBound,
               );
             }
           },
@@ -7907,34 +7910,34 @@ var $jscomp$this = this;
             this.el.removeEventListener("blur", this._handleInputBlurBound);
             this.el.removeEventListener(
               "keyup",
-              this._handleInputKeyupAndFocusBound
+              this._handleInputKeyupAndFocusBound,
             );
             this.el.removeEventListener(
               "focus",
-              this._handleInputKeyupAndFocusBound
+              this._handleInputKeyupAndFocusBound,
             );
             this.el.removeEventListener(
               "keydown",
-              this._handleInputKeydownBound
+              this._handleInputKeydownBound,
             );
             this.el.removeEventListener("click", this._handleInputClickBound);
             this.container.removeEventListener(
               "mousedown",
-              this._handleContainerMousedownAndTouchstartBound
+              this._handleContainerMousedownAndTouchstartBound,
             );
             this.container.removeEventListener(
               "mouseup",
-              this._handleContainerMouseupAndTouchendBound
+              this._handleContainerMouseupAndTouchendBound,
             );
 
             if (typeof window.ontouchstart !== "undefined") {
               this.container.removeEventListener(
                 "touchstart",
-                this._handleContainerMousedownAndTouchstartBound
+                this._handleContainerMousedownAndTouchstartBound,
               );
               this.container.removeEventListener(
                 "touchend",
-                this._handleContainerMouseupAndTouchendBound
+                this._handleContainerMouseupAndTouchendBound,
               );
             }
           },
@@ -7966,7 +7969,7 @@ var $jscomp$this = this;
             // Sketchy removal of dropdown click handler
             this.el.removeEventListener(
               "click",
-              this.dropdown._handleClickBound
+              this.dropdown._handleClickBound,
             );
           },
 
@@ -8129,7 +8132,7 @@ var $jscomp$this = this;
                 matchText +
                 "</span>" +
                 afterMatch +
-                "</span>"
+                "</span>",
             );
             if (img.length) {
               $el.prepend(img);
@@ -8223,7 +8226,7 @@ var $jscomp$this = this;
                 return _this39.options.sortFunction(
                   a.key.toLowerCase(),
                   b.key.toLowerCase(),
-                  val.toLowerCase()
+                  val.toLowerCase(),
                 );
               };
               matchingData.sort(sortFunctionBound);
@@ -8239,7 +8242,7 @@ var $jscomp$this = this;
                     _entry.data +
                     '" class="right circle"><span>' +
                     _entry.key +
-                    "</span>"
+                    "</span>",
                 );
               } else {
                 $autocompleteOption.append("<span>" + _entry.key + "</span>");
@@ -8309,7 +8312,7 @@ var $jscomp$this = this;
             return _get(
               Autocomplete.__proto__ || Object.getPrototypeOf(Autocomplete),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -8330,7 +8333,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Autocomplete;
@@ -8549,7 +8552,7 @@ var $jscomp$this = this;
           $(e.target).siblings("label, .prefix").addClass("active");
         }
       },
-      true
+      true,
     );
 
     /**
@@ -8574,7 +8577,7 @@ var $jscomp$this = this;
           M.validate_field($inputElement);
         }
       },
-      true
+      true,
     );
 
     // Radio and Checkbox focus class
@@ -8657,8 +8660,8 @@ var $jscomp$this = this;
           this,
           Slider,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this40.el.M_Slider = _this40;
@@ -8778,7 +8781,7 @@ var $jscomp$this = this;
               this.$indicators.each(function (el) {
                 el.addEventListener(
                   "click",
-                  _this41._handleIndicatorClickBound
+                  _this41._handleIndicatorClickBound,
                 );
               });
             }
@@ -8797,7 +8800,7 @@ var $jscomp$this = this;
               this.$indicators.each(function (el) {
                 el.removeEventListener(
                   "click",
-                  _this42._handleIndicatorClickBound
+                  _this42._handleIndicatorClickBound,
                 );
               });
             }
@@ -8998,7 +9001,7 @@ var $jscomp$this = this;
             clearInterval(this.interval);
             this.interval = setInterval(
               this._handleIntervalBound,
-              this.options.duration + this.options.interval
+              this.options.duration + this.options.interval,
             );
           },
 
@@ -9042,7 +9045,7 @@ var $jscomp$this = this;
             return _get(
               Slider.__proto__ || Object.getPrototypeOf(Slider),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -9063,7 +9066,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Slider;
@@ -9082,7 +9085,7 @@ var $jscomp$this = this;
       if ($card.data("initialOverflow") === undefined) {
         $card.data(
           "initialOverflow",
-          $card.css("overflow") === undefined ? "" : $card.css("overflow")
+          $card.css("overflow") === undefined ? "" : $card.css("overflow"),
         );
       }
       var $cardReveal = $(this).find(".card-reveal");
@@ -9161,8 +9164,8 @@ var $jscomp$this = this;
           this,
           Chips,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this45.el.M_Chips = _this45;
@@ -9249,12 +9252,12 @@ var $jscomp$this = this;
             this.el.addEventListener("blur", Chips._handleChipsBlur, true);
             this.$input[0].addEventListener(
               "focus",
-              this._handleInputFocusBound
+              this._handleInputFocusBound,
             );
             this.$input[0].addEventListener("blur", this._handleInputBlurBound);
             this.$input[0].addEventListener(
               "keydown",
-              this._handleInputKeydownBound
+              this._handleInputKeydownBound,
             );
           },
 
@@ -9271,15 +9274,15 @@ var $jscomp$this = this;
             this.el.removeEventListener("blur", Chips._handleChipsBlur, true);
             this.$input[0].removeEventListener(
               "focus",
-              this._handleInputFocusBound
+              this._handleInputFocusBound,
             );
             this.$input[0].removeEventListener(
               "blur",
-              this._handleInputBlurBound
+              this._handleInputBlurBound,
             );
             this.$input[0].removeEventListener(
               "keydown",
-              this._handleInputKeydownBound
+              this._handleInputKeydownBound,
             );
           },
 
@@ -9442,7 +9445,7 @@ var $jscomp$this = this;
 
             this.autocomplete = M.Autocomplete.init(
               this.$input[0],
-              this.options.autocompleteOptions
+              this.options.autocompleteOptions,
             );
           },
 
@@ -9494,7 +9497,7 @@ var $jscomp$this = this;
             ) {
               $(this.$input).prop(
                 "placeholder",
-                this.options.secondaryPlaceholder
+                this.options.secondaryPlaceholder,
               );
             }
           },
@@ -9596,7 +9599,7 @@ var $jscomp$this = this;
             return _get(
               Chips.__proto__ || Object.getPrototypeOf(Chips),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -9701,7 +9704,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Chips;
@@ -9764,8 +9767,8 @@ var $jscomp$this = this;
           this,
           Pushpin,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this47.el.M_Pushpin = _this47;
@@ -9883,7 +9886,7 @@ var $jscomp$this = this;
             return _get(
               Pushpin.__proto__ || Object.getPrototypeOf(Pushpin),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -9913,7 +9916,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Pushpin;
@@ -9965,7 +9968,7 @@ var $jscomp$this = this;
         (
           FloatingActionButton.__proto__ ||
           Object.getPrototypeOf(FloatingActionButton)
-        ).call(this, FloatingActionButton, el, options)
+        ).call(this, FloatingActionButton, el, options),
       );
 
       _this48.el.M_FloatingActionButton = _this48;
@@ -10112,12 +10115,12 @@ var $jscomp$this = this;
               window.removeEventListener(
                 "scroll",
                 this._handleCloseBound,
-                true
+                true,
               );
               document.body.removeEventListener(
                 "click",
                 this._handleDocumentClickBound,
-                true
+                true,
               );
               this._animateOutToolbar();
             } else {
@@ -10253,12 +10256,12 @@ var $jscomp$this = this;
                 window.addEventListener(
                   "scroll",
                   _this51._handleCloseBound,
-                  true
+                  true,
                 );
                 document.body.addEventListener(
                   "click",
                   _this51._handleDocumentClickBound,
-                  true
+                  true,
                 );
               }, 100);
             }, 0);
@@ -10339,7 +10342,7 @@ var $jscomp$this = this;
               FloatingActionButton.__proto__ ||
                 Object.getPrototypeOf(FloatingActionButton),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -10360,7 +10363,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return FloatingActionButton;
@@ -10372,7 +10375,7 @@ var $jscomp$this = this;
     M.initializeJqueryWrapper(
       FloatingActionButton,
       "floatingActionButton",
-      "M_FloatingActionButton"
+      "M_FloatingActionButton",
     );
   }
 })(cash, M.anime);
@@ -10514,8 +10517,8 @@ var $jscomp$this = this;
           this,
           Datepicker,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this53.el.M_Datepicker = _this53;
@@ -10531,7 +10534,7 @@ var $jscomp$this = this;
         _this53.options.i18n = $.extend(
           {},
           Datepicker.defaults.i18n,
-          options.i18n
+          options.i18n,
         );
       }
 
@@ -10734,12 +10737,12 @@ var $jscomp$this = this;
               var firstVisibleDate = new Date(
                   this.calendars[0].year,
                   this.calendars[0].month,
-                  1
+                  1,
                 ),
                 lastVisibleDate = new Date(
                   this.calendars[this.calendars.length - 1].year,
                   this.calendars[this.calendars.length - 1].month,
-                  1
+                  1,
                 ),
                 visibleDate = date.getTime();
               // get the end of the month
@@ -10819,7 +10822,7 @@ var $jscomp$this = this;
               yearOfNextMonth = month === 11 ? year + 1 : year,
               daysInPreviousMonth = Datepicker._getDaysInMonth(
                 yearOfPreviousMonth,
-                previousMonth
+                previousMonth,
               );
             var cells = days + before,
               after = cells;
@@ -10989,7 +10992,7 @@ var $jscomp$this = this;
                   this.renderDayName(opts, i) +
                   '">' +
                   this.renderDayName(opts, i, true) +
-                  "</abbr></th>"
+                  "</abbr></th>",
               );
             }
             return (
@@ -11013,7 +11016,7 @@ var $jscomp$this = this;
             year,
             month,
             refYear,
-            randId
+            randId,
           ) {
             var i = void 0,
               j = void 0,
@@ -11042,7 +11045,7 @@ var $jscomp$this = this;
                     : "") +
                   ">" +
                   opts.i18n.months[i] +
-                  "</option>"
+                  "</option>",
               );
             }
 
@@ -11068,7 +11071,7 @@ var $jscomp$this = this;
                     (i === year ? 'selected="selected"' : "") +
                     ">" +
                     i +
-                    "</option>"
+                    "</option>",
                 );
               }
             }
@@ -11162,12 +11165,12 @@ var $jscomp$this = this;
                   this.calendars[c].year,
                   this.calendars[c].month,
                   this.calendars[0].year,
-                  randId
+                  randId,
                 ) +
                 this.render(
                   this.calendars[c].year,
                   this.calendars[c].month,
-                  randId
+                  randId,
                 );
             }
 
@@ -11197,11 +11200,11 @@ var $jscomp$this = this;
             // Add change handlers for select
             yearSelect.addEventListener(
               "change",
-              this._handleYearChange.bind(this)
+              this._handleYearChange.bind(this),
             );
             monthSelect.addEventListener(
               "change",
-              this._handleMonthChange.bind(this)
+              this._handleMonthChange.bind(this),
             );
 
             if (typeof this.options.onDraw === "function") {
@@ -11230,7 +11233,7 @@ var $jscomp$this = this;
             this.el.addEventListener("change", this._handleInputChangeBound);
             this.calendarEl.addEventListener(
               "click",
-              this._handleCalendarClickBound
+              this._handleCalendarClickBound,
             );
             this.doneBtn.addEventListener("click", this._finishSelectionBound);
             this.cancelBtn.addEventListener("click", this._closeBound);
@@ -11239,7 +11242,7 @@ var $jscomp$this = this;
               this._handleClearClickBound = this._handleClearClick.bind(this);
               this.clearBtn.addEventListener(
                 "click",
-                this._handleClearClickBound
+                this._handleClearClickBound,
               );
             }
           },
@@ -11253,7 +11256,7 @@ var $jscomp$this = this;
             this.modalEl = this.$modalEl[0];
 
             this.calendarEl = this.modalEl.querySelector(
-              ".datepicker-calendar"
+              ".datepicker-calendar",
             );
 
             this.yearTextEl = this.modalEl.querySelector(".year-text");
@@ -11314,12 +11317,12 @@ var $jscomp$this = this;
             this.el.removeEventListener("click", this._handleInputClickBound);
             this.el.removeEventListener(
               "keydown",
-              this._handleInputKeydownBound
+              this._handleInputKeydownBound,
             );
             this.el.removeEventListener("change", this._handleInputChangeBound);
             this.calendarEl.removeEventListener(
               "click",
-              this._handleCalendarClickBound
+              this._handleCalendarClickBound,
             );
           },
         },
@@ -11356,8 +11359,8 @@ var $jscomp$this = this;
                   new Date(
                     e.target.getAttribute("data-year"),
                     e.target.getAttribute("data-month"),
-                    e.target.getAttribute("data-day")
-                  )
+                    e.target.getAttribute("data-day"),
+                  ),
                 );
                 if (this.options.autoClose) {
                   this._finishSelection();
@@ -11506,7 +11509,7 @@ var $jscomp$this = this;
             return _get(
               Datepicker.__proto__ || Object.getPrototypeOf(Datepicker),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
         },
@@ -11588,7 +11591,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Datepicker;
@@ -11671,8 +11674,8 @@ var $jscomp$this = this;
           this,
           Timepicker,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this57.el.M_Timepicker = _this57;
@@ -11726,17 +11729,17 @@ var $jscomp$this = this;
             this.el.addEventListener("keydown", this._handleInputKeydownBound);
             this.plate.addEventListener(
               "mousedown",
-              this._handleClockClickStartBound
+              this._handleClockClickStartBound,
             );
             this.plate.addEventListener(
               "touchstart",
-              this._handleClockClickStartBound
+              this._handleClockClickStartBound,
             );
 
             $(this.spanHours).on("click", this.showView.bind(this, "hours"));
             $(this.spanMinutes).on(
               "click",
-              this.showView.bind(this, "minutes")
+              this.showView.bind(this, "minutes"),
             );
           },
         },
@@ -11746,7 +11749,7 @@ var $jscomp$this = this;
             this.el.removeEventListener("click", this._handleInputClickBound);
             this.el.removeEventListener(
               "keydown",
-              this._handleInputKeydownBound
+              this._handleInputKeydownBound,
             );
           },
         },
@@ -11785,21 +11788,21 @@ var $jscomp$this = this;
             // Mousemove on document
             document.addEventListener(
               "mousemove",
-              this._handleDocumentClickMoveBound
+              this._handleDocumentClickMoveBound,
             );
             document.addEventListener(
               "touchmove",
-              this._handleDocumentClickMoveBound
+              this._handleDocumentClickMoveBound,
             );
 
             // Mouseup on document
             document.addEventListener(
               "mouseup",
-              this._handleDocumentClickEndBound
+              this._handleDocumentClickEndBound,
             );
             document.addEventListener(
               "touchend",
-              this._handleDocumentClickEndBound
+              this._handleDocumentClickEndBound,
             );
           },
         },
@@ -11822,11 +11825,11 @@ var $jscomp$this = this;
             e.preventDefault();
             document.removeEventListener(
               "mouseup",
-              this._handleDocumentClickEndBound
+              this._handleDocumentClickEndBound,
             );
             document.removeEventListener(
               "touchend",
-              this._handleDocumentClickEndBound
+              this._handleDocumentClickEndBound,
             );
             var clickPos = Timepicker._Pos(e);
             var x = clickPos.x - this.x0;
@@ -11851,11 +11854,11 @@ var $jscomp$this = this;
             // Unbind mousemove event
             document.removeEventListener(
               "mousemove",
-              this._handleDocumentClickMoveBound
+              this._handleDocumentClickMoveBound,
             );
             document.removeEventListener(
               "touchmove",
-              this._handleDocumentClickMoveBound
+              this._handleDocumentClickMoveBound,
             );
           },
         },
@@ -11900,24 +11903,24 @@ var $jscomp$this = this;
             this.vibrate = navigator.vibrate
               ? "vibrate"
               : navigator.webkitVibrate
-              ? "webkitVibrate"
-              : null;
+                ? "webkitVibrate"
+                : null;
 
             this._canvas = this.modalEl.querySelector(".timepicker-canvas");
             this.plate = this.modalEl.querySelector(".timepicker-plate");
 
             this.hoursView = this.modalEl.querySelector(".timepicker-hours");
             this.minutesView = this.modalEl.querySelector(
-              ".timepicker-minutes"
+              ".timepicker-minutes",
             );
             this.spanHours = this.modalEl.querySelector(
-              ".timepicker-span-hours"
+              ".timepicker-span-hours",
             );
             this.spanMinutes = this.modalEl.querySelector(
-              ".timepicker-span-minutes"
+              ".timepicker-span-minutes",
             );
             this.spanAmPm = this.modalEl.querySelector(
-              ".timepicker-span-am-pm"
+              ".timepicker-span-am-pm",
             );
             this.footer = this.modalEl.querySelector(".timepicker-footer");
             this.amOrPm = "PM";
@@ -11931,7 +11934,7 @@ var $jscomp$this = this;
                 (this.options.twelveHour ? "3" : "1") +
                 '">' +
                 this.options.i18n.clear +
-                "</button>"
+                "</button>",
             )
               .appendTo(this.footer)
               .on("click", this.clear.bind(this));
@@ -11940,14 +11943,14 @@ var $jscomp$this = this;
             }
 
             var confirmationBtnsContainer = $(
-              '<div class="confirmation-btns"></div>'
+              '<div class="confirmation-btns"></div>',
             );
             $(
               '<button class="btn-flat timepicker-close waves-effect" type="button" tabindex="' +
                 (this.options.twelveHour ? "3" : "1") +
                 '">' +
                 this.options.i18n.cancel +
-                "</button>"
+                "</button>",
             )
               .appendTo(confirmationBtnsContainer)
               .on("click", this.close.bind(this));
@@ -11956,7 +11959,7 @@ var $jscomp$this = this;
                 (this.options.twelveHour ? "3" : "1") +
                 '">' +
                 this.options.i18n.done +
-                "</button>"
+                "</button>",
             )
               .appendTo(confirmationBtnsContainer)
               .on("click", this.done.bind(this));
@@ -11997,7 +12000,7 @@ var $jscomp$this = this;
             var g = Timepicker._createSVGEl("g");
             g.setAttribute(
               "transform",
-              "translate(" + dialRadius + "," + dialRadius + ")"
+              "translate(" + dialRadius + "," + dialRadius + ")",
             );
             var bearing = Timepicker._createSVGEl("circle");
             bearing.setAttribute("class", "timepicker-canvas-bearing");
@@ -12143,7 +12146,7 @@ var $jscomp$this = this;
             this.minutes = +value[1] || 0;
             this.spanHours.innerHTML = this.hours;
             this.spanMinutes.innerHTML = Timepicker._addLeadingZero(
-              this.minutes
+              this.minutes,
             );
 
             this._updateAmPmView();
@@ -12258,8 +12261,8 @@ var $jscomp$this = this;
                     ? 12
                     : value
                   : value === 0
-                  ? 0
-                  : value + 12;
+                    ? 0
+                    : value + 12;
               } else {
                 if (roundBy5) {
                   value *= 5;
@@ -12369,7 +12372,7 @@ var $jscomp$this = this;
             return _get(
               Timepicker.__proto__ || Object.getPrototypeOf(Timepicker),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
         },
@@ -12428,7 +12431,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Timepicker;
@@ -12493,7 +12496,7 @@ var $jscomp$this = this;
         this,
         (
           CharacterCounter.__proto__ || Object.getPrototypeOf(CharacterCounter)
-        ).call(this, CharacterCounter, el, options)
+        ).call(this, CharacterCounter, el, options),
       );
 
       _this61.el.M_CharacterCounter = _this61;
@@ -12537,12 +12540,12 @@ var $jscomp$this = this;
             this.el.addEventListener(
               "focus",
               this._handleUpdateCounterBound,
-              true
+              true,
             );
             this.el.addEventListener(
               "input",
               this._handleUpdateCounterBound,
-              true
+              true,
             );
           },
 
@@ -12556,12 +12559,12 @@ var $jscomp$this = this;
             this.el.removeEventListener(
               "focus",
               this._handleUpdateCounterBound,
-              true
+              true,
             );
             this.el.removeEventListener(
               "input",
               this._handleUpdateCounterBound,
-              true
+              true,
             );
           },
 
@@ -12638,7 +12641,7 @@ var $jscomp$this = this;
               CharacterCounter.__proto__ ||
                 Object.getPrototypeOf(CharacterCounter),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -12659,7 +12662,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return CharacterCounter;
@@ -12671,7 +12674,7 @@ var $jscomp$this = this;
     M.initializeJqueryWrapper(
       CharacterCounter,
       "characterCounter",
-      "M_CharacterCounter"
+      "M_CharacterCounter",
     );
   }
 })(cash);
@@ -12713,8 +12716,8 @@ var $jscomp$this = this;
           this,
           Carousel,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this62.el.M_Carousel = _this62;
@@ -12789,7 +12792,7 @@ var $jscomp$this = this;
       // Cap numVisible at count
       _this62.options.numVisible = Math.min(
         _this62.count,
-        _this62.options.numVisible
+        _this62.options.numVisible,
       );
 
       // Setup cross browser string
@@ -12841,30 +12844,30 @@ var $jscomp$this = this;
             if (typeof window.ontouchstart !== "undefined") {
               this.el.addEventListener(
                 "touchstart",
-                this._handleCarouselTapBound
+                this._handleCarouselTapBound,
               );
               this.el.addEventListener(
                 "touchmove",
-                this._handleCarouselDragBound
+                this._handleCarouselDragBound,
               );
               this.el.addEventListener(
                 "touchend",
-                this._handleCarouselReleaseBound
+                this._handleCarouselReleaseBound,
               );
             }
 
             this.el.addEventListener("mousedown", this._handleCarouselTapBound);
             this.el.addEventListener(
               "mousemove",
-              this._handleCarouselDragBound
+              this._handleCarouselDragBound,
             );
             this.el.addEventListener(
               "mouseup",
-              this._handleCarouselReleaseBound
+              this._handleCarouselReleaseBound,
             );
             this.el.addEventListener(
               "mouseleave",
-              this._handleCarouselReleaseBound
+              this._handleCarouselReleaseBound,
             );
             this.el.addEventListener("click", this._handleCarouselClickBound);
 
@@ -12874,7 +12877,7 @@ var $jscomp$this = this;
               this.$indicators.find(".indicator-item").each(function (el, i) {
                 el.addEventListener(
                   "click",
-                  _this63._handleIndicatorClickBound
+                  _this63._handleIndicatorClickBound,
                 );
               });
             }
@@ -12898,50 +12901,50 @@ var $jscomp$this = this;
             if (typeof window.ontouchstart !== "undefined") {
               this.el.removeEventListener(
                 "touchstart",
-                this._handleCarouselTapBound
+                this._handleCarouselTapBound,
               );
               this.el.removeEventListener(
                 "touchmove",
-                this._handleCarouselDragBound
+                this._handleCarouselDragBound,
               );
               this.el.removeEventListener(
                 "touchend",
-                this._handleCarouselReleaseBound
+                this._handleCarouselReleaseBound,
               );
             }
             this.el.removeEventListener(
               "mousedown",
-              this._handleCarouselTapBound
+              this._handleCarouselTapBound,
             );
             this.el.removeEventListener(
               "mousemove",
-              this._handleCarouselDragBound
+              this._handleCarouselDragBound,
             );
             this.el.removeEventListener(
               "mouseup",
-              this._handleCarouselReleaseBound
+              this._handleCarouselReleaseBound,
             );
             this.el.removeEventListener(
               "mouseleave",
-              this._handleCarouselReleaseBound
+              this._handleCarouselReleaseBound,
             );
             this.el.removeEventListener(
               "click",
-              this._handleCarouselClickBound
+              this._handleCarouselClickBound,
             );
 
             if (this.showIndicators && this.$indicators) {
               this.$indicators.find(".indicator-item").each(function (el, i) {
                 el.removeEventListener(
                   "click",
-                  _this64._handleIndicatorClickBound
+                  _this64._handleIndicatorClickBound,
                 );
               });
             }
 
             window.removeEventListener(
               "resize",
-              this._handleThrottledResizeBound
+              this._handleThrottledResizeBound,
             );
           },
 
@@ -13206,8 +13209,8 @@ var $jscomp$this = this;
             return x >= this.count
               ? x % this.count
               : x < 0
-              ? this._wrap(this.count + (x % this.count))
-              : x;
+                ? this._wrap(this.count + (x % this.count))
+                : x;
           },
 
           /**
@@ -13316,7 +13319,7 @@ var $jscomp$this = this;
             if (this.showIndicators) {
               var diff = this.center % this.count;
               var activeIndicator = this.$indicators.find(
-                ".indicator-item.active"
+                ".indicator-item.active",
               );
               if (activeIndicator.index() !== diff) {
                 activeIndicator.removeClass("active");
@@ -13353,7 +13356,7 @@ var $jscomp$this = this;
                 el,
                 centerTweenedOpacity,
                 0,
-                transformString
+                transformString,
               );
             }
 
@@ -13401,7 +13404,7 @@ var $jscomp$this = this;
                   el,
                   tweenedOpacity,
                   -i,
-                  _transformString2
+                  _transformString2,
                 );
               }
             }
@@ -13426,7 +13429,7 @@ var $jscomp$this = this;
                 el,
                 centerTweenedOpacity,
                 0,
-                _transformString3
+                _transformString3,
               );
             }
 
@@ -13591,7 +13594,7 @@ var $jscomp$this = this;
             return _get(
               Carousel.__proto__ || Object.getPrototypeOf(Carousel),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -13612,7 +13615,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Carousel;
@@ -13655,8 +13658,8 @@ var $jscomp$this = this;
           this,
           TapTarget,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this67.el.M_TapTarget = _this67;
@@ -13709,7 +13712,7 @@ var $jscomp$this = this;
             this.el.addEventListener("click", this._handleTargetClickBound);
             this.originEl.addEventListener(
               "click",
-              this._handleOriginClickBound
+              this._handleOriginClickBound,
             );
 
             // Resize
@@ -13729,11 +13732,11 @@ var $jscomp$this = this;
             this.el.removeEventListener("click", this._handleTargetClickBound);
             this.originEl.removeEventListener(
               "click",
-              this._handleOriginClickBound
+              this._handleOriginClickBound,
             );
             window.removeEventListener(
               "resize",
-              this._handleThrottledResizeBound
+              this._handleThrottledResizeBound,
             );
           },
 
@@ -13960,11 +13963,11 @@ var $jscomp$this = this;
             document.body.addEventListener(
               "click",
               this._handleDocumentClickBound,
-              true
+              true,
             );
             document.body.addEventListener(
               "touchend",
-              this._handleDocumentClickBound
+              this._handleDocumentClickBound,
             );
           },
 
@@ -13990,11 +13993,11 @@ var $jscomp$this = this;
             document.body.removeEventListener(
               "click",
               this._handleDocumentClickBound,
-              true
+              true,
             );
             document.body.removeEventListener(
               "touchend",
-              this._handleDocumentClickBound
+              this._handleDocumentClickBound,
             );
           },
         },
@@ -14006,7 +14009,7 @@ var $jscomp$this = this;
             return _get(
               TapTarget.__proto__ || Object.getPrototypeOf(TapTarget),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -14027,7 +14030,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return TapTarget;
@@ -14071,8 +14074,8 @@ var $jscomp$this = this;
           this,
           FormSelect,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       if (_this68.$el.hasClass("browser-default")) {
@@ -14150,16 +14153,16 @@ var $jscomp$this = this;
               .each(function (el) {
                 el.removeEventListener(
                   "click",
-                  _this70._handleOptionClickBound
+                  _this70._handleOptionClickBound,
                 );
               });
             this.el.removeEventListener(
               "change",
-              this._handleSelectChangeBound
+              this._handleSelectChangeBound,
             );
             this.input.removeEventListener(
               "click",
-              this._handleInputClickBound
+              this._handleInputClickBound,
             );
           },
 
@@ -14195,7 +14198,7 @@ var $jscomp$this = this;
               if (this.isMultiple) {
                 // Deselect placeholder option if still selected.
                 var placeholderOption = $(this.dropdownOptions).find(
-                  "li.disabled.selected"
+                  "li.disabled.selected",
                 );
                 if (placeholderOption.length) {
                   placeholderOption.removeClass("selected");
@@ -14259,7 +14262,7 @@ var $jscomp$this = this;
             this.dropdownOptions.id = "select-options-" + M.guid();
             $(this.dropdownOptions).addClass(
               "dropdown-content select-dropdown " +
-                (this.isMultiple ? "multiple-select-dropdown" : "")
+                (this.isMultiple ? "multiple-select-dropdown" : ""),
             );
 
             // Create dropdown structure.
@@ -14272,7 +14275,7 @@ var $jscomp$this = this;
                     optionEl = _this71._appendOptionWithIcon(
                       _this71.$el,
                       el,
-                      "multiple"
+                      "multiple",
                     );
                   } else {
                     optionEl = _this71._appendOptionWithIcon(_this71.$el, el);
@@ -14286,15 +14289,15 @@ var $jscomp$this = this;
                     $(
                       '<li class="optgroup"><span>' +
                         el.getAttribute("label") +
-                        "</span></li>"
-                    )[0]
+                        "</span></li>",
+                    )[0],
                   );
 
                   selectOptions.each(function (el) {
                     var optionEl = _this71._appendOptionWithIcon(
                       _this71.$el,
                       el,
-                      "optgroup-option"
+                      "optgroup-option",
                     );
                     _this71._addOptionToValueDict(el, optionEl);
                   });
@@ -14319,7 +14322,7 @@ var $jscomp$this = this;
 
             // Add caret
             var dropdownIcon = $(
-              '<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"./><path d="M0 0h24v24H0z" fill="none"./></svg>'
+              '<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"./><path d="M0 0h24v24H0z" fill="none"./></svg>',
             );
             this.$el.before(dropdownIcon[0]);
 
@@ -14426,7 +14429,7 @@ var $jscomp$this = this;
             var iconUrl = option.getAttribute("data-icon");
             if (!!iconUrl) {
               var imgEl = $(
-                '<img loading="lazy" alt="" src="' + iconUrl + '">'
+                '<img loading="lazy" alt="" src="' + iconUrl + '">',
               );
               liEl.prepend(imgEl);
             }
@@ -14510,7 +14513,7 @@ var $jscomp$this = this;
               if (optionIsSelected) {
                 this._activateOption(
                   $(this.dropdownOptions),
-                  $(option.optionEl)
+                  $(option.optionEl),
                 );
                 this._keysSelected[key] = true;
               } else {
@@ -14560,7 +14563,7 @@ var $jscomp$this = this;
             return _get(
               FormSelect.__proto__ || Object.getPrototypeOf(FormSelect),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -14581,7 +14584,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return FormSelect;
@@ -14621,8 +14624,8 @@ var $jscomp$this = this;
           this,
           Range,
           el,
-          options
-        )
+          options,
+        ),
       );
 
       _this72.el.M_Range = _this72;
@@ -14678,46 +14681,46 @@ var $jscomp$this = this;
 
             this.el.addEventListener(
               "mousedown",
-              this._handleRangeMousedownTouchstartBound
+              this._handleRangeMousedownTouchstartBound,
             );
             this.el.addEventListener(
               "touchstart",
-              this._handleRangeMousedownTouchstartBound
+              this._handleRangeMousedownTouchstartBound,
             );
 
             this.el.addEventListener(
               "input",
-              this._handleRangeInputMousemoveTouchmoveBound
+              this._handleRangeInputMousemoveTouchmoveBound,
             );
             this.el.addEventListener(
               "mousemove",
-              this._handleRangeInputMousemoveTouchmoveBound
+              this._handleRangeInputMousemoveTouchmoveBound,
             );
             this.el.addEventListener(
               "touchmove",
-              this._handleRangeInputMousemoveTouchmoveBound
+              this._handleRangeInputMousemoveTouchmoveBound,
             );
 
             this.el.addEventListener(
               "mouseup",
-              this._handleRangeMouseupTouchendBound
+              this._handleRangeMouseupTouchendBound,
             );
             this.el.addEventListener(
               "touchend",
-              this._handleRangeMouseupTouchendBound
+              this._handleRangeMouseupTouchendBound,
             );
 
             this.el.addEventListener(
               "blur",
-              this._handleRangeBlurMouseoutTouchleaveBound
+              this._handleRangeBlurMouseoutTouchleaveBound,
             );
             this.el.addEventListener(
               "mouseout",
-              this._handleRangeBlurMouseoutTouchleaveBound
+              this._handleRangeBlurMouseoutTouchleaveBound,
             );
             this.el.addEventListener(
               "touchleave",
-              this._handleRangeBlurMouseoutTouchleaveBound
+              this._handleRangeBlurMouseoutTouchleaveBound,
             );
           },
 
@@ -14732,46 +14735,46 @@ var $jscomp$this = this;
 
             this.el.removeEventListener(
               "mousedown",
-              this._handleRangeMousedownTouchstartBound
+              this._handleRangeMousedownTouchstartBound,
             );
             this.el.removeEventListener(
               "touchstart",
-              this._handleRangeMousedownTouchstartBound
+              this._handleRangeMousedownTouchstartBound,
             );
 
             this.el.removeEventListener(
               "input",
-              this._handleRangeInputMousemoveTouchmoveBound
+              this._handleRangeInputMousemoveTouchmoveBound,
             );
             this.el.removeEventListener(
               "mousemove",
-              this._handleRangeInputMousemoveTouchmoveBound
+              this._handleRangeInputMousemoveTouchmoveBound,
             );
             this.el.removeEventListener(
               "touchmove",
-              this._handleRangeInputMousemoveTouchmoveBound
+              this._handleRangeInputMousemoveTouchmoveBound,
             );
 
             this.el.removeEventListener(
               "mouseup",
-              this._handleRangeMouseupTouchendBound
+              this._handleRangeMouseupTouchendBound,
             );
             this.el.removeEventListener(
               "touchend",
-              this._handleRangeMouseupTouchendBound
+              this._handleRangeMouseupTouchendBound,
             );
 
             this.el.removeEventListener(
               "blur",
-              this._handleRangeBlurMouseoutTouchleaveBound
+              this._handleRangeBlurMouseoutTouchleaveBound,
             );
             this.el.removeEventListener(
               "mouseout",
-              this._handleRangeBlurMouseoutTouchleaveBound
+              this._handleRangeBlurMouseoutTouchleaveBound,
             );
             this.el.removeEventListener(
               "touchleave",
-              this._handleRangeBlurMouseoutTouchleaveBound
+              this._handleRangeBlurMouseoutTouchleaveBound,
             );
           },
 
@@ -14912,7 +14915,7 @@ var $jscomp$this = this;
           key: "_showRangeBubble",
           value: function _showRangeBubble() {
             var paddingLeft = parseInt(
-              $(this.thumb).parent().css("padding-left")
+              $(this.thumb).parent().css("padding-left"),
             );
             var marginLeft = -7 + paddingLeft + "px"; // TODO: fix magic number?
             anim.remove(this.thumb);
@@ -14950,7 +14953,7 @@ var $jscomp$this = this;
             return _get(
               Range.__proto__ || Object.getPrototypeOf(Range),
               "init",
-              this
+              this,
             ).call(this, this, els, options);
           },
 
@@ -14971,7 +14974,7 @@ var $jscomp$this = this;
             return _defaults;
           },
         },
-      ]
+      ],
     );
 
     return Range;

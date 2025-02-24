@@ -70,7 +70,7 @@ function PostIdView() {
 
   const selMain = (value) => {
     document.getElementById("main").src = document.getElementById(
-      `main-${value}`
+      `main-${value}`,
     ).src;
   };
 

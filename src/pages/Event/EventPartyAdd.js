@@ -92,7 +92,7 @@ function EventPartyAdd() {
         // Add the Event into database with axios
         await axios.post(
           `https://seg-server.vercel.app/api/parties`,
-          cleanedData
+          cleanedData,
         );
 
         await axios.post(
@@ -102,7 +102,7 @@ function EventPartyAdd() {
             headers: {
               "Content-Type": "multipart/form-data",
             },
-          }
+          },
         );
 
         await axios.post(
@@ -112,12 +112,12 @@ function EventPartyAdd() {
             headers: {
               "Content-Type": "multipart/form-data",
             },
-          }
+          },
         );
 
         // Navigate to main page
         alert(
-          `Halo ${eventData.name}! Anda berhasil terdaftar dalam acara ${event.title}! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email.`
+          `Halo ${eventData.name}! Anda berhasil terdaftar dalam acara ${event.title}! Silakan tunggu informasi lebih lanjut terkait acara ini yang akan kami kirim melalui email.`,
         );
 
         navigate(`/events`);

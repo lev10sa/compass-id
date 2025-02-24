@@ -305,7 +305,7 @@ function Home() {
               onClick={() =>
                 window.open(
                   "https://compasspubindonesia.com/blogs/category/id/",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -672,8 +672,8 @@ function Home() {
               {lang === "id"
                 ? "Kami berkomitmen untuk menjadi sahabat guru dalam:"
                 : lang === "en"
-                ? "We have bold commitment to be teachers partner in:"
-                : ""}
+                  ? "We have bold commitment to be teachers partner in:"
+                  : ""}
             </h5>
             <div>
               <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
@@ -681,8 +681,8 @@ function Home() {
                 {lang === "id"
                   ? "Pengembangan Diri"
                   : lang === "en"
-                  ? "Self Development"
-                  : ""}
+                    ? "Self Development"
+                    : ""}
               </p>
             </div>
             <div>
@@ -691,8 +691,8 @@ function Home() {
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
                   : lang === "en"
-                  ? "Skill Enhancement"
-                  : ""}
+                    ? "Skill Enhancement"
+                    : ""}
               </p>
             </div>
             <div>
@@ -701,8 +701,8 @@ function Home() {
                 {lang === "id"
                   ? "Materi Pembelajaran"
                   : lang === "en"
-                  ? "Learning Subject"
-                  : ""}
+                    ? "Learning Subject"
+                    : ""}
               </p>
             </div>
           </div>
@@ -810,8 +810,8 @@ function Home() {
               {lang === "id"
                 ? "Kami berkomitmen untuk menjadi sahabat guru dalam:"
                 : lang === "en"
-                ? "We have bold commitment to be teachers partner in:"
-                : ""}
+                  ? "We have bold commitment to be teachers partner in:"
+                  : ""}
             </h5>
             <div>
               <img src={"/assets/img/about/a.jpg"} alt={`a.jpg`} />
@@ -819,8 +819,8 @@ function Home() {
                 {lang === "id"
                   ? "Pengembangan Diri"
                   : lang === "en"
-                  ? "Self Development"
-                  : ""}
+                    ? "Self Development"
+                    : ""}
               </p>
             </div>
             <div>
@@ -829,8 +829,8 @@ function Home() {
                 {lang === "id"
                   ? "Peningkatan Keterampilan"
                   : lang === "en"
-                  ? "Skill Enhancement"
-                  : ""}
+                    ? "Skill Enhancement"
+                    : ""}
               </p>
             </div>
             <div>
@@ -839,8 +839,8 @@ function Home() {
                 {lang === "id"
                   ? "Materi Pembelajaran"
                   : lang === "en"
-                  ? "Learning Subject"
-                  : ""}
+                    ? "Learning Subject"
+                    : ""}
               </p>
             </div>
           </div>
